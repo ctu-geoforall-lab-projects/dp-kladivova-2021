@@ -2,6 +2,7 @@
 \documentclass[a4paper,10pt,twoside]{article}
 \usepackage[utf8]{inputenc} %kodovani, abychom mohli jednoduse psat diakriticka pismena
 \usepackage[english]{babel}
+\usepackage{pdfpages}
 \usepackage{pifont}
 \usepackage{graphicx} %pro vkladani obrazku
 \usepackage{color}
@@ -95,7 +96,19 @@
 \newpage ~ \newpage
 \thispagestyle{empty}
 
-%% 3.  STRÁNKA = ČESKÁ A ANGLICKÁ ANOTACE %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% 3. STRÁNKA NA ZADÁNÍ
+\begin{figure}
+ \centering 
+ \includepdf[pages=-]{assignment/zadanidp.pdf}
+\end{figure}
+
+%% 4. STRÁNKA ZŮSTANE PRÁZDNÁ
+
+\newpage ~ \newpage
+\newpage ~ \newpage
+\thispagestyle{empty}
+
+%% 5.  STRÁNKA = ČESKÁ A ANGLICKÁ ANOTACE %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \renewcommand{\baselinestretch}{1.25} %zvetseni mezery mezi radky
 
@@ -138,12 +151,12 @@ Dosavadní startovací mechanismus softwaru GRASS GIS mohl odradit nové uživat
 \textrm{GUI, GRASS GIS, wxPython, startup, GSoC, vývoj softwaru}
 
 
-%% 4. STRÁNKA ZŮSTANE PRÁZDNÁ
+%% 6. STRÁNKA ZŮSTANE PRÁZDNÁ
 
 \newpage ~ \newpage
 \thispagestyle{empty}
 
-%% 5. STRÁNKA = DECLARATION OF AUTHORSHIP %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% 7. STRÁNKA = DECLARATION OF AUTHORSHIP %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \newpage
 \mbox{}
@@ -157,13 +170,13 @@ I hereby declare that the work presented here is, to the best of my knowledge an
 
 \noindent In Prague ................................... \hfill ................................................
 
-%% 6. STRÁNKA ZŮSTANE PRÁZDNÁ
+%% 8. STRÁNKA ZŮSTANE PRÁZDNÁ
 
 \newpage ~ \newpage
 \thispagestyle{empty}
 
 
-%% 7. STRÁNKA = ACKNOWLEDGEMENT %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% 9. STRÁNKA = ACKNOWLEDGEMENT %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \newpage
 \mbox{}
@@ -174,13 +187,13 @@ I hereby declare that the work presented here is, to the best of my knowledge an
 
 Firstly I would like to thank my parents very much for their support during my studies. Then I would like to express my great thanks to Martin Landa who inspired me and still inspires me a lot on my way of becoming a professional python developer. He was also at the beginning of my participation in the Google Summer of Code program. In the GRASS GIS open-source environment, I met an amazing community of incredibly inspiring people. Among those people, I would like to thank especially Anna and Vaclav Petras who were a great support to me during GSoC and even later on and brought a lot of valuable advice to this work.
 
-%% 8. STRÁNKA ZŮSTANE PRÁZDNÁ
+%% 10. STRÁNKA ZŮSTANE PRÁZDNÁ
 
 \newpage ~ \newpage
 \thispagestyle{empty}
 
 
-%% 9. a 10. STRÁNKA = OBSAH A SEZNAM OBRAZKU %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% 11. a 12. STRÁNKA = OBSAH A SEZNAM OBRAZKU %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \newpage
 
 \tableofcontents %obsah
