@@ -338,60 +338,140 @@ In version 7.8 there are no intuitive functions on the nodes in the Data Catalog
 \section{General startup concepts}
 \noindent
 \large
-
-\noindent First, it is important to distinguish between the terms startup screen and splash screen. If we try to find articles on the startup screen, we will not be very successful. There are only several articles focused on the splash screen or on instructions on how such a screen should look like. As Ed Foster stated in 1996: "Splash screens, as they are commonly called, are the graphic logos that display while the program is loading and identify the program while reminding you about the software publisher's copyright restrictions." In our case, we can consider the screen on Figure \ref{fig:splash_screen} as splash screen, which appears before the main software window starts and remains visible for a few seconds. Articles dealing with this topic are mostly very old. The splash screen theme currently lives mainly on programming websites such as Stack Overflow.
+First, it is important to distinguish between the terms startup screen and splash screen. If we try to find articles on the startup screen, we will not be very successful. There are only several articles focused on the splash screen or on instructions on how such a screen should look like. As Ed Foster stated in 1996: "Splash screens, as they are commonly called, are the graphic logos that display while the program is loading and identify the program while reminding you about the software publisher's copyright restrictions." In our case, we can consider the screen on Figure \ref{fig:splash_screen} as splash screen, which appears before the main software window starts and remains visible for a few seconds. Articles dealing with this topic are mostly very old. The splash screen theme currently lives mainly on programming websites such as Stack Overflow.
 
 As we will see below, a startup screen can mean a splash screen. However, generally speaking, it is usually a screen that requires some initial action from the user to set up the software. This work talks about the startup mechanism, which is a even more general name for the way the software starts in different situations and what state it gets into after starting. Unfortunately, the author could not find any publications dealing with startup mechanisms. This is probably due to the facts that many software programs are developed commercially and most commonly used software or applications do not require any more complex initial setup. However, this may not be the case for GIS software. Therefore, there is no other way than testing the most used GIS software in practice. Then we will move beyond GIS and look at the starting mechanisms of software from various fields.
 
 \subsection{GIS software}
 
-This chapter introduces and compares several GIS approaches in terms of startup mechanisms. First, the 2 most well-known commercial representatives developed by ESRI - ArcGIS Pro and ArcGIS Desktop - are discussed in detail. According to the ranking of the online magazine GISGeography, in 2020 also QGIS 3, QGIS 2 (Quantum GIS), GeoMedia (Hexagon), MapInfo Professional, Feature Manipulation Engine (FME), Global Mapper, gvSIG and GRASS are among the top 10 GIS software. The evaluation of selected software is performed on a point scale from 0 to 10 in four categories - \textit{cartography, analysis, editing and data management} which are subsequently averaged. 
+This chapter introduces and compares several GIS approaches in terms of startup mechanisms. The startup mechanisms are analyzed from various perspectives, which are summarized in the final table identifying several questions. Does the GIS software have its own startup screen, and if so, what does it look like? Does the software have its own format for the project (workspaces)? If not, how is the data stored? Does the software offer first-time mode to help complete beginners? Last but not least, how the software works with data of different coordinate systems? Does it support On the fly transformation? Does it allow the incorrect display of two layers of different coordinate systems on top of each other?
 
-If we focus only on Free GIS Software, the ranking will be somewhat thinner. In the first places in descending order we can find QGIS 3, QGIS 2, gVSIG, GRASS GIS, ILWIS and SAGA GIS. All these mentioned open-source software have been tested and analyzed in detail from the point of view of the startup mechanism. On Figures \ref{fig:hodnoceni_all} and  \ref{fig:hodnoceni_free} we can see graphs of the 10 highest rated GIS software and the 10 highest rated Free GIS software in the world, as stated in the evaluation taken by GISGeography journal.
+On Figures \ref{fig:hodnoceni_all} and  \ref{fig:hodnoceni_free} we can see graphs of the 10 highest rated GIS software and the 10 highest rated Free GIS software in the world in 2020, as stated in the evaluation taken by online magazine GISGeography. The evaluation of selected software is performed on a point scale from 0 to 10 in four categories - \textit{cartography, analysis, editing and data management} which are subsequently averaged. 
+
+In the first place we can notice two representatives of ESRI - ArcGIS Pro, ArcGIS Desktop. I would also mention the other two interesting commercial software GeoMedia (Hexagon) and MapInfo Professional. If we focus only on Free GIS Software, the ranking will be somewhat thinner. In the first places in descending order we can find QGIS 3, QGIS 2, gVSIG, GRASS GIS, ILWIS and SAGA GIS. All these mentioned open-source software have been tested and analyzed in detail from the point of view of the startup mechanism. 
 
 \vspace{0.3cm}
 \begin{figure}[hbt!] 
 \begin{center}
-\includegraphics[width=13cm]{../pictures/hodnoceni_all.png} 
+\includegraphics[width=10.5cm]{../pictures/hodnoceni_all.png} 
 \caption[Top 10 GIS Software in 2020 according to GISGeography journal]{Top 10 GIS Software in 2020 according to GISGeography journal}
 \label{fig:hodnoceni_all}
 \end{center}
 \end{figure}
 
-\vspace{0.3cm}
 \begin{figure}[hbt!] 
 \begin{center}
-\includegraphics[width=13cm]{../pictures/hodnoceni_free.png} 
+\includegraphics[width=10.5cm]{../pictures/hodnoceni_free.png} 
 \caption[Top 10 Free GIS Software in 2020 according to GISGeography journal]{Top 10 Free GIS Software in 2020 according to GISGeography journal}
 \label{fig:hodnoceni_free}
 \end{center}
 \end{figure}
 
-We must keep in mind that this evaluation is very indicative, as each software has different strengths. For example, GRASS GIS is at the top of the \textit{analysis} category, with a rating of 9.8 out of 10, which is comparable to ArcGIS Pro and even one tenth better than QGIS 3. Among Free GIS Software GRASS has the highest rating in this aspect. This uniqueness is also mentioned in the pros of the software, which offers more than 350 geoprocessing modules, LiDAR and network analysis, sophisticated tools for satellite imagery, 3D raster rendering and customization and so forth. In the disciplines of editing and data management, the balance is somewhat worse 7.4 and 7.5 out of 10 points. The biggest drop to 6.1 is in the \textit{cartography} category. At this point, however, it must be highlighted that the ambition of GRASS GIS is definitely not to create high-quality modern maps, but to offer the software for very numerically complex geographical analyzes. What is mentioned as other disadvantages is clunky and dated user interface, defining projects on start-up, steep learning curve to get started and command line window running in background. We can notice that these shortcomings are largely related to the current startup mechanism. The advantage is that the GRASS GIS function can be leverage throught QGIS or uDig.\\
+We must keep in mind that this evaluation is very indicative, as each software has different strengths. For example, GRASS GIS is at the top of the \textit{analysis} category, with a rating of 9.8 out of 10, which is comparable to FME and ArcGIS Pro as can be seen on Figure \ref{fig:hodnoceni_analysis}. Among Free GIS Software GRASS has the highest rating in this aspect. This uniqueness is also mentioned in the pros of the software, which offers more than 350 geoprocessing modules, LiDAR and network analysis, sophisticated tools for satellite imagery, 3D raster rendering and customization and so forth.  The big advantage is that the GRASS GIS function can be leverage throught QGIS or uDig. 
 
-\noindent \textbf{ArcGIS Pro 2.6}
+In the disciplines of editing and data management, the balance is somewhat worse 7.4 and 7.5 out of 10 points. The biggest drop to 6.1 is in the \textit{cartography} category. At this point, however, it must be highlighted that the ambition of GRASS GIS is definitely not to create high-quality modern maps, but to offer the software for very numerically complex geographical analyzes. What is mentioned as other disadvantages is clunky and dated user interface, defining projects on start-up, steep learning curve to get started and command line window running in background. We can notice that these shortcomings are largely related to the current unfortunate startup mechanism.\\
 
-\noindent \textit{\color{red}V současné době se jedná o hlavního zástupce desktopového GIS společnosti ESRI. Je nadstavbou a spojením aplikací ArcMap, ArcScene a ArcGlobe. Je tedy možné v něm zobrazovat a analyzovat i 3D data. Navíc se liší vyšším výkonem - podporuje 64bitovou architekturu a možnosti současných grafických karet.}\\
+\vspace{0.3cm}
+\begin{figure}[hbt!] 
+\begin{center}
+\includegraphics[width=11cm]{../pictures/hodnoceni_analysis.png} 
+\caption[Top GIS Software in 2020 in \textit{analysis} category according to GISGeography journal (source own)]{Top GIS Software in 2020 in \textit{analysis} category according to GISGeography journal  (source own)}
+\label{fig:hodnoceni_analysis}
+\end{center}
+\end{figure}
 
-\noindent \textbf{ArcMap 10.7} \textit{\color{red}je standardním a tradičním zástupcem desktopového GIS společnosti ESRI.} \\
+Two shapefiles of different coordinate system are employed for further experiments - districts in the Czech Republic in the S-JTSK Krovak East North system and US tracts in the USA Contiguous Albers Equal Area Conic system.
 
-\noindent \textbf{GeoMedia (Hexagon)} \textit{\color{red} pokud se podaří sehnat.} 
+\newpage
+\vspace*{-1cm}
+\subsubsection{ArcGIS Pro 2.4}
+\noindent
+\large
+This software is currently the lead representative of ESRI's desktop GIS. It is an extension and connection of ArcMap, ArcScene and ArcGlobe applications. It is therefore possible to display and analyze 3D data in it. In addition, it differs in higher performance - it supports 64-bit architecture and the capabilities of current graphics cards. 
 
-\noindent \textbf{MapInfo Professional} \textit{\color{red} pokud se podaří sehnat.}
+After logging in, the startup screen is displayed (see Figure \ref{fig:arcgis_startup_screen}). It allows us to open recently saved projects or select from pre-prepared templates. Startup screen offers different types of templates - Map (standard), Catalog, Global scene and Local scene, or we can just run an empty sheet. ArcGIS uses the ArcGIS project file with * .aprx extension as its  main management component.
 
-\noindent \textbf{QGIS 3.14} 
+\vspace{0.3cm}
+\begin{figure}[hbt!] 
+\begin{center}
+\includegraphics[width=15cm]{../pictures/arcgis_startup_screen.png} 
+\caption[ArcGIS Pro 2.4 startup dialog (source own)]{ArcGIS Pro 2.4 startup dialog (source own)}
+\label{fig:arcgis_startup_screen}
+\end{center}
+\end{figure}
 
-\noindent \textit{\color{red} Tento software vzniká podobně jako GRASS GIS pod záštitou organizace OSGeo.} \\
+When running the Map template, ArcGIS starts with World Topographic Map and World Hillshade layers projected in WGS 1984 Mercator Auxiliary Sphere. As ArcGIS login account contains information about the user's homeland, the map window was in this case centered on the Czech Republic. The software consists of three main windows. To the left, there is the window called Content, which has several subtabs focusing mainly on the layers. To the right we can find the Catalog tab allowing us to manage folder and project structures.
 
-\noindent \textbf{gVSIG} 
+The actual layers are located in the Map component which is associated with Map window. In the following example on Figure \ref{fig:arcgis_pro_onthefly2}, the map window system is WGS 1984 Web Mercator Auxiliary Sphere (according to the first added layer), but the later layers added are in other coordinate systems. In spite of having different coordinate systems, the layers are displayed correctly in the map window. It is caused by On the fly projection that does not change data, it merely displays them in the new coordinate system temporarily.
 
-\noindent \textit{\color{red}Zde si popíšeme startovací mechanismus dalšího open-source software vznikajícího pod křídly organizace OSGeo.} \\
+\vspace{0.3cm}
+\begin{figure}[hbt!] 
+\begin{center}
+\includegraphics[width=15cm]{../pictures/arcgis_pro_onthefly2.png} 
+\caption[Display of layers with different coordinate system in ArcGIS Pro 2.4 (source own)]{Display of layers with different coordinate system in ArcGIS Pro 2.4 (source own)}
+\label{fig:arcgis_pro_onthefly2}
+\end{center}
+\end{figure}
 
-\noindent \textbf{ILWIS}
 
-\noindent \textbf{SAGA GIS 2.3 (System for Automated Geoscientific Analyses)}
+\newpage
+\vspace*{-1cm}
+\subsubsection{ArcMap 10.7}
+\noindent
+\large
+je standardním a tradičním zástupcem desktopového GIS společnosti ESRI.
 
-\noindent SAGA GIS is a Free Open Source Software (FOSS) offering a comprehensive, growing set of geoscientific methods. 
+\newpage
+\vspace*{-1cm}
+\subsubsection{QGIS 3.14}
+\noindent
+\large
+Tento software vzniká podobně jako GRASS GIS pod záštitou organizace OSGeo.
+ 
+\newpage
+\vspace*{-1cm}
+\subsubsection{gVSIG}
+\noindent
+\large
+Zde si popíšeme startovací mechanismus dalšího open-source software vznikajícího pod křídly organizace OSGeo.
+
+\newpage
+\vspace*{-1cm}
+\subsubsection{ILWIS 3.3 (Integrated Land and Water Information System)}
+\noindent
+\large
+It is a system developed at University of Twente in the Netherlands. The strong point of ILWIS has always been remote sensing and hydrological flow operations. It is natively available only for Windows. The software starts without a startup window. On the left there is a section with several tabs: Operation-Tree, Navigator and Finder. ILWIS seems to be very similar to GRASS GIS. Operation-Tree and Finder are defacto the Modules tab in GRASS divided into two sub-tabs. The navigator has a tree structure like the GRASS Data Catalog and represents  the entire directory structure, not just a home Data directory. ILWIS does not have its own native file to save the projects or workspaces. The data is similarly to GRASS stored in the home directory, which is taken as the default when importing or creating data. The data in this folder is changed to special formats that ILWIS understands.
+
+\vspace{0.3cm}
+\begin{figure}[hbt!] 
+\begin{center}
+\includegraphics[width=15cm]{../pictures/ilwis_uvodni_okno.png} 
+\caption[The main software window after reopening ILWIS 3.3 (source own)]{The main software window after reopening ILWIS 3.3 (source own)}
+\label{fig:ilwis_uvodni_okno.png}
+\end{center}
+\end{figure}
+
+The display of layers with different coordinate system is tested as well. Importing data in the form of a shapefile is somewhat unintuitive here. If we want to perform an import we might go to the Operation-Tree $->$ Import/Export $->$ Import Map, however we encounter the problem that the software does not know the shapefile format. Therefore, the second option can be found in the top bar File $->$ Import. Here we select the ESRI shapefile and it is necessary to expand the default output so that the imported file is saved as an ILWIS object with the * .ioc extension. If we do not do this, only the tables will be imported, no maps.
+
+It is interesting how the software approaches coordinate systems. When importing the layer called districts, the S-JTSK Krovak East North system is converted to the Unknown. In case of US tracts, the US Contiguous Albers Equal Area Conic system is converted to the LatLon system. Therefore, the software does not carry information about a specific coordinate system, it only cares about boundaries of the map. When displaying multiple layers with different coordinate systems in one map window, no On the fly transformation is performed. The system gets confused and the added layer is not displayed even after clicking on the ''Zoom to Layer'' function. 
+There is no need to save the software, after opening it reflects the current state of the Data folder.
+
+\vspace{0.3cm}
+\begin{figure}[hbt!] 
+\begin{center}
+\includegraphics[width=15cm]{../pictures/ilwis_pridani_mapy.png} 
+\caption[Unknown coordinate system properties of district layer in ILWIS 3.3 (source own)]{Unknown coordinate system properties of district layer in ILWIS 3.3 (source own)}
+\label{fig:ilwis_pridani_mapy.png}
+\end{center}
+\end{figure}
+
+
+\newpage
+\vspace*{-1cm}
+\subsubsection{SAGA GIS 2.3 (System for Automated Geoscientific Analyses)}
+\noindent
+\large
+SAGA GIS is a Free Open Source Software (FOSS) offering a comprehensive, growing set of higher-level geoscientific methods. It is one of the most favorite software for remote sensing needs because of its rich library grid, imagery and terrain processing modules.
 This software is blank the first time it is run. On the left there is a window with the Tools, Data and Maps tabs, which are similar to the Modules, Data, Layers tabs in GRASS GIS 7.8. The Data and Maps tabs are further divided into the Tree and Thumbnails subtabs. The tree is divided according to the shapes of geometric objects (point, line, polygon ...). The idea is different from GRASS GIS. The directory structure of added layers is always displayed for the current layer in the lower left window of Data Sources in the File System tab. So we don't have a specific folder in which we work from the beginning. We can add layers to the tree structure and the whole project will be created only when we save the settings to a SAGA GIS project file with the * .sprj extension.
 
 After the second start of SAGA GIS, a small selection dialog box will appear. We can run a blank page, the latest software status, or the last running projects sorted from newest to oldest (Figure \ref{fig:saga_startup}).
@@ -400,12 +480,12 @@ After the second start of SAGA GIS, a small selection dialog box will appear. We
 \begin{figure}[hbt!] 
 \begin{center}
 \includegraphics[width=7cm]{../pictures/saga_startup.png} 
-\caption[Saga GIS startup dialog (source own)]{Saga GIS startup dialog (source own)}
+\caption[Saga GIS 2.3 startup dialog (source own)]{Saga GIS 2.3 startup dialog (source own)}
 \label{fig:saga_startup}
 \end{center}
 \end{figure}
 
-In the Maps tab, multiple layers can be displayed on top of each other or a new map map window can be created for each layer, which is a default option. However, there is no on-the-fly transformation in the software. It means that layers with different coordinate systems may be displayed at the level of one map. As we can see in Figure \ref{fig:saga_gis_cele}, if I add districts in the Czech Republic in the projected coordinate system S-JTSK/Krovak East North (EPSG: 5514) to the map and at the same time I add the US tracts layer in the system USA Contiguous Albers Equal Area Conic (ESRI: 102003) the Czech Republic will appear next to the American continent, as the system assumes that I will only add layers with the same coordinate system to the same map.
+In the Maps tab, multiple layers can be displayed on top of each other or a new map map window can be created for each layer, which is a default option. However, there is no On the fly transformation. It means that layers with different coordinate systems may be displayed at the level of one map. As we can see in Figure \ref{fig:saga_gis_cele}, the Czech Republic appears next to the American continent, as the system assumes that I will only add layers with the same coordinate system to the same map. However, in this case I add districts in the Czech Republic in the projected coordinate system S-JTSK/Krovak East North (EPSG: 5514) and at the same time the US tracts layer in the USA Contiguous Albers Equal Area Conic (ESRI: 102003) system.
 
 \vspace{0.3cm}
 \begin{figure}[hbt!] 
