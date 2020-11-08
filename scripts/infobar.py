@@ -88,15 +88,14 @@ class InfoBar(wx.PyControl):
 
     def UpdateParent(self):
         """
-        Updates the parent layout appearance, but only if this L{InfoBar} parent is **not** managed
-        by L{AuiManager} or `wx.aui.AuiManager`.
+        Updates the parent layout appearance.
         """
         
         parent = self.GetParent()
         parent.Layout()
 
     def DoHide(self):
-        """ Hides this InfoBar. """
+        """ Hides this InfoBar."""
 
         self.Hide()
         handler = self.GetParent().GetEventHandler()
@@ -165,7 +164,7 @@ class InfoBar(wx.PyControl):
 
     def Dismiss(self):
         """
-        Hides the L{InfoBar} window.
+        Hides the InfoBar window.
         """
         
         self.DoHide()
@@ -187,28 +186,6 @@ class InfoBar(wx.PyControl):
 
         if self.IsShown():
             self.UpdateParent()
-
-    def RemoveButton(self, btnid):
-        """
-        Remove a button previously added by L{AddButton}.
-        """
-        
-        sizer = self.GetSizer()
-
-        if not sizer:
-            raise Exception("must be created first")
-
-        items = sizer.GetChildren()
-
-        for item in items[::-1]:
-            if item.IsSpacer():
-                raise Exception("button with id %d not found"%btnid)
-
-            # check if we found our button
-            if item.GetWindow().GetId() == btnid:
-                sizer.Detach(item)
-                item.GetWindow().Destroy()
-                break
 
     def OnCloseButton(self, event):
         """
