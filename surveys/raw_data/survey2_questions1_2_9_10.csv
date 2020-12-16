@@ -1,0 +1,67 @@
+Situation number 1;;;;;
+Respondents;Response Date;Q1: What will be your next step in this situation? ;Q2: Is something confusing to you? If so, what specifically?;Q9:What is your general experience with GIS? ;Q10: How often do you use GRASS GIS?
+1;Nov 30 2020 11:14 AM;I will create a new Location;;B;4
+2;Nov 29 2020 05:29 PM;I will create a new Location;;P;47
+3;Nov 29 2020 03:51 PM;I will try to find a function to import data somewhere.;;I;23
+4;Nov 28 2020 10:29 AM;I will try to find a function to import data somewhere.;;P;41
+5;Nov 28 2020 08:40 AM;I will create a new Location;;B;30
+6;Nov 28 2020 08:09 AM;I will create a new GRASS database. ;;I;19
+7;Nov 27 2020 9:16 AM;I will create a new Location.;;P;89
+8;Nov 27 2020 7:15 AM;I will create a new Location.;;P;99
+9;Nov 27 2020 6:53 AM;I will create a new Location.;;B;25
+10;Nov 27 2020 3:04 PM ;I will create a new Location.;If the help didn't shine on me, I would probably try to import the data.;B;0
+11;Nov 27 2020 01:05 PM;I will try to find a function to import data somewhere.;Why are there already layers in the project?;B;3
+12;Nov 27 2020 01:04 AM;I will create a new Location.;;P;80
+13;Nov 27 2020 12:48 AM;I will create a new Location. ;Not sure I need a world map to start with, even though I don't dislike the idea. I am a ~experienced Grass user, so I'd create a location with the proper projection that differs from WGS84 if needed (and maybe a less wide region than the whole world?), but I am not sure that a first time user would give much weight to the warning.;P;100
+14;Nov 27 2020 12:25 AM;I will create a new Location. ;In the pop-up bar I miss a reason why I should create a new location.;P;100
+15;Nov 27 2020 11:25 AM;I will be confused what to do next and give it up. ;;P;80
+16;Nov 27 2020  9:40 AM ;I will create a new Location. ;;P;81
+17;Nov 27 2020 6:40 AM ;"
+I will try to find a function to import data somewhere.
+";"While not having a great suggestion I am afraid that many people don't read the info box but just search around for the usual ""open file"" button(s).";P;100
+18;Nov 26 2020 4:46 PM;"
+I will try to find a function to import data somewhere.
+";;I;5
+19;Nov 26 2020 5:06 PM;I will create a new Location. ;;I;56
+20;Nov 26 2020 7:48 PM;I will create a new Location. ;;P;90
+21;Nov 26 2020 8:58 PM;I will try to find a function to import data somewhere. ;The note says we are in linwe mapset but we are seeing a map that is in PERMANENT. Will this map display by default when a user first open grass? If yes, message should change. And maybe it should also say something about create a new location with the CRS of user's data and importing with reprojection;P;80
+22;Nov 26 2020 7:48 PM;I will create a new Location. ;;P;74
+23;Nov 26 2020 5:06 PM;I will create a new Location. ;;I;73
+24;Nov 26 2020 4:46 PM;I will create a new Location. ;The message in the orange box is already a great improvement for helping beginners. I think you could add a short sentence about mapsets at the end of the first paragraph.;P;54
+25;Nov 26 2020 3:31 PM;I will create a new Location. ;;P;100
+;;;;;
+;;;;;
+;;;;;
+;;;;;
+;;;;;
+;;;;;
+;;;;;
+;;;;;
+;;;;;
+;;;;;
+;;;;;
+;;;;;
+;;;;;
+;;;;;
+;;;;;
+;;;;;
+;;;;;
+;;;;;
+;;;;;
+;;;;;
+;;;;;
+;;;;;
+;;;;;
+;;;;;
+;;;;;
+;;;;;
+;;;;;
+;;;;;
+;;;;;
+;;;;;
+Legend;;;;;
+;To context menus in Data Catalog;1;;;
+;To management icons;2;;;
+;To both;3;;;
+;"I don't think any features should be added. There is
+little space for that.";4;;;

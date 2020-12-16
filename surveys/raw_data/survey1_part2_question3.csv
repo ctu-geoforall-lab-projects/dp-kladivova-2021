@@ -1,0 +1,54 @@
+Respondents;Response Date;Responses;;;;;;;
+1;Oct 29 2020 07:18 AM;make the creation of a project simple, at the moment when users just want to see their data in a viewer, they are bogged down with projects etc. which is not necessary. ;;;;;;;
+2;Oct 26 2020 04:07 PM;Not at this time;;;;;;;
+3;Oct 26 2020 03:40 PM;No other ideas;;;;;;;
+4;Oct 26 2020 03:30 PM;"Description of what GRASS database, location and mapset means 
+See the Data management first and a description of the main tabs";;;;;;;
+5;Oct 26 2020 12:43 PM;immediately show map at first startup, provide links to tutorial videos;;;;;;;
+6;Oct 26 2020 11:47 AM;Nope but I am not sure that having the demolocation as default is a good idea. I think it will confuse users and take space on disk. Also I hope that with all these new functionalities the options from the command line are still available.;;;;;;;
+7;Oct 26 2020 11:07 AM;N.A;;;;;;;
+8;Oct 26 2020 09:01 AM;I;;;;;;;
+9;Oct 24 2020 09:16 PM;no;;;;;;;
+10;Oct 24 2020 07:36 PM;no;;;;;;;
+11;Oct 24 2020 06:44 PM;Nop;;;;;;;
+12;Oct 24 2020 06:37 PM;Maybe a pop-up for data import (with user choice if this should go into current projection or into new location);;;;;;;
+13;Oct 24 2020 02:23 PM;"Develop a ""knowledge wizard"" how to address geospatial questions. Like
+
+- ""I want to ... resample"" --> show all commands having ""resampling"" as a keyword + Wiki page (https://grasswiki.osgeo.org/wiki/Interpolation#Resampling_methods_and_interpolation_in_GRASS_GIS)
+- ""I want to clean vector topology"" --> same + Wiki page
+- etc.";;;;;;;
+14;Oct 24 2020 11:23 AM;QGIS works as an extremely helpful facade for engaging with GRASS GIS functions. I still struggle to use many GRASS functions because GRASS uses terms that do not map to the terms used for general GIS work. Comparing the pop-up and input options for a vector function like v.distance in GRASS to it's equivalent is a good way to see the difference. GRASS's non-intuitive inputs and lingo prevent me from using most of the functions. The tutorials in my experience do no better to translate them, they simply regurgitate what's in the sidebar for the function already. Though I will be first to admit I may not have found the right tutorial page.;;;;;;;
+15;Oct 24 2020 10:24 AM;"A ""First Time Help"" popup which tells the user what GRASS must have before it can startup. e.g.: A folder on disk, a projection, a ??? ""
+My difficulties with GRASS were due to not easily finding out the basic needs and structure of how GRASS 'hangs together'.
+";;;;;;;
+16;Oct 24 2020 10:02 AM;Having a beginner checkbox(true by default), where a helper hover message appear when i put the mouse on open a new dialog;;;;;;;
+17;Oct 24 2020 10:02 AM;No;;;;;;;
+18;Oct 24 2020 09:12 AM;.;;;;;;;
+19;Oct 24 2020 03:14 AM;No. Sorry :o(;;;;;;;
+20;Oct 24 2020 12:25 AM;Qgis like processing panel;;;;;;;
+21;Oct 23 2020 11:35 PM;Tool search (similar to processing interface);;;;;;;
+22;Oct 23 2020 10:45 PM;It's uncommon to start a blank gis project. Usually, when I use a GIS, I already have at least a satellite image or a shapefile. It would be great to have a First Run Wizard focused on that initial data, for setting up the project's bounding box and spatial reference system. ;;;;;;;
+23;Oct 23 2020 09:52 PM;No;;;;;;;
+24;Oct 23 2020 09:05 PM;keep it simple as possible;;;;;;;
+25;Oct 23 2020 08:59 PM;Don't make the first time run wizard too long. ;;;;;;;
+26;Oct 23 2020 08:14 PM;No.;;;;;;;
+27;Oct 23 2020 08:10 PM;no;;;;;;;
+28;Oct 23 2020 04:49 PM;info icons that would allow folks to hover and know what they're working with/link to help or FAQs;;;;;;;
+29;Oct 23 2020 04:45 PM;an undo button would be nice ;;;;;;;
+30;Oct 23 2020 04:43 PM;Optional video tutorials put out by GRASS GIS;;;;;;;
+31;Oct 23 2020 04:43 PM;N/a;;;;;;;
+32;Oct 23 2020 04:42 PM;Something about file management, or the creation of a grass directory?;;;;;;;
+33;Oct 23 2020 04:41 PM;specifying when a double click vs a right click leads to more info / options;;;;;;;
+34;Oct 23 2020 04:41 PM;associated videos for guidance;;;;;;;
+35;Oct 23 2020 04:41 PM;Changes to the GUI. Put of all GRASS into a single window (that can be rearranged), rather than multiple floating windows. Open new map displays in tabs rather than new windows. ;;;;;;;
+36;Oct 23 2020 04:40 PM;Navigate in grass is easy. All modules are accessible in menus, or toolboxes, etc. What is really difficult is the concept of workspace and create the locations.;;;;;;;
+37;Oct 23 2020 04:22 PM;No;;;;;;;
+38;Oct 23 2020 03:16 PM;A better documentation page;;;;;;;
+39;Oct 23 2020 03:14 PM;LibreOffice has a nice implementation of different types of toolbar layout;;;;;;;
+40;Oct 23 2020 03:09 PM;The Database/Locations/Mapset structure offers many advantages but it takes time to get your head around it even if you are not new to GRASS. Unfortunatelly I do not have any suggestions because changing that structure would mean, I guess, to compromise many other great features of GRASS. ;;;;;;;
+41;Oct 23 2020 02:42 PM;An alternative would be very detailed pdf manuals with the printscreens and information on each button and functionality. Something similar but not necessarily attached to the GUI. This pdf could be accessible or suggested when opening GRASS.;;;;;;;
+42;Oct 23 2020 02:24 PM;"QGIS has a lot of capability that is lacking up-front with GRASS; BUT, I really prefer the look & feel of the GRASS GIS GUI; I find it more intuitive and logical. This is not to say improvements (added capability) should not be made, there can be, but not at the expense of current usability. I don't believe this is simply because of familiarity";;;;;;;
+43;Oct 23 2020 02:00 PM;Creating short videos on getting started with GRASS.;;;;;;;
+44;Oct 23 2020 01:53 PM;What about a single window? Different map displays could be open as tabs linked to tabs in the layer manager, for example.;;;;;;;
+45;Oct 23 2020 01:50 PM;No;;;;;;;
+46;Oct 23 2020 01:47 PM;no;;;;;;;

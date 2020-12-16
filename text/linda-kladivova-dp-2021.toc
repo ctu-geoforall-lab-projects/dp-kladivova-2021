@@ -1,28 +1,50 @@
 \babel@toc {english}{}
 \contentsline {section}{Introduction}{13}{section*.5}%
-\contentsline {section}{\numberline {1}State of Art}{14}{section.1}%
-\contentsline {section}{\numberline {2}General startup concepts}{18}{section.2}%
-\contentsline {subsection}{\numberline {2.1}GIS software}{18}{subsection.2.1}%
-\contentsline {subsubsection}{\numberline {2.1.1}ArcGIS Pro 2.4}{21}{subsubsection.2.1.1}%
-\contentsline {subsubsection}{\numberline {2.1.2}ArcMap 10.7}{23}{subsubsection.2.1.2}%
-\contentsline {subsubsection}{\numberline {2.1.3}QGIS 3.14}{24}{subsubsection.2.1.3}%
-\contentsline {subsubsection}{\numberline {2.1.4}gVSIG}{25}{subsubsection.2.1.4}%
-\contentsline {subsubsection}{\numberline {2.1.5}ILWIS 3.3 (Integrated Land and Water Information System)}{26}{subsubsection.2.1.5}%
-\contentsline {subsubsection}{\numberline {2.1.6}SAGA GIS 2.3 (System for Automated Geoscientific Analyses)}{28}{subsubsection.2.1.6}%
-\contentsline {subsection}{\numberline {2.2}Selected software working with image data}{29}{subsection.2.2}%
-\contentsline {subsection}{\numberline {2.3}Selected development software and others}{31}{subsection.2.3}%
-\contentsline {subsection}{\numberline {2.4}Summary}{32}{subsection.2.4}%
-\contentsline {section}{\numberline {3}GRASS GIS startup proposals}{33}{section.3}%
-\contentsline {subsection}{\numberline {3.1}Proposal A1: More newbie-friendly startup}{33}{subsection.3.1}%
-\contentsline {subsection}{\numberline {3.2}Proposal B1: Startup as information message}{35}{subsection.3.2}%
-\contentsline {subsection}{\numberline {3.3}Proposal A2: Well-designed tabs on the side}{36}{subsection.3.3}%
-\contentsline {subsection}{\numberline {3.4}Proposal A3: Data tree and big buttons}{36}{subsection.3.4}%
-\contentsline {section}{\numberline {4}Used technologies}{39}{section.4}%
-\contentsline {subsection}{\numberline {4.1}GRASS GIS}{39}{subsection.4.1}%
-\contentsline {subsection}{\numberline {4.2}wxPython}{40}{subsection.4.2}%
-\contentsline {section}{\numberline {5}Implementation}{41}{section.5}%
-\contentsline {section}{Discussion}{42}{section*.25}%
-\contentsline {section}{Conclusion}{43}{section*.26}%
-\contentsline {section}{List of abbreviations}{44}{section*.27}%
-\contentsline {section}{Bibliography}{45}{section*.27}%
+\contentsline {section}{\numberline {1}Theory and background information}{14}{section.1}%
+\contentsline {subsection}{\numberline {1.1}GRASS GIS concepts}{14}{subsection.1.1}%
+\contentsline {subsubsection}{\numberline {1.1.1}Data hierarchy in GRASS GIS}{14}{subsubsection.1.1.1}%
+\contentsline {subsubsection}{\numberline {1.1.2}Startup screen versus splash screen}{15}{subsubsection.1.1.2}%
+\contentsline {subsubsection}{\numberline {1.1.3}Location Wizard}{16}{subsubsection.1.1.3}%
+\contentsline {subsubsection}{\numberline {1.1.4}Layer Manager and Map Window}{17}{subsubsection.1.1.4}%
+\contentsline {subsubsection}{\numberline {1.1.5}Data Catalog}{18}{subsubsection.1.1.5}%
+\contentsline {subsubsection}{\numberline {1.1.6}Startup mechanism}{19}{subsubsection.1.1.6}%
+\contentsline {section}{\numberline {2}State of Art}{20}{section.2}%
+\contentsline {subsection}{\numberline {2.1}Prague Roadmap}{21}{subsection.2.1}%
+\contentsline {subsection}{\numberline {2.2}Version 7.9 after Google Summer of Code}{21}{subsection.2.2}%
+\contentsline {subsubsection}{\numberline {2.2.1}Data Catalog}{22}{subsubsection.2.2.1}%
+\contentsline {subsubsection}{\numberline {2.2.2}Location Wizard}{24}{subsubsection.2.2.2}%
+\contentsline {subsubsection}{\numberline {2.2.3}Startup screen}{25}{subsubsection.2.2.3}%
+\contentsline {subsubsection}{\numberline {2.2.4}Various options for starting GRASS}{27}{subsubsection.2.2.4}%
+\contentsline {subsection}{\numberline {2.3}Suggestions for improvement}{29}{subsection.2.3}%
+\contentsline {section}{\numberline {3}General startup concepts}{30}{section.3}%
+\contentsline {subsection}{\numberline {3.1}GIS software}{30}{subsection.3.1}%
+\contentsline {subsubsection}{\numberline {3.1.1}Analysis of selected commercial software}{33}{subsubsection.3.1.1}%
+\contentsline {subsubsection}{\numberline {3.1.2}Analysis of selected open-source software}{39}{subsubsection.3.1.2}%
+\contentsline {subsubsection}{\numberline {3.1.3}Summary}{45}{subsubsection.3.1.3}%
+\contentsline {subsection}{\numberline {3.2}Interesting solutions from other software}{50}{subsection.3.2}%
+\contentsline {subsection}{\numberline {3.3}Summary}{51}{subsection.3.3}%
+\contentsline {section}{\numberline {4}Usability testing methods}{52}{section.4}%
+\contentsline {subsection}{\numberline {4.1}Moderated + in-person usability testing}{53}{subsection.4.1}%
+\contentsline {subsection}{\numberline {4.2}Moderated + remote usability testing}{54}{subsection.4.2}%
+\contentsline {subsection}{\numberline {4.3}Unmoderated + in-person}{54}{subsection.4.3}%
+\contentsline {subsection}{\numberline {4.4}Unmoderated + remote usability testing}{55}{subsection.4.4}%
+\contentsline {section}{\numberline {5}Questionnaires}{56}{section.5}%
+\contentsline {subsection}{\numberline {5.1}Types of questions}{59}{subsection.5.1}%
+\contentsline {section}{\numberline {6}Statistical methods of survey analysis}{60}{section.6}%
+\contentsline {section}{\numberline {7}Analysis of the results of the first survey}{61}{section.7}%
+\contentsline {subsection}{\numberline {7.1}Part 1: GRASS startup and Data Catalog}{61}{subsection.7.1}%
+\contentsline {subsection}{\numberline {7.2}Part 2: Better first-time user experience in GRASS}{72}{subsection.7.2}%
+\contentsline {section}{\numberline {8}How to enhance first-time user experience: Proposal}{81}{section.8}%
+\contentsline {section}{\numberline {9}Analysis of the results of the second survey}{82}{section.9}%
+\contentsline {section}{\numberline {10}Used technologies}{98}{section.10}%
+\contentsline {subsection}{\numberline {10.1}GRASS GIS}{98}{subsection.10.1}%
+\contentsline {subsection}{\numberline {10.2}wxPython}{99}{subsection.10.2}%
+\contentsline {section}{\numberline {11}Implementation}{100}{section.11}%
+\contentsline {section}{Discussion}{101}{section*.89}%
+\contentsline {section}{Conclusion}{102}{section*.90}%
+\contentsline {section}{List of abbreviations}{103}{section*.91}%
+\contentsline {section}{Bibliography}{104}{section*.91}%
 \babel@toc {english}{}
+\contentsline {section}{\numberline {A}Help improve GRASS GIS startup mechanism and Data Catalog }{1}{appendix.A}%
+\contentsline {section}{\numberline {B}Help create a better first-time user experience in GRASS GIS }{1}{appendix.B}%
+\contentsline {section}{\numberline {C}Help improve the special mode for first-time users in GRASS GIS }{1}{appendix.C}%

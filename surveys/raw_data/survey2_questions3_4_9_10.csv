@@ -1,0 +1,70 @@
+Situation number 2;;;;;;
+Respondents;Response Date;*Q3: What will be your next step in this situation? ;Q4: Is something confusing to you? If so, what specifically?;*Q9:What is your general experience with GIS? ;*Q10: How often do you use GRASS GIS?;
+1;Nov 30 2020 11:14 AM;I will import data using Import vector data button in Info Bar.;;B;4;
+2;Nov 29 2020 05:29 PM;I will import data through File menu. ;;P;47;
+3;Nov 29 2020 03:51 PM;I will import data using Import vector data button in Info Bar.;;I;23;
+4;Nov 28 2020 10:29 AM;I will import data using Import vector data button in Info Bar.;;P;41;
+5;Nov 28 2020 08:40 AM;I will import data using Import vector data button in Info Bar.;;B;30;
+6;Nov 28 2020 08:09 AM;I will import data using Import vector data button in Info Bar.;;I;19;
+7;Nov 27 2020 9:16 AM;I will import data using Import vector data button in Info Bar.;;P;89;
+8;Nov 27 2020 7:15 AM;I will import data through File menu. ;;P;99;
+9;Nov 27 2020 6:53 AM;I will import data through File menu. ;;B;25;
+10;Nov 27 2020 3:04 PM ;I will import data through File menu. ;Maybe in the help to guide the user directly to the file menu than to provide him a shortcut via a button.;B;0;
+11;Nov 27 2020 01:05 PM;I will import data using Import vector data button in Info Bar.;;B;3;
+12;Nov 27 2020 01:04 AM;I will import data using Import vector data button in Info Bar.;;P;80;
+13;Nov 27 2020 12:48 AM;I will import data using Import vector data button in Info Bar.;Not clear that the one above is the list of locations in a tree. Took me some seconds to get it. Cool! Nice one, leave this configuration please (but maybe write somewhere 'locations'?).;P;100;
+14;Nov 27 2020 12:25 AM;I would create a mapset to work in and then import the river in permanent. ;"Which button is the ""import vector data button""?";P;100;
+15;Nov 27 2020 11:25 AM;I will import data through File menu. ;;P;80;
+16;Nov 27 2020  9:40 AM ;I will import data using Import vector data button in Info Bar.;;P;81;
+17;Nov 27 2020 6:40 AM ;"
+I will try to find a function to import data somewhere.
+";"Probably the term ""location"" should be abandoned in favour of ""project"".";P;100;
+18;Nov 26 2020 4:46 PM;"
+I will try to find a function to import data somewhere.
+";;I;5;
+19;Nov 26 2020 5:06 PM;I will import data using Import vector data button in Info Bar.;;I;56;
+20;Nov 26 2020 7:48 PM;I will import data using Import vector data button in Info Bar.;;P;90;
+21;Nov 26 2020 8:58 PM;I will import data using Import vector data button in Info Bar.;"Instead of base data, I'd use ""base maps"" and examples between parenthesis";P;80;
+22;Nov 26 2020 7:48 PM;I will import data using Import vector data button in Info Bar.;;P;74;
+23;Nov 26 2020 5:06 PM;I will create another Location.;;I;73;
+24;Nov 26 2020 4:46 PM;I will import data through File menu. ;"I think the names are confusing. What do you think about renaming:
+""Location"" as""AOI"",
+""Mapsets"" as ""Datasets"",
+""Permanent"" as ""Base data"".";P;54;
+25;Nov 26 2020 3:31 PM;I will import data using Import vector data button in Info Bar.;;P;100;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+Legend;;;;;;
+;To context menus in Data Catalog;1;;;;
+;To management icons;2;;;;
+;To both;3;;;;
+;"I don't think any features should be added. There is
+little space for that.";4;;;;

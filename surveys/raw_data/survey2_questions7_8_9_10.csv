@@ -1,0 +1,67 @@
+Conclusion;;;;;;
+Respondents;Response Date;*Q7: What do you think about the following statement? The advice in Info Bars given in each situation was straightforward and led me very well to the right answers.;"
+Q8: Any ideas you want to share? (e.g. the change of wording in Info Bars, adding more information, or, conversely, the removal of some information)";*Q9:What is your general experience with GIS? ;*Q10: How often do you use GRASS GIS?;
+1;Nov 30 2020 11:14 AM;66;;B;4;
+2;Nov 29 2020 05:29 PM;70;Information is helpful;P;47;
+3;Nov 29 2020 03:51 PM;33;;I;23;
+4;Nov 28 2020 10:29 AM;50;;P;41;
+5;Nov 28 2020 08:40 AM;90;;B;30;
+6;Nov 28 2020 08:09 AM;51;;I;19;
+7;Nov 27 2020 9:16 AM;71;;P;89;
+8;Nov 27 2020 7:15 AM;25;Too much text in the info bar;P;99;
+9;Nov 27 2020 6:53 AM;50;I did not pay attention to the infobars, to be honest.;B;25;
+10;Nov 27 2020 3:04 PM ;75;One way to improve the help / introduction could be a sample tutorial on how to solve this task with Otava. Eg: Click there and there, create a project, load data from a given place, there and there you will find a search function that you will use with this parameter. (Said very simply :-D.);B;0;
+11;Nov 27 2020 01:05 PM;50;Maybe some additional pop ups to direct the user to the module tab;B;3;
+12;Nov 27 2020 01:04 AM;90;;P;80;
+13;Nov 27 2020 12:48 AM;skipped;;P;100;
+14;Nov 27 2020 12:25 AM;65;Maybe discuss content of the infobars in a separate PR?;P;100;
+15;Nov 27 2020 11:25 AM;38;;P;80;
+16;Nov 27 2020  9:40 AM ;71;;P;81;
+17;Nov 27 2020 6:40 AM ;83;"The initial info box contains IMHO too much text. People are lazy to read...
+Additionally, the term ""location"" might be abandoned in favour of ""project"" or the like, to make it less strange right away.
+PS: cool to gather opinions with the surveys!! Much appreciated";P;100;
+18;Nov 26 2020 4:46 PM;0;"I didn't read Info Bars, it looks like warning instead of advice. I would consider moving Info Bars above the boxes, otherwise I will not read it as a user.
+Ideally shorten, it's long enough.";I;5;
+19;Nov 26 2020 5:06 PM;90;;I;56;
+20;Nov 26 2020 7:48 PM;51;;P;90;
+21;Nov 26 2020 8:58 PM;50;;P;80;
+22;Nov 26 2020 7:48 PM;100;;P;74;
+23;Nov 26 2020 5:06 PM;99;;I;73;
+24;Nov 26 2020 4:46 PM;100;Info Bars are great, well done! The next step, rather than explaining words such as location, mapset, permanent, module, etc. in info bars, would be to directly rename them.;P;54;
+25;Nov 26 2020 3:31 PM;88;;P;100;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+Legend;;;;;;
+;To context menus in Data Catalog;1;;;;
+;To management icons;2;;;;
+;To both;3;;;;
+;"I don't think any features should be added. There is
+little space for that.";4;;;;

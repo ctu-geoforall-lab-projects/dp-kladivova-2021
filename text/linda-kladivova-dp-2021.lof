@@ -1,21 +1,85 @@
 \babel@toc {english}{}
-\contentsline {figure}{\numberline {1}{\ignorespaces Historical versions of the GRASS startup screen}}{14}{figure.caption.6}%
-\contentsline {figure}{\numberline {2}{\ignorespaces Choosing EPSG code in Location Wizard in version 7.8}}{15}{figure.caption.7}%
-\contentsline {figure}{\numberline {3}{\ignorespaces GRASS GIS splash screen}}{16}{figure.caption.8}%
-\contentsline {figure}{\numberline {4}{\ignorespaces The main software window (version before GSoC)}}{16}{figure.caption.9}%
-\contentsline {figure}{\numberline {5}{\ignorespaces Data Catalog in Data tab (version before GSoC)}}{17}{figure.caption.10}%
-\contentsline {figure}{\numberline {6}{\ignorespaces Top 10 GIS Software in 2020 according to GISGeography journal}}{19}{figure.caption.11}%
-\contentsline {figure}{\numberline {7}{\ignorespaces Top 10 Free GIS Software in 2020 according to GISGeography journal}}{19}{figure.caption.12}%
-\contentsline {figure}{\numberline {8}{\ignorespaces Top GIS Software in 2020 in \textit {analysis} category according to GISGeography journal (source own)}}{20}{figure.caption.13}%
-\contentsline {figure}{\numberline {9}{\ignorespaces ArcGIS Pro 2.4 startup dialog (source own)}}{21}{figure.caption.14}%
-\contentsline {figure}{\numberline {10}{\ignorespaces Display of layers with different coordinate system in ArcGIS Pro 2.4 (source own)}}{22}{figure.caption.15}%
-\contentsline {figure}{\numberline {11}{\ignorespaces The main software window after reopening ILWIS 3.3 (source own)}}{26}{figure.caption.16}%
-\contentsline {figure}{\numberline {12}{\ignorespaces Unknown coordinate system properties of district layer in ILWIS 3.3 (source own)}}{27}{figure.caption.17}%
-\contentsline {figure}{\numberline {13}{\ignorespaces Saga GIS 2.3 startup dialog (source own)}}{28}{figure.caption.18}%
-\contentsline {figure}{\numberline {14}{\ignorespaces Incorrect display of layers with different coordinate system in SAGA GIS 2.3 (source own)}}{29}{figure.caption.19}%
-\contentsline {figure}{\numberline {15}{\ignorespaces First run wizard in Zoner Photo Studio X}}{31}{figure.caption.20}%
-\contentsline {figure}{\numberline {16}{\ignorespaces Proposal A1 by Moritz Lennert}}{34}{figure.caption.21}%
-\contentsline {figure}{\numberline {17}{\ignorespaces Proposal B1 by Moritz Lennert}}{35}{figure.caption.22}%
-\contentsline {figure}{\numberline {18}{\ignorespaces Proposal A2 by Garrett Millar}}{37}{figure.caption.23}%
-\contentsline {figure}{\numberline {19}{\ignorespaces New GRASS website's layout}}{40}{figure.caption.24}%
+\contentsline {figure}{\numberline {1}{\ignorespaces GRASS GIS 7 location structure}}{15}{figure.caption.6}%
+\contentsline {figure}{\numberline {2}{\ignorespaces Historical versions of the GRASS startup screen}}{16}{figure.caption.7}%
+\contentsline {figure}{\numberline {3}{\ignorespaces Choosing EPSG code in Location Wizard in version 7.8}}{16}{figure.caption.8}%
+\contentsline {figure}{\numberline {4}{\ignorespaces Layer Manager and Map Window (version before GSoC)}}{17}{figure.caption.9}%
+\contentsline {figure}{\numberline {5}{\ignorespaces Data Catalog in Data tab (version before GSoC)}}{18}{figure.caption.10}%
+\contentsline {figure}{\numberline {6}{\ignorespaces New functionalities in Data Catalog }}{22}{figure.caption.11}%
+\contentsline {figure}{\numberline {7}{\ignorespaces Switching to mapset in use in Data Catalog}}{23}{figure.caption.12}%
+\contentsline {figure}{\numberline {8}{\ignorespaces Location Wizard first page before and after GSoC}}{24}{figure.caption.13}%
+\contentsline {figure}{\numberline {9}{\ignorespaces Location Wizard second page before and after GSoC}}{24}{figure.caption.14}%
+\contentsline {figure}{\numberline {10}{\ignorespaces Location Wizard third page before and after GSoC)}}{25}{figure.caption.15}%
+\contentsline {figure}{\numberline {11}{\ignorespaces GRASS launched with the Data Catalog in the prepared Demolocation}}{26}{figure.caption.16}%
+\contentsline {figure}{\numberline {12}{\ignorespaces World map as a part of Demolocation}}{26}{figure.caption.17}%
+\contentsline {figure}{\numberline {13}{\ignorespaces Data Catalog in Data tab (version before GSoC)}}{27}{figure.caption.18}%
+\contentsline {figure}{\numberline {14}{\ignorespaces Management of Workspaces in the Layer Manager}}{28}{figure.caption.19}%
+\contentsline {figure}{\numberline {15}{\ignorespaces Top 10 GIS Software in 2020 according to GISGeography journal}}{31}{figure.caption.20}%
+\contentsline {figure}{\numberline {16}{\ignorespaces Top 10 Free GIS Software in 2020 according to GISGeography journal}}{31}{figure.caption.21}%
+\contentsline {figure}{\numberline {17}{\ignorespaces Top 7 GIS Software in 2020 in \textit {analysis} category according to GISGeography journal}}{32}{figure.caption.22}%
+\contentsline {figure}{\numberline {18}{\ignorespaces ArcGIS Pro 2.4 startup dialog (source own)}}{33}{figure.caption.23}%
+\contentsline {figure}{\numberline {19}{\ignorespaces Display of layers with different coordinate system in ArcGIS Pro 2.4 (source own)}}{34}{figure.caption.24}%
+\contentsline {figure}{\numberline {20}{\ignorespaces GeoMedia Advantage 2020: startup dialog (source own)}}{35}{figure.caption.25}%
+\contentsline {figure}{\numberline {21}{\ignorespaces GeoMedia Advantage 2020: Define Warehouse Configuration File dialog (source own)}}{36}{figure.caption.26}%
+\contentsline {figure}{\numberline {22}{\ignorespaces MapInfo Professional 2019 startup dialog (source own)}}{37}{figure.caption.27}%
+\contentsline {figure}{\numberline {23}{\ignorespaces Map-level coordinate system settings in MapInfo Professional 2019 (source own)}}{38}{figure.caption.28}%
+\contentsline {figure}{\numberline {24}{\ignorespaces Welcome to QGIS 3.14 window (source own)}}{39}{figure.caption.29}%
+\contentsline {figure}{\numberline {25}{\ignorespaces The main software window after first opening QGIS 3.14 (source own)}}{40}{figure.caption.30}%
+\contentsline {figure}{\numberline {26}{\ignorespaces Informative warning message in QGIS 3.14 (source own)}}{40}{figure.caption.31}%
+\contentsline {figure}{\numberline {27}{\ignorespaces Correct display of layers with different coordinate system in gvSIG 2.5.0 (source own)}}{41}{figure.caption.32}%
+\contentsline {figure}{\numberline {28}{\ignorespaces Predefined CRS and Datum Transformations in QGIS 3.14 (source own)}}{41}{figure.caption.33}%
+\contentsline {figure}{\numberline {29}{\ignorespaces Correct display of layers with different coordinate system in gvSIG 2.5.0 (source own)}}{42}{figure.caption.34}%
+\contentsline {figure}{\numberline {30}{\ignorespaces The main software window after reopening ILWIS 3.3 (source own)}}{43}{figure.caption.35}%
+\contentsline {figure}{\numberline {31}{\ignorespaces Unknown coordinate system properties of district layer in ILWIS 3.3 (source own)}}{44}{figure.caption.36}%
+\contentsline {figure}{\numberline {32}{\ignorespaces Saga GIS 2.3 startup dialog (source own)}}{45}{figure.caption.37}%
+\contentsline {figure}{\numberline {33}{\ignorespaces Incorrect display of layers with different coordinate system in SAGA GIS 2.3 (source own)}}{46}{figure.caption.38}%
+\contentsline {figure}{\numberline {34}{\ignorespaces Analysis of selected commercial software (source own)}}{48}{figure.caption.39}%
+\contentsline {figure}{\numberline {35}{\ignorespaces Analysis of selected open-source software and GRASS GIS (source own)}}{49}{figure.caption.40}%
+\contentsline {figure}{\numberline {36}{\ignorespaces First run wizard in Zoner Photo Studio X}}{51}{figure.caption.41}%
+\contentsline {figure}{\numberline {37}{\ignorespaces Usability testing methods}}{53}{figure.caption.42}%
+\contentsline {figure}{\numberline {38}{\ignorespaces The Standard of the System Usability Scale (SUS) }}{57}{figure.caption.43}%
+\contentsline {figure}{\numberline {39}{\ignorespaces Difficult interpretation of the rating scale answers}}{58}{figure.caption.44}%
+\contentsline {figure}{\numberline {40}{\ignorespaces Survey 1 Part 1: Responses by day}}{61}{figure.caption.45}%
+\contentsline {figure}{\numberline {41}{\ignorespaces Survey 1 Part 1 Question 1: Histogram}}{62}{figure.caption.46}%
+\contentsline {figure}{\numberline {42}{\ignorespaces Survey 1 Part 1 Question 1: Boxplot}}{62}{figure.caption.47}%
+\contentsline {figure}{\numberline {43}{\ignorespaces Survey 1 Part 1 Question 2: Histogram}}{63}{figure.caption.48}%
+\contentsline {figure}{\numberline {44}{\ignorespaces Survey 1 Part 1 Question 2: Classification of open-ended responses}}{64}{figure.caption.49}%
+\contentsline {figure}{\numberline {45}{\ignorespaces Survey 1 Part 1 Question 3: Descriptive statistics}}{66}{figure.caption.50}%
+\contentsline {figure}{\numberline {46}{\ignorespaces Survey 1 Part 1 Question 3: Stacked Histogram}}{66}{figure.caption.51}%
+\contentsline {figure}{\numberline {47}{\ignorespaces Survey 1 Part 1 Question 3: Boxplot}}{67}{figure.caption.52}%
+\contentsline {figure}{\numberline {48}{\ignorespaces Survey 1 Part 1 Question 3: Probability Density Function}}{67}{figure.caption.53}%
+\contentsline {figure}{\numberline {49}{\ignorespaces Survey 1 Part 1 Question 4: Classification of open-ended answers}}{68}{figure.caption.54}%
+\contentsline {figure}{\numberline {50}{\ignorespaces Survey 1 Part 1 Question 5: Histogram and descriptive statistics}}{69}{figure.caption.55}%
+\contentsline {figure}{\numberline {51}{\ignorespaces Survey 1 Part 1 Question 6: Boxplot}}{70}{figure.caption.56}%
+\contentsline {figure}{\numberline {52}{\ignorespaces Survey 1 Part 1 Question 6: Histogram}}{71}{figure.caption.57}%
+\contentsline {figure}{\numberline {53}{\ignorespaces Survey 1 Part 1 Question 6: Probability Density Function}}{71}{figure.caption.58}%
+\contentsline {figure}{\numberline {54}{\ignorespaces Survey 1 Part 2: Responses by day}}{72}{figure.caption.59}%
+\contentsline {figure}{\numberline {55}{\ignorespaces Survey 1 Part 2 Question 1: Histogram, descriptive statistics and open-ended responses}}{73}{figure.caption.60}%
+\contentsline {figure}{\numberline {56}{\ignorespaces Survey 1 Part 2 Question 2: Histogram, descriptive statistics and classification of open-ended responses}}{74}{figure.caption.61}%
+\contentsline {figure}{\numberline {57}{\ignorespaces Survey 1 Part 2 Question 3: Classification of open-ended responses - part 1}}{76}{figure.caption.62}%
+\contentsline {figure}{\numberline {58}{\ignorespaces Survey 1 Part 2 Question 3: Classification of open-ended responses - part 2}}{77}{figure.caption.63}%
+\contentsline {figure}{\numberline {59}{\ignorespaces Survey 1 Part 2 Question 3: Classification of open-ended responses - part 3}}{78}{figure.caption.64}%
+\contentsline {figure}{\numberline {60}{\ignorespaces Survey 1 Part 2 Question 4: Classification of open-ended responses}}{79}{figure.caption.65}%
+\contentsline {figure}{\numberline {61}{\ignorespaces Survey1 Part 2 Question 5: Descriptive statistics}}{80}{figure.caption.66}%
+\contentsline {figure}{\numberline {62}{\ignorespaces Survey1 Part 2 Question 5: Stacked Histogram}}{80}{figure.caption.67}%
+\contentsline {figure}{\numberline {63}{\ignorespaces Survey 2: Situation 1}}{83}{figure.caption.68}%
+\contentsline {figure}{\numberline {64}{\ignorespaces Survey 2: Situation 2}}{83}{figure.caption.69}%
+\contentsline {figure}{\numberline {65}{\ignorespaces Survey 2: Situation 3}}{84}{figure.caption.70}%
+\contentsline {figure}{\numberline {66}{\ignorespaces Survey 2: Responses by day}}{84}{figure.caption.71}%
+\contentsline {figure}{\numberline {67}{\ignorespaces Survey 2: GIS proficiency of \textbf {Occasional GRASS users} group}}{85}{figure.caption.72}%
+\contentsline {figure}{\numberline {68}{\ignorespaces Survey 2: GIS proficiency of \textbf {Frequent GRASS users} group}}{85}{figure.caption.73}%
+\contentsline {figure}{\numberline {69}{\ignorespaces \textbf {Occasional GRASS users}: Histogram for Question 1 from Survey 2}}{87}{figure.caption.74}%
+\contentsline {figure}{\numberline {70}{\ignorespaces \textbf {Frequent GRASS users}: Histogram for Question 1 from Survey 2}}{88}{figure.caption.75}%
+\contentsline {figure}{\numberline {71}{\ignorespaces Survey 2 Question 2: Classification of open-ended responses}}{89}{figure.caption.76}%
+\contentsline {figure}{\numberline {72}{\ignorespaces \textbf {Occasional GRASS users}: Histogram for Question 3 from Survey 2}}{90}{figure.caption.77}%
+\contentsline {figure}{\numberline {73}{\ignorespaces \textbf {Frequent GRASS users}: Histogram for Question 3 from Survey 2}}{90}{figure.caption.78}%
+\contentsline {figure}{\numberline {74}{\ignorespaces Survey 2 Question 4: Classification of open-ended responses}}{91}{figure.caption.79}%
+\contentsline {figure}{\numberline {75}{\ignorespaces \textbf {Occasional GRASS users}: Histogram for Question 5 from Survey 2}}{92}{figure.caption.80}%
+\contentsline {figure}{\numberline {76}{\ignorespaces \textbf {Frequent GRASS users}: Histogram for Question 5 from Survey 2}}{93}{figure.caption.81}%
+\contentsline {figure}{\numberline {77}{\ignorespaces Survey 2 Question 6: Classification of open-ended responses}}{93}{figure.caption.82}%
+\contentsline {figure}{\numberline {78}{\ignorespaces \textbf {Occasional GRASS users}: Histogram for Question 7 from Survey 2}}{94}{figure.caption.83}%
+\contentsline {figure}{\numberline {79}{\ignorespaces \textbf {Occasional GRASS users}: Boxplot for Question 7 from Survey 2}}{95}{figure.caption.84}%
+\contentsline {figure}{\numberline {80}{\ignorespaces \textbf {Frequent GRASS users}: Histogram for Question 7 from Survey 2}}{95}{figure.caption.85}%
+\contentsline {figure}{\numberline {81}{\ignorespaces \textbf {Frequent GRASS users}: Boxplot for Question 7 from Survey 2}}{96}{figure.caption.86}%
+\contentsline {figure}{\numberline {82}{\ignorespaces Survey 2 Question 8: Classification of open-ended responses}}{97}{figure.caption.87}%
+\contentsline {figure}{\numberline {83}{\ignorespaces New GRASS website's layout}}{99}{figure.caption.88}%
 \babel@toc {english}{}

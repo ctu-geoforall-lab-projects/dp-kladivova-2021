@@ -1,0 +1,173 @@
+---
+title: "master_thesis"
+author: "LInda Kladivova"
+date: "22 4 2020"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## R Markdown
+
+### Introduction to data and setting up
+
+```{r Setting up}
+library("reshape2")
+library("pacman") #this package allows us to use the `pload()` function below to load multiple packages in one line
+p_load(rgdal, sf, tidyverse, tmap, spData, spatstat, maptools, ggrepel, ggspatial, rworldmap, rworldxtra)
+
+```
+
+
+```{r question1}
+
+# Read in data
+question1 <- read.csv(file = "C:/Users/kladivoval/dp-kladivova-2021/surveys/raw_data/survey1_part1_question1.csv", stringsAsFactors = FALSE, sep = ';')
+dim(question1)
+head(question1)
+tail(question1)
+```
+
+```{r question3}
+
+# Read in data
+question3 <- read.csv(file = "C:/Users/kladivoval/dp-kladivova-2021/surveys/raw_data/survey1_part1_question3.csv", stringsAsFactors = FALSE, sep = ';')
+dim(question3)
+head(question3)
+tail(question3)
+
+```
+
+```{r question5}
+
+# Read in data
+question5 <- read.csv(file = "C:/Users/kladivoval/dp-kladivova-2021/surveys/raw_data/survey1_part1_question5.csv", stringsAsFactors = FALSE, sep = ';')
+dim(question5)
+head(question5)
+tail(question5)
+
+```
+
+```{r question6}
+
+# Read in data
+question6 <- read.csv(file = "C:/Users/kladivoval/dp-kladivova-2021/surveys/raw_data/survey1_part1_question6.csv", stringsAsFactors = FALSE, sep = ';')
+dim(question6)
+head(question6)
+tail(question6)
+
+```
+
+```{r survey1_part2_question5}
+
+# Read in data
+question5_2 <- read.csv(file = "C:/Users/kladivoval/dp-kladivova-2021/surveys/raw_data/survey1_part2_question5.csv", stringsAsFactors = FALSE, sep = ';')
+dim(question5_2)
+head(question5_2)
+tail(question5_2)
+
+```
+
+
+### EDA: Overall descriptive statistics and histograms
+
+```{r descriptive statistics }
+
+# Convert sp object to dataframe
+summary(question1)
+summary(question3)
+summary(question5)
+summary(question6)
+summary(question5_2)
+
+question5_sub = question5%>% select(Responses)
+ggplot(data=reshape2::melt(question5_sub)) +
+  geom_histogram(mapping=aes(x=value, fill=variable)) +
+  facet_wrap(~variable, scales = ("free"), nrow=1) +
+  scale_y_continuous(breaks = scales::pretty_breaks(n = 30))
+
+```
+
+### EDA: Boxplots for ranking questions
+
+Furthermore, we can identify where the bulk of our data sits and identify the presence of outliers.
+Similarly as with histograms, We can also create more boxplots within one plot using DPLYR.
+
+```{r package data box2, out.width ='\\maxwidth'}
+
+# QUESTION 3
+question3_sub = question3 %>% select(Mapset_access_info, Deleting_multiple_mapsets_or_locations, Adding_multiple_databases, Creating_renaming_deleting_mapset_or_location, New_management_icons, Small_icons_distinquishing_mapsets.., Removing_deleting_GRASS_database)
+ggplot(data=reshape2::melt(question3_sub)) +
+  geom_boxplot(mapping=aes(x=value, y=value, fill=variable)) +
+  guides(fill = guide_legend(title = "New features in GRASS GIS"))+
+  ylab("Ranking (1 = most useful)") + xlab("") +
+  scale_y_continuous(breaks = scales::pretty_breaks(n = 7))
+  
+```
+
+```{r package data box3, out.width ='\\maxwidth'}
+
+# QUESTION 5
+question5_2_sub = question5_2%>% select(Description_of_main_tabs, Description_of_what_database_location_mapset_means, Brief_advice_on_how_to_start)
+ggplot(data=reshape2::melt(question5_2_sub)) +
+  geom_boxplot(mapping=aes(x=value, y=value, fill=variable)) +
+  guides(fill = guide_legend(title = "Suggested features helping in initial orientation in the software"))+
+  ylab("Ranking (1 = most important)") + xlab("") +
+  scale_y_continuous(breaks = scales::pretty_breaks(n = 3))
+
+ggplot(data=reshape2::melt(question5_2_sub)) +
+  geom_histogram(mapping=aes(x=value, fill=variable), bins=50) +
+  guides(fill = guide_legend(title = "Features enhancing first-time user experience in GRASS GIS"))+
+  xlab("Ranking (1 = most important)") +
+  scale_x_continuous(breaks = scales::pretty_breaks(n = 3)) +
+  scale_y_continuous(breaks = scales::pretty_breaks(n = 20))
+
+```
+
+
+### EDA: Probability and cumulative density functions
+
+We can go a little further and check probability density functions (geom_density) and empirical cumulative distribution functions using ggplot. 
+
+
+```{r package data pdf1, out.width ='\\maxwidth'}
+
+# QUESTION 1
+question1_sub = question1%>% select(Responses)
+ggplot(data=reshape2::melt(question1_sub)) +
+  geom_density(mapping=aes(x=value, fill=variable), na.rm=T, alpha=0.5) +
+  xlab("Degree of agreement with the statement")
+```
+
+```{r package data pdf2, out.width ='\\maxwidth'}
+
+# QUESTION 3
+question3_sub = question3 %>% select(Mapset_access_info, Deleting_multiple_mapsets_or_locations, Adding_multiple_databases, Creating_renaming_deleting_mapset_or_location, New_management_icons, Small_icons_distinquishing_mapsets.., Removing_deleting_GRASS_database)
+ggplot(data=reshape2::melt(question3_sub)) +
+  geom_density(mapping=aes(x=value, fill=variable), na.rm=T, alpha=0.5) +
+  guides(fill = guide_legend(title = "New features in GRASS GIS"))+
+  xlab("Ranking (1 = most useful)")
+
+```
+
+```{r package data pdf3, out.width ='\\maxwidth'}
+
+# QUESTION 6
+question6_sub = question6%>% select(Responses)
+ggplot(data=reshape2::melt(question6_sub)) +
+  geom_density(mapping=aes(x=value, fill=variable), na.rm=T, alpha=0.5) +
+  xlab("Degree of agreement with the statement")
+
+```
+
+```{r package data pdf4, out.width ='\\maxwidth'}
+# QUESTION 5.2
+question5_2_sub = question5_2%>% select(Description_of_main_tabs, Description_of_what_database_location_mapset_means, Brief_advice_on_how_to_start)
+ggplot(data=reshape2::melt(question5_2_sub)) +
+  geom_density(mapping=aes(x=value, fill=variable), na.rm=T, alpha=0.5) +
+  guides(fill = guide_legend(title = "Suggested features helping in initial orientation in the software"))+
+  xlab("Ranking (1 = most important)")
+
+```
