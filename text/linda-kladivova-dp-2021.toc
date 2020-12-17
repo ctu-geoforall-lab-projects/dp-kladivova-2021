@@ -30,20 +30,20 @@
 \contentsline {subsection}{\numberline {4.4}Unmoderated + remote usability testing}{55}{subsection.4.4}%
 \contentsline {section}{\numberline {5}Questionnaires}{56}{section.5}%
 \contentsline {subsection}{\numberline {5.1}Types of questions}{59}{subsection.5.1}%
-\contentsline {section}{\numberline {6}Statistical methods of survey analysis}{60}{section.6}%
-\contentsline {section}{\numberline {7}Analysis of the results of the first survey}{61}{section.7}%
-\contentsline {subsection}{\numberline {7.1}Part 1: GRASS startup and Data Catalog}{61}{subsection.7.1}%
-\contentsline {subsection}{\numberline {7.2}Part 2: Better first-time user experience in GRASS}{72}{subsection.7.2}%
-\contentsline {section}{\numberline {8}How to enhance first-time user experience: Proposal}{81}{section.8}%
-\contentsline {section}{\numberline {9}Analysis of the results of the second survey}{82}{section.9}%
-\contentsline {section}{\numberline {10}Used technologies}{98}{section.10}%
-\contentsline {subsection}{\numberline {10.1}GRASS GIS}{98}{subsection.10.1}%
-\contentsline {subsection}{\numberline {10.2}wxPython}{99}{subsection.10.2}%
-\contentsline {section}{\numberline {11}Implementation}{100}{section.11}%
-\contentsline {section}{Discussion}{101}{section*.89}%
-\contentsline {section}{Conclusion}{102}{section*.90}%
-\contentsline {section}{List of abbreviations}{103}{section*.91}%
-\contentsline {section}{Bibliography}{104}{section*.91}%
+\contentsline {section}{\numberline {6}Statistical methods of survey analysis}{62}{section.6}%
+\contentsline {section}{\numberline {7}Analysis of the results of the first survey}{63}{section.7}%
+\contentsline {subsection}{\numberline {7.1}Part 1: GRASS startup and Data Catalog}{63}{subsection.7.1}%
+\contentsline {subsection}{\numberline {7.2}Part 2: Better first-time user experience in GRASS}{75}{subsection.7.2}%
+\contentsline {section}{\numberline {8}How to enhance first-time user experience: Proposal}{83}{section.8}%
+\contentsline {section}{\numberline {9}Analysis of the results of the second survey}{84}{section.9}%
+\contentsline {section}{\numberline {10}Used technologies}{93}{section.10}%
+\contentsline {subsection}{\numberline {10.1}GRASS GIS}{93}{subsection.10.1}%
+\contentsline {subsection}{\numberline {10.2}wxPython}{94}{subsection.10.2}%
+\contentsline {section}{\numberline {11}Implementation}{95}{section.11}%
+\contentsline {section}{Discussion}{96}{section*.94}%
+\contentsline {section}{Conclusion}{97}{section*.95}%
+\contentsline {section}{List of abbreviations}{98}{section*.96}%
+\contentsline {section}{Bibliography}{99}{section*.96}%
 \babel@toc {english}{}
 \contentsline {section}{\numberline {A}Help improve GRASS GIS startup mechanism and Data Catalog }{1}{appendix.A}%
 \contentsline {section}{\numberline {B}Help create a better first-time user experience in GRASS GIS }{1}{appendix.B}%
