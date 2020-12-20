@@ -31,19 +31,24 @@
 \contentsline {section}{\numberline {5}Questionnaires}{56}{section.5}%
 \contentsline {subsection}{\numberline {5.1}Types of questions}{59}{subsection.5.1}%
 \contentsline {section}{\numberline {6}Statistical methods of survey analysis}{62}{section.6}%
-\contentsline {section}{\numberline {7}Analysis of the results of the first survey}{63}{section.7}%
-\contentsline {subsection}{\numberline {7.1}Part 1: GRASS startup and Data Catalog}{63}{subsection.7.1}%
-\contentsline {subsection}{\numberline {7.2}Part 2: Better first-time user experience in GRASS}{75}{subsection.7.2}%
-\contentsline {section}{\numberline {8}How to enhance first-time user experience: Proposal}{83}{section.8}%
-\contentsline {section}{\numberline {9}Analysis of the results of the second survey}{84}{section.9}%
-\contentsline {section}{\numberline {10}Used technologies}{93}{section.10}%
-\contentsline {subsection}{\numberline {10.1}GRASS GIS}{93}{subsection.10.1}%
-\contentsline {subsection}{\numberline {10.2}wxPython}{94}{subsection.10.2}%
-\contentsline {section}{\numberline {11}Implementation}{95}{section.11}%
-\contentsline {section}{Discussion}{96}{section*.94}%
-\contentsline {section}{Conclusion}{97}{section*.95}%
-\contentsline {section}{List of abbreviations}{98}{section*.96}%
-\contentsline {section}{Bibliography}{99}{section*.96}%
+\contentsline {subsection}{\numberline {6.1}Descriptive statistics}{62}{subsection.6.1}%
+\contentsline {subsection}{\numberline {6.2}Box-and-whisker plot}{64}{subsection.6.2}%
+\contentsline {subsection}{\numberline {6.3}Histogram vs. Bar Chart}{64}{subsection.6.3}%
+\contentsline {subsection}{\numberline {6.4}Probability density function (PDF)}{65}{subsection.6.4}%
+\contentsline {subsection}{\numberline {6.5}Statistical methods used according to data types}{66}{subsection.6.5}%
+\contentsline {section}{\numberline {7}Analysis of the results of the first survey}{67}{section.7}%
+\contentsline {subsection}{\numberline {7.1}Part 1: GRASS startup and Data Catalog}{67}{subsection.7.1}%
+\contentsline {subsection}{\numberline {7.2}Part 2: Better first-time user experience in GRASS}{78}{subsection.7.2}%
+\contentsline {section}{\numberline {8}How to enhance first-time user experience: Proposal}{87}{section.8}%
+\contentsline {section}{\numberline {9}Analysis of the results of the second survey}{88}{section.9}%
+\contentsline {section}{\numberline {10}Used technologies}{104}{section.10}%
+\contentsline {subsection}{\numberline {10.1}GRASS GIS}{104}{subsection.10.1}%
+\contentsline {subsection}{\numberline {10.2}wxPython}{105}{subsection.10.2}%
+\contentsline {section}{\numberline {11}Implementation}{106}{section.11}%
+\contentsline {section}{Discussion}{107}{section*.96}%
+\contentsline {section}{Conclusion}{108}{section*.97}%
+\contentsline {section}{List of abbreviations}{109}{section*.98}%
+\contentsline {section}{Bibliography}{110}{section*.98}%
 \babel@toc {english}{}
 \contentsline {section}{\numberline {A}Help improve GRASS GIS startup mechanism and Data Catalog }{1}{appendix.A}%
 \contentsline {section}{\numberline {B}Help create a better first-time user experience in GRASS GIS }{1}{appendix.B}%
