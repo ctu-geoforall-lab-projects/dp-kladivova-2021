@@ -39,16 +39,18 @@
 \contentsline {section}{\numberline {7}Analysis of the results of the first survey}{67}{section.7}%
 \contentsline {subsection}{\numberline {7.1}Part 1: GRASS startup and Data Catalog}{67}{subsection.7.1}%
 \contentsline {subsection}{\numberline {7.2}Part 2: Better first-time user experience in GRASS}{78}{subsection.7.2}%
-\contentsline {section}{\numberline {8}How to enhance first-time user experience: Proposal}{87}{section.8}%
-\contentsline {section}{\numberline {9}Analysis of the results of the second survey}{88}{section.9}%
-\contentsline {section}{\numberline {10}Used technologies}{104}{section.10}%
-\contentsline {subsection}{\numberline {10.1}GRASS GIS}{104}{subsection.10.1}%
-\contentsline {subsection}{\numberline {10.2}wxPython}{105}{subsection.10.2}%
-\contentsline {section}{\numberline {11}Implementation}{106}{section.11}%
-\contentsline {section}{Discussion}{107}{section*.96}%
-\contentsline {section}{Conclusion}{108}{section*.97}%
-\contentsline {section}{List of abbreviations}{109}{section*.98}%
-\contentsline {section}{Bibliography}{110}{section*.98}%
+\contentsline {section}{\numberline {8}GRASS GIS Development Proposals}{87}{section.8}%
+\contentsline {subsection}{\numberline {8.1}How to enhance first-time user experience: Proposal}{88}{subsection.8.1}%
+\contentsline {subsection}{\numberline {8.2}How to create better GRASS GIS startup}{90}{subsection.8.2}%
+\contentsline {section}{\numberline {9}Analysis of the results of the second survey}{92}{section.9}%
+\contentsline {section}{\numberline {10}Used technologies}{108}{section.10}%
+\contentsline {subsection}{\numberline {10.1}GRASS GIS}{108}{subsection.10.1}%
+\contentsline {subsection}{\numberline {10.2}wxPython}{109}{subsection.10.2}%
+\contentsline {section}{\numberline {11}Implementation}{110}{section.11}%
+\contentsline {section}{Discussion}{111}{section*.98}%
+\contentsline {section}{Conclusion}{112}{section*.99}%
+\contentsline {section}{List of abbreviations}{113}{section*.100}%
+\contentsline {section}{Bibliography}{114}{section*.100}%
 \babel@toc {english}{}
 \contentsline {section}{\numberline {A}Help improve GRASS GIS startup mechanism and Data Catalog }{1}{appendix.A}%
 \contentsline {section}{\numberline {B}Help create a better first-time user experience in GRASS GIS }{1}{appendix.B}%

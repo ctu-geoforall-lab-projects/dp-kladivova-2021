@@ -1619,12 +1619,65 @@ The answers also point out some of the problems that users face without explicit
 \end{center}
 \end{figure}
 
+\newpage
+\vspace*{-1cm}
+\fancyhead[RE, RO]{\fancyplain{}{\small \sl{GRASS GIS Development Proposals}}}
+\section{GRASS GIS Development Proposals}
+\label{sec:proposal}
 
 \newpage
 \vspace*{-1cm}
-\fancyhead[RE, RO]{\fancyplain{}{\small \sl{How to enhance first-time user experience: Proposal}}}
-\section{How to enhance first-time user experience: Proposal}
+\fancyhead[RE, RO]{\fancyplain{}{\small \sl{How to enhance first-time user experience}}}
+\subsection{How to enhance first-time user experience: Proposal}
 \label{sec:proposal1}
+
+
+Jak bylo popsáno v úvodu a v podkapitole Suggestions, tato práce se skládá ze 2 na první pohled nezávislých částí. První část (hlavní část této práce) související s druhou části prvního průzkumu a s druhým průzkumem vylepšuje koncept defaultní lokace o tzv. first-time user mode, který má za úkol vylepšit first-time user experience.  Druhá část související s první částí prvního průzkumu výrazně navazuje na změny provedené v rámci GSoC a odstraňuje nedostatky nového startovacího mechanismu, které v rámci GSoC nebyly zcela dořešeny. První hlavní téma této práce se soustředí výhradně na nové uživatele, zatímco druhé téma související s úplným odstraněním původní startovací obrazovky (aby se neobjevovala ani i v situaci kdy last mapset is not in usable state) je tématem, které se dotkne všech stávajících uživatelů.
+
+
+
+\vspace{0.3cm}
+\begin{figure}[hbt!] 
+\begin{center}
+\includegraphics[width=16cm]{../pictures/first-time_user_diagram.pdf} 
+\caption[Info Bars Flowchart for first-time user]{Info Bar Flowchart for first-time user (Source: Personal collection)}
+\label{fig:first-time_user_diagram}
+\end{center}
+\end{figure}
+
+\newpage
+\vspace*{-1cm}
+\fancyhead[RE, RO]{\fancyplain{}{\small \sl{How to create better GRASS GIS startup}}}
+\subsection{How to create better GRASS GIS startup}
+\label{sec:proposal1}
+
+In the first part of the first survey, Q4 and Q5 mainly concern the Data Catalog and Management Icons, which is definitely important for future software development, however, the implementation is beyond the scope of this work. From the point of view of this work, the most important question is number 2, which solves the case when GRASS wants to start in the last used mapset, however, this mapset is not available for one of these reasons - it has either been deleted or it is used by another process. Unfortunately, this question was not drafted very cleverly in terms of the answer options offered, which is evident from the large number of open-ended responses.
+
+At first glance, the number of respondents who would choose the modernized version of startup screen prevails. However, only 2 out of 10 open-ended responses suggest some form of startup screen. Although the total number of respondents proposing a startup screen is 34 (32 + 2), ie. 65 \% percent of all respondents, we can not talk about a significantly majority opinion. In addition, in open-ended responses, ideas with some form of information or error message very often appear, which is a very interesting variant, which the author of the work did not think of when compiling the survey. In terms of implementation complexity, however, it is a simple option, as the proposed Info Bar for first-time users can cover both purposes - it will primarily serve as a help for new users and secondarily it can serve as an information channel for existing users. In the latter context, they can inform them about non-standard situations and speed up user's work (e.g. when creating a location, it will automatically offer the creation of a mapset, etc.). The Flowchart simulating the startup mechanism of an existing GRASS GIS user is shown in Figure \ref{fig:normal_user_diagram}.
+
+ As we can see, if the last used mapset cannot be used, we come across two different situations:
+
+\noindent \textbf{Either the last used location (as the parent of the last used mapset) is on the disk or it is not.} 
+
+\begin{itemize}
+\item If the last used location is not found, it means only one thing, the user deleted the location, so it is not possible to find the last used mapset. In this case, there is nothing to choose from but start GRASS to the default location.
+\item If the last used location is found and at the same time the PERMANENT mapset is not used by another process in this location, GRASS can start in this PERMANENT mapset.
+\end{itemize}
+
+The default location is therefore taken as the last unwelcome option employed only when the last used location either does not exist at all or exists, but it is not possible to open the last used mapset or PERMANENT mapset. In both cases, the user will see the notification in the form of a warning Info Bar saying the reason of start in default location and advicing a user on what to do next in this situation. The solution is simple as in the new version of the Data Catalog after GSoC it is very easy to add a new database to the Data Catalog, create a new location, etc. 
+
+Since these messages are closely related to the Data Catalog and data hierarchy in GRASS GIS in general, we can use exactly the same object of Info Bar which is used for messages intended for first-time users. This Info Bar is created each time the user starts GRASS GIS and it will only be up to the situation what message will be displayed. During the work, the user can then close the Info Bar, however, in reality it is only hidden and in another defined situation, it  may appear again.
+
+\vspace{0.3cm}
+\begin{figure}[hbt!] 
+\begin{center}
+\includegraphics[width=17cm]{../pictures/normal_user_diagram.png} 
+\caption[Info Bars Flowchart for any existing user]{Info Bar Flowchart for any existing user (Source: Personal collection)}
+\label{fig:normal_user_diagram}
+\end{center}
+\end{figure}
+
+We could also think of other situations where the Info Bar could be displayed to users. For example, when creating a new location, it can be assumed that the user will subsequently request the creation of a mapset. Similarly, when creating a database, it can be assumed that the user will want to create a new location in the next step. The notifications could therefore be a kind of guide not only for the initial user, but also for more experienced users. Their purpose would be to speed up the user's work related to organization of their data.
 
 %% -------<<< Chapter 6: Analysis of the results of the second survey>>>-------\\%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -1973,7 +2026,8 @@ wxPython is a cross-platform toolkit which means that the same program can be ru
 \noindent
 \large
 
-\label{sec:2survey}
+
+ Info Bar je objekt, který se vytvoří vždy při každém startu GRASS GIS a bude pouze na dané situaci, jaké zprávy bude zobrazovat. Během práce poté uživatel může ikonku zavřít, nicméně reálně se pouze skryje a v další vydefinované situaci se může nápověda znovu objevit.
 
 %% -------<<< Chapter: Discussion >>>-------\\%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \newpage
