@@ -3,3 +3,6 @@ text/linda-kladivova-dp-2021.pdf
 *.log
 *.out
 *~
+*.lof
+*.toc
+*.synctex.gz
