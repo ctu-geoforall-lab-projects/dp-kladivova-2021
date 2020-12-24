@@ -119,7 +119,7 @@
 
 \large
 \noindent
-The existing GRASS GIS software start-up mechanism could discourage new users from further working with this software or at least make it uncomfortable. This diploma thesis is built on the programming part performed in the summer of 2020 within the international Google Summer of Code program (GSoC) and uses two surveys to evaluate the benefits of significant changes that have taken place. The first part of the work focuses on a survey among intermediate users and compares the startup mechanism of the original GRASS GIS 7.8 version with the new solution introduced after GSoC which during normal startup cancels the concept of the startup window and its role is taken over by Data Catalog. The second part is oriented on newcomers and implements the first-time mode. A survey based on a simple task further examines whether the initial contact of the user with the software when using the first-time mode is more pleasant or not.
+The existing GRASS GIS software startup mechanism could discourage new users from further working with this software or at least make it uncomfortable. This diploma thesis is built on the programming part performed in the summer of 2020 within the international Google Summer of Code program (GSoC) and uses two surveys to evaluate the benefits of significant changes that have taken place. The first part of the work focuses on a survey among intermediate users and compares the startup mechanism of the original GRASS GIS 7.8 version with the new solution introduced after GSoC which during normal startup cancels the concept of the startup window and its role is taken over by Data Catalog. The second part is oriented on newcomers and implements the first-time mode. A survey based on a simple task further examines whether the initial contact of the user with the software when using the first-time mode is more pleasant or not.
 
 \vspace{2ex}
 \begin{Large}
@@ -241,12 +241,15 @@ Firstly I would like to thank my parents very much for their support during my s
 \large
 \setcounter{page}{13}  % nastaví čítač stránek od stránky Úvod na stránku č. 13
 
+\noindent According to the evaluation of the GISGeography journal, GRASS GIS is one of the best software we can meet in the world of open-source GIS software in terms of numerical GIS analysis. The history of GRASS, built for vector and raster geospatial management, geoprocessing, spatial modeling and visualization, dates back to 1982, when its development was started by the United States military. At the time of writing this thesis, the current stable version of the software is version 7.8, but as the number suggests, the planned version 8.0, which will be released in the spring of 2021, will introduce major changes. They are largely related to the GRASS graphical user interface (GUI).
 
+The implementation of changes and new GUI functionalities gradually leading to the breakthrough version 8.0 began in the summer of 2020, when the author participated in the global student program Google Summer of Code (GSoC), which inspires young developers to begin participating in open-source development. As also mentioned in the evaluation of the GISGeography journal, the main disadvantage of GRASS version 7.8 is mainly the clunky and dated user interface, defining projects on start-up and steep learning curve to get started. As we can see, these shorcomings are largely related to the current startup mechanism. So the task of GSoC was to change the sort of unfortunate GRASS startup mechanism so that it would be easier for first-time users to become familiar with GRASS.
 
-%% -------<<< Chapter 1: State of Art in the version 7.8 >>>-------\\%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+After the changes within GSoC, the startup screen -  the biggest trick for new users, was partially removed. It means that it appears only in non-standard situations. The main role for the  data organization was taken over by the Data Catalog - a tree object, whose functionality was significantly expanded. Now the possibilities of managing data hiearchy components are even beyond the options previously available in the startup screen. Here, for the first time, a new concept of the default location (say`` demolocation '' in development slang) is introduced, which is offered to every first-time user.
 
+This work therefore follows up on the complex topic of creating a better GRASS GIS startup mechanism. The main part of the work consists of two surveys where the first one consists of two parts. The aim of the first part is to evaluate the benefits of significant changes among the GRASS community and at the same time to propose a final solution of the GRASS startup mechanism for the existing user, so that the old startup screen is permanently removed. The second part of the first survey focuses on the improvement of the startup mechanism for first-time users. It finds out what options of firsti-time help would be preferred in the GRASS community. The second survey then introduces the ``first-time mode'', which extends the concept of the default location with a set of information popups that help the user manage the first steps - creating a new location, importing data, etc. Based on the second survey, the design is modified and subsequently implemented.
 
-Changing the startup mechanism, which will make it easier for first-time users to become familiar with GRASS, has been one of the long-term goals of the development community around this software. This whole topic provoked heated discussions mainly because it was not clear whether to keep the startup screen or not.
+NOT FINISHED YET
 
 
 %% -------<<< Chapter 1: State of Art in the version 7.8 >>>-------\\%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -1299,7 +1302,7 @@ Examples of nominal qualitative data are the responses to questions of Multiple 
 
 Conversely, quantitative or numerical data can be characterized by a numerical value. Quantitative variables can be further classified as either discrete (those with a finite or countable number of possible values) or continuous (those with an infinite or un-countable number of possibilities). In the case of surveys conducted in this work, the Slider questions always have the same form - we measure the degree of agreement with the statement on a scale from 0 to 100. It is not a discrete variable, because we do not have any obvious categories from the beginning. Those classes have to be created. In this work, they were determined according to the SUS questionnaire: [0, 20] - Strongly disagree, (20, 40] - Disagree, (40, 60] - Neutral, (60, 80] - Agree and (80, 100] - Strongly agree.
 
-%% -------<<< Chapter 4: Analysis of the results of the first survey>>>-------\\%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% -------<<< Chapter 7: Analysis of the results of the first survey>>>-------\\%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \newpage
 \vspace*{-1cm}
@@ -1307,7 +1310,7 @@ Conversely, quantitative or numerical data can be characterized by a numerical v
 \section{Analysis of the results of the first survey}
 \label{sec:qstat}
 
-\noindent The main part of this work consists of two questionnaires. The first questionnaire was released 23 October and stopped 29 October 2020. It has two separate parts. The first one contains six questions dealing with the improvement of the GRASS GIS startup mechanism and the assessment of the state after GSoC. The second part of the survey which is even more important for this master thesis contains 5 questions focusing on the enhancement of the newcomers' experience. In other words, it focuses on possibilities how to enrich existing Demolocation concept so that the new user can find his way around the software as quickly and conveniently as possible. The implementation part of this work is based on the second part of the first survey and then especially on the second survey, which was released roughly a month later and is analyzed in Section \ref{sec:2survey}.
+\noindent The main part of this work consists of two questionnaires. The first questionnaire was released 23 October and stopped 29 October 2020. It has two separate parts. The first one contains six questions dealing with the improvement of the GRASS GIS startup mechanism and the assessment of the state after GSoC. The second part of the survey which is even more important for this master thesis contains 5 questions focusing on the enhancement of the newcomers' experience. In other words, it focuses on possibilities how to enrich existing Demolocation concept so that the new user can find his way around the software as quickly and conveniently as possible. The implementation part of this work is based on the second part of the first survey and then especially on the second survey, which was released roughly a month later and is analyzed in Section \ref{sec:qstat2}.
 
 \subsection{Part 1: GRASS startup and Data Catalog}
 
@@ -1625,59 +1628,74 @@ The answers also point out some of the problems that users face without explicit
 \section{GRASS GIS Development Proposals}
 \label{sec:proposal}
 
-\newpage
-\vspace*{-1cm}
-\fancyhead[RE, RO]{\fancyplain{}{\small \sl{How to enhance first-time user experience}}}
-\subsection{How to enhance first-time user experience: Proposal}
+\noindent As described in the Introduction and in the subchapter \ref{sec:startup_concepts}, this work consists of 2 seemingly independent parts. The first part (the main part of this work) related to the second part of the first survey and the second survey improves the concept of default location by the so-called first-time user mode, which aims to improve the first-time user experience. The second part, related to the first part of the first survey, builds significantly on the changes made in the GSoC and addresses the shortcomings of the new startup mechanism. The first main topic of this work focuses exclusively on new users, while the second topic related to the complete removal of the original startup screen (so that it does not appear even in a situation where the last mapset is not in usable state) is a topic that affects all existing users.
+
+\subsection{How to enhance first-time user experience}
 \label{sec:proposal1}
 
+After running GRASS in the version after GSoC, the new user is redirected to the default location (demolocation) to the Data tab. Here he/she can see a project template containing a world map. (In the future, demolocation is likely to be enriched with additional maps.) After analyzing the second part of the first survey, it is more than evident that in order to make GRASS more user-friendly tool right from the outset, there is some form of help (whether in form of First Run Wizard or Info Bars) a necessity. Although the Data Catalog provides a visual idea of the hierarchical data structure in GRASS, there is no clue that would explain the concept of defaut location, nor locations and mapsets in general. But it's not just a misunderstanding of the GRASS data hierarchy, as the developers initially thought. Users also have problems with the meaning of tabs, especially with the Modules tab. The responses to Question 5 also point out that the advice on the data import would be usefull as well.
 
-Jak bylo popsáno v úvodu a v podkapitole Suggestions, tato práce se skládá ze 2 na první pohled nezávislých částí. První část (hlavní část této práce) související s druhou části prvního průzkumu a s druhým průzkumem vylepšuje koncept defaultní lokace o tzv. first-time user mode, který má za úkol vylepšit first-time user experience.  Druhá část související s první částí prvního průzkumu výrazně navazuje na změny provedené v rámci GSoC a odstraňuje nedostatky nového startovacího mechanismu, které v rámci GSoC nebyly zcela dořešeny. První hlavní téma této práce se soustředí výhradně na nové uživatele, zatímco druhé téma související s úplným odstraněním původní startovací obrazovky (aby se neobjevovala ani i v situaci kdy last mapset is not in usable state) je tématem, které se dotkne všech stávajících uživatelů.
-
-
+In the most likely scenario, as a new GRASS user we would try to import our own data, display it in the required design and perform analyzes. To do this, in the first step, we should create a location in the coordinate system of their data. In the second step, depending on the data type, we can already import vector or raster data. In the third step, we can visit the Modules tab if want to analyze the data straight away. However, if we only want to change the layer properties, we should go to the Display tab.
 
 \vspace{0.3cm}
 \begin{figure}[hbt!] 
 \begin{center}
-\includegraphics[width=16cm]{../pictures/first-time_user_diagram.pdf} 
-\caption[Info Bars Flowchart for first-time user]{Info Bar Flowchart for first-time user (Source: Personal collection)}
+\includegraphics[width=15.5cm]{../pictures/first-time_user_diagram.png} 
+\caption[Flowchart of First-time user mode]{Flowchart of First-time user mode (Source: Personal collection)}
 \label{fig:first-time_user_diagram}
 \end{center}
 \end{figure}
 
-\newpage
-\vspace*{-1cm}
+For these situations, the author has proposed the sequence of small hints which can be seen in Figure \ref{fig:first-time_user_diagram} and will be the content of the Info Bar. Those texts displayed in the orange box essentially suggest a special first-time user mode, which we can also perceive as a First Run Wizard in terms of continuity. If the user follows the advice in the Info Bar, he will eventually meet all three advice in that order. So it is not possible to skip this mode as in Zoner Photo Studio, but if we do not follow the advice, we can avoid it. Except hints, The Info Bar includes button(s) that offer the user the necessary functions without the need to search. A more detailed description of the first-time mode, including examples of mockups, is contained in the section \ref{sec:qstat2}.
+
 \fancyhead[RE, RO]{\fancyplain{}{\small \sl{How to create better GRASS GIS startup}}}
 \subsection{How to create better GRASS GIS startup}
-\label{sec:proposal1}
+\label{sec:proposal2}
 
 In the first part of the first survey, Q4 and Q5 mainly concern the Data Catalog and Management Icons, which is definitely important for future software development, however, the implementation is beyond the scope of this work. From the point of view of this work, the most important question is number 2, which solves the case when GRASS wants to start in the last used mapset, however, this mapset is not available for one of these reasons - it has either been deleted or it is used by another process. Unfortunately, this question was not drafted very cleverly in terms of the answer options offered, which is evident from the large number of open-ended responses.
 
-At first glance, the number of respondents who would choose the modernized version of startup screen prevails. However, only 2 out of 10 open-ended responses suggest some form of startup screen. Although the total number of respondents proposing a startup screen is 34 (32 + 2), ie. 65 \% percent of all respondents, we can not talk about a significantly majority opinion. In addition, in open-ended responses, ideas with some form of information or error message very often appear, which is a very interesting variant, which the author of the work did not think of when compiling the survey. In terms of implementation complexity, however, it is a simple option, as the proposed Info Bar for first-time users can cover both purposes - it will primarily serve as a help for new users and secondarily it can serve as an information channel for existing users. In the latter context, they can inform them about non-standard situations and speed up user's work (e.g. when creating a location, it will automatically offer the creation of a mapset, etc.). The Flowchart simulating the startup mechanism of an existing GRASS GIS user is shown in Figure \ref{fig:normal_user_diagram}.
+At first glance, the number of respondents who would choose the modernized version of startup screen prevails. However, only 2 out of 10 open-ended responses suggest some form of startup screen. Although the total number of respondents proposing a startup screen is 34 (32 + 2), ie. 65 \% percent of all respondents, we can not talk about a significantly majority opinion. In addition, in open-ended responses, ideas with some form of information or error message very often appear, which is a very interesting variant, which the author of the work did not think of when compiling the survey. In terms of implementation complexity, however, it is a simple option, as the proposed Info Bar for first-time users can cover both purposes - it will primarily serve as a help for new users and secondarily it can serve as an information channel for existing users. In the latter context, the Info Bar can inform users about non-standard situations and speed up their work (e.g. when creating a location, it will automatically offer the creation of a mapset, etc.). 
 
- As we can see, if the last used mapset cannot be used, we come across two different situations:
+The display of the Info Bar in a non-standard situation is related to the existing startup mechanism, which still has not completely got rid of the old startup screen. If we start GRASS GIS for the first time, we meet a default location. In other cases, GRASS tries to boot into the last used mapset. However, there may be a problem where the last used mapset is not in usable state. Two suggestions on how to solve this situation were compiled, which are presented using Flowcharts in Figures \ref{fig:normal_user_diagram} and \ref{fig:normal_user_diagram2}, where the second proposal is only an extension of the first proposal.
 
-\noindent \textbf{Either the last used location (as the parent of the last used mapset) is on the disk or it is not.} 
-
-\begin{itemize}
-\item If the last used location is not found, it means only one thing, the user deleted the location, so it is not possible to find the last used mapset. In this case, there is nothing to choose from but start GRASS to the default location.
-\item If the last used location is found and at the same time the PERMANENT mapset is not used by another process in this location, GRASS can start in this PERMANENT mapset.
-\end{itemize}
-
-The default location is therefore taken as the last unwelcome option employed only when the last used location either does not exist at all or exists, but it is not possible to open the last used mapset or PERMANENT mapset. In both cases, the user will see the notification in the form of a warning Info Bar saying the reason of start in default location and advicing a user on what to do next in this situation. The solution is simple as in the new version of the Data Catalog after GSoC it is very easy to add a new database to the Data Catalog, create a new location, etc. 
-
-Since these messages are closely related to the Data Catalog and data hierarchy in GRASS GIS in general, we can use exactly the same object of Info Bar which is used for messages intended for first-time users. This Info Bar is created each time the user starts GRASS GIS and it will only be up to the situation what message will be displayed. During the work, the user can then close the Info Bar, however, in reality it is only hidden and in another defined situation, it  may appear again.
+In the first proposal in Figure \ref{fig:normal_user_diagram} we do not consider the last used location at all. If the last used mapset is in an unusable state (either because it was deleted or used by another process), the user will always be redirected to the default location (demolocation). We do not prohibit the user from working in the default location as in the normal location. Then, however, there is a risk that the PERMANENT mapset in demolocation can be used by another process. This situation can occur, for example, when a user starts two GRASS sessions. The first instance starts in the last used mapset, but the second instance can no longer start this way.
 
 \vspace{0.3cm}
 \begin{figure}[hbt!] 
 \begin{center}
-\includegraphics[width=17cm]{../pictures/normal_user_diagram.png} 
-\caption[Info Bars Flowchart for any existing user]{Info Bar Flowchart for any existing user (Source: Personal collection)}
+\includegraphics[width=16.5cm]{../pictures/normal_user_diagram.png} 
+\caption[Flowchart of GIS startup for existing users: Proposal 1]{Flowchart of GIS startup for existing users: Proposal 1 (Source: Personal collection)}
 \label{fig:normal_user_diagram}
 \end{center}
 \end{figure}
 
-We could also think of other situations where the Info Bar could be displayed to users. For example, when creating a new location, it can be assumed that the user will subsequently request the creation of a mapset. Similarly, when creating a database, it can be assumed that the user will want to create a new location in the next step. The notifications could therefore be a kind of guide not only for the initial user, but also for more experienced users. Their purpose would be to speed up the user's work related to organization of their data.
+\noindent It is therefore important to check whether the PERMANENT mapset in the default location is in the usable state and if it is not, we need to create a new mapset in the default location, into which GRASS will start in case of emergency. This mapset can be named after the user, which is a concept proposed in the second survey as a standard solution for first-time users. (In the end, it was not implemented since the second survey found that the existence of a user mapset in the standard version of default location is rather confusing than useful). 
+
+When starting in the default location, the user will see the notification in the form of a Info Bar saying the reason of start in default location and advicing a user on what to do next in this situation. The solution is simple as in the new version of the Data Catalog after GSoC it is very easy to add a new database to the Data Catalog, create a new location, etc. The Info Bar can therefore have the character of an information icon, as in the case with help for first-time users.
+
+The Proposal 1 can be extended with another idea. To offer the user the most similar state to last GRASS run, we can start GRASS in the PERMANENT mapset of the last used location. However, it presents a new concept, which assumes that the PERMANENT mapset is some kind of default mapset. This would mean incorporating this idea into other segments of GRASS. For example, in the Data Catalog, there should be a possibility in the Data to switch to location (its PERMANENT) from the location node. The default location is here taken as the last unwelcome option employed only when the last used location either does not exist at all or exists, but it is not possible to open the last used mapset or PERMANENT mapset. 
+
+\vspace{0.3cm}
+\begin{figure}[hbt!] 
+\begin{center}
+\includegraphics[width=17cm]{../pictures/normal_user_diagram2.png} 
+\caption[Flowchart of GIS startup for existing users: Proposal 2]{Flowchart of GIS startup for existing users: Proposal 2 (Source: Personal collection)}
+\label{fig:normal_user_diagram2}
+\end{center}
+\end{figure}
+
+\noindent However, the disadvantage of the second solution is that the GRASS GIS startup process would not be consistent. The first solution is always consistent - run a demolocation in each non-standard situation and provide the same message in Info Bar. Since this massage is closely related to the Data Catalog and data hierarchy in GRASS GIS in general, we can use exactly the same object of Info Bar which is used for messages intended for first-time users. 
+
+We could also think of other situations where the Info Bar could be displayed to users (see Figure \ref{fig:other_situations}). For example, when creating a new location, it can be assumed that the user will subsequently request the creation of a mapset. Similarly, when creating a database, it can be assumed that the user will want to create a new location in the next step. The notifications could therefore be a kind of guide not only for the initial user, but also for more experienced users. Their purpose would be to speed up the user's work related to organization of their data. It could also be the same Info Bar object placed in the data tab, however, this time the type would not be informatve, but questional.
+
+\vspace{0.3cm}
+\begin{figure}[hbt!] 
+\begin{center}
+\includegraphics[width=17cm]{../pictures/other_situations.png} 
+\caption[Flowchart of other situations where Info Bar could be helpful]{Flowchart of other situations where Info Bar could be helpful (Source: Personal collection)}
+\label{fig:other_situations}
+\end{center}
+\end{figure}
 
 %% -------<<< Chapter 6: Analysis of the results of the second survey>>>-------\\%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -1691,7 +1709,7 @@ We could also think of other situations where the Info Bar could be displayed to
 
 The questionnaire is based on a simple task. A user has vector data of rivers in the Czech Republic in the shapefile format in the coordinate system S-JTSK/Krovak East North (EPSG:5514) and they would like to import this data into GRASS and perform a simple task - extract a river called Otava and save it in a separate layer. Unfortunately, due to external epidemiological circumstances, this task could not be tested among GRASS beginners directly on the software. Thus, a survey was designed that simulates three key situations that, according to the diagrams in the previous chapter, a new user is likely to get into and which, according to the results of the second part of the first survey, are crucial. In these situations, the respondent is presented with software mockups of Info Bars which (if they are placed in the right place at the right time and correctly designed in terms of text) should lead to the right decision on how to continue in work. In the following text, the term \textit{default location} is preferred to the term \textit{demolocation}, which is more of a technical (developer) nature. Semantically, these concepts do not differ.
 
-\textbf{The first situation} shown in the mockup in Fig. \ref{fig:grass_infobar_1} shows the GRASS GIS immediately after startup. At this point, a user needs find their way around in a completely unknown environment as quickly as possible and import their data so that he can look at it and possibly perform analyzes. The software starts in the Data tab to the default location (so-called demolocation), which in the Map Display window displays the world map in the WGS 84 system (EPSG:4326). The task of demolocation is to give the user a certain sense of security by showing a map and at the same time an example of data organization in the Data Catalog, which is now the center of GRASS. At the first moment, it is therefore essential for the user to at least passively understand the principle of the GRASS data hierarchy, which is well visible in the Data Catalog and is also briefly explained in the first Info Bar. In order to properly figure out the first situation, a user must realize that the data he wants to import into the software has a different coordinate system (EPSG:5514) than the one defined for the default location (EPSG:4326). This means that if a user understands the meaning of the location, he will create a new location that will have the coordinate system of the data he wants to import.
+\textbf{The first situation} shown in the mockup in Fig. \ref{fig:grass_infobar_1} shows the GRASS GIS immediately after startup. At this point, a user needs find their way around in a completely unknown environment as quickly as possible and import their data so that he can look at it and possibly perform analyzes. The software starts in the Data tab to the default location, which in the Map Display window displays the world map in the WGS 84 system (EPSG:4326). The task of demolocation is to give the user a certain sense of security by showing a map and at the same time an example of data organization in the Data Catalog, which is now the center of GRASS. At the first moment, it is therefore essential for the user to at least passively understand the principle of the GRASS data hierarchy, which is well visible in the Data Catalog and is also briefly explained in the first Info Bar. Terms are also specified in the text using new planned names in parentheses. In order to properly figure out the first situation, a user must realize that the data he wants to import into the software has a different coordinate system (EPSG:5514) than the one defined for the default location (EPSG:4326). This means that if a user understands the meaning of the location, he will create a new location that will have the coordinate system of the data he wants to import.
 
 \vspace{0.3cm}
 \begin{figure}[hbt!] 
@@ -2026,7 +2044,7 @@ wxPython is a cross-platform toolkit which means that the same program can be ru
 \noindent
 \large
 
-
+                         Info Bar se vytvoří created each time the user starts GRASS GIS and it is only up to the situation what message is displayed.  During the work, the user can then close the Info Bar but in reality it is only hidden and in another defined situation it may appear again.
  Info Bar je objekt, který se vytvoří vždy při každém startu GRASS GIS a bude pouze na dané situaci, jaké zprávy bude zobrazovat. Během práce poté uživatel může ikonku zavřít, nicméně reálně se pouze skryje a v další vydefinované situaci se může nápověda znovu objevit.
 
 %% -------<<< Chapter: Discussion >>>-------\\%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
