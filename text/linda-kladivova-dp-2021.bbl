@@ -1,0 +1,44 @@
+\begin{thebibliography}{1}
+
+\bibitem{foster}
+
+
+\bibitem{gisgeography}
+GIS Geography.
+\newblock Grass gis – geographic resources analysis support system.
+\newblock [online], Last visited December 6, 2020.
+\newblock Available on:
+  https://gisgeography.com/grass-gis-geographic-resources-analysis-support-system/.
+
+\bibitem{NETELER2012124}
+Markus Neteler, M.~Hamish Bowman, Martin Landa, and Markus Metz.
+\newblock Grass gis: A multi-purpose open source gis.
+\newblock {\em Environmental Modelling \& Software}, 31:124 -- 130, 2012.
+
+\bibitem{hierarchy}
+2003-2020 GRASS~Development Team.
+\newblock Grass gis database.
+\newblock [online], Last visited November 7, 2020.
+\newblock Available on:
+  https://grass.osgeo.org/grass78/manuals/grass\_database.html.
+
+\bibitem{startup}
+2003-2020 GRASS~Development Team.
+\newblock Grass startup program.
+\newblock [online], Last visited November 7, 2020.
+\newblock Available on: https://grass.osgeo.org/grass79/manuals/grass7.html.
+
+\bibitem{grassgis}
+Wikipedia.
+\newblock Grass gis.
+\newblock [online], Last visited November 6, 2020.
+\newblock Available on: https://en.wikipedia.org/wiki/GRASS\_GIS.
+
+\bibitem{pygrass}
+Ciolli~M. Zambelli~P, Gebbert~S.
+\newblock Pygrass: An object oriented python application programming interface
+  (api) for geographic resources analysis support system (grass) geographic
+  information system (gis).
+\newblock 2(1):201--219, 2013.
+
+\end{thebibliography}
