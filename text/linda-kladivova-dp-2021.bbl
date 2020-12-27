@@ -1,7 +1,27 @@
-\begin{thebibliography}{1}
+\begin{thebibliography}{10}
+
+\bibitem{amelia}
+Ana Amélia.
+\newblock Usability testing of educational software: methods, techniques and
+  evaluators.
+\newblock University of Minho.
+
+\bibitem{sus}
+John Brooke.
+\newblock Sus: A quick and dirty usability scale.
+\newblock {\em Usability Eval. Ind.}, 189, 11 1995.
+
+\bibitem{dishman}
+Marcie Dishman.
+\newblock Website usability testing software-improving user experience and
+  satisfaction with community college websites.
+\newblock {\em The Community College Enterprise}, 21(1):84--87, Spring 2015.
 
 \bibitem{foster}
-
+Ed~Foster.
+\newblock Software vendor screens aren't making much of a splash with
+  multitaskers.
+\newblock {\em InfoWorld}, 18(13):60, Mar 25 1996.
 
 \bibitem{gisgeography}
 GIS Geography.
@@ -10,10 +30,21 @@ GIS Geography.
 \newblock Available on:
   https://gisgeography.com/grass-gis-geographic-resources-analysis-support-system/.
 
+\bibitem{hotjar}
+hotjar.
+\newblock The different types of usability testing methods for your projects.
+\newblock [online], Last visited December 20, 2020.
+\newblock Available on: https://www.hotjar.com/usability-testing/methods/.
+
 \bibitem{NETELER2012124}
 Markus Neteler, M.~Hamish Bowman, Martin Landa, and Markus Metz.
 \newblock Grass gis: A multi-purpose open source gis.
 \newblock {\em Environmental Modelling \& Software}, 31:124 -- 130, 2012.
+
+\bibitem{sixusability}
+Collette Stumpf.
+\newblock 6 usability testing methods that will improve your software.
+\newblock {\em InfoWorld.com}, Jul 19 2018.
 
 \bibitem{hierarchy}
 2003-2020 GRASS~Development Team.

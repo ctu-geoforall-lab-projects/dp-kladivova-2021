@@ -570,480 +570,72 @@ As mentioned in the previous subchapter, in the special situation where the last
 
 \noindent Both the second part of the first survey and the second survey deal with the first question which prevails in this work since all the performed implementations are based on it. The first part of the first survey does not deal only with the second issue mentioned, it is much broader. The goals also are to determine the level of user satisfaction / dissatisfaction with the new solution and to obtain general user preferences regarding further improvements of the GRASS GUI.
 
-%% -------<<< Chapter 3: Concepts of startup mechanism >>>-------\\%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\newpage
-\vspace*{-1cm}
-\fancyhead[RE, RO]{\fancyplain{}{\small \sl{General startup concepts}}}
-\section{General startup concepts}
-\label{sec:startup_concepts}
-\noindent
-\large
-As the author already mentioned, the most commonly used software or applications usually do not require any more complex initial setup. However, this may not be the case for GIS software. Therefore, the following subsection introduces and compares several GIS approaches in terms of startup mechanisms. Then we move even beyond GIS and look especially on the way, how software programs chosen according to the first survey enhance the first-time user experience.
-
-\subsection{GIS software}
-\label{subsection:GIS software}
-
-The startup mechanisms are analyzed from various perspectives, which are summarized in the final table identifying several questions:
-\begin{itemize}
-\item Does the GIS software have its own startup screen, and if so, how does it look like? 
-\item Does the software have file association of project file?
-\item Does the software offer first-time mode to help complete beginners, and if so, in what form?
-\item How the software works with data of different coordinate systems? Does it support On the fly transformation? Does it allow the incorrect display of two layers of different coordinate systems on top of each other?
-\end{itemize}
-
-\noindent On Figures \ref{fig:hodnoceni_all} and  \ref{fig:hodnoceni_free} we can see graphs of the 10 highest rated GIS software and the 10 highest rated Free GIS software in the world in 2020, as stated in the evaluation taken by online magazine GISGeography. The evaluation of selected software is performed on a point scale from 0 to 10 in four categories - \textit{cartography, analysis, editing and data management} which are subsequently averaged. 
-
-In the first place we can notice two representatives of ESRI - ArcGIS Pro, ArcGIS Desktop. I would also mention the other two interesting commercial software GeoMedia (Hexagon) and MapInfo Professional. If we focus only on Free GIS Software, in the first places in descending order we can find QGIS 3, QGIS 2, gVSIG, GRASS GIS, ILWIS and SAGA GIS. 
-
-\vspace{0.3cm}
-\begin{figure}[hbt!] 
-\begin{center}
-\includegraphics[width=13cm]{../pictures/hodnoceni_all.png} 
-\caption[Top 10 GIS Software in 2020 according to GISGeography journal]{Top 10 GIS Software in 2020 according to GISGeography journal}
-\label{fig:hodnoceni_all}
-\end{center}
-\end{figure}
-
-\begin{figure}[hbt!] 
-\begin{center}
-\includegraphics[width=13cm]{../pictures/hodnoceni_free.png} 
-\caption[Top 10 Free GIS Software in 2020 according to GISGeography journal]{Top 10 Free GIS Software in 2020 according to GISGeography journal}
-\label{fig:hodnoceni_free}
-\end{center}
-\end{figure}
-
-\newpage
-\noindent We must keep in mind that this evaluation is very indicative, as each software has different strengths. For example, on Figure \ref{fig:hodnoceni_analysis} GRASS GIS takes the leading position in then \textit{analysis} category, with a rating of 9.8 out of 10, which is comparable to FME and ArcGIS Pro. Among Free GIS Software GRASS has the highest rating in this aspect. This uniqueness is also mentioned in the pros of the software, which offers more than 350 geoprocessing modules, LiDAR and network analysis, sophisticated tools for satellite imagery, 3D raster rendering and customization and so forth.  The big advantage is that the GRASS GIS function can be leverage through QGIS. 
-
-\newpage
-In the disciplines of editing and data management, the balance is somewhat worse 7.4 and 7.5 out of 10 points. The biggest drop to 6.1 is in the \textit{cartography} category. At this point, however, it must be highlighted that the ambition of GRASS GIS is definitely not to create high-quality modern maps, but to offer the software for very numerically complex geographical analyzes. What is mentioned as other disadvantages is clunky and dated user interface, defining projects on start-up, steep learning curve to get started and command line window running in background. We can notice that these shortcomings are largely related to the current unfortunate startup mechanism.
-
-\begin{figure}[hbt!] 
-\begin{center}
-\includegraphics[width=11cm]{../pictures/hodnoceni_analysis.png} 
-\caption[Top 7 GIS Software in 2020 in \textit{analysis} category according to GISGeography journal]{Top 7 GIS Software in 2020 in \textit{analysis} category according to GISGeography journal}
-\label{fig:hodnoceni_analysis}
-\end{center}
-\end{figure}
-
-\noindent At this point, it is important to emphasize that in this work we do not focus at all on the functionality of the software as such. As you could read in the previous lines, in this aspect the software is really very different. Therefore, even though the software may not be very user-friendly, a user will have no choice and reach for it. In this work, software is tested and analyzed in detail from the point of view of the startup mechanism and data organization with an emphasis on finding out what elements they use directly in the software to improve the first-time user experience.
-
-The software is tested using two shapefiles of different coordinate system - districts in the Czech Republic in the S-JTSK Krovak East North system (EPSG: 5514) and US tracts in the USA Contiguous Albers Equal Area Conic system (ESRI: 102003). These systems are not selected by chance. They are defined entirely differently, however, in terms of coordinate digits they are very similar.
-
-The author has extensive experience with ArcMap and QGIS, with other software she had the honor of working for the first time. However, for the purposes of this work, this fact is a plus, as the evaluation of software is not distorted by any previous experience.
-
-\newpage
-\vspace*{-1cm}
-\subsubsection{Analysis of selected commercial software}
-
-\noindent On further rows three commercial representatives (ArcGIS Pro, MapInfo Professional and GeoMedia Advantage) are described in terms of startup mechanisms, new user friendliness and data organization. Data import is also tested for each software. 
-
-\bigskip
-
-\noindent \textbf {ArcGIS Pro 2.4}
-
-\noindent This software is currently the lead representative of ESRI's desktop GIS. It is an extension and connection of ArcMap, ArcScene and ArcGlobe applications. It is therefore possible to display and analyze 3D data in it. After logging in, the startup screen is displayed (see Figure \ref{fig:arcgis_startup_screen}). Here we can open recently saved projects or select from pre-prepared templates, of which we have several to choose from - Map (standard), Catalog, Global scene and Local scene. Another option is to select an empty sheet.
-
-\vspace{0.3cm}
-\begin{figure}[hbt!] 
-\begin{center}
-\includegraphics[width=16cm]{../pictures/arcgis_startup_screen.png} 
-\caption[ArcGIS Pro 2.4 startup dialog]{ArcGIS Pro 2.4 startup dialog (Source: Personal collection)}
-\label{fig:arcgis_startup_screen}
-\end{center}
-\end{figure}
-
-\noindent The imported GIS layers are located in the Map component which is associated with Map window. In the following example on Figure \ref{fig:arcgis_pro_onthefly2}, the map window system is WGS 1984 Web Mercator Auxiliary Sphere (according to the first added layer), but the later layers added are in other coordinate systems. In spite of having different coordinate systems, the layers are displayed correctly in the map window due to On the fly transformation.
-
-\newpage
-\begin{figure}[hbt!] 
-\begin{center}
-\includegraphics[width=16cm]{../pictures/arcgis_pro_onthefly2.png} 
-\caption[Display of layers with different coordinate system in ArcGIS Pro 2.4]{Display of layers with different coordinate system in ArcGIS Pro 2.4 (Source: Personal collection)}
-\label{fig:arcgis_pro_onthefly2}
-\end{center}
-\end{figure}
-
-\noindent ArcGIS Pro works with projects as key elements of data organization. Each project contains a folder that contains the data we want to work with. So there is pressure to make data clear and not scattered all over the disk. We can say that ESRI is moving in a similar direction to GRASS GIS in this aspect. In the case of this software, it is not a disadvantage that it does not offer any special elements or explanations that could help newcomers. The startup screen and the software as such are at first glance clear and user friendly.
-
-\newpage
-\vspace*{-1cm}
-\bigskip
-\noindent \textbf {GeoMedia Advantage 2020}
-
-\noindent This commercial GIS software developed by Intergraph (now Hexagon Geospatial) has a rich 40-year history. It is especially strong at cartography and raster analysis.  It also offers a unique 3D experience for viewing and analyzing data.
-
-After complicated license setup (it is not possible to simply try the trial version, it is necessary to apply for a time-limited license key), we are greeted by a small start dialog captured in Figure \ref{fig:geomedia_startup}, where we can create our own GeoWorkspace file or open an existing one.
-
-\vspace{0.3cm}
-\begin{figure}[hbt!] 
-\begin{center}
-\includegraphics[width=17cm]{../pictures/geomedia_startup.png} 
-\caption[GeoMedia Advantage 2020: startup dialog]{GeoMedia Advantage 2020: startup dialog (Source: Personal collection)}
-\label{fig:geomedia_startup}
-\end{center}
-\end{figure}
-
-\noindent Fortunately, the software provides two examples of GeoWorkspaces which give a user at least a little idea of how it all works. However, if we want to add our own data, it is very user-unfriendly and the author managed to do it after half an hour of intensive efforts.
-
-Any external data we want to add to the software has a character of Warehouses. For example, to be able to display shapefiles (but also other formats), a user has to first define a Warehouse Configuration File. It consists of a data server definition (in the case of ArcView shapefile), a working folder with data and a coordinate system definition, see Figure \ref{fig:define_config_geomedia}. GeoMedia, like GRASS, also requires the definition of CRS right at the beginning and provides detailed settings for this purpose.
-
-\vspace{0.3cm}
-\begin{figure}[hbt!] 
-\begin{center}
-\includegraphics[width=13cm]{../pictures/define_config_geomedia.png} 
-\caption[GeoMedia Advantage 2020: Define Warehouse Configuration File dialog]{GeoMedia Advantage 2020: Define Warehouse Configuration File dialog (Source: Personal collection)}
-\label{fig:define_config_geomedia}
-\end{center}
-\end{figure}
-
-\noindent In the next step it is needful to connect this configuration file. Once it is connected we can manipulate with data in a map window as with legend entries. Each GeoWorkspace file can have multiple Warehouses with different coordinate systems attached. In the map window, an On the fly transformation takes place according to the coordinate system of the map window, which is set under the term Location.
-
-The software does not provide any help, so the user is completely clueless and forced to search the Internet. From a learning point of view, this software is definitely the most difficult to understand from the three selected commercial software. However, we can perceive a certain similarity with GRASS, especially in the setting of the coordinate system, which is also very important from the point of view of GeoMedia software. However, the map window supports the On the fly transformation, which is a significant difference from GRASS GIS.
-
-\newpage
-\vspace*{-1cm}
-\bigskip
-
-\noindent \textbf {MapInfo Professional 2019}
-
-\noindent This commercial GIS software is developed by the American company Pitney Bowes, in the Czech Republic the exclusive provider is CS Map. As the name suggests, MapInfo is very strong in geodata visualization. it offers functionalities for doing modern cartography - several prepared map layouts, advanced labelling, accessing symbology etc. However, some analytical functions e. g. focused on LiDAR and remote sensing are missing.
-
-When we run the software, we are redirected to the startup screen, which atypically occupies the size of the entire computer screen. The startup provides links to new version news or links to videos on YouTube that can help first-time users. In the upper right part of the startup screen it is possible to run help, which has the character of a separate desktop application. In the left part there is a simple bar allowing to choose a workspace we want to work in. We can open an empty workspace, sample workspace with a map of Washington DC or choose another previously saved workspace in the directory path. If we run the software again, the Open Last Saved Session option will be added to the startup screen.
-
-\vspace{0.3cm}
-\begin{figure}[hbt!] 
-\begin{center}
-\includegraphics[width=16cm]{../pictures/map_info_startup_screen.PNG} 
-\caption[MapInfo Professional 2019 startup dialog]{MapInfo Professional 2019 startup dialog (Source: Personal collection)}
-\label{fig:map_info_startup_screen}
-\end{center}
-\end{figure}
-
-\noindent As in ArcGIS Pro, the main component is the Map, which has one coordinate system defined. Data import is somewhat non-intuitive and must be demonstrated through the Open Table icon. When importing, a new file of company's own geodata format * .tab is created. We can define new projection or keep the original one. Coordinate system of the Map can be changed through Map Options as shown on Figure \ref{fig:map_info_startup_projection}. 
-
-\vspace{0.3cm}
-\begin{figure}[hbt!] 
-\begin{center}
-\includegraphics[width=16cm]{../pictures/map_info.PNG} 
-\caption[Map-level coordinate system settings in MapInfo Professional 2019]{Map-level coordinate system settings in MapInfo Professional 2019 (Source: Personal collection)}
-\label{fig:map_info_startup_projection}
-\end{center}
-\end{figure}
-
-\noindent However, at first glance it is not clear in which coordinate system the layers are, more precisely whether we made On the fly transformation or data transformation. After a longer examination, it is clear that we transformed MapInfo *.tab file. The coordinate system is set to the map level (not layer level) and takes over the system of the first map layer added. 
-
-\newpage
-\vspace*{-1cm}
-\subsubsection{Analysis of selected open-source software}
-
-\noindent On further rows four open-source software (QGIS 3, gvSIG, ILWIS, SAGA GIS) are tested and analyzed in detail from the point of view of the startup mechanism with an emphasis on finding out what elements they use directly in the software to improve the first-time user experience. In the next chapter, the results of these analyzes are summarized in tables.
-
-\bigskip
-
-\noindent \textbf {QGIS 3.14}
-
-\noindent This software is created similarly to GRASS GIS under the auspices of OSGeo. The big change from QGIS 2 is that it includes native support for 3D visualizations. The advantage is also the possibility of using and creating tailor-made plugins. QGIS also allows the use of analytical functions from GRASS, SAGA GIS software and the GDAL library. 
-
-At the first start, Welcome to QGIS window appears, in which we can link to the QGIS website and check the news in the given version. The window runs in the default language of the operating system.
-
-\vspace{0.3cm}
-\begin{figure}[hbt!] 
-\begin{center}
-\includegraphics[width=8cm]{../pictures/qgis_startup_window.JPG} 
-\caption[Welcome to QGIS 3.14 window]{Welcome to QGIS 3.14 window (Source: Personal collection)}
-\label{fig:qgis_startup_window}
-\end{center}
-\end{figure}
-
-\noindent After this introduction, we are redirected to the main software window (Fig. \ref{fig:qgis_first_window})  informing about community events and significant improvements that have taken place. Here we can choose an empty project template or we may open sample datasets (North Carolina, South Dakota, Alaska) provided along with instalation.
-
-In QGIS 3, we distinguish between the layer's and project's CRS. It is worth mentioning that QGIS supports about 2700 known coordinate systems, whose definitions are stored in the SQLite database installed together with QGIS. The empty project has always global default projection EPSG: 4326 - WGS 84.
-
-\vspace{0.3cm}
-\begin{figure}[hbt!] 
-\begin{center}
-\includegraphics[width=17cm]{../pictures/qgis_first_window.JPG} 
-\caption[The main software window after first opening QGIS 3.14]{The main software window after first opening QGIS 3.14 (Source: Personal collection)}
-\label{fig:qgis_first_window}
-\end{center}
-\end{figure}
-
-\noindent In QGIS, On-the-fly transformation is enabled by default, meaning that whenever you use layers with different coordinate systems QGIS transparently reprojects them to the project CRS. When importing the first layer (in this case US tracts in ESRI: 102003 system), the dialog box shown in Fig. \ref{fig:qgis_transformation} specifies what type of transformation to perform when changing the project CRS. These Datum transformations are then listed in Project Properties - CRS settings (Fig. \ref{fig:qgis_trans}). It is important to note that the first layer added defines the coordinate system of the project. In our case, it was changed to the US Contiguous Albers Equal Area Conic system. In the dialog \ref{fig:qgis_trans} we can set the Predefined coordinate system, which is related to the project, not to the layer.
-
-Whenever a more accurate transformation is available, but is not currently usable, QGIS 3 shows an informative warning message (see Fig. \ref{fig:qgis_warning_window}) advising to use more accurate transformation. Those messages appear quite often in a variety of situations, which can definitely help new as well as experienced QGIS users.
-
-\begin{figure}[hbt!] 
-\begin{center}
-\includegraphics[width=17cm]{../pictures/qgis_warning_window.JPG} 
-\caption[Informative warning message  in QGIS 3.14]{Informative warning message  in QGIS 3.14 (Source: Personal collection)}
-\label{fig:qgis_warning_window}
-\end{center}
-\end{figure}
-
-\begin{figure}[hbt!] 
-\begin{center}
-\includegraphics[width=14cm]{../pictures/qgis_transformation.JPG} 
-\caption[Select the type of transformation in QGIS 3.14]{Select the type of transformation in QGIS 3.14 (Source: Personal collection)}
-\label{fig:qgis_transformation}
-\end{center}
-\end{figure}
-
-\begin{figure}[hbt!] 
-\begin{center}
-\includegraphics[width=14cm]{../pictures/qgis_trans.JPG} 
-\caption[Predefined CRS and Datum Transformations in QGIS 3.14]{Predefined CRS and Datum Transformations in QGIS 3.14 (Source: Personal collection)}
-\label{fig:qgis_trans}
-\end{center}
-\end{figure}
-
-
-\newpage
-\vspace*{-1cm} 
-\bigskip
-
-\noindent \textbf {gvSIG 2.5.0}
-
-\noindent Here we will describe the startup mechanism of another open-source software created under the OSGeo organization. gvSIG can work with common vector and raster data, integrates files and databases as well as remote data through OGC standards. It is developed in Java and, like QGIS, includes a plugin system which allows to easily extend the software capabilities and develop tailor-made solutions.
-
-Software is designed very simply. It does not have a startup window, nor does it support any first-time mode. When started, an empty map window will open. The work is saved in a project with the extension * .qvsproj, which can then be started through the associated icon. If we do not start the software using the project's association icon, it is reopened by default with a blank map. Adding layers is also intuitive. It is possible to add multiple layers in different coordinate systems, the software recognizes the EPSG codes. The data still retains its original coordinate system, however, map layers are rendered in the WGS 84 (EPSG:4326) using On the fly transformation, see Fig. \ref{fig:gvSIG_coords}.
-
-\vspace{0.3cm}
-\begin{figure}[hbt!] 
-\begin{center}
-\includegraphics[width=17cm]{../pictures/gvSIG_coords.PNG} 
-\caption[Correct display of layers with different coordinate system in gvSIG 2.5.0]{Correct display of layers with different coordinate system in gvSIG 2.5.0 (Source: Personal collection)}
-\label{fig:gvSIG_coords}
-\end{center}
-\end{figure}
-
-\newpage
-\vspace*{-1cm} 
-\bigskip
-\noindent \textbf {ILWIS 3.3 (Integrated Land and Water Information System)}
-
-\noindent The strong point of this system developed at University of Twente in the Netherlands has always been remote sensing and hydrological flow operations.
-
-The software starts without a startup window and does not have features enhancing first-time user experience. On the left there is a section with several tabs: Operation-Tree, Navigator and Finder. ILWIS seems to be very similar to GRASS GIS. Operation-Tree and Finder are defacto the Modules tab in GRASS divided into two sub-tabs.  The data is similarly to GRASS stored in the home directory here called Data, which is taken as the default when importing or creating data. The content of this folder is in special formats that ILWIS understands, see Figure \ref{fig:ilwis_uvodni_okno}. 
-
-The navigator has a tree structure like the GRASS Data Catalog and represents the entire directory structure, not just a home Data directory. ILWIS does not have its own native file to save the projects or workspaces.
-
-\vspace{0.3cm}
-\begin{figure}[hbt!] 
-\begin{center}
-\includegraphics[width=17cm]{../pictures/ilwis_uvodni_okno.png} 
-\caption[The main software window after reopening ILWIS 3.3]{The main software window after reopening ILWIS 3.3 (Source: Personal collection)}
-\label{fig:ilwis_uvodni_okno}
-\end{center}
-\end{figure}
-
-\noindent The display of layers with different coordinate system is tested as well. Importing data in the form of a shapefile is somewhat unintuitive here. If we want to perform an import we might go to the Operation-Tree $->$ Import/Export $->$ Import Map, however we encounter the problem that the software does not know the shapefile format. Therefore, the second option can be found in the top bar File $->$ Import. Here we select the ESRI shapefile and it is necessary to expand the default output so that the imported file is saved as an ILWIS object with the * .ioc extension. If we do not do this, only the tables will be imported, no maps.
-
-It is interesting how the software approaches coordinate systems. When importing the layer called districts, the S-JTSK Krovak East North system is converted to the Unknown. In case of US tracts, the US Contiguous Albers Equal Area Conic system is converted to the LatLon system. Therefore, the software does not carry information about a specific coordinate system, it only cares about boundaries of the map. When displaying multiple layers with different coordinate systems in one map window, no On the fly transformation is performed. The system gets confused and the added layer is not displayed even after clicking on the ''Zoom to Layer'' function. There is no need to save the software, after opening it reflects the current state of the Data folder.
-
-\vspace{0.3cm}
-\begin{figure}[hbt!] 
-\begin{center}
-\includegraphics[width=17cm]{../pictures/ilwis_pridani_mapy.png} 
-\caption[Unknown coordinate system properties of district layer in ILWIS 3.3]{Unknown coordinate system properties of district layer in ILWIS 3.3 (Source: Personal collection)}
-\label{fig:ilwis_pridani_mapy}
-\end{center}
-\end{figure}
-
-\bigskip
-
-\noindent \textbf {SAGA GIS 2.3 (System for Automated Geoscientific Analyses)}
-
-\noindent SAGA GIS is a Free Open Source Software (FOSS) offering a comprehensive, growing set of higher-level geoscientific methods. It is one of the most favorite software for remote sensing needs because of its rich library grid, imagery and terrain processing modules.
-
-This software is blank the first time it is run. On the left there is a window with the Tools, Data and Maps tabs, which are similar to the Modules, Data, Layers tabs in GRASS GIS 7.8. The Data and Maps tabs are further divided into the Tree and Thumbnails subtabs. The tree is divided according to the shapes of geometric objects (point, line, polygon ...). 
-
-The idea is different from GRASS GIS. The directory structure of added layers is always displayed for the current layer in the lower left window of Data Sources in the File System tab. So we do not have a specific folder in which we work from the beginning. We can add layers to the tree structure and the whole project will be created only when we save the settings to a SAGA GIS project file.
-
-In the Maps tab, multiple layers can be displayed on top of each other or a new map map window can be created for each layer, which is a default option. However, there is no On the fly transformation. It means that layers with different coordinate systems may be displayed at the level of one map.  As we can see in Figure \ref{fig:saga_gis_cele}, the Czech Republic appears next to the American continent, as the system assumes adding layers with the same coordinate system to the map.
-
-After the second start of SAGA GIS, a small selection dialog box will appear. We can run a blank page, the latest software state, or the last running projects sorted from newest to oldest (Figure \ref{fig:saga_startup}).
-
-\vspace{0.3cm}
-\begin{figure}[hbt!] 
-\begin{center}
-\includegraphics[width=6cm]{../pictures/saga_startup.png} 
-\caption[Saga GIS 2.3 startup dialog]{Saga GIS 2.3 startup dialog (Source: Personal collection)}
-\label{fig:saga_startup}
-\end{center}
-\end{figure}
-
-\vspace*{-1cm} 
-\subsubsection{Summary}
-\label{subsec:startup_concepts_summary}
-
-The summary corresponding to the questions asked at the beginning of this chapter is contained in the Figures \ref{fig:commercial_software} and \ref{fig:open-source_software}. In the cross-section of all selected GIS software, we can notice that the data hierarchy is quite different. The truth is that two world-famous representatives of GIS software - ArcGIS Pro and QGIS 3 -  have similar data organization into projects. However, in the data hierarchy of the other two commercial software GeoMedia and MapInfo, the term `` project '' does not appear at all. 
-
-\newpage
-\begin{figure}[hbt!] 
-\begin{center}
-\includegraphics[width=17cm]{../pictures/saga_gis_cele.png} 
-\caption[Incorrect display of layers with different coordinate system in SAGA GIS 2.3]{Incorrect display of layers with different coordinate system in SAGA GIS 2.3 (Source: Personal collection)}
-\label{fig:saga_gis_cele}
-\end{center}
-\end{figure}
-
-\noindent It is therefore good to realize that we may consider this name as a standard for data organization, especially for open-source software, but after looking at commercial software we find out that data organization across software is surprisingly different not only from a technical point of view, but also in terms of different names.
-
-Startup screens appear in some form in all selected commercial software. For GeoMedia, it is a small dialog box whose purpose is purely organizational - choose the GeoWorkspace you will work in. For ArcGIS Pro and MapInfo, startup screens play a more important role. It tries to impress users with both modern design and the services they offer. Similarly, QGIS tries to make contact with the user from the beginning - it refers to news and displays Info Bars (see Fig. \ref{fig:qgis_warning_window}).
-
-It is surprising how much of a difference there can be between commercial GIS software in terms of efforts to enhance the first-time user experience. With the GeoMedia software, the author did not manage to record any effort at all, on the contrary, MapInfo is very generous to its user from the very beginning and uses modern technologies in startup screen, such as videos on YouTube. Despite the fact that in some of selected software there is a certain effort to better interact with the initial user, none of them contains any first run wizard incorporated directly in the main software window (as offered by Zoner Photo Studio X, see the next chapter \ref{sec:other_software}). But this is not necessarily wrong. Whether any help at all makes sense and will not be rather counterproductive strongly depends on the complexity of data organization in a particular software. For example, with gvSIG software, there is no startup screen or any other helpful explanation, although it can be assumed that the new user will find his way around without any problems. GeoMedia also lacks any interactive features, however, as data organization is more complex to understand, it is likely to be much more inconvenient start for users.
-
-As known, GRASS GIS went a different way from the beginning. Not only in data organization. The difference between GRASS and other GIS software goes far beyond the startup mechanism or data organization. Let's remember the unique Unix philosophy, where the software consists of a collection of small applications called modules, or the ability to call these modules from the command line. It is therefore interesting to note that the comparison of GRASS GIS with other GIS software does not provide significant inspiration for other implementations associated with the improvement of the startup mechanism, which requires (and probably deserves) a completely unique solution whose roots were laid already in the summer of 2020 by GSoC implementations. However, the comparison offers an interesting look at this topic, which is not talked about much, but certainly has a big impact on the whole software. The evidence may be, after all,  user complaints about the problematic startup screen in versions before GSoC.
-
-We do not have to look for inspiration only in GIS software. How the software interacts with the first-time user is a completely general thing that plays a role in all types of software. In the next chapter, the author highlights several interesting cases of startup mechanisms involving user interaction. These are software that the author either uses herself or received a tip in the Quesion 4 from the second part of the survey number 1.
-
-\vspace{0.3cm}
-\begin{figure}[hbt!] 
-\begin{center}
-\includegraphics[width=15cm]{../pictures/commercial_software.pdf}
-\caption[Analysis of selected commercial software]{Analysis of selected commercial software (Source: Personal collection)}
-\label{fig:commercial_software}
-\end{center}
-\end{figure}
-
-\vspace{0.3cm}
-\begin{figure}[hbt!] 
-\begin{center}
-\includegraphics[width=15cm]{../pictures/open-source_software.pdf} 
-\caption[Analysis of selected open-source software and GRASS GIS]{Analysis of selected open-source software and GRASS GIS (Source: Personal collection)}
-\label{fig:open-source_software}
-\end{center}
-\end{figure}
-
-
-\newpage
-\vspace*{-1cm} 
-\subsection{Interesting solutions from other software}
-\label{sec:other_software}
-
-\noindent \textit{\color{red}Dokončit!}
-
-\noindent \textbf{Zoner Photo Studio X} \\
-
-\noindent After the initial login and launching the main software window, a short first run wizard will appear and can be skipped. The guide consists of four parts. The first section introduces the main tabs on the left side of the software window called the Navigator and also explains the Catalog tab, which provides quick access to photos. The following are two pages of a guide describing photo thumbnails and zooming. The last page of the wizard lists the right toolbar and the three individual modules - Manager, Develop and Editor. The main software components described in the wizard are always marked with a blue frame and the individual information windows are assigned to a particular part by arrows. The wizard is not only at the beginning, but also when using the above-mentioned modules for the first time.
-
-Images are managed in the Catalog, which has a tree structure. We edit the image, save it, and if we turn off the Zoner software and run it a second time, it starts up in the last opened file. If the last used file is deleted, the software is launched in the Manager tab in the last opened folder, where another image can be selected for editing or we can simply click to another folder and open or create another image. There is a native image format of Zoner Photo Studio X with extension * .zps, however, firstly, traditional formats such as * .jpg, * .png, * .tif, * .gif etc. are offered to us.
-
-\vspace{0.3cm}
-\begin{figure}[hbt!] 
-\begin{center}
-\includegraphics[width=15cm]{../pictures/zoner.png} 
-\caption[First run wizard in Zoner Photo Studio X]{First run wizard in Zoner Photo Studio X}
-\label{fig:zoner}
-\end{center}
-\end{figure}
-
-\newpage
-\vspace*{-1cm}
-\subsection{Summary}
-
 
 %% -------<<< Chapter 4: Usability testing methods >>>-------\\%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
+\vspace*{-1cm}
+\fancyhead[RE, RO]{\fancyplain{}{\small \sl{Enhancing the first-time user experience in other software}}}
+\section{Enhancing the first-time user experience in other software}
+\label{sec:usability_testing}
+
+sem bude chtít něco šoupnout
+
+-- QGIS infobars
+
+-- Zoner Photo Studio X First Run Wizard
+
+--?
+
 \newpage
 \vspace*{-1cm}
 \fancyhead[RE, RO]{\fancyplain{}{\small \sl{Usability testing methods}}}
 \section{Usability testing methods}
 \label{sec:usability_testing}
 
-
-\noindent As Ana Amélia describes in her work [], the concept of usability is related to the field of Human-Computer-Interaction (HCI). Here we can find several definitions of what usability means. In the case of websites and software applications, usability refers to whether or not users can achieve specific goals with efficiency, effectiveness, and satisfaction (Marcie Dishman). Booth (1989) mentions four aspects of usability testing: usefulness, effectiveness (ease for use), learnability, and attitude.
-
-As explained by https://www.hotjar.com/usability-testing/methods/, the main goal of usability testing is to test and validate the product hypothesis and specific design decisions using the end-user perspective. We can come across various options for dividing usability testing methods. The most recently used division, for example, at https://www.hotjar.com/usability-testing/methods/, https://usabilitygeek.com/remote-usability-testing-best-practices/ is as follows:
-
-\begin{itemize}
-\item	Moderated vs. unmoderated
-\item	Remote vs. in person
-\item	Explorative vs. assessment vs. comparative
-\end{itemize}
-
-\noindent A moderated testing is done with direct supervision. It investigates the reasoning behind user behavior which allows a researcher to dig deeper into any pain points and usability issues. To test participants, answer their queries, and ask follow-up questions takes about 1 – 2 hours, and the average number of participants is 3 – 5 (https://www.playbookux.com/10-popular-usability-testing-methods/).
-
-Conversely, an unmoderated test is not supervised. The participant is usually in their own home using their own devices to test software usability. The problem is that an average tester might not understand the complexities of a product which can consequently cause the testing in a different way than was originally intended. It takes about 20 minutes and the average number of participants is 5- 10 (https://www.playbookux.com/10-popular-usability-testing-methods/).
-
-In-person testing provides very valuable data since researchers can also watch and analyze participants’ emotions.
-Remote testing is done over the internet or by phone and doesn’t go as deep into a participant’s reasoning. However, it allows researchers to test large numbers of people in different geographical areas using fewer resources.
-
-\noindent Explorative tests are open-ended, participants are asked to give opinions, think about new features. Assessment research tests a user's interaction with the product and how well they are able to use it. It's used to evaluate the product's general functionality. Comparative research methods involve asking users to choose which of two solutions they would prefer.
-
-\noindent User testing methods are very nicely captured on the following picture \ref{fig:usability_testing_methods}:
+\noindent As Ana Amélia describes in her work \cite{amelia}, the concept of usability is related to the field of Human-Computer-Interaction (HCI). Here we can find several definitions of what usability means. In the case of websites and software applications, usability refers to whether or not users can achieve specific goals with efficiency, effectiveness, and satisfaction \cite{dishman}. As pointed out by \cite{hotjar}, the main goal of usability testing is to test and validate the product hypothesis and specific design decisions using the end-user perspective. We can come across various options for dividing usability testing methods. One used division\footnote{\url{https://www.hotjar.com/usability-testing/methods/}} is nicely captured in Figure \ref{fig:usability_testing_methods}.
 
 \vspace{0.3cm}
 \begin{figure}[hbt!] 
 \begin{center}
-\includegraphics[width=17cm]{../pictures/usability_testing_methods.png} 
-\caption[Usability testing methods]{Usability testing methods (source: https://www.hotjar.com/usability-testing/methods/)}
+\includegraphics[width=13cm]{../pictures/usability_testing_methods.png} 
+\caption[Usability testing methods]{Usability testing methods (source: \cite{hotjar})}
 \label{fig:usability_testing_methods}
 \end{center}
 \end{figure}
 
-\noindent It is essential to emphasize that usability testing, using an appropriate method, is a valuable investment in a software product.
-
-\subsection{Moderated + in-person usability testing}
-Those tests are the best in terms of collecting depth, comprehensive information.
-\smallskip
-
 \noindent \textbf {Guerrilla testing}
 
-\noindent This is the simplest form of usability test best in the early stages of the product development process. The people are asked to perform a quick usability test (maximum 10 minutes), often in exchange for a small gift. Test subjects are chosen at random from a public place, so that they may have no history with a product. This is the reason why Guerrilla testing is not suitable for testing products that require having special skills.
+\noindent This is the simplest form of Moderated + in-person usability test best in the early stages of the product development process. The people are asked to perform a quick usability test, often in exchange for a small gift. Test subjects are chosen at random from a public place, so that they may have no history with a product. This is the reason why Guerrilla testing is not suitable for testing products that require having special skills.
 
 \smallskip
 
 \noindent \textbf {Lab usability testing}
 
-\noindent This type of usability research usually takes place inside a controlled environment that is different from the user’s real environment.
-Lab usability testing works best if we need very comprehensive and detailed information about how the user works with the program and what problems they encounter. Participants perform tasks and the researcher monitors them and asks questions. It is important that the moderator is trained and able to help participants, but at the same time, he should let them think and not tell them exactly what to do. The moderator should also be able to read human emotions. After testing, it is also crucial to discuss and analyze the specific problems the participants have faced.
-
-\subsection{Moderated + remote usability testing}
-Moderated and remote usability tests are performed via a computer or phone and require a trained moderator. They are good for picking from a wide range of participants while still taking advantage of a moderator's skills and ability to dive deep.
+\noindent This type of Moderated + in-person usability research usually takes place inside a controlled environment that is different from the user’s real environment. Lab usability testing works best if we need very comprehensive and detailed information about how the user works with the program and what problems they encounter. Participants perform tasks and the researcher monitors them and asks questions. It is important that the moderator is trained and able to help participants, but at the same time, he should let them think and not tell them exactly what to do. After testing, it is also crucial to discuss and analyze the specific problems the participants have faced.
 
 \smallskip
 
-\noindent \textbf {Phone interviews}
+\noindent \textbf {Phone interviews and Card sorting}
 
-\noindent In a phone usability test, a moderator verbally instructs participants to complete tasks on their computer and collects feedback while the user interaction is recorded remotely. This is a very good option to test users all over the world.
-
-\smallskip
-
-\noindent \textbf {Card sorting}
-
-\noindent Card sorting is a simple method that involves placing concepts or features on virtual cards and allowing participants to manipulate the cards into groups and categories. After they sort the cards, they explain their logic to a moderator. It is used for better organizing content and features in a user interface.
-
-\subsection {Unmoderated + in-person}
-Unmoderated in-person tests offer many of the benefits of testing in a controlled atmosphere and reduce the possibility that a researcher could influence participants with their questions.
+\noindent In a phone usability test, a moderator verbally instructs participants to complete tasks on their computer and collects feedback while the user interaction is recorded remotely. This is a very good option to test users all over the world. Card sorting is a simple method that involves placing concepts or features on virtual cards and allowing participants to manipulate the cards into groups and categories. After they sort the cards, they explain their logic to a moderator.
 
 \smallskip
 
 \noindent \textbf {Contextual inquiry}
 
-\noindent Sometimes also called the Interview/Observation is the method especially suitable for obtaining information about the user's habits and preferences or to evaluate whether the user is satisfied with the product. A researcher first asks a series of questions about the experience with the product and then gives the user a task to work on independently. A researcher will not provide any opinions and can only interfere if the participant gets stuck on something. Otherwise, an observer remains silent, focuses mainly on the emotions and behavior of the user, and writes notes which will be then summarized in a detailed test report.
+\noindent Sometimes also called the Interview/Observation is the Unmoderated + in-person usability method especially suitable for obtaining information about the user's habits and preferences or to evaluate whether the user is satisfied with the product. A researcher first asks a series of questions about the experience with the product and then gives the user a task to work on independently. A researcher will not provide any opinions and can only interfere if the participant gets stuck on something. Otherwise, an observer remains silent, focuses mainly on the emotions and behavior of the user, and writes notes which will be then summarized in a detailed test report.
 
 \smallskip
 
 \noindent \textbf {Eye-tracking}
 
-\noindent This special method allows scientists to observe the movements of the user's eyes using a special device located on the monitor, and to create heatmaps (where the user most often looked). The disadvantage of this method is that it requires a lab with special equipment and software.
-
-\subsection{Unmoderated + remote usability testing}
-
-Test participants are asked to complete tasks alone in their environment using their own devices. It does lead to the natural participant's behavior, however, this type of testing is less detailed. As a researcher can obtain a larger amount of data, they could be able to have more confidence in a decision concerning their product. The main point is that a researcher needs to ensure that every test instruction is clear. Unclear tasks can cause results that miss the right objectives. It is suitable for validation of a particular question or hypothesis, however, it is not recommended to be used as a first usability testing method since it does not go deep into the user’s thinking.
+\noindent This special method allows scientists to observe the movements of the user's eyes using a special device located on the monitor, and to create heatmaps (where the user most often looked). Eye-tracking requires a lab with special equipment and software.
 
 \smallskip
 
-\noindent \textbf {Session recordings}
+\noindent \textbf {Unmoderated + remote usability testing methods}
 
-\noindent Session recordings use software to record the actions that anonymized people take on a website/software such as mouse clicks, movement, and scrolling. It helps to understand what content/features are the most interesting for the users as well as what interaction problems users encounter while they interact with the product.
-\smallskip
-
-\noindent \textbf {Online testing tools and platforms}
-
-\noindent There are a variety of online testing tools that allow one to remotely observe user behavior. The most commonly used online testing tools are a 5-second test and unmoderated card sorting. In the 5-second test, participants have five seconds to look at a screenshot of the page before they answer the question. It is an easy way how to collect qualitative data about people’s first impressions and reactions. Card sorting, described above, can also be conducted in an unmoderated and remote manner if a researcher leaves out the opportunity for follow-up questions.
-
+\noindent Test participants are asked to complete tasks alone in their environment using their own devices. It does lead to the natural participant's behavior, however, this type of testing is less detailed. The main point is that a researcher needs to ensure that every test instruction is clear. Unclear tasks can cause results that miss the right objectives. It is not recommended to be used as a first usability testing method since it does not go deep into the user’s thinking. The most commonly used online testing tools are a 5-second test and unmoderated card sorting. In the 5-second test, participants have five seconds to look at a screenshot of the page before they answer the question. Card sorting, described above, can also be conducted in an unmoderated and remote manner if a researcher leaves out the opportunity for follow-up questions.
 
 %% -------<<< Chapter 5: Questionnaires >>>-------\\%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \newpage
@@ -1052,27 +644,25 @@ Test participants are asked to complete tasks alone in their environment using t
 \section{Questionnaires}
 \label{sec:questionnaires}
 
-\noindent As the reader of this work probably realized surveys (questionnaires) were not mentioned among unmoderated + remote usability testing. The reason is that questionnaires are not usually considered as usability testing because it does not require to directly test product functionality. However, in some literature [6 usability, Ana Amélia], questionnaires are also included in usability testing methods. In Ana Amélia's work, for example, the survey includes both - interview and questionnaire techniques. The questionnaire refers to a technique that can fall under the so-called expert/heuristic method, which works with experienced people who identify problems a less experienced user might encounter. As [6 usability] writes, questionnaires are not as numerically grounded and precise as other forms or testing, but they can provide important feedback from the user group in a short time. They can take the form of specific questions about the software and its future development.
+\noindent As the reader of this work probably realized surveys (questionnaires) were not mentioned among unmoderated + remote usability testing. The reason is that questionnaires are not usually considered as usability testing because it does not require to directly test product functionality. However, in some literature \cite{amelia} \cite{sixusability}, questionnaires are also included in usability testing methods. In Ana Amélia's work, for example, the survey includes both - interview and questionnaire techniques. The questionnaire refers to a technique that can fall under the so-called expert/heuristic method, which works with experienced people who identify problems a less experienced user might encounter. As [6 usability] writes, questionnaires are not as numerically grounded and precise as other forms or testing, but they can provide important feedback from the user group in a short time. They can take the form of specific questions about the software and its future development.
 
 Questionnaires must, above all, be effective. Therefore, in this new field very different from the field of programming, it was necessary to acquire new knowledge that will help avoid beginner's mistakes. How the surveys were conceived and what they would look like eventually crystallized by combining two different information flows.
 
-The first flow is based on what type of questionnaire is usually used if we want to examine the software usability. For this purpose, we can use the widely used standard questionnaire known as the System Usability Scale (SUS). This questionnaire having 10 five-point items with alternating positive or negative tone was introduced by Brooke in 1996 [John Brooke]. The standard version is shown in Figure \ref{fig:sus}. The aim of this work is to obtain more detailed responses from GRASS users related to a specific topic, so using this questionnaire alone does not make much sense in this work. However, the Slider questions (see \ref{sec:slider}) are technically realized similarly as in SUS - the interviewer does not evaluate questions but statements. It can often happen that the user would not use the queried functionality, but they assume that the others do, which results in a positive answer. Statements encourage the user to better express their own opinions.
+The first flow is based on what type of questionnaire is usually used if we want to examine the software usability. For this purpose, we can use the widely used standard questionnaire known as the System Usability Scale (SUS). This questionnaire having 10 five-point items with alternating positive or negative tone was introduced by Brooke in 1996 \cite{sus}. The standard version is shown in Figure \ref{fig:sus}. The aim of this work is to obtain more detailed responses from GRASS users related to a specific topic, so using this questionnaire alone does not make much sense in this work. However, the Slider questions (see \ref{sec:slider}) are technically realized similarly as in SUS - the interviewer does not evaluate questions but statements. It can often happen that the user would not use the queried functionality, but they assume that the others do, which results in a positive answer. Statements encourage the user to better express their own opinions.
 
-The second source that inspired the author in composing the surveys was a user survey workshop within the All Things Open platform in which the author participated. The visited video conference \footnote{\url{https://2020.allthingsopen.org/sessions/user-experience-secrets-to-better-surveys-happier-users/}} led by professionals Dan Zola and Kerry Thompson from SWAY UX set out a few key rules for creating a questionnaire from which to get as much information as possible.
+The second source that inspired the author in composing the surveys was a user survey workshop within the All Things Open platform in which the author participated. The visited video conference\footnote{\url{https://2020.allthingsopen.org/sessions/user-experience-secrets-to-better-surveys-happier-users/}} led by professionals Dan Zola and Kerry Thompson from SWAY UX set out a few key rules for creating a questionnaire. According to the lecturers, the questionnaire helps with the evaluation of customer satisfaction as well as understanding who are users and what are their pain points and priorities. It can be conducted not only at the start of the new project but basically at any time the survey administrator (developer) needs user input.
 
 \vspace{0.3cm}
 \begin{figure}[hbt!] 
 \begin{center}
 \includegraphics[width=14cm]{../pictures/sus.png} 
-\caption[System Usability Scale Questionnaire (SUS) ]{System Usability Scale Questionnaire (SUS) (source: https://www.bentley.edu/centers/user-experience-center/what-every-client-should-know-about-sus-scores SUS - A quick and dirty usability scale John Brooke)}
+\caption[System Usability Scale Questionnaire (SUS) ]{System Usability Scale Questionnaire (SUS) (Source: \cite{sus})}
 \label{fig:sus}
 \end{center}
 \end{figure}
 
 \newpage
-\noindent According to the lecturers, the user survey helps with the evaluation of customer satisfaction as well as understanding who are users and what are their pain points and priorities. It can be conducted not only at the start of the new project but basically at any time the survey administrator (developer) needs user input.
-
-In order to understand what makes up a good questionnaire, it is first necessary to clarify what constitutes a bad questionnaire. The workshop summarized the following 8 errors in particular:
+\noindent In order to understand what makes up a good questionnaire, it is first necessary to clarify what constitutes a bad questionnaire. The workshop summarized the following 8 errors in particular:
 
 \begin{itemize}
 \item Too many questions (max 10 questions)
@@ -1096,10 +686,8 @@ In order to understand what makes up a good questionnaire, it is first necessary
 \end{center}
 \end{figure}
 
-\noindent As mentioned at the beginning of the chapter, questionnaires are not usually considered as usability testing because it does not require to test product functionality. However, it would be very challenging (if not impossible) in our work to ensure users having both versions of GRASS GIS (version 7.8 and version 7.9 after GSoC) and perform usability testing in the form of Lab usability testing or Contextual inquiry methods. Therefore, it was finally decided to use questionnaires as the main testing method.
+\noindent As mentioned at the beginning of the chapter, questionnaires are not usually considered as usability testing because it does not require to test product functionality. However, it would be very challenging (if not impossible) in our work to ensure users having both versions of GRASS GIS (version 7.8 and version 7.9 after GSoC) and perform usability testing in the form of Lab usability testing or Contextual inquiry methods. \textbf{Therefore, it was finally decided to use questionnaires as the main testing method.}
 
-\newpage
-\vspace*{-1cm}
 \subsection{Types of questions}
 
 \noindent The author followed the advice to avoid rating scale questions. Instead, she used Slider and Ranking methods, which unfortunately are not offered by the free Google Forms service but only by the paid Survey Monkey (SM) service that was eventually used. The complete list of question types offered by the Survey Monkey platform can be seen in Figure \ref{fig:survey_monkey_options}. Those marked in green are used in surveys in this work. The following lines will shed light on the advantages of the types used and the procedure of processing them.
@@ -1129,8 +717,9 @@ In order to understand what makes up a good questionnaire, it is first necessary
 \end{figure}
 
 
-\smallskip
-\vspace*{-0.5cm}
+\newpage
+\vspace*{-1cm}
+\bigskip
 \noindent \textbf {Ranking}
 
 \noindent Ranking questions require the respondent to compare items to each other by placing them in order of preference. Although ranking answers usually have clear answers (the result cannot be an ambiguous answer somewhere in the middle as with the rating scale), it also has its disadvantages. It forces respondents to decide between items that they may perceive the same. It is also essential for this type of question to follow the general principle that the order of the individual options is generated randomly. Otherwise, items earlier in the list may be more likely to be ranked highest. A typical example of a Ranking question is provided in Figure \ref{fig:ranking_question}.
@@ -1159,8 +748,9 @@ In order to understand what makes up a good questionnaire, it is first necessary
 \end{center}
 \end{figure}
 
-\smallskip
-\vspace*{-0.5cm}
+\newpage
+\vspace*{-1cm}
+\bigskip
 \noindent \textbf {Multiple Choice}
 
 \noindent For this type of question, we also distinguish whether the respondent can choose just one option or may check more than one. In this work, ``One option'' variant is used (see Figure \ref{fig:multiple_choice_question}). The disadvantage of the Multiple Choice question is the fact that we give the respondent a fixed list of answer options, which can skew the answers. Therefore, the ``Other (please specify)'' variant is usually added as the last place, which allows the user to write their own answer. The analysis of a question providing the ``Other'' variant is more demanding and requires a similar approach as the Comment Box question since it has the character of an open-ended question. Therefore, the responses must first be organized into topics they deal with. If many people take the opportunity to write their own comments, it is likely that the responses to the question were not designed correctly. Then the assignment of open-ended responses to those originally set is more challenging and the telling value of responses is weakened.
@@ -1174,108 +764,59 @@ In order to understand what makes up a good questionnaire, it is first necessary
 \end{center}
 \end{figure}
 
-%% -------<<< Chapter 6: Statistical methods of survey analysis>>>-------\\%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\newpage
-\vspace*{-1cm}
-\fancyhead[RE, RO]{\fancyplain{}{\small \sl{Statistical methods of survey analysis}}}
-\section{Statistical methods of survey analysis}
+\subsection{Methods of questionnaire analysis}
 \label{sec:qstat}
 
-\noindent In this work, a statistical analysis of questions is performed, which uses the basic methods of Explanatory Data Analysis. Thanks to this analysis, we can discover patterns or anomalies that occur in the answers. This can then help us to draw the conclusions of the surveys. It is important to understand EDA as a process that does not have given rules, it only depends on the analyst which of the methods to use. As this work is purely about finding out the basic features and characteristics of a relatively small sample of answers, which counts a maximum of 52 respondents (the number of respondents in the first part of the first survey), we analyze data over a single variable/column from a dataset. Therefore, we use only basic methods such as histograms, boxplots, and probability density functions. Other EDA tools, for example, quantile-quantile (q-q) plots, scatter plots or correlation matrices detect relationships between two or more variables.
+\noindent In this work, a statistical analysis of questions is performed, which uses the basic methods of Explanatory Data Analysis. Thanks to this analysis, we can discover patterns or anomalies that occur and draw the conclusions of the surveys. It is important to understand EDA as a process that does not have given rules, it only depends on the analyst which of the methods to use. As this work is purely about finding out the basic features and characteristics of a relatively small sample of answers, which counts a maximum of 52 respondents (the number of respondents in the first part of the first survey), we analyze data over a single variable/column from a dataset. Therefore, we use only basic methods such as histograms, boxplots, and probability density functions. Other EDA tools, for example, quantile-quantile (q-q) plots, scatter plots or correlation matrices detect relationships between two or more variables. Recently, descriptive statistics have also been included in EDA, which provides us with a brief summary of the data in the sense of Mean, Standard Deviation, and 5 elements of the box-and-whisker plot (Minimum, Maximum, 25th percentile, median, and 75th percentile). Ranking and Slider questions are analyzed using R language using RStudio. Here the author has applied extensive experience with this program, especially with the Tidyverse library, which is the core of data analysis in R and itself contains several interesting packages. In this work, the \textit{dplyr} package is used for data manipulation. The visualization is made through the \textit{ggplot2} \footnote{\url{https://github.com/rstudio/cheatsheets/blob/master/data-visualization-2.1.pdf}} package. In addition to the R language, the Python language has become the giant of data analysis with its Pandas library in recent years.
 
-Ranking and Slider questions are analyzed using R language using RStudio. Here the author has applied extensive experience with this program, especially with the Tidyverse library, which is the core of data analysis in R and itself contains several interesting packages. In this work, the \textit{dplyr} package is used for data manipulation. The visualization is made through the \textit{ggplot2} \footnote{\url{https://github.com/rstudio/cheatsheets/blob/master/data-visualization-2.1.pdf}} package. In addition to the R language, the Python language has become the giant of data analysis with its Pandas library in recent years.
-
-\subsection{Descriptive statistics}
-
-Recently, descriptive statistics have also been included in EDA, which provides us with a brief summary of the data in the sense of Mean, Standard Deviation, and 5 elements of the box whisker plot (Minimum, Maximum, 25th percentile, median, and 75th percentile). The goal of descriptive statistics is to have a generalized view of data in order to prepare it for querying and visualizing in different ways.
-
-\smallskip
-\noindent \textbf{Arithmetic mean}
-\smallskip
-
-\noindent This characteristic belongs to the measures of central tendency. It is simply the sum of all measurements divided by the number of observations in the data set. The mean is not a robust measure, it is highly sensitive to changes in data values. Therefore, it is the best measure for symmetric distributions without outliers. Other types of averages include weighted mean, geometric mean, harmonic mean.
-
-\smallskip
-\noindent \textbf{Median}
-\smallskip
-
-\noindent The median is the middle value that separates the higher half from the lower half of the data set. It is sometimes also called 2-quantile. In the case of a discrete random variable, the median is a number that satisfies the equality $ P(X \leq m) \geq 0.5$ and $P(X \geq m) \geq 0.5$ . In the case of a continuous real one-dimensional random variable with probability density $f$ the following applies to the median:
-$$
-\int_{-\infty}^{m} f(x)\, \mathrm{d}x = 0.5.
-$$
-
-\noindent The median is a robust measure of central tendency. It means that is not very sensitive to changes in the data values. Therefore, it is useful for skewed distributions or data with outliers. Robust statistics in general are good for data drawn from a wide range of probability distributions, especially for distributions that are not normal.
-
-\smallskip
-\noindent \textbf{Quartiles}
-\smallskip
-
-\noindent In general, a kth percentile of a data set is a value that divides the data set into the lower kth percentile and the upper (1 - kth) percentile. It means that k\% of the observations fall at or below kth percentile. The first quartile (Q1) is the 25th percentile and can be defined as the median value of the lower half of the data set. Similarly, the third quantile (Q3) which is basically the 75th percentile is the median of the upper part of the data set. The interquartile range (IQR) is defined as the difference between those quartiles.
-
-\smallskip
-\noindent \textbf{Standard deviation}
-\smallskip
-
-\noindent The standard deviation is simply the square root of the variance which indicates the average deviation of each data value from the mean of a data set. The calculation of the variance of a data set requires comparing each data value to the mean. The math formula for calculating the variance is simple:
-
-$$
-\sigma = \sqrt{\frac{\displaystyle\sum_{i=1}^{n}(x_i - \mu)^2} {n}}
-$$
-
-\noindent where n is the size of the sample and $\mu$ is the arithmetic mean.
-
-The standard deviation provides the most commonly used measure of the spread of the underlying distribution of data. When comparing two distributions, the larger the standard deviation, the more dispersion the data set has (the data values differ more from the mean).
-
-
-\newpage
-\vspace*{-1cm}
-\subsection{Box-and-whisker plot}
+\bigskip
+\noindent \textbf{Box-and-whisker plot}
 
 \noindent This graphical method summarizes maximum and minimum values in data, the interquartile range, and the median. It is very practical since all of those statistics can be seen at a glance. The graphical representation of individual parts of the graph is captured in Figure \ref{fig:boxplot}. The central box is enclosed by two lines corresponding to Q1 and Q3. A line (or whisker) that extends from each edge of the box, goes to the farthest non-outlier point in the distribution. Outliers are points that fall more than 1.5 times the IQR from either edge of the box. Usually, they are plotted individually.
 
 \vspace{0.3cm}
 \begin{figure}[hbt!]
 \begin{center}
-\includegraphics[width=7cm]{../pictures/boxplot.png}
+\includegraphics[width=6.5cm]{../pictures/boxplot.png}
 \caption[Description of box-and-whisker plot (boxplot)]{Description of box-and-whisker plot (boxplot) (Source: https://medium.com/code-heroku/introduction-to-exploratory-data-analysis-eda-c0257f888676)}
 \label{fig:boxplot}
 \end{center}
 \end{figure}
 
-\noindent We can identify symmetry or skewness of a distribution from a boxplot. And if more than one boxplot is plotted on the same scale, we can visually compare the centers, the spreads, and the extreme values of different variables. Boxplots are very useful for both exploratory work and final presentation.
+\noindent We can identify symmetry or skewness of a distribution from a boxplot. And if more than one boxplot is plotted on the same scale, we can visually compare the centers, the spreads, and the extreme values of different variables.
 
-\subsection{Histogram vs. Bar Chart}
+\bigskip
+\noindent \textbf {Histogram vs. Bar Chart}
 
-\noindent A histogram is used when working with quantitative data. It shows the number of observations that lie in-between the range of values, which is known as a bin. Unlike a bar chart, individual columns touch. It indicates the underlying continuous nature of data. Categorical features cannot be visualized through histograms. Instead, we can use bar charts. In this type of graph, elements are taken as individual entities, so we can e.g. rearrange the blocks, from highest to lowest. To sum it up, histograms are used to show distributions of variables while bar charts are used to compare variables. Illustrative comparison of Histogram and Bar Chart is shown in the following Figure \ref{fig:histogram_barchart}:
+\noindent A histogram is used when working with quantitative data. It shows the number of observations that lie in-between the range of values, which is known as a bin. Unlike a bar chart, individual columns touch. Categorical features cannot be visualized through histograms. Instead, we can use bar charts where elements are taken as individual entities, so we can e.g. rearrange the blocks, from highest to lowest. Illustrative comparison of Histogram and Bar Chart is shown in the following Figure \ref{fig:histogram_barchart}:
 
 \vspace{0.3cm}
 \begin{figure}[hbt!]
 \begin{center}
-\includegraphics[width=12cm]{../pictures/histogram_barchart.png}
+\includegraphics[width=12.5cm]{../pictures/histogram_barchart.png}
 \caption[Histogram vs. Bar Chart (boxplot)]{Histogram vs. Bar Chart (Source: https://www.onlinemathlearning.com/histograms.html)}
 \label{fig:histogram_barchart}
 \end{center}
 \end{figure}
 
-\subsection{Probability density function (PDF)}
+\bigskip
+\noindent \textbf {Probability density function (PDF)}
 
-Simply said the Probability density curve is the graphical representation of the probability that a continuous random variable falls in a particular class. Therefore, the total area under an entire density curve is 100 \%. The probability that a continuous random variable acquires a certain (exactly given) value is zero. This follows from the following relation, from which it is possible to determine by an integral the probability that the random variable X acquires a value from the interval $ (x_1, x_2) $:
+\noindent Simply said the Probability density curve is the graphical representation of the probability that a continuous random variable falls in a particular class. Therefore, the total area under an entire density curve is 100 \%. The probability that a continuous random variable acquires a certain (exactly given) value is zero.
 
-$$
-P[x_1 \leq X \leq x_2] = \int_{x_1}^{x_2} f(x)\, \mathrm{d}x.
-$$
-
-\noindent For a discrete random variable, we determine the probability that it is equal to exactly some value. Such a function is called the Probability mass function (PMF). It holds that all probabilities in the function must be non-negative and together give the sum of 1. The value of the random variable having the largest probability mass is the mode.
+For a discrete random variable, we determine the probability that it is equal to exactly some value. Such a function is called the Probability mass function (PMF). It holds that all probabilities in the function must be non-negative and together give the sum of 1. The value of the random variable having the largest probability mass is the mode.
 
 \newpage
 \vspace*{-1cm}
-\subsection{Statistical methods used according to data types}
+\subsubsection{Data types}
 
-How to analyze survey responses depends on their type. We divide two types of variables - quantitative and quantitative. Qualitative (categorical) data cannot be quantified. Although numerical codes can be assigned to individual categories, they do not have a logical connection with quantity. Qualitative data can be further divided into binary (yes / no), nominal (contains more categories) and ordinal (also contains more categories and can be sorted). For example, very hot, hot, cold, very cold, warm are all nominal data when considered individually. But when placed on a scale and arranged in a given order (very hot, hot, warm, cold, very cold), they are regarded as ordinal data. Regarding descriptive statistics, we can count and determine a mode (the most common value in a dataset) for nominal data. Measures of central tendency for ordinal data, in which values are ranked relative to each other but are not measured absolutely, are limited to mode or median.
+How to analyze survey responses depends on their type. We divide two data types - qualitative and quantitative. Qualitative data can be further divided into binary (yes / no), nominal (contains more categories) and ordinal (also contains more categories and can be sorted). For example, very hot, hot, cold, very cold, warm are all nominal data when considered individually. But when placed on a scale and arranged in a given order (very hot, hot, warm, cold, very cold), they are regarded as ordinal data. Regarding descriptive statistics, we can count and determine a mode (the most common value in a dataset) for nominal data. Measures of central tendency for ordinal data, in which values are ranked relative to each other but are not measured absolutely, are limited to mode or median.
 
 Examples of nominal qualitative data are the responses to questions of Multiple Choice type. Here, it is possible to create a bar chart (where we can find the mode), but other descriptive statistics do not make sense. An example of ordinal qualitative data is the responses to questions of Ranking type. A Bar Plot can also be compiled for Ranking questions, but the mean and standard deviation do not make sense. Ordinal variables are not continuous variables and should not be treated as if they are. Therefore, we should correctly create the Probability mass function (PMF) for Ranking questions where we determine a specific point probability on the y-axis that the discrete random variable is equal to some order. However, in question Q3 in the first part of the first survey and Q5 in the second part of the survey, PDF charts were eventually used. Although their use is not entirely correct, they provide better visual insight into the data than PMF, especially if we have several PDF charts for different variables.
 
 Conversely, quantitative or numerical data can be characterized by a numerical value. Quantitative variables can be further classified as either discrete (those with a finite or countable number of possible values) or continuous (those with an infinite or uncountable number of possibilities). In the case of surveys conducted in this work, the Slider questions always have the same form - we measure the degree of agreement with the statement on a scale from 0 to 100. It is not a discrete variable, because we do not have any obvious categories from the beginning. Those classes have to be created. In this work, they were determined according to the SUS questionnaire: [0, 20] - Strongly disagree, (20, 40] - Disagree, (40, 60] - Neutral, (60, 80] - Agree and (80, 100] - Strongly agree.
+
+
 
 %% -------<<< Chapter 7: Analysis of the results of the first survey>>>-------\\%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -2071,35 +1612,13 @@ Info Bar is created each time the user starts GRASS GIS and it is only up to the
 \noindent
 \large
 
-https://trac.osgeo.org/grass/wiki/wxGUIDevelopment/New\_Startup\#PragueRoadmap \\
 
-Zambelli, P.; Gebbert, S.; Ciolli, M. Pygrass: An Object Oriented Python Application Programming Interface (API) for Geographic Resources Analysis Support System (GRASS) Geographic Information System (GIS). ISPRS Int. J. Geo-Inf. 2013, 2, 201-219. \\
-
-Predicting Database Requirements for Geographic Information Systems in the Year 2000: Long-Term Design Issues for GRASS. August 1992.\\
 
 Goran, W.D., Dvorak, W.E., Van Warren, L. and Webster, R.D., 1983, Fort Hood Geographic Information System: Pilot System Development and User Instructions, Technical Report N-154, USA Construction Engineering Research Laboratory, Champaign, IL.\\
 
-https://www.wxpython.org/\\
-
-https://grass.osgeo.org/\\
-
-https://gisgeography.com/grass-gis-geographic-resources-analysis-support-system/\\
-
-https://gisgeography.com/mapping-out-gis-software-landscape/\\
-
 Tips \& tricks: Dismissing a splash screen Anonymous. Inside FileMaker Pro; Louisville Sv. 7, Čís. 6,  (Jun 1999): 12-14. \\
 
-Warning: Splash screens cause delays, multitasking problems, and irritability Foster, Ed. InfoWorld; San Mateo Sv. 18, Čís. 18,  (Apr 29, 1996): 66. \\
-
-Adding a Splash Screen to Custom Applications Jerry Walter \\
-
-Customizing your startup screen by Ron Wilder \\
-
-Software vendor screen aren't making mush of a splash with multitaskers Foster, Ed, Info world, Mar 25, 1996, 18, 13, ProQuest Central pg. 60 \\
-
 https://www.arcdata.cz/produkty/arcgis/desktopovy-gis/arcgis-pro \\
-
-https://gisgeography.com/free-gis-software/\\
 
 https://ebookcentral.proquest.com/lib/techlib-ebooks/reader.action?docID=833420\&ppg=34
 https://techlib.summon.serialssolutions.com/cs-CZ/\#!/search?ho=t\&l=cs-CZ\&q=how\%20to\%20analyse\%20survey\%20results
