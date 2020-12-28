@@ -7,46 +7,47 @@ Reallocating 'name_of_file' (item size: 1) to 13 items.
 Database file #1: bibliography.bib
 Warning--empty journal in amelia
 Warning--empty year in amelia
+Warning--empty booktitle in inproceedings
 Warning--empty journal in pygrass
-You've used 12 entries,
+You've used 20 entries,
             2118 wiz_defined-function locations,
-            569 strings with 5825 characters,
-and the built_in function-call counts, 2924 in all, are:
-= -- 286
-> -- 100
+            602 strings with 7027 characters,
+and the built_in function-call counts, 4807 in all, are:
+= -- 469
+> -- 178
 < -- 0
-+ -- 43
-- -- 30
-* -- 154
-:= -- 517
-add.period$ -- 41
-call.type$ -- 12
-change.case$ -- 51
++ -- 75
+- -- 54
+* -- 223
+:= -- 838
+add.period$ -- 72
+call.type$ -- 20
+change.case$ -- 87
 chr.to.int$ -- 0
-cite$ -- 15
-duplicate$ -- 109
-empty$ -- 263
-format.name$ -- 30
-if$ -- 610
+cite$ -- 24
+duplicate$ -- 171
+empty$ -- 443
+format.name$ -- 54
+if$ -- 1019
 int.to.chr$ -- 0
-int.to.str$ -- 12
-missing$ -- 7
-newline$ -- 68
-num.names$ -- 24
-pop$ -- 66
+int.to.str$ -- 20
+missing$ -- 8
+newline$ -- 115
+num.names$ -- 40
+pop$ -- 135
 preamble$ -- 1
-purify$ -- 39
+purify$ -- 67
 quote$ -- 0
-skip$ -- 78
+skip$ -- 128
 stack$ -- 0
-substring$ -- 130
-swap$ -- 10
+substring$ -- 170
+swap$ -- 18
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 48
-warning$ -- 3
-while$ -- 28
-width$ -- 14
-write$ -- 135
-(There were 3 warnings)
+type$ -- 80
+warning$ -- 4
+while$ -- 44
+width$ -- 22
+write$ -- 228
+(There were 4 warnings)

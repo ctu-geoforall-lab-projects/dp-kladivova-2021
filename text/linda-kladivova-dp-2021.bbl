@@ -1,5 +1,11 @@
 \begin{thebibliography}{10}
 
+\bibitem{grass}
+GRASS Development~Team 1998-2020.
+\newblock Grass gis.
+\newblock [online], Last visited December 29, 2020.
+\newblock Available on: https://grass.osgeo.org/.
+
 \bibitem{amelia}
 Ana Amélia.
 \newblock Usability testing of educational software: methods, techniques and
@@ -30,16 +36,56 @@ GIS Geography.
 \newblock Available on:
   https://gisgeography.com/grass-gis-geographic-resources-analysis-support-system/.
 
+\bibitem{heroku}
+Code Heroku.
+\newblock Introduction to exploratory data analysis (eda).
+\newblock [online], Last visited December 18, 2020.
+\newblock Available on:
+  https://medium.com/code-heroku/introduction-to-exploratory-data-analysis-eda-c0257f888676.
+
 \bibitem{hotjar}
 hotjar.
 \newblock The different types of usability testing methods for your projects.
 \newblock [online], Last visited December 20, 2020.
 \newblock Available on: https://www.hotjar.com/usability-testing/methods/.
 
+\bibitem{luminousmen}
+luminousmen.
+\newblock Exploratory data analysis.
+\newblock [online], Last visited December 18, 2020.
+\newblock Available on: https://luminousmen.com/post/exploratory-data-analysis.
+
+\bibitem{minitab}
+Minitab.
+\newblock Understanding qualitative, quantitative, attribute, discrete, and
+  continuous data types.
+\newblock [online], Last visited December 21, 2020.
+\newblock Available on:
+  https://blog.minitab.com/blog/understanding-statistics/understanding-qualitative-quantitative-attribute-discrete-and-continuous-data-types.
+
+\bibitem{wisconsin1}
+Brian Murphy and Rachelle Barr.
+\newblock 1. statistics in general.
+\newblock [online], Last visited December 18, 2020.
+\newblock Available on:
+  https://mat117.wisconsin.edu/book/01/1-statistics-in-general/.
+
 \bibitem{NETELER2012124}
 Markus Neteler, M.~Hamish Bowman, Martin Landa, and Markus Metz.
 \newblock Grass gis: A multi-purpose open source gis.
 \newblock {\em Environmental Modelling \& Software}, 31:124 -- 130, 2012.
+
+\bibitem{OnlineMathLearning}
+OnlineMathLearning.com.
+\newblock Histograms.
+\newblock [online], Last visited December 21, 2020.
+\newblock Available on: https://www.onlinemathlearning.com/histograms.html.
+
+\bibitem{inproceedings}
+Matevž Pesek, Alja Isaković, Gregor Strle, and Matija Marolt.
+\newblock Improving the usability of online usability surveys with an
+  interactive stripe scale.
+\newblock 10 2016.
 
 \bibitem{sixusability}
 Collette Stumpf.
@@ -58,6 +104,12 @@ Collette Stumpf.
 \newblock Grass startup program.
 \newblock [online], Last visited November 7, 2020.
 \newblock Available on: https://grass.osgeo.org/grass79/manuals/grass7.html.
+
+\bibitem{ordinaldata}
+Wikipedia.
+\newblock Ordinal data.
+\newblock [online], Last visited December 21, 2020.
+\newblock Available on: https://en.wikipedia.org/wiki/Ordinal\_data.
 
 \bibitem{grassgis}
 Wikipedia.

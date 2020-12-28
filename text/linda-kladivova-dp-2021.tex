@@ -239,31 +239,28 @@ Firstly I would like to thank my parents very much for their support during my s
 \large
 \setcounter{page}{13}  % nastaví čítač stránek od stránky Úvod na stránku č. 13
 
-\noindent According to the evaluation of the GISGeography journal \cite{gisgeography}, GRASS GIS is one of the best software we can meet in the world of open-source software focused on Geographic Information System (GIS) in terms of numerical analysis. The history of GRASS, built for vector and raster geospatial management, geoprocessing, spatial modeling, and visualization, dates back to 1982 when its development was started by the United States military. At the time of writing this thesis, the current stable version of the software is version 7.8, but as the number suggests, the planned version 8.0, which will be released in the spring of 2021, will introduce major changes. They are going to be largely related to the GRASS graphical user interface (GUI).
+\noindent According to the evaluation of the GISGeography journal \cite{gisgeography}, GRASS GIS (Geographic Resources Analysis Support System) is one of the best software we can meet in the world of open-source software focused on Geographic Information System (GIS) in terms of numerical analysis. The history of GRASS, built for vector and raster geospatial management, geoprocessing, spatial modeling, and visualization, dates back to 1982 when its development was started by the United States military. At the time of writing this thesis, the current stable version of the software is version 7.8, but as the number suggests, the planned version 8.0, which will be released in the spring of 2021, will introduce major changes. They are going to be largely related to the GRASS graphical user interface (GUI).
 
-As also mentioned in the evaluation of the GISGeography journal, the main disadvantage of GRASS version 7.8 is mainly the clunky and dated user interface, defining projects on start-up and steep learning curve to get started. As we can see, these shortcomings are largely related to the current startup mechanism. So the task of GSoC was to change the sort of unfortunate GRASS startup mechanism so that it would be easier for first-time users to become familiar with GRASS. After the changes within GSoC, the startup screen -  the biggest trick for new users, was partially removed. The main role for the data organization was taken over by the Data Catalog - a tree object, whose functionality was significantly expanded. Here, for the first time, a new concept of the default location (also`` demolocation '' in development slang) was introduced, which is offered to every first-time user. Now the possibilities of managing data hierarchy components are even beyond the options previously available in the startup screen. 
+Although, in the startup screen of version 7.8, there is a certain effort to provide the first-time user with the maximum possible help, the development community often encountered misunderstanding from the ranks of users. These complaints led to the creation of an implementation proposal known as the Prague Roadmap. This proposal was the basis for the author's participation in the Google Summer of Code program (GSoc). The task of GSoC was to change the sort of unfortunate GRASS startup mechanism so that it would be easier for first-time users to become familiar with GRASS. After the changes within GSoC, the startup screen --  the biggest trick for new users, was partially removed. The main role for the data organization was taken over by the Data Catalog -- a tree object, whose functionality was significantly expanded. Here, for the first time, a new concept of the default location (also ``demolocation'' in development slang) was introduced, which is offered to every first-time user. Now, the possibilities of managing data hierarchy components are even beyond the options previously available in the startup screen. 
 
-This work, therefore, follows up on the complex topic of creating a better GRASS GIS startup mechanism. The main part of the work consists of two surveys where the first one consists of two parts. The aim of the first part is to evaluate the benefits of significant changes among the GRASS community and at the same time to propose a final solution of the GRASS startup mechanism for the existing user so that the old startup screen is permanently removed. The second part of the first survey already focuses on the improvement of the startup mechanism for first-time users. Already at GSoC, it was decided that some form of assistance to new users would need to be implemented. The second part of the survey finds out what options of first-time help would be preferred in the GRASS community. The second survey then introduces the proposal for a new ``first-time mode'', which extends the concept of the default location with an info bar helping users to manage the first steps - creating a new location, importing data, etc. The second survey in the form of a simple task examines whether users like the newly designed mockups of the info bar and gives users space to share their own ideas. Based on the analysis of the second survey, text and layout of the info bar is modified and subsequently implemented.
+This work, therefore, follows up on the complex topic of creating a better GRASS GIS startup mechanism. The main part of the work consists of two surveys where the first one consists of two parts. The aim of the first part is to evaluate the benefits of significant changes among the GRASS community and at the same time to propose a final solution of the GRASS startup mechanism for the existing user so that the old startup screen is permanently removed. The second part of the first survey focuses on the improvement of the startup mechanism for first-time users. Already at GSoC, it was decided that some form of assistance to new users would need to be implemented. The second part of the survey finds out what options of first-time help would be preferred. The second survey conducted one month later introduces a new special mode for first-time users (``first-time mode''), which extends the concept of the default location with an Info Bar helping users to manage the first steps. It examines whether users like the newly designed mockups of the Info Bar and gives them space to share ideas. Based on the analysis of the second survey, the Info Bar is improved and subsequently implemented.
 
 \newpage
 \vspace*{-1cm}
 \pagestyle{fancy}
 \fancyhead[RE, RO]{\fancyplain{}{\small \sl{GRASS GIS}}}
 \subsection{GRASS GIS}
-\noindent GRASS (Geographic Resources Analysis Support System) is a cross-platform desktop geographic information system (GIS) designed to work with geographic 2D/3D raster and vector data with SQL-based attribute management, and vector network analysis, both using the command line and graphical user interface (GUI). Besides, it offers many spatial modelling algorithms, 3D visualization, as well as image processing routines pertaining to LiDAR and multi-band imagery \cite{NETELER2012124}.
+\noindent GRASS GIS is a cross-platform desktop geographic information system (GIS) designed to work with geographic 2D/3D raster and vector data with SQL-based attribute management, and vector network analysis, both using the command line and graphical user interface (GUI). Besides, it offers many spatial modelling algorithms, 3D visualization, as well as image processing routines pertaining to LiDAR and multi-band imagery \cite{NETELER2012124}. It is open-source software published under the GNU GPL general license and managed and developed under the Open Source Geospatial Foundation (OSGeo). Important users of the GRASS system include, for example, NASA, NOAA, USDA, USGS, and many environmental consulting companies \cite{grassgis}. 
 
-The development of the GRASS GIS system was started by the research laboratories of the US Army Engineer Engineer in 1982, later got into the academic sphere and today it is also used in the commercial sphere. It is open-source software published under the GNU GPL general license and managed and developed under the OSGeo organization. Important users of the GRASS system include, for example, NASA or NOAA \cite{grassgis}.
-
-The power of software stems mainly from its Unix philosophy, where the software itself consists of a collection of more than 500 applications called modules. Each of these modules has only one task to perform, and the real power of the software comes when the various of these modules begin to chain together, allowing the user to create even very complex applications. Most of these modules are written in C, but above the whole system, PyGRASS as an object-oriented Python Application Programming Interface (API) stands, which hides the complexity of GRASS and provides access to the capability of the C- API of GRASS for geo-scientists that are not familiar with C \cite{pygrass}.
+The power of software stems mainly from its Unix philosophy, where the software itself consists of a collection of more than 500 applications called modules. Each of these modules has only one task to perform, and the real power of the software comes when the various of these modules begin to chain together, allowing the user to create even very complex applications. Most of these modules are written in C, but above the whole system, PyGRASS as an object-oriented Python Application Programming Interface (API) stands, which hides the complexity of GRASS and provides access to the capability of the C-API of GRASS for geo-scientists that are not familiar with C \cite{pygrass}. Nowadays, most main changes take place in the Python programming language, which also applies to the GUI, which uses the wxPython extension. 
 
 The software has been developing since January 2020 on GitHub, a web version control using Git. Nowadays, most main changes take place in the Python language, which also applies to the GUI, which uses the wxPython extension. Besides improving the GRASS GIS startup mechanism, in summer 2020 the community presented a new website on the occasion of its 37th birthday which offers a curated list of tutorials in different languages and links to videos.
 
-
-\vspace{0.3cm}
+\vspace{0.7cm}
 \begin{figure}[hbt!]
 \begin{center}
 \includegraphics[width=16cm]{../pictures/grass_gis.png} 
-\caption[New GRASS website's layout]{New GRASS website's layout (Source: \url{https://grass.osgeo.org)}}
+\caption[New GRASS website's layout]{New GRASS website's layout (Source: \cite{grass})}
 \label{fig:grass_gis}
 \end{center}
 \end{figure}
@@ -288,7 +285,7 @@ The software has been developing since January 2020 on GitHub, a web version con
 
 \noindent The Database, which is built hierarchically at the top, has the character of a base directory, whose usual name is ``grassdata''. It contains Locations - a collections of data with common coordinate reference system (CRS). Therefore, Maps in the Mapsets contained in a particular Location will always have the same coordinate system.
 
-It is also important to mention that when creating a location, a mapset named PERMANENT is automatically created. Briefly speaking, the PERMANENT mapset is used to store general spatial data which are also accessible but write-projected to other users who are working in the same Location as the Database owner. The PERMANENT mapset also holds the default region boundary coordinate values which are very important for raster analysis \cite{hierarchy}. 
+It is also important to mention that when creating a location, a mapset named PERMANENT is automatically created. Briefly speaking, the PERMANENT mapset is used to store general spatial data which are also accessible but write-protected to other users who are working in the same Location as the Database owner. The PERMANENT mapset also holds the default region boundary coordinate values which are very important for raster analysis \cite{hierarchy}. 
 
 In the following text, the elements of the GRASS data hierarchy are already taken as standard terms and the initial letters are lowercase.
 
@@ -307,7 +304,7 @@ In the following text, the elements of the GRASS data hierarchy are already take
 \item GUI (graphical user interface) components that the user encounters during startup. In the case of GRASS GIS version 7.8, these are the splash screen, startup screen and Location Wizard. There may be situations where the requested mapset is locked (this happens if it is used by another process, or if the last session in this mapset ended in an error). If the running mapset is locked, we are first notified that there is a lock file with a .gislock extension in the mapset, and then asked if we want to delete this file. In this special situation, when running GRASS, we even encounter five different GUI components.
 In the case of the version after GSoC, the mentioned components are bypassed in most situations and we can move straight to the third point.
 
-\item the state instantly after startup - here we can talk e.g. about the state of individual Layer Manager tabs, and Map Display. The info bar, which is implemented in this work, can also be considered as a part of the startup mechanism.
+\item the state instantly after startup - here we can talk e.g. about the state of individual Layer Manager tabs, and Map Display.
 
 \end{itemize}
 
@@ -332,7 +329,7 @@ The startup screen is the first component of the GRASS GIS version 7.8 that we m
 \bigskip
 \noindent \textbf {Location Wizard}
 
-\noindent Location Wizard is a software component, which has the character of a guide that appears when creating a new location. Therefore, the main task of the wizard is to define this system. It consists of four consecutive dialog boxes. A comparison of the Location Wizard before and after GSoC is included in subsection \ref{sec:afterGSoC}.
+\noindent Location Wizard is a software component, which has the character of a guide that appears when creating a new location. Therefore, the main task of the wizard is to define the Coordinate Reference System (CRS). It consists of four consecutive dialog boxes. A comparison of the Location Wizard before and after GSoC is included in subsection \ref{sec:afterGSoC}.
 
 \bigskip
 \noindent \textbf {Layer Manager and Map Display}
@@ -349,7 +346,7 @@ The startup screen is the first component of the GRASS GIS version 7.8 that we m
 \end{figure}
 
 \newpage
-\noindent As explained in more detail in the documentation, the Layer Manager provides a GUI for creating and managing maps. In Fig. \ref{fig:empty_layers1} we can notice five tabs - Layers, Console, Modules, Data, and Python.
+\noindent As explained in more detail in the GRASS documentation, the Layer Manager provides a GUI for creating and managing maps. In Figure \ref{fig:empty_layers1} we can notice five tabs - Layers, Console, Modules, Data, and Python.
 In the Layer Manager version 7.8, after running GRASS we first see the Layers tab, which allows layers in Map Display to be switched on and off. After starting the session this tab is empty. The path to the current mapset and location can be noticed in the top bar in the Map Display window. In this case, the current mapset is called demomapset and is located in the location named \textit{fire\_grassdata}. GRASS GIS allows adding more Map Display windows. We can then manage layers in these windows via the Layers tab.
 
 \vspace{0.3cm}
@@ -386,16 +383,16 @@ The data in the current mapset are firmly connected to the Map Display window. I
 \label{section:Prague Roadmap}
 \noindent
 \large
-The data hierarchy described in subsubsection \ref{subsection:hierarchy} proves its worth especially when used by experienced users of GRASS, however, for complete beginners, it is rather confusing. Especially if the above-mentioned main components (database, location, and mapset) have to be defined right at the start of the software when launching the startup screen, which has been standard since version 6.4.  Although, in the startup screen of version 7.8, there is a certain effort to provide the first-time user with the maximum possible help (short description of data hierarchy, Help button), the development community often encountered misunderstanding from the ranks of users \footnote{\url{https://trac.osgeo.org/grass/ticket/3474}}. 
+The data hierarchy described in subsubsection \ref{subsection:hierarchy} proves its worth especially when used by experienced users of GRASS, however, for complete beginners, it is rather confusing. Especially if the above-mentioned main components (database, location, and mapset) have to be defined right at the start of the software in the startup screen, which has been standard since version 6.4.  Although, in the startup screen of version 7.8, there is a certain effort to provide the first-time user with the maximum possible help (short description of data hierarchy, Help button), the development community often encountered misunderstanding from the ranks of users \footnote{\url{https://trac.osgeo.org/grass/ticket/3474}}. The disadvantages of GRASS mentioned in the evaluation of the GISGeography journal \cite{gisgeography} are also largely related to the current startup mechanism. According to this source, the main disadvantage of GRASS version 7.8 is mainly the clunky and dated user interface, defining projects on start-up and steep learning curve to get started.
 
-The general question, on which answer the community has still not fully agreed over the years, is whether to keep existing data hierarchy at all or change the whole concept and use only \textit{project} and \textit{map} terms, which is the usual standard for other GIS software. The \texttt {database/location/mapset} mechanism may indeed seem complicated at first glance, but we must keep in mind that many later problems will be avoided by clearly defining the coordinate system at the beginning and allowing only one coordinate system within one location. From the author’s point of view, the advantage (perhaps from the point of view of first-time users maybe the disadvantage) is that GRASS GIS does not support ``on the fly'' transformation which shows differently projected data in the right place on the map. It guarantees that we cannot analyze data having a different coordinate system together, as could happen in ArcGIS or QGIS, for example. In GRASS GIS, we also cannot get into a situation that ``on the fly'' transformation does not occur at all, but despite this, it is allowed to display two layers of different coordinate systems on top of each other. This, of course, results in the incorrect rendering of the layers in the map window (may happen e.g. in SAGA GIS). 
+The general question, on which answer the community has still not fully agreed over the years, is whether to keep existing data hierarchy at all or change the whole concept and use only \textit{project} and \textit{map} terms, which is the usual standard for other GIS software. The \texttt {database/location/mapset} mechanism may indeed seem complicated at first glance, but we must keep in mind that many later problems will be avoided by clearly defining the CRS at the beginning and allowing only one coordinate system within one location. From the author’s point of view, the advantage (perhaps from the point of view of first-time users maybe the disadvantage) is that GRASS GIS does not support ``on the fly'' transformation which shows differently projected data in the right place on the map. It guarantees that we cannot analyze data having a different coordinate system together, as could happen in ArcGIS or QGIS, for example. In GRASS GIS, we also cannot get into a situation that ``on the fly'' transformation does not occur at all, but despite this, it is allowed to display two layers of different coordinate systems on top of each other. This, of course, results in the incorrect rendering of the layers in the map window (may happen e.g. in SAGA GIS). 
 
-In 2017, the first suggestions on how to simplify this startup screen began to appear. In terms of implementation complexity, the simplest and most effective proposal seemed to be the proposal A3 \footnote{\url{https://trac.osgeo.org/grass/wiki/wxGUIDevelopment/New\_Startup\#ProposalA3Prague2019:Datatreeandbigbuttons}}. Based on this proposal, the Prague Roadmap\footnote{\url{https://trac.osgeo.org/grass/wiki/wxGUIDevelopment/New\_Startup\#PragueRoadmap}} was created in 2019. 
+In 2017, the first suggestions on how to simplify this startup screen began to appear. In terms of implementation complexity, the simplest and most effective proposal seemed to be the proposal A3 \footnote{\url{https://trac.osgeo.org/grass/wiki/wxGUIDevelopment/New\_Startup\#ProposalA3Prague2019:Datatreeandbigbuttons}}. Based on this proposal, the implementation proposal known as the Prague Roadmap\footnote{\url{https://trac.osgeo.org/grass/wiki/wxGUIDevelopment/New\_Startup\#PragueRoadmap}} was created in 2019 in Prague. 
 The most serious changes in Prague Roadmap concern the Data Catalog. They lie in supporting multiple databases, adding buttons to create existing or new databases, or adding new actions from the context menu to a database, location, and mapset node. Considering the disadvantages mentioned in the paragraph above, the data hierarchy \texttt{database/location/mapset} is preserved. In addition, this proposal introduces a new concept called \textit{workspace} which is not directly part of a mapset, but is associated with it.
 
 The proposed changes in the Location Wizard are mainly related to the clarification of the first page, better naming of the given attributes, and speeding up the selection of the coordinate system in the dialog. Furthermore, the proposal assumes the possibility of filtering in the Data Catalog based on the recently selected items. General startup GUI should be able to collect recent maps and workspaces as well as recently used databases and workspaces. The display of map layers in the Data Catalog is switched off by default, the display of workspaces under the relevant mapset is switched on. When GRASS GIS launches, the "grassdata" working directory for storing locations, mapsets and maps should be automatically created in a reasonable place.
 
-Furthermore, the same Data Catalog implemented in the Data tab is planned to be used within a startup screen inspired by the proposal A2 designed by Garrett Millar. However, unlike the A2 design, in the Prague Roadmap the startup screen has no other tabs. It consists of only one startup page, which has a Data Datalog in the center, and a toolbar with big buttons for creating or defining new or existing data components, such as a location or mapset.
+Furthermore, the same Data Catalog implemented in the Data tab is planned to be used within a startup screen. The startup screen proposed in Prague Roadmap consists of only one startup page, which has a Data Datalog in the center, and a toolbar with big buttons for creating or defining new or existing data components, such as a location or mapset.
 
 
 \fancyhead[RE, RO]{\fancyplain{}{\small \sl{State of Art after GSoC}}}
@@ -458,7 +455,7 @@ Another substantive step forward was the graphic change of the icon enabling or 
 \end{center}
 \end{figure}
 
-\noindent However, the essential change is related to the ``Choose EPSG code'' page. Now it supports dynamic EPSG search and the hyperlink which is changed dynamically according to a filter set by a user (see Fig. \ref{fig:loc_wiz_3}). The last page of the Location Wizard called ``Summary'' remains unchanged.
+\noindent However, the essential change is related to the ``Choose EPSG code'' page. Now it supports dynamic EPSG search and the hyperlink which is changed dynamically according to a filter set by a user (see Figure \ref{fig:loc_wiz_3}). The last page of the Location Wizard called ``Summary'' remains unchanged.
 
 \vspace{0.3cm}
 \begin{figure}[hbt!] 
@@ -478,7 +475,7 @@ Another substantive step forward was the graphic change of the icon enabling or 
 
 \begin{enumerate}
 
-\item \textbf{GRASS bypasses the startup screen and starts in the pre-prepared default location} (see Figure \ref{fig:demolocation_startup}). This situation occurs after the software is installed, that is when no used databases are stored in the settings. The default location (demolocation) called \textit{world\_latlong\_wgs84} in WGS84 coordinate system (EPSG:4326) shows the correct organization of the data. Base data are stored in a PERMANENT mapset whereas already analyzed data belongs to another mapset, for example to the one named after a user. The current implementation does not show a world map immediately at startup, it is necessary to display the map using Data Catalog (see Fig. \ref{fig:demolocation}). The splash screen does not appear.
+\item \textbf{GRASS bypasses the startup screen and starts in the pre-prepared default location} (see Figure \ref{fig:demolocation_startup}). This situation occurs after the software is installed, that is when no used databases are stored in the settings. The default location (demolocation) called \textit{world\_latlong\_wgs84} in WGS84 coordinate system (EPSG:4326) shows the correct organization of the data. Base data are stored in a PERMANENT mapset whereas already analyzed data belongs to another mapset, for example to the one named after a user. The current implementation does not show the World map immediately at startup, it is necessary to display the map using Data Catalog (see Figure \ref{fig:demolocation}). The splash screen does not appear.
 \item\textbf{ GRASS bypasses the startup screen if possible to start in the last used mapset} (see Figure \ref{fig:last_mapset_startup}). This situation is probably the most common. The software remembers the databases that were open when the last session was closed and opens them.  The splash screen does not appear.
 \item \textbf{GRASS launches in startup screen if a mapset is not in a usable state} (was deleted or is used by another process). In this special situation, GRASS starts in the same way as in version 7.8.
 
@@ -531,7 +528,7 @@ Another substantive step forward was the graphic change of the icon enabling or 
 \noindent \texttt{:$\sim$\$ grass79 --gtext} \\
 \noindent Start GRASS using the text-based user interface.  In version 7.8, this option as the only one does not display the startup screen. However, it means that the desired location and mapset must already be set as environmental variables either by running a specific mapset using the \texttt{:$\sim$\$ grass78 \$HOME/grassdata/location/mapset} command, or taken from the last GRASS session, specifically from a file in the path \textit{\$HOME/.grass7/rc}. In version 7.9, --gtext uses startup screen but then does not run the GUI.
 
-The possibilities of starting GRASS GIS can be further extended by the concept of \textit{workspaces}. In the development version of the software version, it is possible to save the current software settings and then open it, as we can see in Fig. \ref {fig:workspace_grass}. However, there is no option to start a specific workspace from the command line or to start GRASS GIS from File Manager using the file association of the workspace file (.gxw).
+The possibilities of starting GRASS GIS can be further extended by the concept of \textit{workspaces}. In the development version of the software version, it is possible to save the current software settings and then open it, as we can see in Figure \ref {fig:workspace_grass}. However, there is no option to start a specific workspace from the command line or to start GRASS GIS from File Manager using the file association of the workspace file (.gxw).
 
 \vspace{0.3cm}
 \begin{figure}[hbt!] 
@@ -546,30 +543,30 @@ The possibilities of starting GRASS GIS can be further extended by the concept o
 \vspace*{-1cm}
 \fancyhead[RE, RO]{\fancyplain{}{\small \sl{Thesis objectives}}}
 \subsection{Thesis objectives}
+\label{sec:objectives}
 
-Already during GSoC, it was decided that some form of special mode for new users, which will extend the concept of demolocation will need to be implemented. At the same time, however, after GSoC, some questions remained unanswered regarding the general startuú mechanism and further direction of the GRASS GUI. The analysis of the first part of the first survey entitled \textbf {Help improve GRASS GIS startup mechanism and Data Catalog}, see Appendix \ref{appendix:A}, tries to answer these questions.
-
-As it was not clear how to grab the new special mode for firt-time users, the first survey was extended by a second thematically different section called \textbf{Help create a better first-time user experience in GRASS GIS}, see Appendix \ref{appendix:B}. The answers in this part of the survey are important for the subsequent decision of what information the mode should contain and which implementation form to choose.
-
-The aim of the second survey \textbf{Help improve the special mode for first-time users} conducted one month later is to find out whether users like the proposal of mockups of info bar for first-time users and give them space to share their own ideas so that the implemented solution in this work is the best possible from an objective point of view  (see Appendix \ref{appendix:C}).
-
-\noindent In this work we will try to answer the following two fundamental questions:
+The aim of the master thesis is to evaluate the changes made in the GSoC using questionnaires, propose the final solution of the GRASS startup mechanism and especially propose and implement a new solution that will help enhance a first-time user experience in GRASS. There are two fundamental questions related to the mentioned proposals, which we will try to answer in the work:
 
 \begin{enumerate}
 
 \item  \noindent \textbf{How to enhance first-time user experience?}
 
-\noindent As already mentioned, data hierarchy in GRASS GIS can cause significant problems for newcomers. Therefore, the core question of this work is how to enhance the first-time user experience. The aim of this work is to propose the solution (see subsection \ref{sec:proposal1})  and also implement it.
+\noindent As already mentioned, data hierarchy in GRASS GIS can cause significant problems for newcomers. Therefore, the aim of this work is to propose the solution on how to enhance the first-time user experience (see subsection \ref{sec:proposal1})  and implement it.
 
 
 \item \noindent \textbf{How to improve GRASS GIS startup mechanism?}
 
-As mentioned in the previous subchapter, in the special situation where the last opened mapset is not in the usable state (is in use or was deleted), the ``old'' startup screen still appears. This situation is rather a lack of a new solution introduced after GSoC and the important goal of this work is to propose the solution for how this shortcoming could be remedied. For more information, see subsection \ref{sec:proposal2}.
+As mentioned in the previous subchapter, in the special situation where the last opened mapset is not in the usable state, the ``old'' startup screen still appears. This situation is rather a lack of a new solution introduced after GSoC and the important goal of this work is to propose the solution for how this shortcoming could be remedied (see subsection \ref{sec:proposal2}).
 
 \end{enumerate}
 
-\noindent Both the second part of the first survey and the second survey deal with the first question which prevails in this work since all the performed implementations are based on it. The first part of the first survey does not deal only with the second issue mentioned, it is much broader. The goals also are to determine the level of user satisfaction / dissatisfaction with the new solution and to obtain general user preferences regarding further improvements of the GRASS GUI.
+\noindent Already during GSoC, it was decided that some form of special mode for new users will need to be implemented. At the same time, however, some questions remained unanswered regarding the general startup mechanism and further direction of the GRASS GUI. 
 
+Therefore, the first part of the first survey entitled \textbf {Help improve GRASS GIS startup mechanism and Data Catalog}, see Appendix \ref{appendix:A}, does not deal only with the second issue mentioned, it is much broader. The goals also are to determine the level of user satisfaction/dissatisfaction with the new solution and to obtain general user preferences regarding further improvements of the GRASS GUI.
+
+As it was not clear how to grab the new special mode for first-time users, the first survey was extended by a second thematically different section called \textbf{Help create a better first-time user experience in GRASS GIS}, see Appendix \ref{appendix:B}. The answers in this part of the survey are important for the subsequent decision of what information the special mode for first-time users should contain and which implementation form to choose.
+
+The aim of the second survey called \textbf{Help improve the special mode for first-time users} is to find out whether users like the proposed mockups of the Info Bar and give them space to share their own ideas so that the implemented solution in this work is the best possible from an objective point of view (see Appendix \ref{appendix:C}). Both the second part of the first survey and the second survey deal with the first question which prevails in this work since all the performed implementations are based on it. 
 
 %% -------<<< Chapter 4: Usability testing methods >>>-------\\%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \newpage
@@ -580,11 +577,82 @@ As mentioned in the previous subchapter, in the special situation where the last
 
 sem bude chtít něco šoupnout
 
--- QGIS infobars
+\bigskip
 
--- Zoner Photo Studio X First Run Wizard
+\noindent \textbf {QGIS 3.14}
 
---?
+\noindent This software is created similarly to GRASS GIS under the auspices of OSGeo. The big change from QGIS 2 is that it includes native support for 3D visualizations. The advantage is also the possibility of using and creating tailor-made plugins. QGIS also allows the use of analytical functions from GRASS, SAGA GIS software and the GDAL library. 
+
+At the first start, Welcome to QGIS window appears, in which we can link to the QGIS website and check the news in the given version. The window runs in the default language of the operating system.
+
+\vspace{0.3cm}
+\begin{figure}[hbt!] 
+\begin{center}
+\includegraphics[width=8cm]{../pictures/qgis_startup_window.JPG} 
+\caption[Welcome to QGIS 3.14 window]{Welcome to QGIS 3.14 window (Source: Personal collection)}
+\label{fig:qgis_startup_window}
+\end{center}
+\end{figure}
+
+\noindent After this introduction, we are redirected to the main software window (Fig. \ref{fig:qgis_first_window})  informing about community events and significant improvements that have taken place. Here we can choose an empty project template or we may open sample datasets (North Carolina, South Dakota, Alaska) provided along with instalation.
+
+In QGIS 3, we distinguish between the layer's and project's CRS. It is worth mentioning that QGIS supports about 2700 known coordinate systems, whose definitions are stored in the SQLite database installed together with QGIS. The empty project has always global default projection EPSG: 4326 - WGS 84.
+
+\vspace{0.3cm}
+\begin{figure}[hbt!] 
+\begin{center}
+\includegraphics[width=17cm]{../pictures/qgis_first_window.JPG} 
+\caption[The main software window after first opening QGIS 3.14]{The main software window after first opening QGIS 3.14 (Source: Personal collection)}
+\label{fig:qgis_first_window}
+\end{center}
+\end{figure}
+
+\noindent In QGIS, On-the-fly transformation is enabled by default, meaning that whenever you use layers with different coordinate systems QGIS transparently reprojects them to the project CRS. When importing the first layer (in this case US tracts in ESRI: 102003 system), the dialog box shown in Fig. \ref{fig:qgis_transformation} specifies what type of transformation to perform when changing the project CRS. These Datum transformations are then listed in Project Properties - CRS settings (Fig. \ref{fig:qgis_trans}). It is important to note that the first layer added defines the coordinate system of the project. In our case, it was changed to the US Contiguous Albers Equal Area Conic system. In the dialog \ref{fig:qgis_trans} we can set the Predefined coordinate system, which is related to the project, not to the layer.
+
+Whenever a more accurate transformation is available, but is not currently usable, QGIS 3 shows an informative warning message (see Fig. \ref{fig:qgis_warning_window}) advising to use more accurate transformation. Those messages appear quite often in a variety of situations, which can definitely help new as well as experienced QGIS users.
+
+\begin{figure}[hbt!] 
+\begin{center}
+\includegraphics[width=17cm]{../pictures/qgis_warning_window.JPG} 
+\caption[Informative warning message  in QGIS 3.14]{Informative warning message  in QGIS 3.14 (Source: Personal collection)}
+\label{fig:qgis_warning_window}
+\end{center}
+\end{figure}
+
+\begin{figure}[hbt!] 
+\begin{center}
+\includegraphics[width=14cm]{../pictures/qgis_transformation.JPG} 
+\caption[Select the type of transformation in QGIS 3.14]{Select the type of transformation in QGIS 3.14 (Source: Personal collection)}
+\label{fig:qgis_transformation}
+\end{center}
+\end{figure}
+
+\begin{figure}[hbt!] 
+\begin{center}
+\includegraphics[width=14cm]{../pictures/qgis_trans.JPG} 
+\caption[Predefined CRS and Datum Transformations in QGIS 3.14]{Predefined CRS and Datum Transformations in QGIS 3.14 (Source: Personal collection)}
+\label{fig:qgis_trans}
+\end{center}
+\end{figure}
+
+
+\newpage
+\noindent \textbf{Zoner Photo Studio X} \\
+
+\noindent After the initial login and launching the main software window, a short first run wizard will appear and can be skipped. The guide consists of four parts. The first section introduces the main tabs on the left side of the software window called the Navigator and also explains the Catalog tab, which provides quick access to photos. The following are two pages of a guide describing photo thumbnails and zooming. The last page of the wizard lists the right toolbar and the three individual modules - Manager, Develop and Editor. The main software components described in the wizard are always marked with a blue frame and the individual information windows are assigned to a particular part by arrows. The wizard is not only at the beginning, but also when using the above-mentioned modules for the first time.
+
+Images are managed in the Catalog, which has a tree structure. We edit the image, save it, and if we turn off the Zoner software and run it a second time, it starts up in the last opened file. If the last used file is deleted, the software is launched in the Manager tab in the last opened folder, where another image can be selected for editing or we can simply click to another folder and open or create another image. There is a native image format of Zoner Photo Studio X with extension * .zps, however, firstly, traditional formats such as * .jpg, * .png, * .tif, * .gif etc. are offered to us.
+
+\vspace{0.3cm}
+\begin{figure}[hbt!] 
+\begin{center}
+\includegraphics[width=15cm]{../pictures/zoner.png} 
+\caption[First run wizard in Zoner Photo Studio X]{First run wizard in Zoner Photo Studio X}
+\label{fig:zoner}
+\end{center}
+\end{figure}
+
+
 
 \newpage
 \vspace*{-1cm}
@@ -592,7 +660,7 @@ sem bude chtít něco šoupnout
 \section{Usability testing methods}
 \label{sec:usability_testing}
 
-\noindent As Ana Amélia describes in her work \cite{amelia}, the concept of usability is related to the field of Human-Computer-Interaction (HCI). Here we can find several definitions of what usability means. In the case of websites and software applications, usability refers to whether or not users can achieve specific goals with efficiency, effectiveness, and satisfaction \cite{dishman}. As pointed out by \cite{hotjar}, the main goal of usability testing is to test and validate the product hypothesis and specific design decisions using the end-user perspective. We can come across various options for dividing usability testing methods. One used division\footnote{\url{https://www.hotjar.com/usability-testing/methods/}} is nicely captured in Figure \ref{fig:usability_testing_methods}.
+\noindent As Ana Amélia describes in her work \cite{amelia}, the concept of usability is related to the field of Human-Computer-Interaction (HCI). Here we can find several definitions of what usability means. In the case of websites and software applications, usability refers to whether or not users can achieve specific goals with efficiency, effectiveness, and satisfaction \cite{dishman}. As pointed out by \cite{hotjar}, the main goal of usability testing is to test and validate the product hypothesis and specific design decisions using the end-user perspective. We can come across various options for dividing usability testing methods. One possible division is nicely captured in Figure \ref{fig:usability_testing_methods}.
 
 \vspace{0.3cm}
 \begin{figure}[hbt!] 
@@ -644,13 +712,13 @@ sem bude chtít něco šoupnout
 \section{Questionnaires}
 \label{sec:questionnaires}
 
-\noindent As the reader of this work probably realized surveys (questionnaires) were not mentioned among unmoderated + remote usability testing. The reason is that questionnaires are not usually considered as usability testing because it does not require to directly test product functionality. However, in some literature \cite{amelia} \cite{sixusability}, questionnaires are also included in usability testing methods. In Ana Amélia's work, for example, the survey includes both - interview and questionnaire techniques. The questionnaire refers to a technique that can fall under the so-called expert/heuristic method, which works with experienced people who identify problems a less experienced user might encounter. As [6 usability] writes, questionnaires are not as numerically grounded and precise as other forms or testing, but they can provide important feedback from the user group in a short time. They can take the form of specific questions about the software and its future development.
+\noindent As the reader of this work probably realized surveys (questionnaires) were not mentioned among unmoderated + remote usability testing. The reason is that questionnaires are not usually considered as usability testing because it does not require to directly test product functionality. However, in some literature \cite{amelia} \cite{sixusability}, questionnaires are also included in usability testing methods. In Ana Amélia's work \cite{amelia}, for example, the survey includes both - interview and questionnaire techniques. The questionnaire refers to a technique that can fall under the so-called expert/heuristic method, which works with experienced people who identify problems a less experienced user might encounter. As the author of \cite{sixusability} writes, questionnaires are not as numerically grounded and precise as other forms or testing, but they can provide important feedback from the user group in a short time. They can take the form of specific questions about the software and its future development.
 
 Questionnaires must, above all, be effective. Therefore, in this new field very different from the field of programming, it was necessary to acquire new knowledge that will help avoid beginner's mistakes. How the surveys were conceived and what they would look like eventually crystallized by combining two different information flows.
 
-The first flow is based on what type of questionnaire is usually used if we want to examine the software usability. For this purpose, we can use the widely used standard questionnaire known as the System Usability Scale (SUS). This questionnaire having 10 five-point items with alternating positive or negative tone was introduced by Brooke in 1996 \cite{sus}. The standard version is shown in Figure \ref{fig:sus}. The aim of this work is to obtain more detailed responses from GRASS users related to a specific topic, so using this questionnaire alone does not make much sense in this work. However, the Slider questions (see \ref{sec:slider}) are technically realized similarly as in SUS - the interviewer does not evaluate questions but statements. It can often happen that the user would not use the queried functionality, but they assume that the others do, which results in a positive answer. Statements encourage the user to better express their own opinions.
+The first flow is based on what type of questionnaire is usually used if we want to examine the software usability. For this purpose, we can use the widely used standard questionnaire known as the System Usability Scale (SUS). This questionnaire having 10 five-point items with alternating positive or negative tone was introduced by Brooke in 1996 \cite{sus}. The standard version is shown in Figure \ref{fig:sus}. The aim of this work is to obtain more detailed responses from GRASS users related to a specific topic, so using this questionnaire alone does not make much sense in this work. However, the Slider questions (see \ref{sec:slider}) are technically realized similarly as questions in SUS - the interviewer does not evaluate questions but statements. It can often happen that the user would not use the queried functionality, but they assume that the others do, which results in a positive answer. Statements encourage the user to better express their own opinions.
 
-The second source that inspired the author in composing the surveys was a user survey workshop within the All Things Open platform in which the author participated. The visited video conference\footnote{\url{https://2020.allthingsopen.org/sessions/user-experience-secrets-to-better-surveys-happier-users/}} led by professionals Dan Zola and Kerry Thompson from SWAY UX set out a few key rules for creating a questionnaire. According to the lecturers, the questionnaire helps with the evaluation of customer satisfaction as well as understanding who are users and what are their pain points and priorities. It can be conducted not only at the start of the new project but basically at any time the survey administrator (developer) needs user input.
+The second source that inspired the author in composing the questionnaires was a user survey workshop within the All Things Open platform in which the author participated. The visited video conference\footnote{\url{https://2020.allthingsopen.org/sessions/user-experience-secrets-to-better-surveys-happier-users/}} led by professionals Dan Zola and Kerry Thompson from SWAY UX set out a few key rules for creating a questionnaire. According to the lecturers, the questionnaire helps with the evaluation of customer satisfaction as well as understanding who are users and what are their pain points and priorities. It may be conducted not only at the start of the new project but basically at any time the survey administrator (developer) needs user input.
 
 \vspace{0.3cm}
 \begin{figure}[hbt!] 
@@ -675,7 +743,7 @@ The second source that inspired the author in composing the surveys was a user s
 \item Vague answers (scale from 1-10, where an answer is 5)
 \end{itemize}
 
-\noindent The latter vague answers can occur in the case of answers with a rating scale. Although the authors of the workshop do not explicitly mention the SUS questionnaire, they strongly recommend avoiding the rating scale. The result could look similar to the following example in Fig. \ref{fig:blur_scale}. It is much more advantageous to use either binary answers (Yes / No) or rank specific features.
+\noindent The latter vague answers can occur in the case of answers with a rating scale. Although the authors of the workshop do not explicitly mention the SUS questionnaire, they strongly recommend avoiding the rating scale. The result could look similar to the following example in Figure \ref{fig:blur_scale}. It is much more advantageous to use either binary answers (Yes / No) or rank specific features.
 
 \vspace{0.3cm}
 \begin{figure}[hbt!] 
@@ -696,7 +764,7 @@ The second source that inspired the author in composing the surveys was a user s
 \begin{figure}[hbt!] 
 \begin{center}
 \includegraphics[width=10cm]{../pictures/survey_monkey_options.png} 
-\caption[Survey Monkey answer types ]{Survey Monkey question types (source: https://www.surveymonkey.com)}
+\caption[Survey Monkey answer types ]{Survey Monkey question types (Source: Personal collection)}
 \label{fig:survey_monkey_options}
 \end{center}
 \end{figure}
@@ -705,7 +773,7 @@ The second source that inspired the author in composing the surveys was a user s
 \noindent \textbf {Slider}
 \label{sec:slider}
 
-\noindent This type of question, also called Visual Analog Scale (VAS), can be used instead of a rating scale. We let respondents rate an item or statement on a numerical scale by dragging an interactive slider. This method is visually more pleasant than the so-called Likert scale, which is the scale used in SUS. Besides, it best captures the true opinion and perception of users, as there is no limited LS 'discrete set of predetermined responses. Sliders are, for example, widely used by healthcare professionals to determine their patient's pain. The pain does not have discrete jumps, but it is continuous, so it is appropriate to express it on a continuous scale from 0 to 100. As Matevž Pesek, Alja Isakovic concluded the Slider (they call it Stripe) increases the intuitiveness, simplicity, and speed of answering the question. Therefore, this method is widely represented in the surveys conducted in this work. The form of the questions are inspired by the SUS questionnaire, in which users do not essentially evaluate the question, but try to express a degree of agreement with the opinion, which takes the form of a statement. A typical example of a Slider question can be seen in Figure \ref{fig:slider_question}.
+\noindent This type of question, also called Visual Analog Scale (VAS), can be used instead of a rating scale. We let respondents rate an item or statement on a numerical scale by dragging an interactive slider. This method is visually more pleasant than the so-called Likert scale, which is the scale used in SUS. Besides, it best captures the true opinion and perception of users, as there is no limited LS 'discrete set of predetermined responses. Sliders are, for example, widely used by healthcare professionals to determine their patient's pain. The pain does not have discrete jumps, but it is continuous, so it is appropriate to express it on a continuous scale from 0 to 100. As Matevž Pesek, Alja Isakovic \cite{inproceedings} concluded the Slider (they call it Stripe) increases the intuitiveness, simplicity, and speed of answering the question. Therefore, this method is widely represented in the surveys conducted in this work. The form of the questions is inspired by the SUS questionnaire, in which users do not essentially evaluate the question, but try to express a degree of agreement with the opinion. A typical example of a Slider question can be seen in Figure \ref{fig:slider_question}.
 
 \vspace{0.3cm}
 \begin{figure}[hbt!] 
@@ -737,7 +805,7 @@ The second source that inspired the author in composing the surveys was a user s
 \vspace*{-0.5cm}
 \noindent \textbf {Comment Box}
 
-\noindent This more sophisticated technique in terms of subsequent analyzes allows the user to share their own ideas in the form of open-ended responses. The basis of the analysis is to determine the topics into which the answers can be categorized. It may happen that one answer includes more topics. In this case, it is advantageous to divide the answers into atomic parts and then categorize them. Comment Box questions (see Fig. \ref{fig:comment_box_question}) can be further analyzed in a similar way as Multiple Choice types - by displaying the numbers of responses in individual topics using bar charts.
+\noindent This more sophisticated technique in terms of subsequent analyzes allows the user to share their own ideas in the form of open-ended responses. The basis of the analysis is to determine the topics into which the answers can be categorized. It may happen that one answer includes more topics. In this case, it is advantageous to divide the answers into atomic parts and then categorize them. Comment Box questions (see Figure \ref{fig:comment_box_question}) can be further analyzed in a similar way as Multiple Choice types - by displaying the numbers of responses in individual topics using bar charts.
 
 \vspace{0.3cm}
 \begin{figure}[hbt!] 
@@ -767,7 +835,7 @@ The second source that inspired the author in composing the surveys was a user s
 \subsection{Methods of questionnaire analysis}
 \label{sec:qstat}
 
-\noindent In this work, a statistical analysis of questions is performed, which uses the basic methods of Explanatory Data Analysis. Thanks to this analysis, we can discover patterns or anomalies that occur and draw the conclusions of the surveys. It is important to understand EDA as a process that does not have given rules, it only depends on the analyst which of the methods to use. As this work is purely about finding out the basic features and characteristics of a relatively small sample of answers, which counts a maximum of 52 respondents (the number of respondents in the first part of the first survey), we analyze data over a single variable/column from a dataset. Therefore, we use only basic methods such as histograms, boxplots, and probability density functions. Other EDA tools, for example, quantile-quantile (q-q) plots, scatter plots or correlation matrices detect relationships between two or more variables. Recently, descriptive statistics have also been included in EDA, which provides us with a brief summary of the data in the sense of Mean, Standard Deviation, and 5 elements of the box-and-whisker plot (Minimum, Maximum, 25th percentile, median, and 75th percentile). Ranking and Slider questions are analyzed using R language using RStudio. Here the author has applied extensive experience with this program, especially with the Tidyverse library, which is the core of data analysis in R and itself contains several interesting packages. In this work, the \textit{dplyr} package is used for data manipulation. The visualization is made through the \textit{ggplot2} \footnote{\url{https://github.com/rstudio/cheatsheets/blob/master/data-visualization-2.1.pdf}} package. In addition to the R language, the Python language has become the giant of data analysis with its Pandas library in recent years.
+\noindent In this work, a statistical analysis of questions is performed, which uses the basic methods of Explanatory Data Analysis. Thanks to this analysis, we can discover patterns or anomalies that occur and draw the conclusions of the surveys. It is important to understand EDA as a process that does not have given rules, it only depends on the analyst which of the methods to use. As this work is purely about finding out the basic features and characteristics of a relatively small sample of answers, which counts a maximum of 52 respondents (the number of respondents in the first part of the first survey), we analyze data over a single variable/column from a dataset. Therefore, we use only basic methods such as histograms, boxplots, and probability density functions. Other EDA tools, for example, quantile-quantile (q-q) plots, scatter plots or correlation matrices detect relationships between two or more variables. Descriptive statistics, which provides us with a brief summary of the data in the sense of Mean, Standard Deviation, and 5 elements of the box-and-whisker plot (Minimum, Maximum, 25th percentile, median, and 75th percentile), is also often considered as a part of EDA \cite{heroku} \cite{luminousmen}. In this work Ranking and Slider questions are analyzed using R language using RStudio. Here the author has applied extensive experience with this program, especially with the Tidyverse library, which is the core of data analysis in R and itself contains several interesting packages. In this work, the \textit{dplyr} package is used for data manipulation. The visualization is made through the \textit{ggplot2} \footnote{\url{https://github.com/rstudio/cheatsheets/blob/master/data-visualization-2.1.pdf}} package. In addition to the R language, the Python language has become the giant of data analysis with its Pandas library in recent years.
 
 \bigskip
 \noindent \textbf{Box-and-whisker plot}
@@ -778,7 +846,7 @@ The second source that inspired the author in composing the surveys was a user s
 \begin{figure}[hbt!]
 \begin{center}
 \includegraphics[width=6.5cm]{../pictures/boxplot.png}
-\caption[Description of box-and-whisker plot (boxplot)]{Description of box-and-whisker plot (boxplot) (Source: https://medium.com/code-heroku/introduction-to-exploratory-data-analysis-eda-c0257f888676)}
+\caption[Description of box-and-whisker plot (boxplot)]{Description of box-and-whisker plot (boxplot) (Source: \cite{heroku})}
 \label{fig:boxplot}
 \end{center}
 \end{figure}
@@ -788,13 +856,13 @@ The second source that inspired the author in composing the surveys was a user s
 \bigskip
 \noindent \textbf {Histogram vs. Bar Chart}
 
-\noindent A histogram is used when working with quantitative data. It shows the number of observations that lie in-between the range of values, which is known as a bin. Unlike a bar chart, individual columns touch. Categorical features cannot be visualized through histograms. Instead, we can use bar charts where elements are taken as individual entities, so we can e.g. rearrange the blocks, from highest to lowest. Illustrative comparison of Histogram and Bar Chart is shown in the following Figure \ref{fig:histogram_barchart}:
+\noindent A histogram is used when working with quantitative data. It shows the number of observations that lie in-between the range of values, which is known as a bin. Unlike a bar chart, individual columns touch. Categorical features cannot be visualized through histograms. Instead, we can use bar charts where elements are taken as individual entities, so we can e.g. rearrange the blocks, from highest to lowest \cite{OnlineMathLearning}. Illustrative comparison of Histogram and Bar Chart is shown in the following Figure \ref{fig:histogram_barchart}:
 
 \vspace{0.3cm}
 \begin{figure}[hbt!]
 \begin{center}
 \includegraphics[width=12.5cm]{../pictures/histogram_barchart.png}
-\caption[Histogram vs. Bar Chart (boxplot)]{Histogram vs. Bar Chart (Source: https://www.onlinemathlearning.com/histograms.html)}
+\caption[Histogram vs. Bar Chart (boxplot)]{Histogram vs. Bar Chart (Source: \cite{OnlineMathLearning})}
 \label{fig:histogram_barchart}
 \end{center}
 \end{figure}
@@ -804,17 +872,17 @@ The second source that inspired the author in composing the surveys was a user s
 
 \noindent Simply said the Probability density curve is the graphical representation of the probability that a continuous random variable falls in a particular class. Therefore, the total area under an entire density curve is 100 \%. The probability that a continuous random variable acquires a certain (exactly given) value is zero.
 
-For a discrete random variable, we determine the probability that it is equal to exactly some value. Such a function is called the Probability mass function (PMF). It holds that all probabilities in the function must be non-negative and together give the sum of 1. The value of the random variable having the largest probability mass is the mode.
+For a discrete random variable, we determine the probability that it is equal to exactly some value. Such a function is called the Probability mass function (PMF). It holds that all probabilities in the function must be non-negative and together give the sum of 1.
 
 \newpage
 \vspace*{-1cm}
 \subsubsection{Data types}
 
-How to analyze survey responses depends on their type. We divide two data types - qualitative and quantitative. Qualitative data can be further divided into binary (yes / no), nominal (contains more categories) and ordinal (also contains more categories and can be sorted). For example, very hot, hot, cold, very cold, warm are all nominal data when considered individually. But when placed on a scale and arranged in a given order (very hot, hot, warm, cold, very cold), they are regarded as ordinal data. Regarding descriptive statistics, we can count and determine a mode (the most common value in a dataset) for nominal data. Measures of central tendency for ordinal data, in which values are ranked relative to each other but are not measured absolutely, are limited to mode or median.
+How to analyze survey responses depends on their type. We divide two data types - qualitative and quantitative. Qualitative data can be further divided into binary (yes / no), nominal (contains more categories) and ordinal (also contains more categories and can be sorted) \cite{minitab}. For example, very hot, hot, cold, very cold, warm are all nominal data when considered individually. But when placed on a scale and arranged in a given order (very hot, hot, warm, cold, very cold), they are regarded as ordinal data. Regarding descriptive statistics, we can count and determine a mode (the most common value in a dataset) for nominal data. Measures of central tendency for ordinal data, in which values are ranked relative to each other but are not measured absolutely, are limited to mode or median \cite{ordinaldata}.
 
-Examples of nominal qualitative data are the responses to questions of Multiple Choice type. Here, it is possible to create a bar chart (where we can find the mode), but other descriptive statistics do not make sense. An example of ordinal qualitative data is the responses to questions of Ranking type. A Bar Plot can also be compiled for Ranking questions, but the mean and standard deviation do not make sense. Ordinal variables are not continuous variables and should not be treated as if they are. Therefore, we should correctly create the Probability mass function (PMF) for Ranking questions where we determine a specific point probability on the y-axis that the discrete random variable is equal to some order. However, in question Q3 in the first part of the first survey and Q5 in the second part of the survey, PDF charts were eventually used. Although their use is not entirely correct, they provide better visual insight into the data than PMF, especially if we have several PDF charts for different variables.
+Examples of nominal qualitative data are the responses to questions of Multiple Choice type. Here, it is possible to create a bar chart (where we can find the mode), but other descriptive statistics do not make sense. An example of ordinal qualitative data is the responses to questions of Ranking type. A bar chart can also be compiled for Ranking questions, but the mean and standard deviation do not make sense. Ordinal variables are not continuous variables and should not be treated as if they are. Therefore, we should correctly create the Probability mass function (PMF) for Ranking questions where we determine a specific point probability on the y-axis that the discrete random variable is equal to some order. However, in question Q3 in the first part of the first survey and Q5 in the second part of the survey, PDF charts were eventually used. Although their use is not entirely correct, they provide better visual insight into the data than PMF, especially if we have several PDF charts for different variables.
 
-Conversely, quantitative or numerical data can be characterized by a numerical value. Quantitative variables can be further classified as either discrete (those with a finite or countable number of possible values) or continuous (those with an infinite or uncountable number of possibilities). In the case of surveys conducted in this work, the Slider questions always have the same form - we measure the degree of agreement with the statement on a scale from 0 to 100. It is not a discrete variable, because we do not have any obvious categories from the beginning. Those classes have to be created. In this work, they were determined according to the SUS questionnaire: [0, 20] - Strongly disagree, (20, 40] - Disagree, (40, 60] - Neutral, (60, 80] - Agree and (80, 100] - Strongly agree.
+Conversely, quantitative or numerical data can be characterized by a numerical value. Quantitative variables can be further classified as either discrete (those with a finite or countable number of possible values) or continuous (those with an infinite or uncountable number of possibilities) \cite{wisconsin1}. In the case of surveys conducted in this work, the Slider questions always have the same form - we measure the degree of agreement with the statement on a scale from 0 to 100. It is not a discrete variable, because we do not have any obvious categories from the beginning. Those classes have to be created. In this work, they were determined according to the SUS questionnaire: [0, 20] - Strongly disagree, (20, 40] - Disagree, (40, 60] - Neutral, (60, 80] - Agree and (80, 100] - Strongly agree.
 
 
 
@@ -826,11 +894,11 @@ Conversely, quantitative or numerical data can be characterized by a numerical v
 \section{Analysis of the results of the first survey}
 \label{sec:qstat}
 
-\noindent The main part of this work consists of two questionnaires. The first questionnaire was released on 23 October and stopped on 29 October 2020. It has two separate parts. The first one contains six questions dealing with the improvement of the GRASS GIS startup mechanism and the assessment of the state after GSoC. The second part of the survey which is even more important for this master thesis contains 5 questions focusing on the enhancement of the newcomers' experience. In other words, it focuses on possibilities of how to enrich the existing Demolocation concept so that the new user can find his way around the software as quickly and conveniently as possible. The implementation part of this work is based on the second part of the first survey and then especially on the second survey, which was released roughly a month later and is analyzed in Section \ref{sec:qstat2}.
+\noindent The main part of this work consists of two questionnaires. The first questionnaire was released on 23 October and stopped on 29 October 2020. It has two separate parts. The first one contains six questions dealing with the improvement of the GRASS GIS startup mechanism and the assessment of the state after GSoC. The second part of the survey which is even more important for this master thesis contains 5 questions focusing on the enhancement of the newcomers' experience. In other words, it focuses on possibilities of how to enrich the existing ``demolocation'' concept so that the new users can find their way around the software as quickly and conveniently as possible. The implementation part of this work is based on the second part of the first survey and then especially on the second survey, which was released roughly a month later and is analyzed in Section \ref{sec:qstat2}.
 
 \subsection{Part 1: GRASS startup and Data Catalog}
 
-\noindent The first part of the survey returns to the changes that were implemented within the GSoC. It tries both - to get feedback from users and to answer questions that remain unanswered after GSoC. From this point of view, the most fundamental question is No. 2, which finds out the preferences regarding the way of starting GRASS GIS in a situation where the last mapset is not in a usable state. Questions 4, 5, and 6 are also related to the further direction of GRASS GIS (not only in terms of the startup mechanism) while questions 1 and 3 assess the benefits of GSoC. The first part of the survey was attended by 52 respondents, the completion rate was high - 96 \% and no respondent skipped any questions. We can see a weekly graph of the number of responses for a specific day in Fig. \ref{fig:survey1_part2_insight2}.
+\noindent The first part of the survey called \textbf {Help improve GRASS GIS startup mechanism and Data Catalog} returns to the changes that were implemented within the GSoC. It tries both - to get feedback from users and to answer questions that remain unanswered after GSoC. From this point of view, the most fundamental question is No. 2, which finds out the preferences regarding the way of starting GRASS GIS in a situation where the last mapset is not in a usable state. Questions 4, 5, and 6 are also related to the further direction of GRASS GIS (not only in terms of the startup mechanism) while questions 1 and 3 assess the benefits of GSoC. The first part of the survey was attended by 52 respondents, the completion rate was high - 96 \% and no respondent skipped any questions. We can see a weekly graph of the number of responses for a specific day in Figure \ref{fig:survey1_part2_insight2}.
 
 \begin{figure}[hbt!] 
 \begin{center}
@@ -845,7 +913,7 @@ Conversely, quantitative or numerical data can be characterized by a numerical v
 The partial removal of the startup screen and improvement of the Data Catalog simplifies the initial introduction to the software and further work.}
 \par\noindent\rule{\textwidth}{0.4pt}
 
-\noindent This question has the form of a Slider where 0 means complete disagreement with the statement and 100 means complete agreement. If we only worked with an average value of 70.9, we would conclude that enthusiasm probably prevails, but it is not so certain. The box-whisker-plot in Fig. \ref{fig:survey1_part1_question1_boxplot} shows that the median is significantly higher - 78.5 points out of a 100. If we look at the histogram in Figure \ref{fig:survey1_part1_question1_histogram}, which was divided into 5 parts exactly according to the number of bins in the original SUS, we can see that in the last interval ``Strongly agree'' there are 22 responses out of 52. On this basis, we can conclude then that the vast majority like the situation after GSoC, however, there is also a minority of negative opinions.
+\noindent This question has the form of a Slider where 0 means complete disagreement with the statement and 100 means complete agreement. If we only worked with an average value of 70.9, we would conclude that enthusiasm probably prevails, but it is not so certain. The box-whisker-plot in Figure \ref{fig:survey1_part1_question1_boxplot} shows that the median is significantly higher - 78.5 points out of a 100. If we look at the histogram in Figure \ref{fig:survey1_part1_question1_histogram}, which was divided into 5 parts exactly according to the number of bins in the original SUS, we can see that in the last interval ``Strongly agree'' there are 22 responses out of 52. On this basis, we can conclude then that the vast majority like the situation after GSoC, however, there is also a minority of negative opinions.
 
 \begin{figure}[hbt!] 
 \begin{center}
@@ -870,7 +938,7 @@ The partial removal of the startup screen and improvement of the Data Catalog si
 
 \noindent The result of this question put in the Multiple Choice form with the possibility of open-ended responses is very unexpected and unclear. Some open-ended answers strongly suggest that respondents did not understand from the previous context to the question (see Appendix \ref{appendix:A}, page 2) that the startup screen will not be visible at all in other cases. Another drawback is the only two close-ended choices. Most people, therefore, preferred something familiar (startup screen) to the new concept of Demolocation.
 
-One of the ways to proceed here is not to give to the result of this question in terms of the bar chart in Figure \ref{fig:survey1_part1_question2_histogram_sm}, as the possibilities of answers to this question were not well-conceived, and focus mainly on open-ended responses. Ten respondents choose neither of the two questions offered and took the opportunity to write their own proposal. Of the ten answers, which are categorized in the table in Fig. \ref{fig:survey1_part1_question2_other_answers}, only one respondent \#31 is for maintaining the original start screen. There are some ideas of displaying a simple dialog in the form of a warning message, which offers a user some other options - e.g. to open a demolocation, an existing mapset, or to create a new mapset. There was also a suggestion that it would not be a dialog, but only a pop-up message.
+One of the ways to proceed here is not to give to the result of this question in terms of the bar chart in Figure \ref{fig:survey1_part1_question2_histogram_sm}, as the possibilities of answers to this question were not well-conceived, and focus mainly on open-ended responses. Ten respondents choose neither of the two questions offered and took the opportunity to write their own proposal. Of the ten answers, which are categorized in the table in Figure \ref{fig:survey1_part1_question2_other_answers}, only one respondent \#31 is for maintaining the original start screen. There are some ideas of displaying a simple dialog in the form of a warning message, which offers a user some other options - e.g. to open a demolocation, an existing mapset, or to create a new mapset. There was also a suggestion that it would not be a dialog, but only a pop-up message.
 
 \vspace{0.3cm}
 \begin{figure}[hbt!] 
@@ -900,16 +968,16 @@ The advantage of changes made after GSoC is that changing the database, location
 \noindent \textbf{Question 3: Please, rank how useful these features in Data Catalog would be (or already are) for you (1 = the most useful).}
 \par\noindent\rule{\textwidth}{0.4pt}
 
-\noindent This question asks the GRASS user to evaluate the benefits of the new features that were introduced after GSoC. The implementation of \textit{Small icons distinctive mapping, locations, GRASS databases, and layers (vector, raster)} is the work of Anna Petrasova, other functions are part of the implementations performed by the author. The evaluation of functions is performed by sorting them from the most useful (number 1) to the least useful (number 7).
+\noindent This question asks the GRASS user to evaluate the benefits of the new features that were introduced after GSoC (see Figure \ref{fig:function}) . The implementation of \textit{Small icons distinctive mapping, locations, GRASS databases, and layers (vector, raster)} is the work of Anna Petrasova, other functions are part of the implementations performed by the author. The evaluation of functions is performed by sorting them from the most useful (number 1) to the least useful (number 7).
 
-According to the means in Figure \ref{fig:survey1_part1_question3_descriptive_stats_sm} the greatest success have \textit{New management icons for adding GRASS database, location, and mapset, and for downloading location}. However, the use of mean and standard deviation is quite misleading for ordinal types of variables. It is better to focus on the median whose values are in Figure \ref{fig:survey1_part1_question3_pdf} marked in a red box. The median is the smallest for \textit{Small icons distinguishing mapsets, locations, GRASS databases, and layers (vector, raster)}. Although the responses do not have the character of a continuous random variable and the Figure \ref{fig:survey1_part1_question3_pdf} is somewhat misleading in terms of statistics, \textit{Small icons distinguishing mapsets, locations, GRASS databases, and layers (vector, raster) } are also the most successful here. In the second place, there are \textit{New management icons for adding GRASS database, location, and mapset, and for downloading location} and in third place, we can find \textit{Creating, renaming and deleting mapset or location}.
+According to the means in Figure \ref{fig:survey1_part1_question3_descriptive_stats_sm} the greatest success have \textit{New management icons}. However, the use of mean and standard deviation is quite misleading for ordinal types of variables. It is better to focus on the median whose values are in Figure \ref{fig:survey1_part1_question3_descriptive_stats_sm} marked in a red box. The median is the smallest for \textit{Small icons distinguishing mapsets, locations, GRASS databases, and layers (vector, raster)}. Although the responses do not have the character of a continuous random variable and the Figure \ref{fig:survey1_part1_question3_pdf} is somewhat misleading in terms of statistics, \textit{Small icons distinguishing mapsets, locations, GRASS databases, and layers (vector, raster) } are also the most successful here. In the second place, there are \textit{New management icons} and in third place, we can find \textit{Creating, renaming and deleting mapset or location}.
 
-Interestingly, no special success was achieved by \textit{Adding multiple GRASS databases}, which were relatively difficult to implement. As can be seen from the stacked bar chart, the most controversial is \textit{Mapset access info (current, in use, and a different user)}, which some users rated as the most useful and a similar number of users as the least useful.
+Interestingly, no special success was achieved by \textit{Adding multiple GRASS databases}, which were relatively difficult to implement. As can be seen from the stacked bar chart in Figure \ref{fig:survey1_part1_question3_histogram} and also the boxplot in Figure \ref{fig:survey1_part1_question3_boxplot_r}, the most controversial is \textit{Mapset access info (current, in use, and a different user)}, which some users rated as the most useful and a similar number of users as the least useful.
 
 \vspace{0.3cm}
 \begin{figure}[hbt!] 
 \begin{center}
-\includegraphics[width=16cm]{../surveys/analyzed_data/survey1_part1_question3_descriptive_stats_sm.png} 
+\includegraphics[width=17cm]{../surveys/analyzed_data/survey1_part1_question3_descriptive_stats_sm.png} 
 \caption[Survey 1 Part 1 Question 3: Descriptive statistics]{Survey 1 Part 1 Question 3: Descriptive statistics (Source: Basic analyzes provided by the SM)}
 \label{fig:survey1_part1_question3_descriptive_stats_sm}
 \end{center}
@@ -918,12 +986,13 @@ Interestingly, no special success was achieved by \textit{Adding multiple GRASS 
 \vspace{0.3cm}
 \begin{figure}[hbt!] 
 \begin{center}
-\includegraphics[width=16cm]{../surveys/analyzed_data/survey1_part1_question3_histogram.png} 
+\includegraphics[width=17cm]{../surveys/analyzed_data/survey1_part1_question3_histogram.png} 
 \caption[Survey 1 Part 1 Question 3: Stacked Bar Chart ]{Survey 1 Part 1 Question 3: Stacked Bar Chart (Source: Basic analyzes provided by the SM)}
 \label{fig:survey1_part1_question3_histogram}
 \end{center}
 \end{figure}
 
+\newpage
 \vspace{0.3cm}
 \begin{figure}[hbt!] 
 \begin{center}
@@ -946,7 +1015,7 @@ Interestingly, no special success was achieved by \textit{Adding multiple GRASS 
 \noindent \textbf{Question 4: Which features would you like to add?}
 \par\noindent\rule{\textwidth}{0.4pt}
 
-\noindent From the point of view of the Data Catalog, there are, for example, proposals for the EPSG code shown after the location name, cloning the location, deleting multiple layers via the context menu, displaying space-time datasets (STDS), or displaying saved workspaces. Regarding things unrelated to the Data Catalog, three users would like an easier and clearer way to add WMS/WFS using a new icon.
+\noindent From the point of view of the Data Catalog, in Figure \ref{fig:survey1_part1_question4_open_ended}, we can see proposals for the EPSG code shown after the location name, cloning the location, deleting multiple layers via the context menu, displaying space-time datasets (STDS), or displaying saved workspaces. Regarding things unrelated to the Data Catalog, three users would like an easier and clearer way to add WMS/WFS using a new icon.
 
 \begin{figure}[hbt!] 
 \begin{center}
@@ -960,7 +1029,7 @@ Interestingly, no special success was achieved by \textit{Adding multiple GRASS 
 \noindent \textbf{Question 5: Because we have limited screen space, we need to think about where we can add new features.Where would you add them?}
 \par\noindent\rule{\textwidth}{0.4pt}
 
-\noindent In this Multiple Choice question, most respondents agree to add additional functions to the context menu. Interestingly, 13.5 \% of respondents think that \textit{no additional features should be added, there is little space for them}. That is almost a seventh of the respondents, so also a relatively significant part. So there is a certain fear that the added functions may rather reduce the clarity of the current solution. This is also evidenced by the fact that in the Q4 none of the respondents mention adding more complex functions to the Data Catalog, such as Import Data. The improvements mainly concern the management of data hierarchy in GRASS.
+\noindent In this Multiple Choice question analyzed in Figure \ref{fig:survey1_part1_question5_descriptive_stats_sm} using the bar chart, most respondents agree to add additional functions to the context menu. Interestingly, 13.5 \% of respondents think that \textit{no additional features should be added, there is little space for them}. That is almost a seventh of the respondents, so also a relatively significant part. So there is a certain fear that the added functions may rather reduce the clarity of the current solution. This is also evidenced by the fact that in the Q4 none of the respondents mention adding more complex functions to the Data Catalog, such as Data Import. The improvements mainly concern the management of data hierarchy in GRASS.
 
 \vspace{0.3cm}
 \begin{figure}[hbt!] 
@@ -975,11 +1044,11 @@ Interestingly, no special success was achieved by \textit{Adding multiple GRASS 
 \noindent \textbf{Question 6: So, what do you think about the following statement? I would start GRASS using the file association of the workspace file (.gxw) frequently.}
 \par\noindent\rule{\textwidth}{0.4pt}
 
-\noindent This question takes the form of a Slider and was intentionally conceived in this somewhat strict way. It depends on the opinion of individuals whether they would really use this functionality often, not on the general belief, which can be distorted by the fact that in other software this functionality is a matter of course. GRASS GIS is the only software of those selected in the section \ref{sec:startup_concepts}, together with ILWIS, that does not have this option (see the summary \ref{subsec:startup_concepts_summary}). Nevertheless, based on the results of this question, GRASS GIS users do not seem to mind. The author can name several reasons why this is the case.
+\noindent This question takes the form of a Slider and was intentionally conceived in this somewhat strict way. It depends on the opinion of individuals whether they would really use this functionality often, not on the general belief, which can be distorted by the fact that in other software this functionality is a matter of course. Among highly evaluated commercial and open-source software by GISGeography \cite{gisgeography} (ArcGIS Pro, Geomedia Advantage, MapInfo Professional, QGIS 3, gvSIG, GRASS GIS, ILWIS, SAGA GIS), according to author's conclusions, GRASS GIS is the only software of mentioned together with ILWIS, that cannot be started using the file association of the workspace file. Nevertheless, based on the results, users do not seem to mind.
 
-After changes within GSoC, GRASS GIS starts in the last open mapset to the Data tabs, which allows easy switching between mapsets, opening other GRASS databases, saving and opening workspaces, etc. It is therefore very easy to work with a data hierarchy in GRASS GIS. In addition, the data is stored directly in the mapsets, so it is not necessary to remember where in the disk the data is located, such as in QGIS. Another reason is that GRASS GIS is often used under the Unix operating system and runs from the command line.
+The author can name several reasons why. After changes within GSoC, GRASS GIS starts in the last open mapset to the Data tabs, which allows easy switching between mapsets, opening GRASS databases, saving and opening workspaces, etc. It is therefore very easy to work with the data hierarchy. In addition, the data is stored directly in the mapsets, so it is not necessary to remember where in the disk the data is located, such as in QGIS. Another reason is that GRASS GIS is often started from the command line.
 
-The answer to this question is therefore very ambiguous about what to expect. The average value of the degree of agreement with the statement is 51, as you can see from Fig. \ref{fig:survey1_part1_question6_boxplot}. The median is slightly higher, just over 54 points. Both of these values are more or less meaningless. The most interesting view is offered by the Probability Density Function in Fig. \ref{fig:survey1_part1_question6_r_pdf}. The largest density values are in the range of 50 - 75, according to which we can conclude that the answer whether to implement is rather yes, but it is not a functionality that is perceived by GRASS GIS users as essential.
+The average value of the degree of agreement with the statement is 51, as you can see from Figure \ref{fig:survey1_part1_question6_boxplot}. The median is slightly higher, just over 54 points. Both of these values are more or less meaningless. The most interesting view is offered by the histogram in Figure \ref{fig:survey1_part1_question6_histogram} and PDF in Figure \ref{fig:survey1_part1_question6_r_pdf}. The largest density values are in the range of 50 - 75, according to which we can conclude that the answer whether to implement is rather yes, but it is not a functionality that is perceived as essential.
 
 \vspace{0.3cm}
 \begin{figure}[hbt!] 
@@ -1013,9 +1082,9 @@ The answer to this question is therefore very ambiguous about what to expect. Th
 \vspace*{-1cm}
 \subsection{Part 2: Better first-time user experience in GRASS}
 
-\noindent The second part of the survey seeks to get user preferences on how they would like to improve the first-time user experience. This survey consists mainly of Multiple Choice and Comment Box types of questions, so the evaluation is very subjective and there are exceptional answers for which the author was not entirely sure whether she understood them correctly. This is, after all, one of the disadvantages of questionnaires and remote usability testing in general.
+\noindent The second part of the survey called \textbf{Help create a better first-time user experience in GRASS GIS} seeks to get user preferences on how they would like to improve the first-time user experience. This survey consists mainly of Multiple Choice and Comment Box types of questions, so the evaluation is very subjective and there are exceptional answers for which the author was not entirely sure whether she understood them correctly. This is, after all, one of the disadvantages of questionnaires and remote usability testing in general.
 
-This part of the survey offers two ways to improve the first-time user experience that the author has noticed with other software - Info Bars (QGIS 3) and First Run Wizard (Zoner Photo Studio X). Respondents evaluate these topics in the first two questions, thus giving feedback on which of the above options they would prefer in GRASS. Question number 3 is very open and users write their own suggestions on how to improve the first-time user experience. In question 4, users share ideas for software that is user-friendly. In question 5, we then find out which specific things cause problems for users and what any first-time advice should be about. The second part of the first survey was attended by 46 respondents, the completion rate was high - 97 \%. Question 4, which was optional, was skipped 14 times. Other questions were answered by all participants, however, the answers were not always relevant, so not all are part of the analyzes. We can see a weekly graph of the number of responses for a specific day in Fig. \ref{fig:survey1_part2_insight2}.
+This part of the survey offers two ways to improve the first-time user experience that the author has noticed with other software - Info Bars (QGIS 3) and First Run Wizard (Zoner Photo Studio X). Respondents evaluate these topics in the first two questions, thus giving feedback on which of the above options they would prefer in GRASS. Question 3 is very open and users write their own suggestions on how to improve the first-time user experience. In Question 4, users share ideas for software that is user-friendly, while in Question 5, we then find out which specific things cause problems for users and what any first-time advice should be about. The second part of the first survey was attended by 46 respondents, the completion rate was high - 97 \%. Question 4, which was optional, was skipped 14 times. Other questions were answered by all participants, however, the answers were not always relevant, so not all are part of the analyzes. We can see a weekly graph of the number of responses for a specific day in Figure \ref{fig:survey1_part2_insight2}.
 
 \vspace{0.3cm}
 \begin{figure}[hbt!] 
@@ -1030,7 +1099,7 @@ This part of the survey offers two ways to improve the first-time user experienc
 \noindent \textbf{Question 1: Do you like the idea of First Run Wizard (inspired by Zoner implementation)?}
 \par\noindent\rule{\textwidth}{0.4pt}
 
-\noindent Users mostly like the idea of First Run Wizard, but there are also a lot of comments in Figure \ref{fig:survey1_part2_question1_all} highlighted in pink, which First Run Wizard finds rather annoying. After all, comments 1 and 2 also mean ``No, because...'' rather than ``Yes, but...''. If we then combine the subgroups into two large groups ``Yes'' and ``No'', we will come to the conclusion that 33 (71.7 \%) respondents are for and the remaining 13 (28.3 \%) respondents against First Run Wizard.
+\noindent Users mostly like the idea of First Run Wizard, but there are also a lot of comments in Figure \ref{fig:survey1_part2_question1_all} highlighted in pink, which First Run Wizard finds rather annoying. After all, comments \#1 and \#2 also mean ``No, because...'' rather than ``Yes, but...''. If we then combine the subgroups into two large groups ``Yes'' and ``No'', we will come to the conclusion that 33 (71.7 \%) respondents are for and the remaining 13 (28.3 \%) respondents against First Run Wizard.
 
 \vspace{0.3cm}
 \begin{figure}[hbt!] 
@@ -1053,24 +1122,23 @@ This part of the survey offers two ways to improve the first-time user experienc
 \begin{figure}[hbt!] 
 \begin{center}
 \includegraphics[width=15.5cm]{../surveys/analyzed_data/survey1_part2_question2_all.png} 
-\caption[Survey 1 Part 2 Question 2: Bar Char descriptive statistics and classification of open-ended responses]{Survey 1 Part 2 Question 2: Bar Char, descriptive statistics and classification of  open-ended responses (Source: Basic analyzes provided by the SM)}
+\caption[Survey 1 Part 2 Question 2: Bar Chart descriptive statistics and classification of open-ended responses]{Survey 1 Part 2 Question 2: Bar Chart, descriptive statistics and classification of  open-ended responses (Source: Basic analyzes provided by the SM)}
 \label{fig:survey1_part2_question2_all}
 \end{center}
 \end{figure}
 
-\noindent A relatively large proportion of respondents (17.4 \%) think that these icons will be ignored by new GRASS users. If we combine the subgroups into two main groups ``Yes'' and ``No'', we conclude that 34 (73.9 \%) respondents are for and 12 (26.1 \%) against Info Bars. This is a slightly better balance than in question number 1. But even here we must be careful. The difficult task will be to find a compromise between the fact that the information icons must be placed in the right place so that the user can ignore them as little as possible, but at the same time must not act as a warning, which is also pointed out by comment \#3.
+\noindent A relatively large proportion of respondents (17.4 \%) think that these icons will be ignored by new GRASS users. If we combine the subgroups into two main groups ``Yes'' and ``No'', we conclude that 34 (73.9 \%) respondents are for and 12 (26.1 \%) against Info Bars. This is a slightly better balance than in Question 1. But even here we must be careful. The difficult task will be to find a compromise between the fact that the information icons must be placed in the right place so that the user can ignore them as little as possible, but at the same time must not act as a warning, which is also pointed out by comment \#3.
 
 \par\noindent\rule{\textwidth}{0.4pt}
 \noindent \textbf{Question 3: Do you have other ideas that would lead you to more straightforward navigation in the software?}
 \par\noindent\rule{\textwidth}{0.4pt}
-\noindent For this question, GRASS GIS users were very shared, which resulted in a very detailed analysis of the answers into 12 groups. However, the variety of responses is so wide that many responses could not be included, so they ended up in a separate ``Other'' group. In the following lines, the author summarizes and discusses in more detail several opinions that were expressed. In the survey, several opinions are expressed, which the author will try to summarize and discuss in more detail in the following lines. The color represented by the categories in Figures \ref{fig:survey1_part2_question3_open_ended-1_1}, \ref{fig:survey1_part2_question3_open_ended-2_1}, \ref{fig:survey1_part2_question3_open_ended3_1} is purely random.
+\noindent For this question, GRASS GIS users were very shared, which resulted in a very detailed analysis of the answers into 12 groups. However, the variety of responses is so wide that many responses could not be included, so they ended up in a separate ``Other'' group. In the following lines, the author summarizes and discusses in more detail several opinions that were expressed. The color representing categories in Figures \ref{fig:survey1_part2_question3_open_ended-1_1}, \ref{fig:survey1_part2_question3_open_ended-2_1}, \ref{fig:survey1_part2_question3_open_ended3_1} is purely random.
 
-The first topic that permeates the whole questionnaire is how to better explain the GRASS GIS data hierarchy to newcomers. In this question, this topic is mentioned by respondents \#2, \#8, \#19, \#22. For example, respondent \#8 suggests a ``First Time Help'' pop-up window that explains folders on a disk, locations, etc. However, the topic of GRASS data hierarchy appears in other questions as well. For example, in question 4 respondent \#1 talks about the old concept of location. However, as can be seen from the answers \#25 and \#27, some users are satisfied with the current system.
+The first topic that permeates the whole questionnaire is how to better explain the GRASS GIS data hierarchy to newcomers. In this question, this topic is mentioned by respondents \#2, \#8, \#19, \#22. For example, respondent \#8 suggests a ``First Time Help'' pop-up window that explains folders on a disk, locations, etc. However, the topic of GRASS data hierarchy appears in other questions as well. For example, in Question 4 respondent \#1 talks about the old concept of location. However, as can be seen from the answers \#25 and \#27, some users are satisfied with the current system.
 
-Either way, data hierarchy in GRASS is usually one of the main topics of video calls of the developer community (link to the attached video call) and the only agreement is that the concept of database/location/mapset is abstruse to new users. The truth is that if database/location/mapset were named differently and more intuitively (for instance database/project/subproject) and thus closer to the standard of other open-source software, then the word ``old'' would not be part of the criticism. Therefore, perhaps the most feasible proposal that will not interfere so much with the implementation of GRASS is to maintain the concept but to change the terminology.
+Either way, data hierarchy in GRASS is usually one of the main topics of video calls of the developer community (link to the attached video call) and the only agreement is that the concept of \textit{database/location/mapset} is abstruse to new users. The truth is that if database/location/mapset were named differently and more intuitively (for instance \textit{database/project/subproject}) and thus closer to the standard of other open-source software, then the word ``old'' would not be part of the criticism. Therefore, perhaps the most feasible proposal that will not interfere so much with the implementation of GRASS is to maintain the concept but to change the terminology.
 
-The second important topic is better documentation, for example with the use of videos. Respondent \#26 would even like very detailed PDF manuals with print screens and information on each button and functionality.
-
+The second important topic is better documentation, for example with the use of videos. Respondent \#26 would even like very detailed PDF manuals with print screens and information on each button and functionality.  It should be noted here that the proposed solutions that will improve the first-time user experience must be sustainable also in terms of further development, which will probably be crucial in the future, as the community around GRASS is very lively. 
 \newpage
 \vspace{0.3cm}
 \begin{figure}[hbt!] 
@@ -1101,21 +1169,21 @@ The second important topic is better documentation, for example with the use of 
 \end{center}
 \end{figure}
 
-\noindent It should be noted here that the proposed solutions that will improve the first-time user experience must be sustainable also in terms of further development, which will probably be crucial in the future, as the community around GRASS is very lively. Therefore, it is advantageous to focus on smaller outputs, which is easy to edit in case of changes, rather than doing ``inflexible'' tutorials, whether in the form of PDFs or videos, which can be very outdated in a short time, thus for new users rather confusing. However, this does not mean that short videos or clearer documentation could not be created. Inspiration can come here from QGIS, as suggested by respondent \#14 in question 5. Respondent \#7 also encounters the relationship between QGIS and GRASS. As mentioned in \ref{subsection:GIS software} GRASS modules can also be run through QGIS. However, the GRASS function in QGIS has a different description than the same module in GRASS. This should be unified on the GRASS side.
+\noindent Therefore, it is advantageous to focus on smaller outputs, which is easy to edit in case of changes, rather than doing ``inflexible'' tutorials, whether in the form of PDFs or videos, which can be very outdated in a short time, thus for new users rather confusing. However, this does not mean that short videos or clearer documentation could not be created. Inspiration can come here from QGIS, as suggested by respondent \#14 in question 5. Respondent \#7 also encounters the relationship between QGIS and GRASS. As mentioned in \ref{subsection:GIS software} GRASS modules can also be run through QGIS. However, the GRASS function in QGIS has a different description than the same module in GRASS. This should be unified on the GRASS side.
 
 From the point of view of the further direction of this master thesis, a very important topic is how to improve the first-time user experience directly in the software, in other words how to improve demolocation where GRASS starts automatically after the first start. The answer \#3 is closely related to this since it asks for immediate display of the map. After all, for example, the open-source software Blender for modeling and rendering 3D computer graphics shows the cube when started. It is therefore natural for a new GRASS user to see the map. Furthermore, the classification also shows that brief advice on how to start would be valuable for newcomers and six respondents (\#5, \#8, \#9, \#12, \#15, \#18) mentions some form of info icons. Respondents \#5 and \#12 also point out the importance of the initial data and its easy import into the GRASS GIS. Two opinions call for putting GRASS into a single window.
 
-The answers also point out some of the problems that users face without explicitly mentioning them. Respondents \#10 and \#11 want a Tool search which is already part of the Modules tab. This may indicate that users did not understand the meaning of other tabs (probably did not notice them). By the way, Question 5 also draws attention to this problem, where 9 respondents out of 46 classified \textit{Description of main tabs (Data, Display, Modules, Console, Python] and Map Display} as the advice that would help them most in their initial orientation in the software.
+The answers also point out some of the problems that users face without explicitly mentioning them. Respondents \#10 and \#11 want a ``Tool search'' which is already part of the Modules tab. This may indicate that users did not understand the meaning of other tabs (probably did not notice them). By the way, Question 5 also draws attention to this problem, where 9 respondents out of 46 classified \textit{Description of main tabs (Data, Display, Modules, Console, Python] and Map Display} as the advice that would help them most in their initial orientation in the software.
 
 \par\noindent\rule{\textwidth}{0.4pt}
 \noindent \textbf{Question 4: What software do you think does a good job of providing a good first-time user experience? (optional)}
 \par\noindent\rule{\textwidth}{0.4pt}
-\noindent In this open optional question, QGIS is mentioned most often. However, the solution in GRASS may not be the same as in QGIS. Ideally it will be the best solution for GRASS, see \#42 in Q3.
+\noindent In this optional question, QGIS is mentioned most often. However, the solution in GRASS may not be the same as in QGIS. Ideally it will be the best solution for GRASS, see \#42 in Q3.
 
 \vspace{0.3cm}
 \begin{figure}[hbt!] 
 \begin{center}
-\includegraphics[width=16cm]{../surveys/analyzed_data/survey1_part2_question4_open_ended_1.png} 
+\includegraphics[width=17cm]{../surveys/analyzed_data/survey1_part2_question4_open_ended_1.png} 
 \caption[Survey 1 Part 2 Question 4: Classification of open-ended responses]{Survey 1 Part 2 Question 4: Classification of open-ended responses (Source: Personal collection)}
 \label{fig:survey1_part2_question4_open_ended_1}
 \end{center}
@@ -1125,7 +1193,7 @@ The answers also point out some of the problems that users face without explicit
 \noindent \textbf{Question 5: Let's imagine you are a first-time user. What would help you significantly in your initial orientation in the software? Please, rank those features according to the importance (1 = the most important).}
 \par\noindent\rule{\textwidth}{0.4pt}
 
-\noindent This question, where users sorted different features according to how much they would help them in their initial orientation, has no clear answers at all. Although the \textit{Description of main tabs (Data, Display, Modules, Console, Python] and Map Display} variant has the highest median (see Fig. \ref{fig:survey1_part2_question5_stats}) it appears very often on the first place as captured by the bar chart in Figure \ref{fig:survey1_part2_question5_histogram_r}. The answers suggest that the software should provide advice on all of these selected aspects because more or less, all of these aspects are problematic for new users. The question remains what advice and in what form to include directly in the demolocation and what advice should no longer be included, but it should be well-referred to.
+\noindent This question, where users sorted different features according to how much they would help them in their initial orientation, has no clear answers at all. Although the \textit{Description of main tabs (Data, Display, Modules, Console, Python, and Map Display} variant has the lowest preference according to the median (see Figure \ref{fig:survey1_part2_question5_stats}) it appears very often on the first place as captured by the bar chart in Figure \ref{fig:survey1_part2_question5_histogram_r}. The answers suggest that the software should provide advice on all of these selected aspects because more or less, all of these aspects are problematic for new users. The question remains what advice and in what form to include directly in the demolocation and what advice should no longer be included, but it should be well-referred to.
     
 \vspace{0.3cm}
 \begin{figure}[hbt!] 
@@ -1152,37 +1220,37 @@ The answers also point out some of the problems that users face without explicit
 \section{GRASS GIS Development Proposals}
 \label{sec:proposal}
 
-\noindent As described in the Introduction and the subchapter \ref{sec:startup_concepts}, this work consists of 2 seemingly independent parts. The first part (the main part of this work) related to the second part of the first survey and the second survey improves the concept of default location by the so-called first-time user mode, which aims to improve the first-time user experience. The second part, related to the first part of the first survey, builds significantly on the changes made in the GSoC and addresses the shortcomings of the new startup mechanism. The first main topic of this work focuses exclusively on new users, while the second topic related to the complete removal of the original startup screen (so that it does not appear even in a situation where the last mapset is not in a usable state) is a topic that affects all existing users.
+\noindent As described in the subchapter \ref{sec:objectives}, this work consists of 2 seemingly independent parts. The first part (the main part of this work) related to the second part of the first survey and the second survey improves the concept of default location by the so-called first-time user mode, which aims to improve the first-time user experience. The second part, related to the first part of the first survey, builds significantly on the changes made in the GSoC and addresses the shortcomings of the new startup mechanism. The first main topic of this work focuses exclusively on new users, while the second topic related to the complete removal of the original startup screen (so that it does not appear even in a situation where the last mapset is not in a usable state) is a topic that affects all existing users.
 
 \subsection{How to enhance first-time user experience}
 \label{sec:proposal1}
 
-After running GRASS in the version after GSoC, the new user is redirected to the default location (demolocation) to the Data tab. Here he/she can see a project template containing a world map. (In the future, the default location is likely to be enriched with additional maps.) After analyzing the second part of the first survey, it is more than evident that to make GRASS a more user-friendly tool right from the outset, there is some form of help (whether in form of First Run Wizard or Info Bars) a necessity. Although the Data Catalog provides a visual idea of the hierarchical data structure in GRASS, no clue would explain the concept of the default location, nor locations and mapsets in general. But it's not just a misunderstanding of the GRASS data hierarchy, as the developers initially thought. Users also have problems with the meaning of tabs, especially with the Modules tab. The responses to Question 5 also point out that the advice on the data import would be useful as well.
+After running GRASS in the version after GSoC, the new user is redirected to the default location (demolocation) to the Data tab. Here he/she can see a project template containing a world map. (In the future, the default location is likely to be enriched with additional maps.) The analysis of the second survey confirmed the assumption that in order to make GRASS a more user-friendly tool right from the outset, there is some form of help (whether in form of First Run Wizard or Info Bars) a necessity. Although the Data Catalog provides a visual idea of the hierarchical data structure in GRASS, no clue would explain the concept of the default location, nor locations and mapsets in general. But it's not just a misunderstanding of the GRASS data hierarchy, as the developers initially thought. Users also have problems with the meaning of tabs, especially with the Modules tab. The responses to Question 5 also point out that the advice on the data import would be useful as well.
 
-In the most likely scenario, as a new GRASS user, we would try to import our data, display it in the required design, and perform analyzes. To do this, in the first step, we should create a location in the coordinate system of their data. In the second step, depending on the data type, we can already import vector or raster data. In the third step, we can visit the Modules tab if want to analyze the data straight away. However, if we only want to change the layer properties, we should go to the Display tab.
+In the most likely scenario, as a new GRASS user, we would try to import our data, display it in the required design, and perform analyzes. To do this, in the first step, we should create a location in the coordinate system of our data. In the second step, depending on the data type, we can already import vector or raster data. In the third step, we can visit the Modules tab if want to analyze the data straight away. However, if we only want to change the layer properties, we should go to the Display tab.
 
 \vspace{0.3cm}
 \begin{figure}[hbt!] 
 \begin{center}
-\includegraphics[width=15.5cm]{../pictures/first-time_user_diagram.png} 
+\includegraphics[width=16cm]{../pictures/first-time_user_diagram.png} 
 \caption[Flowchart of First-time user mode]{Flowchart of First-time user mode (Source: Personal collection)}
 \label{fig:first-time_user_diagram}
 \end{center}
 \end{figure}
 
-For these situations, the author has proposed the sequence of small hints which can be seen in Figure \ref{fig:first-time_user_diagram} and will be the content of the Info Bar. Those texts displayed in the orange box essentially suggest a special first-time user mode, which we can also perceive as a First Run Wizard in terms of continuity. If the user follows the advice in the Info Bar, he will eventually meet all three advice in that order. So it is not possible to skip this mode as in Zoner Photo Studio, but if we do not follow the advice, we can avoid it. Except for hints, The Info Bar includes a button(s) that offer the user the necessary functions without the need to search. A more detailed description of the first-time mode, including examples of mockups, is contained in section \ref{sec:qstat2}.
+For these situations, the author has proposed the sequence of small hints which can be seen in Figure \ref{fig:first-time_user_diagram}. Those texts displayed in the orange box essentially suggest a special first-time user mode, which we can also perceive as a First Run Wizard in terms of continuity. If the user follows the advices, he will eventually meet all three advice in that order. So it is not possible to skip this mode as in Zoner Photo Studio, but if we do not follow the advice, we can avoid it. Since small hints are displayed in predefined situations, it was decided to implement them with a similar solution that is used in QGIS 3 - in the form of the Info Bar. After all, the Info Bar had better response than the First Run Wizard in the second survey. Except for hints, the Info Bar in GRASS will include a button(s) that offer the user the necessary functions without the need to search. A more detailed description of the first-time mode, including Info Bar mockups, is contained in section \ref{sec:qstat2}.
 
-\fancyhead[RE, RO]{\fancyplain{}{\small \sl{How improve GRASS GIS startup mechanism}}}
 \subsection{How to improve GRASS GIS startup mechanism}
 \label{sec:proposal2}
 
-In the first part of the first survey, Q4 and Q5 mainly concern the Data Catalog and Management Icons, which is important for future software development, however, the implementation is beyond the scope of this work. From the point of view of this work, the most important question is number 2, which solves the case when GRASS wants to start in the last used mapset, however, this mapset is not available for one of these reasons - it has either been deleted or it is used by another process. Unfortunately, this question was not drafted very cleverly in terms of the answer options offered, which is evident from a large number of open-ended responses.
+In the first part of the first survey, Q4 and Q5 mainly concern the Data Catalog and Management Icons, which development  is important, however, the implementation is beyond the scope of this work. From the point of view of this work, the most important question is number 2, which solves the case when GRASS wants to start in the last used mapset, however, this mapset is not available for one of these reasons - it has either been deleted or it is used by another process. Unfortunately, this question was not drafted very cleverly in terms of the answer options offered, which is evident from a large number of open-ended responses.
 
 At first glance, the number of respondents who would choose the modernized version of the startup screen prevails. However, only 2 out of 10 open-ended responses suggest some form of the startup screen. Although the total number of respondents proposing a startup screen is 34 (32 + 2), ie. 65 \% percent of all respondents, we can not talk about a significant majority opinion. Besides, in open-ended responses, ideas with some form of information or error message very often appear, which is a very interesting variant, which the author of the work did not think of when compiling the survey. In terms of implementation complexity, however, it is a simple option, as the proposed Info Bar for first-time users can cover both purposes - it will primarily serve as a help for new users and secondarily it can serve as an information channel for existing users. In the latter context, the Info Bar can inform users about non-standard situations and speed up their work (e.g. when creating a location, it will automatically offer the creation of a mapset, etc.).
 
-The display of the Info Bar in a non-standard situation is related to the existing startup mechanism, which still has not completely gotten rid of the old startup screen. If we start GRASS GIS for the first time, we meet a default location. In other cases, GRASS tries to boot into the last used mapset. However, there may be a problem where the last used mapset is not in a usable state. Two suggestions on how to solve this situation were compiled, which are presented using Flowcharts in Figures \ref{fig:normal_user_diagram} and \ref{fig:normal_user_diagram2}, where the second proposal is only an extension of the first proposal.
+The display of the Info Bar in a non-standard situation is related to the existing startup mechanism, which still has not completely gotten rid of the old startup screen. If we start GRASS GIS for the first time, we meet a default location. In other cases, GRASS tries to boot into the last used mapset. However, there may be a problem where the last used mapset is not in a usable state. Two suggestions on how to solve this situation were compiled, which are presented using Flowcharts in Figures \ref{fig:normal_user_diagram} and \ref{fig:normal_user_diagram2}, where the second proposal is an extension of the first proposal.
 
-In the first proposal in Figure \ref{fig:normal_user_diagram} we do not consider the last used location at all. If the last used mapset is in an unusable state (either because it was deleted or used by another process), the user will always be redirected to the default location. We do not prohibit the user from working in the default location as in the normal location. Then, however, there is a risk that the PERMANENT mapset can be used by another process. This situation can occur, for example, when a user starts two GRASS sessions. The first instance starts in the last used mapset, but the second instance can no longer start this way.
+\newpage
+In the first proposal in Figure \ref{fig:normal_user_diagram} we do not consider the last used location at all. If the last used mapset is in an unusable state, the user will always be redirected to the default location. We do not prohibit the user from working in the default location as in the normal location. Then, however, there is a risk that the PERMANENT mapset can be used by another process. This situation can occur, for example, when a user starts two GRASS sessions. The first instance starts in the last used mapset, but the second instance can no longer start this way.
 
 \vspace{0.3cm}
 \begin{figure}[hbt!] 
@@ -1193,13 +1261,13 @@ In the first proposal in Figure \ref{fig:normal_user_diagram} we do not consider
 \end{center}
 \end{figure}
 
-\noindent It is therefore essential to check whether the PERMANENT mapset in the default location is in the usable state and if it is not, we need to create a new mapset in the default location, into which GRASS will start in case of emergency. This mapset can be named after the user, which is a concept proposed in the second survey as a standard solution for first-time users. (In the end, it was not implemented since the second survey found that the existence of a user mapset in the standard version of default location is rather confusing than useful).
+\noindent It is therefore essential to check whether the PERMANENT mapset in the default location is in the usable state and if it is not, we need to create a new mapset in the default location, into which GRASS will start in case of emergency. This mapset can be named after the user, which is a concept proposed in the second survey as a standard solution for first-time users. (In the end, it was not implemented since the second survey found that the existence of a user mapset in the standard version of the default location is rather confusing than useful).
 
-When starting in the default location, the user will see the notification in the form of an Info Bar saying the reason of start in the default location and advising a user on what to do next in this situation. The solution is simple as in the new version of the Data Catalog after GSoC it is very easy to add a new database to the Data Catalog, create a new location, etc. The Info Bar can therefore have the character of an information icon, as in the case with help for first-time users.
+\newpage
+When starting in the default location, the user will see the notification in the form of the Info Bar saying the reason of start in the default location and advising a user on what to do next in this situation. The solution is simple as in the new version of the Data Catalog after GSoC it is very easy to add a new database to the Data Catalog, create a new location, etc. The Info Bar can therefore have the character of an information icon, as in the case with help for first-time users.
 
-Proposal 1 can be extended with another idea. To offer the user the most similar state to the last GRASS run, we can start GRASS in the PERMANENT mapset of the last used location. However, it presents a new concept, which assumes that the PERMANENT mapset is some kind of default mapset. This would mean incorporating this idea into other segments of GRASS. For example, in the Data Catalog, there should be a possibility in the Data to switch to location (its PERMANENT) from the location node. The default location is here taken as the last unwelcome option employed only when the last used location either does not exist at all or exists, but it is not possible to open the last used mapset or PERMANENT mapset.
+Proposal 1 can be extended with another idea. To offer the user the most similar state to the last GRASS run, we can start GRASS in the PERMANENT mapset of the last used location. However, it presents a new concept, which assumes that the PERMANENT mapset is some kind of default mapset. This would mean incorporating this idea into other segments of GRASS. For example, in the Data Catalog context menu, there should be a possibility to switch to location (its PERMANENT) from the location node. In this proposal, the default location is taken as the last unwelcome option employed only when the last used location either does not exist at all or exists, but it is not possible to open the last used mapset or PERMANENT mapset.
  
-
 \vspace{0.3cm}
 \begin{figure}[hbt!] 
 \begin{center}
@@ -1209,7 +1277,7 @@ Proposal 1 can be extended with another idea. To offer the user the most similar
 \end{center}
 \end{figure}
 
-\noindent However, the disadvantage of the second solution is that the GRASS GIS startup process would not be consistent. The first solution is always consistent - run a demolocation in each non-standard situation and provide the same message in Info Bar. Since this massage is closely related to the Data Catalog and data hierarchy in GRASS GIS in general, we can use the same object of Info Bar which is used for messages intended for first-time users.
+\noindent However, the disadvantage of the second solution is that the GRASS GIS startup process would not be consistent. The first solution is always consistent - boot in the demolocation in each non-standard situation and provide the same message in the Info Bar. Since this massage is closely related to the Data Catalog and data hierarchy in GRASS GIS in general, we can use the same object of Info Bar which is used for messages intended for first-time users.
 
 We could also think of other situations where the Info Bar could be displayed to users (see Figure \ref{fig:other_situations}). For example, when creating a new location, it can be assumed that the user will subsequently request the creation of a mapset. Similarly, when creating a database, it can be assumed that the user will want to create a new location in the next step. The notifications could therefore be a kind of guide intended not only for first-time users. Their purpose would be to speed up the user's work related to the organization of their data. It could also be the same Info Bar object placed in the data tab, however, this time the type would not be informative, but questional.
 
@@ -1217,7 +1285,7 @@ We could also think of other situations where the Info Bar could be displayed to
 \begin{figure}[hbt!] 
 \begin{center}
 \includegraphics[width=17cm]{../pictures/other_situations.png} 
-\caption[Flowchart of other situations where Info Bar could be helpful]{Flowchart of other situations where Info Bar could be helpful (Source: Personal collection)}
+\caption[Flowchart of other situations where the Info Bar could be helpful]{Flowchart of other situations where the Info Bar could be helpful (Source: Personal collection)}
 \label{fig:other_situations}
 \end{center}
 \end{figure}
@@ -1230,11 +1298,11 @@ We could also think of other situations where the Info Bar could be displayed to
 \section{Analysis of the results of the second survey}
 \label{sec:qstat2}
 
-\noindent The second questionnaire was released on November 26 and stopped on November 30, 2020. It introduces a new Info Bars solution to new and existing users and tests its success. At the same time, it addresses users to share their ideas on how to modify and adapt the solution so that the resulting solution that emerges from this work, largely based on this survey, enriches the first-time user experience with GRASS as much as possible.
+\noindent The second questionnaire called \textbf{Help improve the special mode for first-time users} was released on November 26 and stopped on November 30, 2020. It introduces a new Info Bar solution to new and existing users and tests its success. At the same time, it addresses users to share their ideas on how to modify and adapt the solution so that the resulting solution that emerges from this work, largely based on this survey, enriches the first-time user experience with GRASS as much as possible.
 
 The questionnaire is based on a simple task. A user has vector data of rivers in the Czech Republic in the shapefile format in the coordinate system S-JTSK/Krovak East North (EPSG:5514) and they would like to import this data into GRASS and perform a simple task - extract a river called Otava and save it in a separate layer. Unfortunately, due to external epidemiological circumstances, this task could not be tested among GRASS beginners directly on the software. Thus, a survey was designed that simulates three key situations that, according to the diagrams in the previous chapter, a new user is likely to get into and which, according to the results of the second part of the first survey, are crucial. In these situations, the respondent is presented with software mockups of Info Bars which (if they are placed in the right place at the right time and correctly designed in terms of text) should lead to the right decision on how to continue in work. In the following text, the term \textit{default location} is preferred to the term \textit{demolocation}, which is more of a technical (developer) nature. Semantically, these concepts do not differ.
 
-\textbf{The first situation} shown in the mockup in Fig. \ref{fig:grass_infobar_1} shows the GRASS GIS immediately after startup. At this point, a user needs to find their way around in a completely unknown environment as quickly as possible and import their data so that he can look at it and possibly perform analyzes. The software starts in the Data tab to the default location, which in the Map Display window displays the world map in the WGS 84 system (EPSG:4326). The task of the default location is to give the user a certain sense of security by showing a map and at the same time an example of data organization in the Data Catalog, which is now the center of GRASS. At the first moment, it is therefore essential for the user to at least passively understand the principle of the GRASS data hierarchy, which is well visible in the Data Catalog and is also briefly explained in the first Info Bar. Terms are also specified in the text using new planned names in parentheses. In order to properly figure out the first situation, a user must realize that the data he wants to import into the software has a different coordinate system (EPSG:5514) than the one defined for the default location (EPSG:4326). This means that if a user understands the meaning of the location, he will create a new location that will have the coordinate system of the data he wants to import.
+\textbf{The first situation} shown in the mockup in Figure \ref{fig:grass_infobar_1} shows the GRASS GIS immediately after startup. At this point, a user needs to find their way around in a completely unknown environment as quickly as possible and import their data so that he can look at it and possibly perform analyzes. The software starts in the Data tab to the default location, which in the Map Display window displays the world map in the WGS 84 system (EPSG:4326). The task of the default location is to give the user a certain sense of security by showing a map and at the same time an example of data organization in the Data Catalog, which is now the center of GRASS. At the first moment, it is therefore essential for the user to at least passively understand the principle of the GRASS data hierarchy, which is well visible in the Data Catalog and is also briefly explained in the first Info Bar. Terms are also specified in the text using new planned names in parentheses. In order to properly figure out the first situation, a user must realize that the data he wants to import into the software has a different coordinate system (EPSG:5514) than the one defined for the default location (EPSG:4326). This means that if a user understands the meaning of the location, he will create a new location that will have the coordinate system of the data he wants to import.
 
 \vspace{0.3cm}
 \begin{figure}[hbt!] 
@@ -1257,7 +1325,7 @@ The questionnaire is based on a simple task. A user has vector data of rivers in
 \end{center}
 \end{figure}
 
-\noindent The result of Question 5 of the second part of the first survey shows that users also have a problem with the meaning of individual tabs. After importing the data, a user wants to either analyze data directly or change its display in the Map Display (e.g. change transparency, strength, line color, etc.). In \textbf{the third situation} shown in Fig. \ref{fig:grass_infobar_3} it is, therefore, necessary to introduce a user to the two main tabs called Modules and Display, which are useful for the mentioned purposes. As a reader probably noticed, the proposal seeks to provide new users with basic advice on all of the aspects that appeared in Survey 1 Part 2 Question 5.
+\noindent The result of Question 5 of the second part of the first survey shows that users also have a problem with the meaning of individual tabs. After importing the data, a user wants to either analyze data directly or change its display in the Map Display (e.g. change transparency, strength, line color, etc.). In \textbf{the third situation} shown in Figure \ref{fig:grass_infobar_3} it is, therefore, necessary to introduce a user to the two main tabs called Modules and Display, which are useful for the mentioned purposes. As a reader probably noticed, the proposal seeks to provide new users with basic advice on all of the aspects that appeared in Survey 1 Part 2 Question 5.
 
 \vspace{0.3cm}
 \begin{figure}[hbt!] 
@@ -1268,7 +1336,7 @@ The questionnaire is based on a simple task. A user has vector data of rivers in
 \end{center}
 \end{figure}
 
-\noindent The survey was visited by 32 respondents, 25 of them provided relevant responses. The completion rate among relevant respondents was 96 \%. We can see a weekly graph of the number of responses for a specific day in Fig. \ref{fig:survey1_part2_insight2}.
+\noindent The survey was visited by 32 respondents, 25 of them provided relevant responses. The completion rate among relevant respondents was 96 \%. We can see a weekly graph of the number of responses for a specific day in Figure \ref{fig:survey1_part2_insight2}.
 
 \vspace{0.3cm}
 \begin{figure}[hbt!] 
@@ -1283,7 +1351,7 @@ The questionnaire is based on a simple task. A user has vector data of rivers in
 
 The responses were divided into two groups with regard to the GRASS experience of individual respondents. The first group called \textbf{Occasional GRASS users} includes respondents who use GRASS less than sometimes (they chose less than 50 points in Q10) while the second group called \textbf{Frequent GRASS users} includes users who use GRASS more often than sometimes (they selected more than 50 points or 50 points in Q10).
 
-According to Q9, the \textbf{Occasional GRASS users} group (see Fig. \ref{fig:survey2_respondents_group1}) consists mainly of beginners and a minority of advanced or intermediate GIS experts (a total of 10 respondents) while the \textbf{Frequent GRASS users} group (see Fig. \ref{fig:survey2_respondents_group2}) includes mainly GIS professionals and some intermediate (a total of 15 respondents).
+According to Q9, the \textbf{Occasional GRASS users} group (see Figure \ref{fig:survey2_respondents_group1}) consists mainly of beginners and a minority of advanced or intermediate GIS experts (a total of 10 respondents) while the \textbf{Frequent GRASS users} group (see Figure \ref{fig:survey2_respondents_group2}) includes mainly GIS professionals and some intermediate (a total of 15 respondents).
 
 \vspace{0.3cm}
 \begin{figure}[hbt!] 
@@ -1360,7 +1428,7 @@ Response \#11 indicates that a user may not realize that he or she is in a defau
 \noindent \textbf{Question 4: Is something confusing to you? If so, what specifically?? (Optional)}
 \par\noindent\rule{\textwidth}{0.4pt}
 
-\noindent As the comment \#14 in Figure \ref{fig:survey2_question4} points out, it is not clear from the Info Bar that it is an import using the \textit{v.import} or {r.import} modules. It is important to make sure that the user who clicks on the button in the Info Bar will be able to run this function later on without having to search for it. Therefore, the buttons could contain bitmap images in addition to the text. Creating a location already has its image used for management icons, for data import it would be useful to add basic functions for data import also to the management icons. However, the question is whether to implement the buttons in the Info Bar at all. Perhaps it would be clearer to lead a user directly to the File menu or to the upper toolbar containing management icons, as respondent \#10 suggests.
+\noindent As the comment \#14 in Figure \ref{fig:survey2_question4} points out, it is not clear from the Info Bar that it is the import using the \textit{v.import} or \textit{r.import} modules. It is important to make sure that the user who clicks on the button in the Info Bar will be able to run this function afterwards without having to search for it. Therefore, the buttons could contain bitmap images in addition to the text. Creating a location already has its image used for management icons, for data import it would be useful to add basic functions for data import also to the management icons. However, the question is whether to implement the buttons in the Info Bar at all. Perhaps it would be clearer to lead a user directly to the File menu or to the upper toolbar containing management icons, as respondent \#10 suggests.
 
 \newpage
 \vspace{0.3cm}
@@ -1391,12 +1459,12 @@ Response \#11 indicates that a user may not realize that he or she is in a defau
 \end{center}
 \end{figure}
 
-\noindent The comment number \#13 encounters the problem that in the first Info Bar the explanations are not clear enough related to the Data Catalog. Therefore, the first Info Bar could also display small icons next to the explanation of location and mapset, which are used to distinguish the data hierarchy elements in the Data Catalog. Another part of the users encounters problematic terminology in GRASS. In this case, according to the author's opinion, it is worth waiting for how helpful will Info Bars be for first-time users. Only after a certain time when this mechanism will be functional can we conclude whether it will be necessary to change the terminology of the data hierarchy or whether the new startup mechanism is so straightforward to new users that most of them will get their way around without problems.
+\noindent The comment number \#13 encounters the problem that the first help in the Info Bar is not clearly related to the Data Catalog. Therefore, the Info Bar in the first situation could also contain small icons next to the explanation of location and mapset, which are used to distinguish the data hierarchy elements in the Data Catalog. Another part of the users encounters problematic terminology in GRASS. In this case, according to the author's opinion, it is worth waiting for how helpful will the Info Bar be for first-time users. Only after a certain time when this mechanism will be functional can we conclude whether it will be necessary to change the terminology of the data hierarchy or whether the new startup mechanism is so straightforward to new users that most of them will get their way around without problems.
 
 \vspace{0.3cm}
 \begin{figure}[hbt!] 
 \begin{center}
-\includegraphics[width=16cm]{../surveys/analyzed_data/survey2_question4.png} 
+\includegraphics[width=16.5cm]{../surveys/analyzed_data/survey2_question4.png} 
 \caption[Survey 2 Question 4: Classification of open-ended responses]{Survey 2 Question 4: Classification of open-ended responses (Source: Personal collection)}
 \label{fig:survey2_question4}
 \end{center}
@@ -1406,7 +1474,7 @@ Response \#11 indicates that a user may not realize that he or she is in a defau
 \noindent \textbf{Question 5:  What will be your next step in third situation?}
 \par\noindent\rule{\textwidth}{0.4pt}
 
-\noindent Two users who selected the Other option, would double-click on a vector layer to obtain layer properties. It can be concluded that these users did not understand the function of the Data Catalog. In the Data Catalog, it is only possible to display the metadata of the layer, if we want to change the display properties of this layer, we have to go to the Display tab. It is also interesting that from \textbf{Occasional GRASS users} only 1 person would go straight to the Modules tab, while for {Frequent GRASS users} this option prevails. As we can notice in Figures \ref{fig:survey2_question5_histogram_group1} and \ref{fig:survey2_question5_histogram_group2}, the half of \textbf{Occasional GRASS users} would then look to the documentation, from \textbf{Frequent GRASS users} only three people would do so. Based on this finding, it might make sense to include to the Info Bar a link to the documentation for the Display and Modules tabs.
+\noindent Two users who selected the Other option, would double-click on a vector layer to obtain layer properties. It can be concluded that these users did not understand the function of the Data Catalog. In the Data Catalog, it is only possible to display the metadata of the layer, if we want to change the display properties of this layer, we have to go to the Display tab. It is also interesting that from \textbf{Occasional GRASS users} only 1 person would go straight to the Modules tab, while for {Frequent GRASS users} this option prevails. As we can notice in Figures \ref{fig:survey2_question5_histogram_group1} and \ref{fig:survey2_question5_histogram_group2}, the half of \textbf{Occasional GRASS users} would then look to the documentation, from \textbf{Frequent GRASS users} only three people would do so.
 
 \par\noindent\rule{\textwidth}{0.4pt}
 \noindent \textbf{Question 6: Is something confusing to you? If so, what specifically?? (Optional)}
@@ -1441,13 +1509,13 @@ Response \#11 indicates that a user may not realize that he or she is in a defau
 \end{figure}
 
 \newpage
-\noindent The Display tab was only renamed from original \textit{Layers} tab within GSoC and moved to the second place in the order of tabs. The Data tab (previously in the fourth place in the tab order) was placed in the first place. The Data tab has the character of a data directory and is only used to organize data in GRASS GIS. A very distant counterpart called Catalog can be found in ArcGIS. Map layers and their properties are located in the Display tab. In the Info Bar in the third situation, it would be helpful to better explain the difference between the Data and Display tabs. Similarly, it could help to change the terminology of Modules to \textit{Tools}, as suggested by respondent \#24 in Fig. \ref{fig:survey2_question6}.
+\noindent The Display tab was only renamed from original \textit{Layers} tab within GSoC and moved to the second place in the order of tabs. The Data tab (previously in the fourth place in the tab order) was placed in the first place. The Data tab has the character of a data directory and is only used to organize data in GRASS GIS. A very distant counterpart called Catalog can be found in ArcGIS. Map layers and their properties are located in the Display tab. In the Info Bar in the third situation, it would be helpful to better explain the difference between the Data and Display tabs. Similarly, it could help to change the terminology of Modules to \textit{Tools}, as suggested by respondent \#24 in Figure \ref{fig:survey2_question6}.
 
 \par\noindent\rule{\textwidth}{0.4pt}
 \noindent \textbf{Question 7: What do you think about the following statement? The advice in Info Bars given in each situation was straightforward and led me very well to the right answers.}
 \par\noindent\rule{\textwidth}{0.4pt}
 
-\noindent The agreement with this statement is significantly higher for the group \textbf{Frequent GRASS users} as seen in Figures \ref{fig:survey2_question7_histogram_group2} and \ref{fig:survey2_question7_boxplot_group2}. It was expected since the perception of these users is somewhat distorted by the knowledge of GRASS. For the \textbf{Occasional GRASS users}, however, the average of 53.5 is also not disappointing. Despite the very small number of respondents, we can conclude that there are more \textbf{Occasional GRASS users} who like Info Bars than dislike them.
+\noindent The agreement with this statement is significantly higher for the group \textbf{Frequent GRASS users} as seen in Figures \ref{fig:survey2_question7_histogram_group2} and \ref{fig:survey2_question7_boxplot_group2}. It was expected since the perception of these users is somewhat distorted by the knowledge of GRASS. For the \textbf{Occasional GRASS users}, however, the average of 53.5 is also not disappointing. Despite the very small number of respondents, we can conclude that there are more \textbf{Occasional GRASS users} who like the Info Bar solution than dislike it.
 
 It is important to admit that the survey indicates what the respondent should pay attention to. This is not only since a user has a choice of multiple answers but also to the topic of the survey itself. It is therefore clear that in practice the success of the Info Bar can be different.
 
@@ -1482,9 +1550,9 @@ It is important to admit that the survey indicates what the respondent should pa
 \noindent \textbf{Question 8: Any ideas you want to share? (e.g. the change of wording in Info Bars, adding more information, or, conversely, the removal of some information) (Optional)}
 \par\noindent\rule{\textwidth}{0.4pt}
 
-\noindent In addition to the required changes in terminology and concerns that the Info Bar will be ignored by users, several respondents said that the texts in the Info Bars are too long. There is an effort to shorten them as much as possible, but at the same time, it must contain everything needed. The text of Info Bars is definitely not final and will be changed based on proposals in Pull Requests and also based on longer-term feedback from GRASS users.
+\noindent In addition to the required changes in terminology and concerns that the Info Bar will be ignored by users, several respondents said that the texts in the Info Bar are too long. There is an effort to shorten them as much as possible, but at the same time, it must contain everything needed. The text of the Info Bar is definitely not final and will be changed based on proposals in Pull Requests and also based on longer-term feedback from GRASS users.
 
-A very valuable comment was given by respondent \#18, who suggests placing the Info Bar above the Data Catalog (not below as presented in the proposal). This respondent also perceives the Info Bar as a warning message rather than an information message. It can be evoked by an orange color that was chosen deliberately in order to highlight the Info Bar and at the same time to match the color of the selected item of data hierarchy emphasized by the white text on the orange field as well. The Info Bar type (for example, information, warnings, or a question) is distinguished by a small icon on the left side of the widget. All three Info Bar designed for first-time users has the character of an information message.
+A very valuable comment was given by respondent \#18, who suggests placing the Info Bar above the Data Catalog (not below as presented in the proposal). This respondent also perceives the Info Bar as a warning message rather than an information message. It can be evoked by an orange color that was chosen deliberately in order to highlight the Info Bar and at the same time to match the color of the selected item of data hierarchy emphasized by the white text on the orange field as well. The Info Bar type (for example, information, warnings, or a question) is distinguished by a small icon on the left side of the widget. The Info Bar designed for first-time users has the character of an information message.
 
 \vspace{0.3cm}
 \begin{figure}[hbt!] 
@@ -1495,19 +1563,19 @@ A very valuable comment was given by respondent \#18, who suggests placing the I
 \end{center}
 \end{figure}
 
-\noindent In terms of concept, three Info Bars will be implemented in situations that have been identified based on the first survey. The concept, therefore, will be preserved. However, the second survey revealed some shortcomings which resulted in several changes:
+\noindent In terms of concept, the Info Bar in Data Catalog will be implemented with texts appearing in situations that have been identified based on the first survey. The concept, therefore, will be preserved. However, the second survey revealed some shortcomings which resulted in several changes:
 
 \begin{itemize}
 \item Removal of a user-named mapset from the default location
 \item Placing the Info Bar above the Data Catalog
-\item Text editing in Info Bars stemming from the second survey
+\item Text editing in the Info Bar stemming from the second survey
 \end {itemize}
 
 \noindent Alternatively, after successful implementation of this foundation, further improvements can be made:
 
 \begin {itemize}
-\item Adding basic functions for importing data between management icons
-\item Adding bitmap images to the buttons so that users know 100\% what function they are calling through Info Bars
+\item Adding basic functions for data import between Management icons
+\item Adding bitmap images to the buttons so that users know 100\% what function they are calling through the Info Bar
 \end {itemize}
 
 \newpage
@@ -1567,8 +1635,8 @@ wxPython is a cross-platform toolkit which means that the same program can be ru
 \section{Implementation}
 \noindent
 \large
+The Info Bar is created each time the user starts GRASS GIS and it is only up to the situation what message is displayed.  During the work, the user can then close the Info Bar but in reality it is only hidden and in another defined situation it may appear again.
 
-Info Bar is created each time the user starts GRASS GIS and it is only up to the situation what message is displayed.  During the work, the user can then close the Info Bar but in reality it is only hidden and in another defined situation it may appear again.
 
 
 %% -------<<< Chapter: Discussion >>>-------\\%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -1611,28 +1679,6 @@ Info Bar is created each time the user starts GRASS GIS and it is only up to the
 
 \noindent
 \large
-
-
-
-Goran, W.D., Dvorak, W.E., Van Warren, L. and Webster, R.D., 1983, Fort Hood Geographic Information System: Pilot System Development and User Instructions, Technical Report N-154, USA Construction Engineering Research Laboratory, Champaign, IL.\\
-
-Tips \& tricks: Dismissing a splash screen Anonymous. Inside FileMaker Pro; Louisville Sv. 7, Čís. 6,  (Jun 1999): 12-14. \\
-
-https://www.arcdata.cz/produkty/arcgis/desktopovy-gis/arcgis-pro \\
-
-https://ebookcentral.proquest.com/lib/techlib-ebooks/reader.action?docID=833420\&ppg=34
-https://techlib.summon.serialssolutions.com/cs-CZ/\#!/search?ho=t\&l=cs-CZ\&q=how\%20to\%20analyse\%20survey\%20results
-https://stattrek.com/statistics/dictionary.aspx?definition=Categorical\%20variable
-https://www.alchemer.com/resources/blog/quantitative-questions-vs-qualitative-questions-in-surveys/
-https://www.askattest.com/blog/insight/quantitative-vs-qualitative-research-and-how-to-use-each
-https://mat117.wisconsin.edu/book/01/2-visualizing-qualitative-data/
-
-https://r4ds.had.co.nz/exploratory-data-analysis.html
-
-https://www.formpl.us/blog/nominal-ordinal-data
-
-https://luminousmen.com/post/exploratory-data-analysis
-https://medium.com/code-heroku/introduction-to-exploratory-data-analysis-eda-c0257f888676
 
 \newpage
 \vspace*{-1cm}
