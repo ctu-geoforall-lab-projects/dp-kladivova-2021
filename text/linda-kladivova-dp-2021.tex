@@ -295,13 +295,16 @@ Although, in the startup screen of version 7.8, there is a certain
 effort to provide the first-time user with the maximum possible help,
 the development community often encountered misunderstanding from the
 ranks of users. These complaints led to the creation of an
+% ML: Prague Roadmap could be in quotes, but for sure - reference is missing 
 implementation proposal known as the Prague Roadmap. This proposal was
 the basis for the author's participation in the global program Google
-Summer of Code program (GSoc) focused on bringing more student
+% ML: "students into" (skip student developers - what does it mean?)
+Summer of Code program (GSoC) focused on bringing more student
 developers into open source software development. The task of GSoC was
 to change the sort of unfortunate GRASS startup mechanism so that it
 would be easier for first-time users to become familiar with
 GRASS. After the changes within GSoC, the startup screen -- the
+% ML: find better word that "trick"
 biggest trick for new users, was partially removed. The main role for
 the data organization was taken over by the Data Catalog -- a tree
 object, whose functionality was significantly expanded. Now, the
@@ -312,7 +315,9 @@ This work, therefore, follows up on the complex topic of creating a
 better GRASS GIS startup mechanism. The main part of the work consists
 of two surveys where the first one consists of two parts. The aim of
 the first part is to evaluate the benefits of significant changes
+% ML: replace "final" with more suitable word (final is never final;-)
 among the GRASS community and at the same time to propose a final
+% ML: for "existing" user - what does it mean?
 solution of the GRASS startup mechanism for the existing user so that
 the old startup screen is permanently removed. The second part of the
 first survey focuses on the improvement of the startup mechanism for
@@ -356,9 +361,12 @@ complexity of GRASS and provides access to the capability of the C-API
 of GRASS for geo-scientists that are not familiar with C
 \cite{pygrass}.
 
+% ML: GRASS is using versioning system since 1999 (CVS, than
+% Subversion). Starting with such sentence can be misleading.
 The software has been developing since January 2020 on GitHub, a web
 version control using Git. Nowadays, most main changes take place in
 the Python language, which also applies to the GUI, which uses the
+% ML: extension -> library
 wxPython extension. Besides improving the GRASS GIS startup mechanism,
 in summer 2020 the community presented a new website (see Figure
 \ref{fig:grass_gis}) on the occasion of its 37th birthday which offers
@@ -410,6 +418,7 @@ mapset named PERMANENT is automatically created. Briefly speaking, the
 PERMANENT mapset is used to store general spatial data which are also
 accessible but write-protected to other users who are working in the
 same Location as the Database owner. The PERMANENT mapset also holds
+% ML: not only extent, but also resolution ("computational region" in GRASS terminology)
 the default region boundary coordinate values which are very important
 for raster analysis \cite{hierarchy}.
 
@@ -428,7 +437,7 @@ basically includes three things:
 
 \begin {itemize}
 
-\item the way GRASS GIS can be started. In the case of a Unix
+\item the way GRASS GIS can be started. In the case of an Unix
   operating system, it is run from the command line.
 
 \item GUI (graphical user interface) components that the user
@@ -479,6 +488,7 @@ speaking, a startup screen usually requires some initial action from
 the user to set up the software.
 
 The startup screen is the first component of the GRASS GIS version 7.8
+% ML: "meet" doesn't sound good, try better wording
 that we meet. It allows us to set all the above-mentioned components
 except maps and, in the case of locations and mapsets, also manage
 them in terms of renaming and deleting. The various historical
@@ -486,6 +496,7 @@ versions of the startup screen can be seen in Figure
 \ref{fig:verze_startup}. The one on the right corresponds to version
 7.5 (as well as 7.8).
 
+%% ML: source?
 \vspace{0.3cm}
 \begin{figure}[hbt!]
 \begin{center}
@@ -510,6 +521,7 @@ GSoC is included in subsection \ref{sec:afterGSoC}.
 
 \noindent The peculiarity of GRASS GIS is that it does not consist of
 one software window, as is usually the custom, but directly of
+% ML: in section header you mentioned 'Map Display', keep terminology consistent (Display vs Window)
 two. The topic of connecting Layer Manager with Map Window is, by the
 way, one of the proposed topics on GSoC
 \footnote{\url{https://trac.osgeo.org/grass/wiki/GSoC/2020\#GRASSGUI:Singlewindowlayout}}.
@@ -532,15 +544,19 @@ running GRASS we first see the Layers tab, which allows layers in Map
 Display to be switched on and off. After starting the session this tab
 is empty. The path to the current mapset and location can be noticed
 in the top bar in the Map Display window. In this case, the current
+% ML: demomapset in italics(?)
 mapset is called demomapset and is located in the location named
 \textit{fire\_grassdata}. GRASS GIS allows adding more Map Display
+% ML: at beggining of this paragraph you are using "maps" term, now
+% "layers". This need to be explained, kept consistent.
 windows. We can then manage layers in these windows via the Layers
 tab.
 
 \vspace{0.3cm}
 \begin{figure}[hbt!] 
 \begin{center}
-\includegraphics[width=17cm]{../pictures/empty_layers1.png} 
+  \includegraphics[width=17cm]{../pictures/empty_layers1.png}
+  % ML: Window vs Display
 \caption[Layer Manager and Map Window in version 7.8]{Layer Manager and Map Window in version 7.8 (Source: Personal collection)}
 \label{fig:empty_layers1}
 \end{center}
