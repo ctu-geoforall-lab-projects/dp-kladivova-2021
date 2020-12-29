@@ -237,24 +237,23 @@ Firstly I would like to thank my parents very much for their support during my s
 \fancyhead[RE, RO]{\fancyplain{}{\small \sl{Introduction}}}
 \section{Introduction}
 \large
-\setcounter{page}{13}  % nastaví čítač stránek od stránky Úvod na stránku č. 13
+\setcounter{page}{17}  % nastaví čítač stránek od stránky Úvod na stránku č. 13
 
 \noindent According to the evaluation of the GISGeography journal \cite{gisgeography}, GRASS GIS (Geographic Resources Analysis Support System) is one of the best software we can meet in the world of open-source software focused on Geographic Information System (GIS) in terms of numerical analysis. The history of GRASS, built for vector and raster geospatial management, geoprocessing, spatial modeling, and visualization, dates back to 1982 when its development was started by the United States military. At the time of writing this thesis, the current stable version of the software is version 7.8, but as the number suggests, the planned version 8.0, which will be released in the spring of 2021, will introduce major changes. They are going to be largely related to the GRASS graphical user interface (GUI).
 
-Although, in the startup screen of version 7.8, there is a certain effort to provide the first-time user with the maximum possible help, the development community often encountered misunderstanding from the ranks of users. These complaints led to the creation of an implementation proposal known as the Prague Roadmap. This proposal was the basis for the author's participation in the Google Summer of Code program (GSoc). The task of GSoC was to change the sort of unfortunate GRASS startup mechanism so that it would be easier for first-time users to become familiar with GRASS. After the changes within GSoC, the startup screen --  the biggest trick for new users, was partially removed. The main role for the data organization was taken over by the Data Catalog -- a tree object, whose functionality was significantly expanded. Here, for the first time, a new concept of the default location (also ``demolocation'' in development slang) was introduced, which is offered to every first-time user. Now, the possibilities of managing data hierarchy components are even beyond the options previously available in the startup screen. 
+Although, in the startup screen of version 7.8, there is a certain effort to provide the first-time user with the maximum possible help, the development community often encountered misunderstanding from the ranks of users. These complaints led to the creation of an implementation proposal known as the Prague Roadmap. This proposal was the basis for the author's participation in the global program Google Summer of Code program (GSoc) focused on bringing more student developers into open source software development. The task of GSoC was to change the sort of unfortunate GRASS startup mechanism so that it would be easier for first-time users to become familiar with GRASS. After the changes within GSoC, the startup screen --  the biggest trick for new users, was partially removed. The main role for the data organization was taken over by the Data Catalog -- a tree object, whose functionality was significantly expanded. Now, the possibilities of managing data hierarchy components are even beyond the options previously available in the startup screen. 
 
 This work, therefore, follows up on the complex topic of creating a better GRASS GIS startup mechanism. The main part of the work consists of two surveys where the first one consists of two parts. The aim of the first part is to evaluate the benefits of significant changes among the GRASS community and at the same time to propose a final solution of the GRASS startup mechanism for the existing user so that the old startup screen is permanently removed. The second part of the first survey focuses on the improvement of the startup mechanism for first-time users. Already at GSoC, it was decided that some form of assistance to new users would need to be implemented. The second part of the survey finds out what options of first-time help would be preferred. The second survey conducted one month later introduces a new special mode for first-time users (``first-time mode''), which extends the concept of the default location with an Info Bar helping users to manage the first steps. It examines whether users like the newly designed mockups of the Info Bar and gives them space to share ideas. Based on the analysis of the second survey, the Info Bar is improved and subsequently implemented.
 
 \newpage
 \vspace*{-1cm}
-\pagestyle{fancy}
-\fancyhead[RE, RO]{\fancyplain{}{\small \sl{GRASS GIS}}}
 \subsection{GRASS GIS}
+\label{subsection:grassgis}
 \noindent GRASS GIS is a cross-platform desktop geographic information system (GIS) designed to work with geographic 2D/3D raster and vector data with SQL-based attribute management, and vector network analysis, both using the command line and graphical user interface (GUI). Besides, it offers many spatial modelling algorithms, 3D visualization, as well as image processing routines pertaining to LiDAR and multi-band imagery \cite{NETELER2012124}. It is open-source software published under the GNU GPL general license and managed and developed under the Open Source Geospatial Foundation (OSGeo). Important users of the GRASS system include, for example, NASA, NOAA, USDA, USGS, and many environmental consulting companies \cite{grassgis}. 
 
-The power of software stems mainly from its Unix philosophy, where the software itself consists of a collection of more than 500 applications called modules. Each of these modules has only one task to perform, and the real power of the software comes when the various of these modules begin to chain together, allowing the user to create even very complex applications. Most of these modules are written in C, but above the whole system, PyGRASS as an object-oriented Python Application Programming Interface (API) stands, which hides the complexity of GRASS and provides access to the capability of the C-API of GRASS for geo-scientists that are not familiar with C \cite{pygrass}. Nowadays, most main changes take place in the Python programming language, which also applies to the GUI, which uses the wxPython extension. 
+The power of software stems mainly from its Unix philosophy, where the software itself consists of a collection of more than 500 applications called modules. Each of these modules has only one task to perform, and the real power of the software comes when the various of these modules begin to chain together, allowing the user to create even very complex applications. Most of these modules are written in C, but above the whole system, PyGRASS as an object-oriented Python Application Programming Interface (API) stands, which hides the complexity of GRASS and provides access to the capability of the C-API of GRASS for geo-scientists that are not familiar with C \cite{pygrass}.
 
-The software has been developing since January 2020 on GitHub, a web version control using Git. Nowadays, most main changes take place in the Python language, which also applies to the GUI, which uses the wxPython extension. Besides improving the GRASS GIS startup mechanism, in summer 2020 the community presented a new website on the occasion of its 37th birthday which offers a curated list of tutorials in different languages and links to videos.
+The software has been developing since January 2020 on GitHub, a web version control using Git. Nowadays, most main changes take place in the Python language, which also applies to the GUI, which uses the wxPython extension. Besides improving the GRASS GIS startup mechanism, in summer 2020 the community presented a new website (see Figure \ref{fig:grass_gis}) on the occasion of its 37th birthday which offers a curated list of tutorials in different languages and links to videos.
 
 \vspace{0.7cm}
 \begin{figure}[hbt!]
@@ -291,7 +290,6 @@ In the following text, the elements of the GRASS data hierarchy are already take
 
 \newpage
 \vspace*{-1cm}
-\fancyhead[RE, RO]{\fancyplain{}{\small \sl{State of Art before GSoC}}}
 \subsection{State of Art before GSoC}
 \label{sec:beforeGSoC}
 
@@ -378,7 +376,6 @@ The data in the current mapset are firmly connected to the Map Display window. I
 
 \newpage
 \vspace*{-1cm}
-\fancyhead[RE, RO]{\fancyplain{}{\small \sl{Prague Roadmap}}}
 \subsection{Prague Roadmap}
 \label{section:Prague Roadmap}
 \noindent
@@ -395,7 +392,6 @@ The proposed changes in the Location Wizard are mainly related to the clarificat
 Furthermore, the same Data Catalog implemented in the Data tab is planned to be used within a startup screen. The startup screen proposed in Prague Roadmap consists of only one startup page, which has a Data Datalog in the center, and a toolbar with big buttons for creating or defining new or existing data components, such as a location or mapset.
 
 
-\fancyhead[RE, RO]{\fancyplain{}{\small \sl{State of Art after GSoC}}}
 \subsection{State of Art after GSoC}
 \label{sec:afterGSoC}
 
@@ -475,7 +471,7 @@ Another substantive step forward was the graphic change of the icon enabling or 
 
 \begin{enumerate}
 
-\item \textbf{GRASS bypasses the startup screen and starts in the pre-prepared default location} (see Figure \ref{fig:demolocation_startup}). This situation occurs after the software is installed, that is when no used databases are stored in the settings. The default location (demolocation) called \textit{world\_latlong\_wgs84} in WGS84 coordinate system (EPSG:4326) shows the correct organization of the data. Base data are stored in a PERMANENT mapset whereas already analyzed data belongs to another mapset, for example to the one named after a user. The current implementation does not show the World map immediately at startup, it is necessary to display the map using Data Catalog (see Figure \ref{fig:demolocation}). The splash screen does not appear.
+\item \textbf{GRASS bypasses the startup screen and starts in the pre-prepared default location (also ``demolocation'' in development slang)} (see Figure \ref{fig:demolocation_startup}). This situation occurs after the software is installed, that is when no used databases are stored in the settings. The default location called \textit{world\_latlong\_wgs84} in WGS84 coordinate system (EPSG:4326) shows the correct organization of the data. Base data are stored in a PERMANENT mapset whereas already analyzed data belongs to another mapset, for example to the one named after a user. The current implementation does not show the World map included in \textit{country\_boundaries} layer immediately at startup, it is necessary to display the map using Data Catalog (see Figure \ref{fig:demolocation}). The splash screen does not appear.
 \item\textbf{ GRASS bypasses the startup screen if possible to start in the last used mapset} (see Figure \ref{fig:last_mapset_startup}). This situation is probably the most common. The software remembers the databases that were open when the last session was closed and opens them.  The splash screen does not appear.
 \item \textbf{GRASS launches in startup screen if a mapset is not in a usable state} (was deleted or is used by another process). In this special situation, GRASS starts in the same way as in version 7.8.
 
@@ -541,7 +537,6 @@ The possibilities of starting GRASS GIS can be further extended by the concept o
 
 \newpage
 \vspace*{-1cm}
-\fancyhead[RE, RO]{\fancyplain{}{\small \sl{Thesis objectives}}}
 \subsection{Thesis objectives}
 \label{sec:objectives}
 
@@ -1588,54 +1583,121 @@ A very valuable comment was given by respondent \#18, who suggests placing the I
 \end{figure}
 
 
-\newpage
-\vspace*{-1cm}
-\fancyhead[RE, RO]{\fancyplain{}{\small \sl{Used technologies}}}
-\section{Used technologies}
-\noindent
-\large
-
-\noindent This chapter briefly presents GRASS GIS, a Geographic Information System (GIS) technology built for vector and raster geospatial data management, geoprocessing, spatial modelling and visualization, from both historical and technical point of view. Furthermore, it describes the main programming technology used for a new startup GUI implementation, called wxPython.
-
-\subsection{GRASS GIS}
-\noindent
-\large
-
-\noindent GRASS (Geographic Resources Analysis Support System) is a cross-platform desktop geographic information system (GIS) designed to work with geographic 2D/3D raster and vector data, image records, both using the command line and graphical user interface (GUI). Besides, it enables the production of high-quality graphic outputs, spatio-temporal modeling, data visualization, or connection to spatial databases.
-
-The development of the GRASS GIS system was started by the research laboratories of the US Army Engineer Engineer in 1982, later got into the academic sphere and today it is also used in the commercial sphere. It is open-source software published under the GNU GPL general license and managed and developed under the OSGeo organization. Important users of the GRASS system include, for example, NASA or NOAA.
-
-The power of software stems mainly from its Unix philosophy, where the software itself consists of a collection of more than 500 applications called modules. Each of these modules has only one task to perform, and the real power of the software comes when the various of these modules begin to chain together, allowing the user to create even very complex applications. Most of these modules are written in C, but above the whole system, PyGRASS as an object-oriented Python Application Programming Interface (API) stands, which hides the complexity of GRASS and provides access to the capability of the C- API of GRASS for geo-scientists that are not familiar with C.
-
-Nowadays, most main changes take place in the python programming language, which also applies to the GUI, which uses the wxPython extension. The software has been developing since January 2020 on GitHub, a web service that supports development using the Git versioning tool. This principle makes working on code much clearer. It stores the history of work, ensures stylistic consistency using the flake8 command-line utility, and also allows the creation of Issues, which can have the character of errors and various improvements. Then these issues are usually proposed for changes (so-called pull requests), which users discuss. Therefore, GitHub partly works as a social network, which can support the creativity and enthusiasm of developers.
-
-At this point, I would like to mention that besides improving the GRASS GIS startup mechanism, in summer 2020 the community presented a new website on the occasion of its 37th birthday (stable version 7.8.) which offers a curated list of tutorials in different languages and links to videos.
-
-\vspace{0.3cm}
-\begin{figure}[hbt!]
-\begin{center}
-\includegraphics[width=15cm]{../pictures/grass_gis.png} 
-\caption[New GRASS website's layout]{New GRASS website's layout (source: \url{https://grass.osgeo.org)}}
-\label{fig:grass_gis}
-\end{center}
-\end{figure}
-
-\subsection{wxPython}
-\noindent
-\large
-
-\noindent This open-source toolkit allows Python programmers to create a graphical user interface. We can import it to a script file as a package that wraps the GUI components of the popular wxWidgets cross-platform C++ library established in 1992 at the Artificial Intelligence Applications Institute at the University of Edinburgh. There are several other GUI packages for Python, for example, the Tkinter package is also very popular.
-
-wxPython is a cross-platform toolkit which means that the same program can be run on multiple platforms without modification. Currently, supported platforms are Windows, macOS, Linux, or other Unix-like systems. The resulting design on each platform can be a bit different as we can also notice when using GRASS GIS on different systems.
-
-%% -------<<< Chapter 3: Implementation>>>-------\\%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% -------<<< Chapter 8: Implementation>>>-------\\%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \newpage
 \vspace*{-1cm}
 \fancyhead[RE, RO]{\fancyplain{}{\small \sl{Implementation}}}
 \section{Implementation}
 \noindent
 \large
-The Info Bar is created each time the user starts GRASS GIS and it is only up to the situation what message is displayed.  During the work, the user can then close the Info Bar but in reality it is only hidden and in another defined situation it may appear again.
+
+\noindent This chapter presents the implementation of first-time mode from the technical point of view. As mentioned in subsection \ref{subsection:grassgis} the most changes in GRASS GIS takes place in Python which also applies to GUI which uses the wxPython extension. wxPython is a cross-platform toolkit which means that the same program can be run on multiple platforms without modification. Currently, supported platforms are Windows, macOS, Linux, or other Unix-like systems. The resulting design on each platform can be a bit different as we can also notice when using GRASS GIS on different systems. We can import wx to a script file as a package that wraps the GUI components of the popular wxWidgets cross-platform C++ library established in 1992 at the Artificial Intelligence Applications Institute at the University of Edinburgh. There are several other GUI packages for Python, for example, the Tkinter package is also very popular.
+
+GRASS GIS has been developing since January 2020 on GitHub, a web service that supports development using the Git versioning tool. This principle makes working on code much clearer. It stores the history of work, ensures stylistic consistency using the flake8 command-line utility, and also allows the creation of Issues, which can have the character of errors and various improvements. Then these issues are usually proposed for changes (so-called Pull Requests), which users discuss. We can say that GitHub partly works as a social network, which can support the creativity and enthusiasm of developers. In the following text presenting the changes that have taken place in terms of the developer's point of view, the term \textit{demolocation} is preferred to the term \textit{default location}.
+
+\bigskip
+\noindent \Large \textbf{Displaying a world map and deleting a user mapset}
+
+\noindent \large Displaying a world map as a part of the default location is solved in the script \textit{gui/wxpython/lmgr/frame.py} directly in the constructor of the GMFrame class, which represents the Layer Manager (see chapter \ref{sec:beforeGSoC}). The map is displayed whenever the user is in the default location, this is checked via the location name \textit{world\_latlong\_wgs84}.
+
+The default location (demolocation) is automatically part of the GRASS GIS distribution. After the first run, this location is copied on-the-fly to an automatically created database called ``grassdata'. In this demolocation, a mapset named after the user is created. This described solution was implemented within GSoC. However, based on Survey 2, it was decided that the user mapset is confusing. Therefore, the demolocation now starts in the PERMANENT mapset, which becomes the current mapset at startup. The change mainly affects the file \textit{gui/wxpython/startup/utils.py}.
+
+\par\noindent\rule{\textwidth}{0.4pt}
+\textbf{Pull Requests:}
+
+Displaying a world map: \url{https://github.com/OSGeo/grass/pull/1070}
+
+Deleting a user mapset: \url{https://github.com/OSGeo/grass/pull/1173}
+\par\noindent\rule{\textwidth}{0.4pt}
+
+\bigskip
+\noindent \Large \textbf{Special mode for first-time users}
+
+\noindent \large The basis of the new special mode for first-time users is the \texttt{InfoBar} class for which a new file in the path \textit{gui/wxpython/gui\_core/infobar.py} has been created. The file was intentionally created in the \textit{gui\_core} directory, as the \texttt{InfoBar} class is a general template and is therefore usable for other future InfoBar instances located elsewhere than in the Data Catalog. This class inherits from the implementation in the Advanced Generic Widgets (AGW). This package provides many custom wxPython controls that are simply an addition to the wxPython widgets set. In terms of Layout and displaying and hiding messages (and buttons), the Info Bar has been significantly adapted to GRASS GIS.
+
+Next, the \texttt{DataCatalogInfoManager} class was created in the new script in the path \textit{gui/wxpython/datacatalog/infomanager.py}. This class contains methods that define the individual info messages that will be displayed. It takes care of both the text and the buttons as well as functions that are called when the buttons are pressed.
+
+Both \texttt{InfoBar} and \texttt{DataCatalogInfoManager} instances are created in the \texttt{DataCatalog} class in the \textit{gui/wxpython/datacatalog/catalog.py} file. This class is a template for an object that is the content of the Data tab. The \texttt{DataCatalog} class contains first the \texttt{DataCatalogTree} object, which is often inaccurately called the Data Catalog, secondly the toolbar object \texttt{DataCatalogToolbar} in which the Management icons are located, and thirdly the newly implemented \texttt{InfoBar} object. In Figure \ref{fig:uml_chart} we can see a UML diagram that shows the classes described above and the relationships between them.
+
+If the user is in the demolocation after startup, the world map is displayed and at the same time the Info Bar is visible, which displays advice and buttons for the first situation. The setting of the Info Bar for the second and third situation is no longer so straightforward. It is necessary to use Signals from the pydispatch library.
+
+In the second situation, a Signal is created in the \texttt{DataCatalogTree} class and emitted if the user is in a demolocation and a new location is successfully created. At the same time, when generally creating a new location, there is always a switch to the PERMANENT mapset of the newly created location, which thus becomes the current mapset.
+
+\vspace{0.3cm}
+\begin{figure}[hbt!] 
+\begin{center}
+\includegraphics[width=17cm]{../pictures/uml_chart.png} 
+\caption[UML diagram of InfoBar implementation]{UML diagram of InfoBar implementation (Source: Personal collection)}
+\label{fig:uml_chart}
+\end{center}
+\end{figure}
+
+\newpage
+
+\noindent The \texttt{showImportDataInfo} method is connected to the signal in the parent \texttt{DataCatalog} object, which calls \texttt{InfoManager} with the settings which is set in case of successful creation of a new location. The Info Bar is displayed in the second situation after creating a new location using the appropriate Management icon as well as after creating a location using the button in the Info Bar set for the first situation.
+
+Showing the Info Bar in the third situation is also handled via Signal from the pydispatch library. Signal is created in the \texttt{ImportDialog} class in the \textit{gui/wxpython/modules/import\_export} file, which is the parrent for both the \texttt{GdalImportDialog} class for importing raster data as well as the \texttt{OgrImportDialog} class for importing vector data. If the import is successful, this Signal is emited. In the \texttt{DataCatalog} class, the \texttt{showImportSuccessfulInfo} method calling the \texttt{InfoManager} with the particular settings, is connected to this Signal. The Info Bar is displayed in the third situation after data import using the appropriate Management icons as well as after data import using the buttons in the Info Bar set for the second situation.
+
+The Info Bar does not appear if the user creates a location or imports data from the File tab. In this case, it is assumed that it is not a first-time user. The Info Bar is therefore only a part of the Data Catalog, its functionality is not connected with the \texttt{GMFrame} class, which represents the Layer Manager.
+
+\par\noindent\rule{\textwidth}{0.4pt}
+\textbf{Pull Requests:}
+
+Info Bar in first situation: \url{https://github.com/OSGeo/grass/pull/1078}
+
+Info Bar in second situation: \url{https://github.com/OSGeo/grass/pull/1183}
+
+Info Bar in third situation: \url{https://github.com/OSGeo/grass/pull/1204}
+\par\noindent\rule{\textwidth}{0.4pt}
+
+\bigskip
+\noindent \Large\textbf{Managament icons for vector and raster data import}
+
+\noindent \large Due to the Info Bar in the second situation, two Management icons for data import are added. They are implemented in the file \textit{gui/wxpython/datacatalog/toolbar.py} in the \texttt{DataCatalogToolbar} class and use images used for the same purpose in QGIS. Depending on the type of import (vector/ raster), the function called \textit{Simplified vector import with reprojection (v.import)} or \textit{Simplified raster import with reprojection (v.raster)} is called. These are the same functions that are linked to the buttons `` Import vector data '' and `` Import raster data '' in the Info Bar set for the second situation.
+
+\par\noindent\rule{\textwidth}{0.4pt}
+\textbf{Pull Request:}
+
+\url{https://github.com/OSGeo/grass/pull/1205}
+\par\noindent\rule{\textwidth}{0.4pt}
+
+%% -------<<< Chapter 9: Results >>>-------\\%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
+\vspace*{-1cm}
+\fancyhead[RE, RO]{\fancyplain{}{\small \sl{Results}}}
+\section{Results}
+\noindent
+\large
+
+The Info Bar is created in Data Catalog each time the user starts GRASS GIS and it is only up to the situation what message is displayed. During the work, the user can then close the Info Bar but in reality it is only hidden and in another defined situation it may get visible again. 
+Displaying the world map as part of the demolocation immediately after GRASS GIS first startup is a functionality mentioned in responses in Survey 1 Part 2 Question 3, and developers have long considered this concept. 
+
+\vspace{0.3cm}
+\begin{figure}[hbt!] 
+\begin{center}
+\includegraphics[width=17cm]{../pictures/po_prvnich_trech_PRs.png} 
+\caption[UML diagram of InfoBar implementation]{UML diagram of InfoBar implementation (Source: Personal collection)}
+\label{fig:po_prvnich_trech_PRs}
+\end{center}
+\end{figure}
+
+\vspace{0.3cm}
+\begin{figure}[hbt!] 
+\begin{center}
+\includegraphics[width=17cm]{../pictures/druha_infobar_a_nove_management_ikonky.png} 
+\caption[UML diagram of InfoBar implementation]{UML diagram of InfoBar implementation (Source: Personal collection)}
+\label{fig:druha_infobar_a_nove_management_ikonky}
+\end{center}
+\end{figure}
+
+\vspace{0.3cm}
+\begin{figure}[hbt!] 
+\begin{center}
+\includegraphics[width=17cm]{../pictures/third_infobar.png} 
+\caption[UML diagram of InfoBar implementation]{UML diagram of InfoBar implementation (Source: Personal collection)}
+\label{fig:third_infobar}
+\end{center}
+\end{figure}
 
 
 
@@ -1654,15 +1716,6 @@ The Info Bar is created each time the user starts GRASS GIS and it is only up to
 \fancyhead[RE, RO]{\fancyplain{}{\small \sl{Conclusion}}}
 \section*{Conclusion}
 \addcontentsline{toc}{section}{Conclusion}
-\noindent
-\large
-
-%% -------<<< Chapter: List of abbreviations >>>-------\\%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\newpage
-\vspace*{-1cm}
-\fancyhead[RE, RO]{\fancyplain{}{\small \sl{List of abbreviations}}}
-\section*{List of abbreviations}
-\addcontentsline{toc}{section}{List of abbreviations}
 \noindent
 \large
 
@@ -1686,7 +1739,8 @@ The Info Bar is created each time the user starts GRASS GIS and it is only up to
 \section{Help improve GRASS GIS startup mechanism and Data Catalog }
 \fancyhead[RE, RO]{\fancyplain{}{\small \sl{Appendix A: Questionnaire 1}}}
 \label{appendix:A}
-\setcounter{page}{1} 
+\setcounter{page}{1}  % nastaví čítač stránek znovu od jedné
+\pagenumbering{Roman} % číslování římskými číslicemi
  
  \begin{figure}[hbt!]
  \begin{center}
@@ -1732,8 +1786,6 @@ The Info Bar is created each time the user starts GRASS GIS and it is only up to
 \newpage
 \vspace*{-1cm}
 \section{Help create a better first-time user experience in GRASS GIS }
-\fancyhead[RE, RO]{\fancyplain{}{\small \sl{Appendix B: Questionnaire 2}}}
-\setcounter{page}{1} 
 \label{appendix:B}
 
  \begin{figure}[hbt!]
@@ -1767,7 +1819,6 @@ The Info Bar is created each time the user starts GRASS GIS and it is only up to
  \vspace*{-1cm}
  \section{Help improve the special mode for first-time users in GRASS GIS }
  \fancyhead[RE, RO]{\fancyplain{}{\small \sl{Appendix C: Questionnaire 3}}}
- \setcounter{page}{1} 
  \label{appendix:C}
 
  \begin{figure}[hbt!]
