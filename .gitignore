@@ -6,3 +6,5 @@ text/linda-kladivova-dp-2021.pdf
 *.lof
 *.toc
 *.synctex.gz
+*.bbl
+*.blg
