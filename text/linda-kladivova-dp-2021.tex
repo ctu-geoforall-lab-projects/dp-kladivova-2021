@@ -2226,7 +2226,6 @@ should no longer be included, but it should be well-referred to.
 \vspace*{-1cm}
 \fancyhead[RE, RO]{\fancyplain{}{\small \sl{GRASS GIS Development Proposals}}}
 \section{GRASS GIS Development Proposals}
-\label{sec:proposal}
 
 \noindent As described in the subchapter \ref{sec:objectives}, this
 work consists of 2 seemingly independent parts. The first part (the
@@ -2436,54 +2435,11 @@ be informative, but questional.
 \section{Analysis of the results of the second survey}
 \label{sec:qstat2}
 
-\noindent The second questionnaire called \textbf{Help improve the
-  special mode for first-time users} was released on November 26 and
-stopped on November 30, 2020. It introduces a new Info Bar solution to
-new and existing users and tests its success. At the same time, it
-addresses users to share their ideas on how to modify and adapt the
-solution so that the resulting solution that emerges from this work,
-largely based on this survey, enriches the first-time user experience
-with GRASS as much as possible.
+\noindent The second questionnaire called \textbf{Help improve the special mode for first-time users} was released on November 26 and stopped on November 30, 2020. It introduces a new Info Bar solution to new and existing users and tests its success. At the same time, it addresses users to share their ideas on how to modify and adapt the solution so that the resulting solution that emerges from this work, largely based on this survey, enriches the first-time user experience with GRASS as much as possible.
 
-The questionnaire is based on a simple task. A user has vector data of
-rivers in the Czech Republic in the shapefile format in the coordinate
-system S-JTSK/Krovak East North (EPSG:5514) and they would like to
-import this data into GRASS and perform a simple task - extract a
-river called Otava and save it in a separate layer. Unfortunately, due
-to external epidemiological circumstances, this task could not be
-tested among GRASS beginners directly on the software. Thus, a survey
-was designed that simulates three key situations that, according to
-the diagrams in the previous chapter, a new user is likely to get into
-and which, according to the results of the second part of the first
-survey, are crucial. In these situations, the respondent is presented
-with software mockups of Info Bars which (if they are placed in the
-right place at the right time and correctly designed in terms of text)
-should lead to the right decision on how to continue in work. In the
-following text, the term \textit{default location} is preferred to the
-term \textit{demolocation}, which is more of a technical (developer)
-nature. Semantically, these concepts do not differ.
+The questionnaire is based on a simple task. A user has vector data of rivers in the Czech Republic in the shapefile format in the coordinate system S-po/Krovak East North (EPSG:5514) and they would like to import this data into GRASS and perform a simple task - extract a river called Otava and save it in a separate layer. Unfortunately, due to external epidemiological circumstances, this task could not be tested among GRASS beginners directly on the software. Thus, a survey was designed that simulates three key situations that, according to the diagrams in the previous chapter, a new user is likely to get into and which, according to the results of the second part of the first survey, are crucial. In these situations, the respondent is presented with software mockups of Info Bars which (if they are placed in the right place at the right time and correctly designed in terms of text) should lead to the right decision on how to continue in work. In the following text, the term \textit{default location} is preferred to the term \textit{demolocation}, which is more of a technical (developer) nature. Semantically, these concepts do not differ.
 
-\textbf{The first situation} shown in the mockup in Figure
-\ref{fig:grass_infobar_1} shows the GRASS GIS immediately after
-startup. At this point, a user needs to find their way around in a
-completely unknown environment as quickly as possible and import their
-data so that he can look at it and possibly perform analyzes. The
-software starts in the Data tab to the default location, which in the
-Map Display window displays the world map in the WGS 84 system
-(EPSG:4326). The task of the default location is to give the user a
-certain sense of security by showing a map and at the same time an
-example of data organization in the Data Catalog, which is now the
-center of GRASS. At the first moment, it is therefore essential for
-the user to at least passively understand the principle of the GRASS
-data hierarchy, which is well visible in the Data Catalog and is also
-briefly explained in the first Info Bar. Terms are also specified in
-the text using new planned names in parentheses. In order to properly
-figure out the first situation, a user must realize that the data he
-wants to import into the software has a different coordinate system
-(EPSG:5514) than the one defined for the default location
-(EPSG:4326). This means that if a user understands the meaning of the
-location, he will create a new location that will have the coordinate
-system of the data he wants to import.
+\textbf{The first situation} shown in the mockup in Figure \ref{fig:grass_infobar_1} shows the GRASS GIS immediately after startup. At this point, a user needs to find their way around in a completely unknown environment as quickly as possible and import their data so that he can look at it and possibly perform analyzes. The software starts in the Data tab to the default location, which in the Map Display window displays the world map in the WGS 84 system (EPSG:4326). The task of the default location is to give the user a certain sense of security by showing a map and at the same time an example of data organization in the Data Catalog, which is now the center of GRASS. At the first moment, it is therefore essential for the user to at least passively understand the principle of the GRASS data hierarchy, which is well visible in the Data Catalog and is also briefly explained in the first Info Bar. Terms are also specified in the text using new planned names in parentheses. In order to properly figure out the first situation, a user must realize that the data he wants to import into the software has a different coordinate system (EPSG:5514) than the one defined for the default location (EPSG:4326). This means that if a user understands the meaning of the location, he will create a new location that will have the coordinate system of the data he wants to import. The user can also click on a button ``Learn More'' linking the website \cite{hierarchy} which contains a detailed explanation of the data hierarchy.
 
 \vspace{0.3cm}
 \begin{figure}[hbt!] 
@@ -2494,16 +2450,7 @@ system of the data he wants to import.
 \end{center}
 \end{figure}
 
-\newpage
-\noindent Once a user creates a new location, he finds themselves in
-\textbf{the second situation} captured in Figure
-\ref{fig:grass_infobar_2} which displays the second Info Bar leading
-to data import. This Info Bar also explains the concept of PERMANENT
-mapset and shows a variant of creating own mapset, which is not
-necessary but useful. It means that we are still partially dealing
-with the topic of data hierarchy in GRASS, but at the same time, we
-advise the user on how to import their data. After successful import,
-a map is displayed automatically in the Map Display.
+\noindent Once a user creates a new location, he finds themselves in \textbf{the second situation} captured in Figure \ref{fig:grass_infobar_2} which displays the second Info Bar leading to data import. This Info Bar also explains the concept of PERMANENT mapset and shows a variant of creating own mapset, which is not necessary but useful. It means that we are still partially dealing with the topic of data hierarchy in GRASS, but at the same time, we advise the user on how to import their data. After successful import, a map is displayed automatically in the Map Display.
 
 \vspace{0.3cm}
 \begin{figure}[hbt!] 
@@ -2942,7 +2889,6 @@ resulted in several changes:
 \end{center}
 \end{figure}
 
-
 %% -------<<< Chapter 8: Implementation>>>-------\\%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \newpage
 \vspace*{-1cm}
@@ -2951,54 +2897,15 @@ resulted in several changes:
 \noindent
 \large
 
-\noindent This chapter presents the implementation of first-time mode
-from the technical point of view. As mentioned in subsection
-\ref{subsection:grassgis} the most changes in GRASS GIS takes place in
-Python which also applies to GUI which uses the wxPython
-extension. wxPython is a cross-platform toolkit which means that the
-same program can be run on multiple platforms without
-modification. Currently, supported platforms are Windows, macOS,
-Linux, or other Unix-like systems. The resulting design on each
-platform can be a bit different as we can also notice when using GRASS
-GIS on different systems. We can import wx to a script file as a
-package that wraps the GUI components of the popular wxWidgets
-cross-platform C++ library established in 1992 at the Artificial
-Intelligence Applications Institute at the University of
-Edinburgh. There are several other GUI packages for Python, for
-example, the Tkinter package is also very popular.
+\noindent This chapter presents the implementation of first-time mode from the technical point of view. As mentioned in subsection \ref{subsection:grassgis} the most changes in GRASS GIS takes place in Python which also applies to GUI which uses the wxPython extension. wxPython is a cross-platform toolkit which means that the same program can be run on multiple platforms without modification. Currently, supported platforms are Windows, macOS, Linux, or other Unix-like systems. The resulting design on each platform can be a bit different as we can also notice when using GRASS GIS on different systems. We can import wx to a script file as a package that wraps the GUI components of the popular wxWidgets cross-platform C++ library. There are several other GUI packages for Python, for example, the Tkinter package is also very popular.
 
-GRASS GIS has been developing since January 2020 on GitHub, a web
-service that supports development using the Git versioning tool. This
-principle makes working on code much clearer. It stores the history of
-work, ensures stylistic consistency using the flake8 command-line
-utility, and also allows the creation of Issues, which can have the
-character of errors and various improvements. Then these issues are
-usually proposed for changes (so-called Pull Requests), which users
-discuss. We can say that GitHub partly works as a social network,
-which can support the creativity and enthusiasm of developers. In the
-following text presenting the changes that have taken place in terms
-of the developer's point of view, the term \textit{demolocation} is
-preferred to the term \textit{default location}.
+GRASS GIS has been developing since January 2020 on GitHub, a web service that supports development using the Git versioning tool. This principle makes working on code much clearer. It stores the history of work, ensures stylistic consistency using the flake8 command-line utility, and also allows the creation of Issues, which can have the character of errors and various improvements. Then these issues are usually proposed for changes (so-called Pull Requests), which users discuss. Therefore, GitHub partly works as a social network, which can support the creativity and enthusiasm of developers. In the following text presenting the changes from the developer's point of view, the term \textit{demolocation} is preferred to the term \textit{default location}.
 
-\bigskip
-\noindent \Large \textbf{Displaying a world map and deleting a user mapset}
+\subsection{Displaying a world map and deleting a user mapset}
 
-\noindent \large Displaying a world map as a part of the default
-location is solved in the script \textit{gui/wxpython/lmgr/frame.py}
-directly in the constructor of the GMFrame class, which represents the
-Layer Manager (see chapter \ref{sec:beforeGSoC}). The map is displayed
-whenever the user is in the default location, this is checked via the
-location name \textit{world\_latlong\_wgs84}.
+\noindent \large Displaying a world map as a part of the default location is solved in the script \textit{gui/wxpython/lmgr/frame.py} directly in the constructor of the GMFrame class, which represents the Layer Manager (see chapter \ref{sec:beforeGSoC}). The map is displayed whenever the user is in the default location, this is checked via the location name \textit{world\_latlong\_wgs84}.
 
-The default location (demolocation) is automatically part of the GRASS
-GIS distribution. After the first run, this location is copied
-on-the-fly to an automatically created database called
-``grassdata'. In this demolocation, a mapset named after the user is
-created. This described solution was implemented within GSoC. However,
-based on Survey 2, it was decided that the user mapset is
-confusing. Therefore, the demolocation now starts in the PERMANENT
-mapset, which becomes the current mapset at startup. The change mainly
-affects the file \textit{gui/wxpython/startup/utils.py}.
+The demolocation is automatically part of the GRASS GIS distribution. After the first run, it was copied on-the-fly to an automatically created database called ``grassdata'' and a mapset named after the user was created. However, based on Survey 2, the author found out that the user mapset is confusing. Therefore, the demolocation now starts in the PERMANENT mapset, which becomes the current mapset at startup. The change mainly affects the file \textit{gui/wxpython/startup/utils.py}.
 
 \par\noindent\rule{\textwidth}{0.4pt}
 \textbf{Pull Requests:}
@@ -3006,54 +2913,22 @@ affects the file \textit{gui/wxpython/startup/utils.py}.
 Displaying a world map: \url{https://github.com/OSGeo/grass/pull/1070}
 
 Deleting a user mapset: \url{https://github.com/OSGeo/grass/pull/1173}
+
 \par\noindent\rule{\textwidth}{0.4pt}
 
-\bigskip
-\noindent \Large \textbf{Special mode for first-time users}
+\subsection{Special mode for first-time users}
 
-\noindent \large The basis of the new special mode for first-time
-users is the \texttt{InfoBar} class for which a new file in the path
-\textit{gui/wxpython/gui\_core/infobar.py} has been created. The file
-was intentionally created in the \textit{gui\_core} directory, as the
-\texttt{InfoBar} class is a general template and is therefore usable
-for other future InfoBar instances located elsewhere than in the Data
-Catalog. This class inherits from the implementation in the Advanced
-Generic Widgets (AGW). This package provides many custom wxPython
-controls that are simply an addition to the wxPython widgets set. In
-terms of Layout and displaying and hiding messages (and buttons), the
-Info Bar has been significantly adapted to GRASS GIS.
+\noindent \large The basis of the new special mode for first-time users is the \texttt{InfoBar} class for which a new file in the path \textit{gui/wxpython/gui\_core/infobar.py} has been created. The file was intentionally created in the \textit{gui\_core} directory, as the \texttt{InfoBar} class is a general template and is therefore usable for other future InfoBar instances located elsewhere than in the Data Catalog. This class inherits from the implementation in the Advanced Generic Widgets (AGW). This package provides many custom wxPython controls that are simply an addition to the wxPython widgets set. In terms of Layout and displaying and hiding messages (and buttons), the Info Bar has been significantly adapted to GRASS GIS.
 
-Next, the \texttt{DataCatalogInfoManager} class was created in the new
-script in the path
-\textit{gui/wxpython/datacatalog/infomanager.py}. This class contains
-methods that define the individual info messages that will be
-displayed. It takes care of both the text and the buttons as well as
-functions that are called when the buttons are pressed.
+Next, the \texttt{DataCatalogInfoManager} class was created in the new script in the path \textit{gui/wxpython/datacatalog/infomanager.py}. This class contains methods that define the individual info messages that will be displayed. It takes care of both the text and the buttons as well as functions that are called when the buttons are pressed.
 
-Both \texttt{InfoBar} and \texttt{DataCatalogInfoManager} instances
-are created in the \texttt{DataCatalog} class in the
-\textit{gui/wxpython/datacatalog/catalog.py} file. This class is a
-template for an object that is the content of the Data tab. The
-\texttt{DataCatalog} class contains first the \texttt{DataCatalogTree}
-object, which is often inaccurately called the Data Catalog, secondly
-the toolbar object \texttt{DataCatalogToolbar} in which the Management
-icons are located, and thirdly the newly implemented \texttt{InfoBar}
-object. In Figure \ref{fig:uml_chart} we can see a UML diagram that
-shows the classes described above and the relationships between them.
+Both \texttt{InfoBar} and \texttt{DataCatalogInfoManager} instances are created in the \texttt{DataCatalog} class in the \textit{gui/wxpython/datacatalog/catalog.py} file. This class is a template for an object that is the content of the Data tab. The \texttt{DataCatalog} class contains first the \texttt{DataCatalogTree} object, which is often inaccurately called the Data Catalog, secondly the toolbar object \texttt{DataCatalogToolbar} in which the Management icons are located, and thirdly the newly implemented \texttt{InfoBar} object. In Figure \ref{fig:uml_chart} we can see a UML diagram that shows the classes described above and the relationships between them.
 
-If the user is in the demolocation after startup, the world map is
-displayed and at the same time the Info Bar is visible, which displays
-advice and buttons for the first situation. The setting of the Info
-Bar for the second and third situation is no longer so
-straightforward. It is necessary to use Signals from the pydispatch
-library.
+If the user is in the demolocation after startup, the world map is displayed and at the same time the Info Bar is visible, which displays advice and buttons for the first situation. The setting of the Info Bar for the second and third situation is no longer so straightforward. It is necessary to use Signals from the pydispatch library.
 
-In the second situation, a Signal is created in the
-\texttt{DataCatalogTree} class and emitted if the user is in a
-demolocation and a new location is successfully created. At the same
-time, when generally creating a new location, there is always a switch
-to the PERMANENT mapset of the newly created location, which thus
-becomes the current mapset.
+In the second situation, a Signal is created in the \texttt{DataCatalogTree} class and emitted if the user is in a demolocation and a new location is successfully created. At the same time, when generally creating a new location, there is always a switch to the PERMANENT mapset of the newly created location, which thus becomes the current mapset. The \texttt{showImportDataInfo} method is connected to the signal in the parent \texttt{DataCatalog} object, which calls \texttt{InfoManager} with the settings which is set in case of successful creation of a new location. The Info Bar is displayed in the second situation after creating a new location using the Management icon as well as after creating a location using the button in the Info Bar set for the first situation.
+
+Showing the Info Bar in the third situation is also handled via Signal from the pydispatch library. Signal is created in the \texttt{ImportDialog} class in the \textit{gui/wxpython/modules/import\_export} file, which is the parrent for both the \texttt{GdalImportDialog} class for importing raster data as well as the \texttt{OgrImportDialog} class for importing vector data. 
 
 \vspace{0.3cm}
 \begin{figure}[hbt!] 
@@ -3064,39 +2939,12 @@ becomes the current mapset.
 \end{center}
 \end{figure}
 
+\noindent If the import is successful, this Signal is emited. In the \texttt{DataCatalog} class, the \texttt{showImportSuccessfulInfo} method calling the \texttt{InfoManager} with the particular settings, is connected to this Signal. The Info Bar is displayed in the third situation after data import using the appropriate Management icons as well as after data import using the buttons in the Info Bar set for the second situation.
+
+The Info Bar does not appear if the user creates a location or imports data from the File tab. In this case, it is assumed that it is not a first-time user. The Info Bar is therefore only a part of the Data Catalog, its functionality is not connected with the \texttt{GMFrame} class, which represents the Layer Manager.
+
 \newpage
-
-\noindent The \texttt{showImportDataInfo} method is connected to the
-signal in the parent \texttt{DataCatalog} object, which calls
-\texttt{InfoManager} with the settings which is set in case of
-successful creation of a new location. The Info Bar is displayed in
-the second situation after creating a new location using the
-appropriate Management icon as well as after creating a location using
-the button in the Info Bar set for the first situation.
-
-Showing the Info Bar in the third situation is also handled via Signal
-from the pydispatch library. Signal is created in the
-\texttt{ImportDialog} class in the
-\textit{gui/wxpython/modules/import\_export} file, which is the
-parrent for both the \texttt{GdalImportDialog} class for importing
-raster data as well as the \texttt{OgrImportDialog} class for
-importing vector data. If the import is successful, this Signal is
-emited. In the \texttt{DataCatalog} class, the
-\texttt{showImportSuccessfulInfo} method calling the
-\texttt{InfoManager} with the particular settings, is connected to
-this Signal. The Info Bar is displayed in the third situation after
-data import using the appropriate Management icons as well as after
-data import using the buttons in the Info Bar set for the second
-situation.
-
-The Info Bar does not appear if the user creates a location or imports
-data from the File tab. In this case, it is assumed that it is not a
-first-time user. The Info Bar is therefore only a part of the Data
-Catalog, its functionality is not connected with the \texttt{GMFrame}
-class, which represents the Layer Manager.
-
-\par\noindent\rule{\textwidth}{0.4pt}
-\textbf{Pull Requests:}
+\noindent \textbf{Pull Requests:}
 
 Info Bar in first situation: \url{https://github.com/OSGeo/grass/pull/1078}
 
@@ -3105,25 +2953,24 @@ Info Bar in second situation: \url{https://github.com/OSGeo/grass/pull/1183}
 Info Bar in third situation: \url{https://github.com/OSGeo/grass/pull/1204}
 \par\noindent\rule{\textwidth}{0.4pt}
 
-\bigskip
-\noindent \Large\textbf{Managament icons for vector and raster data import}
+\subsection{Managament icons for vector and raster data import}
 
-\noindent \large Due to the Info Bar in the second situation, two
-Management icons for data import are added. They are implemented in
-the file \textit{gui/wxpython/datacatalog/toolbar.py} in the
-\texttt{DataCatalogToolbar} class and use images used for the same
-purpose in QGIS. Depending on the type of import (vector/ raster), the
-function called \textit{Simplified vector import with reprojection
-  (v.import)} or \textit{Simplified raster import with reprojection
-  (v.raster)} is called. These are the same functions that are linked
-to the buttons `` Import vector data '' and `` Import raster data ''
-in the Info Bar set for the second situation.
+\noindent \large Due to the Info Bar in the second situation, two Management icons for data import are added. They are implemented in the file \textit{gui/wxpython/datacatalog/toolbar.py} in the \texttt{DataCatalogToolbar} class and use images used for the same purpose in QGIS. Depending on the type of import (vector/ raster), the function called \textit{Simplified vector import with reprojection (v.import)} or \textit{Simplified raster import with reprojection (v.raster)} is called. These are the same functions that are linked to the buttons ``Import vector data'' and ``Import raster data'' in the Info Bar set for the second situation.
 
 \par\noindent\rule{\textwidth}{0.4pt}
 \textbf{Pull Request:}
 
 \url{https://github.com/OSGeo/grass/pull/1205}
 \par\noindent\rule{\textwidth}{0.4pt}
+
+\vspace{0.3cm}
+\begin{figure}[hbt!] 
+\begin{center}
+\includegraphics[width=15cm]{../pictures/icons.png} 
+\caption[Management icons for vector and raster data import]{Management icons for vector and raster data import (Source: Personal collection)}
+\label{fig:icons}
+\end{center}
+\end{figure}
 
 %% -------<<< Chapter 9: Results >>>-------\\%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \newpage
@@ -3133,41 +2980,58 @@ in the Info Bar set for the second situation.
 \noindent
 \large
 
-The Info Bar is created in Data Catalog each time the user starts
-GRASS GIS and it is only up to the situation what message is
-displayed. During the work, the user can then close the Info Bar but
-in reality it is only hidden and in another defined situation it may
-get visible again.  Displaying the world map as part of the
-demolocation immediately after GRASS GIS first startup is a
-functionality mentioned in responses in Survey 1 Part 2 Question 3,
-and developers have long considered this concept.
+\noindent In addition to the created proposal on how to improve the current GRASS GIS startup mechanism (see subsection \ref{sec:proposal2}), the goal of this work is to propose and implement a special mode for first-time users. Based on the second part of the first survey and the section \ref{sec:usability_testing}, this mode was compiled. It consists of Info Bar which is created in Data Catalog each time the user starts GRASS GIS and it is only up to the situation what message is displayed. During the work, the user can then close the Info Bar but in reality it is only hidden and in another defined situation it may get visible again. The Info Bar is finally displayed in three defined situations, which were already proposed in Survey 2 - for the first time after the first GRASS GIS startup, the second time when the first-time user creates a new location successfully, and the third time when the first-time user imports data successfully. The situation in which every GRASS user finds themselves when start GRASS GIS after the installation can be seen in Figures \ref{fig:lmgr1}, \ref{fig:mapdisplay1}.
 
 \vspace{0.3cm}
 \begin{figure}[hbt!] 
 \begin{center}
-\includegraphics[width=17cm]{../pictures/po_prvnich_trech_PRs.png} 
-\caption[UML diagram of InfoBar implementation]{UML diagram of InfoBar implementation (Source: Personal collection)}
-\label{fig:po_prvnich_trech_PRs}
+\includegraphics[width=13cm]{../pictures/lmgr1.png} 
+\caption[Layer Manager in Situation 1 (immediatelly after first startup)]{Layer Manager in Situation 1 (immediatelly after first startup) (Source: Personal collection)}
+\label{fig:lmgr1}
 \end{center}
 \end{figure}
 
 \vspace{0.3cm}
 \begin{figure}[hbt!] 
 \begin{center}
-\includegraphics[width=17cm]{../pictures/druha_infobar_a_nove_management_ikonky.png} 
-\caption[UML diagram of InfoBar implementation]{UML diagram of InfoBar implementation (Source: Personal collection)}
-\label{fig:druha_infobar_a_nove_management_ikonky}
+\includegraphics[width=15cm]{../pictures/mapdisplay1.png} 
+\caption[Map Display in Situation 1 (immediatelly after first startup)]{Map Display in Situation 1 (immediatelly after first startup) (Source: Personal collection)}
+\label{fig:mapdisplay1}
 \end{center}
 \end{figure}
+
+\noindent There are several important changes compared to the proposal in Survey 2. Firstly, the Info Bar is newly placed above the Data Catalog, which will help it not to be ignored. Secondly, the appearance of the Info Bar was slightly modified, which we can notice on the buttons that have different design. Thirdly, the color of the world map, which is displayed automatically as part of the demolocation, was changed to dark blue from the original gray. Lastly, the Info Bar text set for the first situation was slightly specified - the word `` default '' was added before the location name, as in Survey 2, there are responses indicating that users do not undestand where they are located. 
+
+The text in the Info Bar set for the second situation (see Figure \ref{fig:lmgr2}) was also slightly changed. In order to further improve the Info Bar function, but also the Data tab in general, two Management icons were created for the import of raster and vector data. We can see them in Figure \ref{fig:icons} highlighted in red. The main reason is that Management icons were very successful in Survey 1 Part 1 Question 3 and at the same time, the advice in the proposal in Survey 2 regarging File Manager is confusing. There are several functions for data import in File Manager. It makes much more sense to continue with the same concept that was introduced at the content of the Info Bar in the first situation, when the creation of a new location is also possible via the Management icon in addition to the button in the Info Bar.
+
+\begin{figure}[hbt!] 
+\begin{center}
+\includegraphics[width=13cm]{../pictures/lmgr2.png} 
+\caption[Layer Manager in Situation 2  (after successfully created location)]{Layer Manager in Situation 2 (after successfully created location) (Source: Personal collection)}
+\label{fig:lmgr2}
+\end{center}
+\end{figure}
+
+\noindent The text in the Info Bar in the third situation was changed according to the proposal of the respondent \#21 in Survey 2 Question 6. The situation in the Data tab after successful data import can be seen in Figures \ref{fig:lmgr3}, \ref{fig:mapdisplay3}.
 
 \vspace{0.3cm}
 \begin{figure}[hbt!] 
 \begin{center}
-\includegraphics[width=17cm]{../pictures/third_infobar.png} 
-\caption[UML diagram of InfoBar implementation]{UML diagram of InfoBar implementation (Source: Personal collection)}
-\label{fig:third_infobar}
+\includegraphics[width=13cm]{../pictures/lmgr3.png} 
+\caption[Layer Manager in Situation 3 (after successful import)]{Layer Manager in Situation 3 (after successful import) (Source: Personal collection)}
+\label{fig:lmgr3}
 \end{center}
 \end{figure}
+
+\newpage
+\begin{figure}[hbt!] 
+\begin{center}
+\includegraphics[width=15cm]{../pictures/mapdisplay3.png} 
+\caption[Map Display in Situation 3 (after successful import)]{Map Display in Situation 3 (after successful import) (Source: Personal collection)}
+\label{fig:mapdisplay3}
+\end{center}
+\end{figure}
+
 
 
 
