@@ -297,6 +297,8 @@ the development community often encountered misunderstanding from the
 ranks of users. These complaints led to the creation of an
 % ML: Prague Roadmap could be in quotes, but for sure - reference is missing 
 implementation proposal known as the Prague Roadmap. This proposal was
+% ML: GSoC is mentioned many times in the theses (is there reference
+% to wiki page somewhere), see 1.2 & 1.4, please add clear reference
 the basis for the author's participation in the global program Google
 % ML: "students into" (skip student developers - what does it mean?)
 Summer of Code program (GSoC) focused on bringing more student
@@ -720,12 +722,15 @@ location or mapset.
 
 \noindent The changes that occurred during the Google Summer of Code
 are fundamental. At first, developers did not plan to remove the
+% ML: try to use shorter sentences (long sentences dicreaces
+% readibility)
 startup screen. The changes were to be based on Proposal A3, which
 planned to improve the Data Catalog, but also suggested that the same
 Data Catalog, which is available in the Data tab after starting the
 session, will be part of the startup screen. During the
 implementation, however, all the functionality of the startup screen,
 including switching mapsets as well as locations and databases, was
+% ML: moved -> implemented
 moved to the Data Catalog, so it no longer made sense to keep this
 notion. At least definitely not the form in which it is in version
 7.8.
@@ -736,8 +741,10 @@ notion. At least definitely not the form in which it is in version
 \noindent The main goal of GSoC was to improve the Data Catalog in
 such a way that enables a user-friendly organization of work. This is
 mainly about creating, renaming, and deleting mapsets and locations,
+% ML: not only startup screen, but also by Layer Manager's menu
 which was previously possible through the startup screen. However,
-completely new possibilities have been added. GRASS GIS allows a user
+completely new possibilities have been added. GRASS GIS allows an user
+% ML: add -> work/define (?)
 to add multiple databases. New management icons offer intuitive
 creation of the mentioned data components. In the context menu, there
 are also new options for deleting several mapsets or
@@ -763,6 +770,7 @@ functionalities that have been newly implemented in the Data Catalog.
 mapsets. In version 7.8, the startup screen informs about the lock and
 asks if the user wants to remove the lock. In order to completely take
 over the startup screen functionality by the Data Catalog, it is also
+% ML: "they" ? try to rewrite the sentence
 necessary to warn the user that the mapset to which they are going to
 switch is locked. How this case was solved is clear from Figure
 \ref{fig:data_catalog_switch_new}. Because mapset locking was often
@@ -775,7 +783,11 @@ enabling or disabling changes outside the current mapset. This icon
 has newly the bitmap of a pencil (instead of bitmap of a lock in
 version 7.8) and protects a user from unwanted changes. If we do not
 have editing enabled, we cannot rename or delete any mapsets,
+% ML: layers -> maps (better data elements - it's more generic, in the
+% future data catalog could show also spacetime datasets and other
+% data elements, not only raster/vector maps)
 locations, and databases. We can only work with layers inside the
+% ML: probably describe short why PERMANENT mapset cannot be deleted
 current mapset. However, even if we enable editing, we can never
 delete a PERMANENT mapset. Similarly, we cannot delete boldly marked
 \textbf{current} components in the Data Catalog.
@@ -824,7 +836,7 @@ version. Besides, CRS can be newly specified using a WKT string.
 
 \noindent However, the essential change is related to the ``Choose
 EPSG code'' page. Now it supports dynamic EPSG search and the
-hyperlink which is changed dynamically according to a filter set by a
+hyperlink which is changed dynamically according to a filter set by an
 user (see Figure \ref{fig:loc_wiz_3}). The last page of the Location
 Wizard called ``Summary'' remains unchanged.
 
@@ -856,13 +868,24 @@ the GRASS GIS ``after GSoC'' development version:
   \textit{world\_latlong\_wgs84} in WGS84 coordinate system
   (EPSG:4326) shows the correct organization of the data. Base data
   are stored in a PERMANENT mapset whereas already analyzed data
-  belongs to another mapset, for example to the one named after a
+  % ML: is "named after an user" correct wording?
+  belongs to another mapset, for example to the one named after an
   user. The current implementation does not show the World map
   included in \textit{country\_boundaries} layer immediately at
   startup, it is necessary to display the map using Data Catalog (see
   Figure \ref{fig:demolocation}). The splash screen does not appear.
-\item\textbf{ GRASS bypasses the startup screen if possible to start in the last used mapset} (see Figure \ref{fig:last_mapset_startup}). This situation is probably the most common. The software remembers the databases that were open when the last session was closed and opens them.  The splash screen does not appear.
-\item \textbf{GRASS launches in startup screen if a mapset is not in a usable state} (was deleted or is used by another process). In this special situation, GRASS starts in the same way as in version 7.8.
+\item\textbf{ GRASS bypasses the startup screen if possible to start
+    in the last used mapset} (see Figure
+  % ML: from text it's not clear that GRASS starts in the last used
+  % location/mapset
+  \ref{fig:last_mapset_startup}). This situation is probably the most
+  common. The software remembers the databases that were open when the
+  last session was closed and opens them.  The splash screen does not
+  appear.
+  % ML: if the last used mapset ...
+\item \textbf{GRASS launches in startup screen if a mapset is not in a
+    usable state} (was deleted or is used by another process). In this
+  special situation, GRASS starts in the same way as in version 7.8.
 
 \vspace{0.3cm}
 \begin{figure}[hbt!] 
@@ -901,12 +924,14 @@ the GRASS GIS ``after GSoC'' development version:
 encounters during startup and to the state that the software finds
 itself immediately after startup, the startup mechanism also includes
 the way we run the software. Because users of this software usually
-work under a Unix operating system, GRASS GIS is usually run from the
+work under an Unix operating system, GRASS GIS is usually run from the
 command line. Advanced users often do not even run the graphical
 environment and perform all geographic analyzes using the command
 line. This is also why the command line window runs in the background
 throughout the work with this software. In our work, however, we
 mainly focus on first-time users who do not have to be
+% ML: "we" is heavily used in this thesis, here it's not clear what
+% mean "we", try to rewrite the sentence
 experienced. This is also basically the main reason why we try to
 improve the GRASS GUI.
 
@@ -924,6 +949,8 @@ screen appears only when the mapset is not in the usable state.
 
 \noindent \texttt{:$\sim$\$ grass79 --text} \\
 \noindent Start GRASS using the text-based user interface. Appropriate
+% ML: location/mapset can be defined also by the argument
+% ML: grass79 --text /path/to/location/mapset
 location and mapset must be either set by environmental variables or
 taken from the last GRASS session.
 
@@ -932,13 +959,15 @@ taken from the last GRASS session.
 7.8, this option as the only one does not display the startup
 screen. However, it means that the desired location and mapset must
 already be set as environmental variables either by running a specific
+% ML: same usage as for --text
 mapset using the \texttt{:$\sim$\$ grass78
   \$HOME/grassdata/location/mapset} command, or taken from the last
 GRASS session, specifically from a file in the path
-\textit{\$HOME/.grass7/rc}. In version 7.9, --gtext uses startup
+\textit{\$HOME/.grass7/rc}. In version 7.9, \texttt{--gtext} uses startup
 screen but then does not run the GUI.
 
 The possibilities of starting GRASS GIS can be further extended by the
+% ML: twice "version" in a single sentence (the later can be removed)
 concept of \textit{workspaces}. In the development version of the
 software version, it is possible to save the current software settings
 and then open it, as we can see in Figure \ref
