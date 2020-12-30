@@ -570,21 +570,41 @@ explanation of other tabs can be found in the documentation
 \noindent \textbf {Data Catalog}
 
 \noindent When we want to display the data located in the
+% ML: not limited only to current (you can display all data from
+% current location)
+%
+% ML: Data catalog is not the only way how to display data ("we need
+% to go"), https://training.gismentors.eu/grass-gis-zacatecnik/intro/zobrazeni-geodat.html
 \textit{current mapset} (equal to active mapset), we need to go to the
+% ML: try to rewrite sentence "In this tab" (you are not speaking
+% about "tab" before)
 Data tab. In this tab provided in Figure \ref{fig:data_catalog_pred},
 there is a Data Catalog in the middle, and the toolbar in the upper
+% ML: "we are" sounds strange in this context
 part. Within the Data Catalog we are allowed to work with maps through
 the context menu - to display, rename and delete them, display their
+% ML: usually "*from* another mapset"
 metadata, or to copy them to another mapset. However, the Data Catalog
 in version 7.8 does not provide management of mapsets, locations, or a
 database. This management is sort of hidden in the Settings/GRASS
+% ML: it's not tab, but the menu.
 working environment tab.
 
+% ML: why "in the current mapset"?, you can read/display data also from
+% other mapsets
+%
+% ML: "what means "firmly" in this context?, the whole paragraph
+% doesn't make sense to me - probably you meant "current location"
+% instead of "current mapset"?
+% ML: please rewrite whole paragraph - it's very confusing
 The data in the current mapset are firmly connected to the Map Display
 window. If we want to see maps from a different mapset we can find in
 the mapset context menu the option for switching. We are able to
 switch between mapsets in the same location or between mapsets in
+% ML: how you can move mapset to another location via GRASS GUI/CLI?
+% It's not possible and not allowed
 different locations. If we move the data to the mapset in another
+%% ML: the last sentence is the only correct
 location with a different CRS, the projection takes place. GRASS GIS
 does not use ``on the fly'' transformation.
 
@@ -607,6 +627,7 @@ does not use ``on the fly'' transformation.
 experienced users of GRASS, however, for complete beginners, it is
 rather confusing. Especially if the above-mentioned main components
 (database, location, and mapset) have to be defined right at the start
+% ML: try to find better word than "standard"
 of the software in the startup screen, which has been standard since
 version 6.4.  Although, in the startup screen of version 7.8, there is
 a certain effort to provide the first-time user with the maximum
@@ -628,6 +649,8 @@ for other GIS software. The \texttt {database/location/mapset}
 mechanism may indeed seem complicated at first glance, but we must
 keep in mind that many later problems will be avoided by clearly
 defining the CRS at the beginning and allowing only one coordinate
+% ML: here we are not directly speaking about GRASS, right? So
+% "location" -> "project" ?
 system within one location. From the author’s point of view, the
 advantage (perhaps from the point of view of first-time users maybe
 the disadvantage) is that GRASS GIS does not support ``on the fly''
@@ -654,22 +677,34 @@ adding new actions from the context menu to a database, location, and
 mapset node. Considering the disadvantages mentioned in the paragraph
 above, the data hierarchy \texttt{database/location/mapset} is
 preserved. In addition, this proposal introduces a new concept called
+% ML: Workspace files has been introduced to GRASS much more earlier
+% (before 7.4 for sure)
 \textit{workspace} which is not directly part of a mapset, but is
 associated with it.
 
 The proposed changes in the Location Wizard are mainly related to the
 clarification of the first page, better naming of the given
 attributes, and speeding up the selection of the coordinate system in
+% ML: Explain idea of using Data Catalog in startup screen in more
+% understandable way (Data Catalog is already used in the GUI, here it
+% was planned to use it also for startup screen purposes)
 the dialog. Furthermore, the proposal assumes the possibility of
 filtering in the Data Catalog based on the recently selected
+% ML: what means recetly used "maps" for startup?
 items. General startup GUI should be able to collect recent maps and
+% ML: twice used "workspace" in a single sentence, you probably meant
+% "location" (at the end)
 workspaces as well as recently used databases and workspaces. The
 display of map layers in the Data Catalog is switched off by default,
 the display of workspaces under the relevant mapset is switched
+% ML: launches for the first time
 on. When GRASS GIS launches, the "grassdata" working directory for
 storing locations, mapsets and maps should be automatically created in
 a reasonable place.
 
+% ML: ah, here you explain the how idea - separate text about location
+% wizard and data catalog startup screen usage into two seperate
+% paragraphs
 Furthermore, the same Data Catalog implemented in the Data tab is
 planned to be used within a startup screen. The startup screen
 proposed in Prague Roadmap consists of only one startup page, which
@@ -677,6 +712,8 @@ has a Data Datalog in the center, and a toolbar with big buttons for
 creating or defining new or existing data components, such as a
 location or mapset.
 
+% ML: you could probably add image from wiki page describing whole
+% concept (if there is any)
 
 \subsection{State of Art after GSoC}
 \label{sec:afterGSoC}
