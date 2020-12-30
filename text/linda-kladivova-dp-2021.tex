@@ -2980,12 +2980,12 @@ Info Bar in third situation: \url{https://github.com/OSGeo/grass/pull/1204}
 \noindent
 \large
 
-\noindent In addition to the created proposal on how to improve the current GRASS GIS startup mechanism (see subsection \ref{sec:proposal2}), the goal of this work is to propose and implement a special mode for first-time users. Based on the second part of the first survey and the section \ref{sec:usability_testing}, this mode was compiled. It consists of Info Bar which is created in Data Catalog each time the user starts GRASS GIS and it is only up to the situation what message is displayed. During the work, the user can then close the Info Bar but in reality it is only hidden and in another defined situation it may get visible again. The Info Bar is finally displayed in three defined situations, which were already proposed in Survey 2 - for the first time after the first GRASS GIS startup, the second time when the first-time user creates a new location successfully, and the third time when the first-time user imports data successfully. The situation in which every GRASS user finds themselves when start GRASS GIS after the installation can be seen in Figures \ref{fig:lmgr1}, \ref{fig:mapdisplay1}.
+\noindent In addition to the created proposal on how to improve the current GRASS GIS startup mechanism (see subsection \ref{sec:proposal2}), the goal of this work is to propose and implement a special mode for first-time users. Based on the second part of the first survey and the section \ref{sec:usability_testing}, this mode was compiled. It consists of Info Bar which is created in Data Catalog each time the user starts GRASS GIS and it is only up to the situation what message is displayed. The Info Bar is finally displayed in three defined situations, which were already proposed in Survey 2 - for the first time after the first GRASS GIS startup, the second time when the first-time user creates a new location successfully, and the third time when the first-time user imports data successfully. During the work, the user can then close the Info Bar but in reality it is only hidden and in another defined situation it may get visible again. The following lines use the software screenshots to present these three situations and highlight the changes from the design in Survey 2.
 
 \vspace{0.3cm}
 \begin{figure}[hbt!] 
 \begin{center}
-\includegraphics[width=13cm]{../pictures/lmgr1.png} 
+\includegraphics[width=12cm]{../pictures/lmgr1.png} 
 \caption[Layer Manager in Situation 1 (immediatelly after first startup)]{Layer Manager in Situation 1 (immediatelly after first startup) (Source: Personal collection)}
 \label{fig:lmgr1}
 \end{center}
@@ -2994,15 +2994,16 @@ Info Bar in third situation: \url{https://github.com/OSGeo/grass/pull/1204}
 \vspace{0.3cm}
 \begin{figure}[hbt!] 
 \begin{center}
-\includegraphics[width=15cm]{../pictures/mapdisplay1.png} 
+\includegraphics[width=13cm]{../pictures/mapdisplay1.png} 
 \caption[Map Display in Situation 1 (immediatelly after first startup)]{Map Display in Situation 1 (immediatelly after first startup) (Source: Personal collection)}
 \label{fig:mapdisplay1}
 \end{center}
 \end{figure}
 
-\noindent There are several important changes compared to the proposal in Survey 2. Firstly, the Info Bar is newly placed above the Data Catalog, which will help it not to be ignored. Secondly, the appearance of the Info Bar was slightly modified, which we can notice on the buttons that have different design. Thirdly, the color of the world map, which is displayed automatically as part of the demolocation, was changed to dark blue from the original gray. Lastly, the Info Bar text set for the first situation was slightly specified - the word `` default '' was added before the location name, as in Survey 2, there are responses indicating that users do not undestand where they are located. 
+\noindent Figures \ref{fig:lmgr1}, \ref{fig:mapdisplay1} show the first situation in which every GRASS user finds themselves when start GRASS GIS after the installation. There are several important changes compared to the proposal in Survey 2 (see Figure \ref{fig:grass_infobar_1}). Firstly, the Info Bar is newly placed above the Data Catalog, which will help it not to be ignored. Secondly, the appearance of the Info Bar was slightly modified, which we can notice on the buttons that have different design. Thirdly, the color of the world map, which is displayed automatically as part of the demolocation, was changed to dark blue from the original gray. Lastly, the Info Bar text set for the first situation was slightly specified - the word `` default '' was added before the location name, as in Survey 2, there are responses indicating that users do not undestand where they are located. 
 
-The text in the Info Bar set for the second situation (see Figure \ref{fig:lmgr2}) was also slightly changed. In order to further improve the Info Bar function, but also the Data tab in general, two Management icons were created for the import of raster and vector data. We can see them in Figure \ref{fig:icons} highlighted in red. The main reason is that Management icons were very successful in Survey 1 Part 1 Question 3 and at the same time, the advice in the proposal in Survey 2 regarging File Manager is confusing. There are several functions for data import in File Manager. It makes much more sense to continue with the same concept that was introduced at the content of the Info Bar in the first situation, when the creation of a new location is also possible via the Management icon in addition to the button in the Info Bar.
+In order to further improve the Info Bar function in the second situation, but also the Data tab in general, two Management icons were created for the import of raster and vector data. We can see them in Figure \ref{fig:icons} highlighted in red. The main reason is that Management icons were very successful in Survey 1 Part 1 Question 3 and at the same time, the advice in the proposal in Survey 2 regarging File Manager is confusing since there are several functions for data import in File Manager. It makes much more sense to continue with the same concept that was introduced at the content of the Info Bar in the first situation, when the creation of a new location is also possible via the Management icon in addition to the button in the Info Bar. 
+Therefore, the text of the originally proposed Info Bar in Figure \ref{fig:grass_infobar_2} was slightly changed (see Figure \ref{fig:lmgr2}). 
 
 \begin{figure}[hbt!] 
 \begin{center}
@@ -3012,7 +3013,7 @@ The text in the Info Bar set for the second situation (see Figure \ref{fig:lmgr2
 \end{center}
 \end{figure}
 
-\noindent The text in the Info Bar in the third situation was changed according to the proposal of the respondent \#21 in Survey 2 Question 6. The situation in the Data tab after successful data import can be seen in Figures \ref{fig:lmgr3}, \ref{fig:mapdisplay3}.
+\noindent The originally proposed text in the Info Bar in the third situation (see Figure \ref{fig:grass_infobar_2}) was changed according to the proposal of the respondent \#21 in Survey 2 Question 6. The Data tab after successful data import can be seen in Figures \ref{fig:lmgr3}, \ref{fig:mapdisplay3}.
 
 \vspace{0.3cm}
 \begin{figure}[hbt!] 
