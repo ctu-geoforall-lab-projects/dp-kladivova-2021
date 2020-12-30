@@ -987,7 +987,7 @@ since all the performed implementations are based on it.
 \vspace*{-1cm}
 \fancyhead[RE, RO]{\fancyplain{}{\small \sl{Enhancing the first-time user experience in other software}}}
 \section{Enhancing the first-time user experience in other software}
-\label{sec:usability_testing}
+\label{subsection:enhancing}
 
 sem bude chtít něco šoupnout
 
@@ -2136,7 +2136,7 @@ confusing. However, this does not mean that short videos or clearer
 documentation could not be created. Inspiration can come here from
 QGIS, as suggested by respondent \#14 in question 5. Respondent \#7
 also encounters the relationship between QGIS and GRASS. As mentioned
-in \ref{subsection:GIS software} GRASS modules can also be run through
+in \ref{subsection:enhancing} GRASS modules can also be run through
 QGIS. However, the GRASS function in QGIS has a different description
 than the same module in GRASS. This should be unified on the GRASS
 side.
@@ -2861,7 +2861,7 @@ character of an information message.
 \end{center}
 \end{figure}
 
-\noindent In terms of concept, the Info Bar in Data Catalog will be
+\noindent In terms of concept, the Info Bar in Data Catalog can be
 implemented with texts appearing in situations that have been
 identified based on the first survey. The concept, therefore, will be
 preserved. However, the second survey revealed some shortcomings which
@@ -2977,6 +2977,7 @@ Info Bar in third situation: \url{https://github.com/OSGeo/grass/pull/1204}
 \vspace*{-1cm}
 \fancyhead[RE, RO]{\fancyplain{}{\small \sl{Results}}}
 \section{Results}
+\label{sec:results}
 \noindent
 \large
 
@@ -3045,14 +3046,17 @@ Therefore, the text of the originally proposed Info Bar in Figure \ref{fig:grass
 \noindent
 \large
 
-%% -------<<< Chapter: Conclusion >>>-------\\%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\newpage
-\vspace*{-1cm}
-\fancyhead[RE, RO]{\fancyplain{}{\small \sl{Conclusion}}}
-\section*{Conclusion}
-\addcontentsline{toc}{section}{Conclusion}
-\noindent
-\large
+\noindent The first important goal of this work is to evaluate the benefits of significant changes that have taken place within the GSoC. Based on Survey 1 Part 1, it was found out that most users agree with the statement that partial removal of the startup screen and improvement of the Data Catalog simplifies the initial introdution to the software and further work. The most useful feautes according to users are the small icons in the Data Catalog distinguishing elements of data hierarchy, the new Management icons for adding GRASS database, location, and mapset, and for downloading location, and some or some new functions in the context menu for creating, renaming and deleting mapset and location.
+
+Further direction of this diploma thesis is related to two key questions, which were introduced in the subsection \ref{sec:objectives}. First question -- \textbf{How to enhance first-time user experience?} -- loosely follows the topic of improving the GRASS startup mechanism and seeks a way to make getting started in GRASS more user-friendly. The second question of this work -- \textbf{How to improve the GRASS GIS startup mechanism?} -- encounters the main shortcoming of the solution after GSoC, when the old startup screen (causing problems to first-time users) was not completely removed. In the following lines, the author describes how and whether these questions were answered at all as well as the shortcomings of the presented solutions and suggestions for improvements.
+
+Based on the surveys and the chapter \ref{subsection:enhancing}, a first-time user mode extending the concept of the default location (location with pre-prepared data, into which GRASS will run at the very first start) was designed. This mode consists of three info messages, which are gradually displayed to the new user in defined situations. These user-intensive situations were determined on the basis of Survey 1 Part 2. It turned out that users not only have trouble understanding the GRASS data hierarchy, but they also have problems with the meaning of Modules and Display tabs, and with data import. The advice that is provided in the info messages tries to address all three of these issues. The first message displayed to the user immediately after startup, in addition to the data hierarchy, also describes the concept of the default location. Key question number 1 was therefore largely answered. The evidence may be the fact that in Survey 2 simulating the proposed solution of info messages, users in defined situations usually made the right decisions. Furthermore, there are comments among the open responses, which directly state that the person likes the proposal. Based on the second survey, the Info Bar was further enhanced by some of the topics raised in Survey 2. It can therefore be assumed that the version presented in the chapter \ref{sec:results} is even more helpful from the user's point of view. However, this does not mean that the implemented solution cannot be improved. In the following paragraph, the author mention several ideas for improvement.
+
+The second survey shows that it is not entirely clear from the info message dealing with data import (see Figure \ref{fig:lmgr2}) which functions the ``Import vector data'' and ``Import raster data'' buttons call. In addition to the buttons in the Info Bar, it is possible to use the newly implemented Management icons for data import (see Figure \ref{fig:icons}), but the continuity of these functions may not be obvious at first glance. The improvement would mean adding images to the buttons (the same images that are used for Management icons). Similarly, the first info message does not completely guarantee that the user will make the connection of the data hierarchy explanations (locations, mapsets) with the visual representation of the data hierarchy offered by the Data Catalog. In this info message, small icons could be placed in front of the names of the data hierarchy elements, distinguishing which type of element it is. The text in info messages was slightly modified on the basis of Survey 2, but it can still be expected that its form is not final. How first-time user mode works will be shown by time and other user suggestions.
+
+As can be seen from the previous lines, most users like the idea of the info bar. In Survey 1 Part 1 Question 1, several suggestions were made that would solve the start of GRASS GIS when the last used mapset is not in usable state by displaying a warning or an error message. A solution proposed for this issue conceptually improves and tightens the GRASS GIS startup mechanism introduced after GSoC. The proposal for the second key question incorporates both concepts, on which the new first-time user mode stands - the concept of default location and the concept of info message. The concept of the default location is advantageous due to the fact that without a significant implementation intervention, it will enable the complete removal of the old startup screen, which still appears in the current implementation. The default location is used in the presented proposal in the subsection \ref{sec:proposal2} as an alternative solution, into which GRASS will start in case the start to the last used mapset fails. In this case, the author suggests displaying the info message stating that the reason that the user is located in the default location. The work also suggests displaying info messages in other situations in which they could speed up daily work with GRASS. The proposal compiled for the second key question is not implemented in this work. However, the author assumes the participattion in these implementations after the completion of this work. Both the new first-time mode and the complete removal of the old startup screen are planned improvements to the new version of GRASS 8.0, which is scheduled for release in the spring of 2021.
+
+In addition to the proposals and implementation of first-time mode, this work brought a number of valuable answers concerning especially the direction of further development of the GRASS GIS. For example, Survey 1 shows that starting GRASS using the file association of workspace file is not perceived by GRASS GIS users as essential, although it is standard in other software. There are also demands for better documentation. If we select the most important topics related to the GUI, users would especially like to simplify the path to import WMS/WFS, expand the set of management icons and also enrich even more the Data Catalog.
 
 
 %% -------<<< LITERATURA >>>-------\\%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
