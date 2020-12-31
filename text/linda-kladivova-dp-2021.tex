@@ -1019,81 +1019,76 @@ possible from an objective point of view (see Appendix
 second survey deal with the first question which prevails in this work
 since all the performed implementations are based on it.
 
-%% -------<<< Chapter 4: Usability testing methods >>>-------\\%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% -------<<< Chapter 2: Enhancing the first-time user experience in other software >>>-------\\%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \newpage
 \vspace*{-1cm}
-\fancyhead[RE, RO]{\fancyplain{}{\small \sl{Enhancing the first-time user experience in other software}}}
-\section{Enhancing the first-time user experience in other software}
+\fancyhead[RE, RO]{\fancyplain{}{\small \sl{Enhancing the first-time user experience}}}
+\section{Enhancing the first-time user experience}
 \label{subsection:enhancing}
 
-sem bude chtít něco šoupnout
+Firstly, we need to define what we mean by the \textit{first-time user experience}. As \cite{ftue} states ``In human–computer interaction and UI design, a first-time user experience (FTUE) refers to the initial stages of using a piece of software. It commonly includes configuration steps, such as signing up for an account. Every user of a service has his/her own FTUE, even if he/she has extensive experience with using a similar product. Patience, time investment, and intuitiveness are factors for a user's FTUE. Software services generally have different layouts, styles, graphics, and hotkeys which must be identified to contribute to a user's learning, mastery, and efficiency of the software.'' 
 
-\bigskip
+There are many articles dealing with both improving the first-time user experience and evaluating it. For instance, \cite{BARNETT201882} deals with the use of FTUEs embedded in games on mobile devices. It implies that FTUE has the power to affect user perception in elements of usability which is an integral part of software development and is about maximizing the effectiveness, efficiency and satisfaction of the user. From a game design perspective, FTUE is impactful. Similarly, \cite{smartphones} investigates experience of users who use new gesture control features of smart phones and tablets for the first time. The study reveals advantages and disadvantages of new gesture control features and based on results suggests improvements regarding design. Also interesting is the work \cite{onlineexamination} which studies the first-time user experience in a website-based exam system. As in the previous article, the conducted survey identifies several shortcomings that may improve in the future.
 
-\noindent \textbf {QGIS 3.14}
+The first-time user experience is mainly related to the initial user steps, so it is often related to the startup mechanism. So let's look in the following subsection at selected GIS software to examine if they use any features that enhance the first-time user experience or even the user experience in general. Then we move even beyond GIS and look at some other interesting ways how to improve the first-time user experience.
 
-\noindent This software is created similarly to GRASS GIS under the
-auspices of OSGeo. The big change from QGIS 2 is that it includes
-native support for 3D visualizations. The advantage is also the
-possibility of using and creating tailor-made plugins. QGIS also
-allows the use of analytical functions from GRASS, SAGA GIS software
-and the GDAL library.
+\subsection{GIS software}
+\label{subsection:GIS software}
 
-At the first start, Welcome to QGIS window appears, in which we can
-link to the QGIS website and check the news in the given version. The
-window runs in the default language of the operating system.
+\noindent On Figures \ref{fig:hodnoceni_all} and  \ref{fig:hodnoceni_free} we can see graphs of the 10 highest rated GIS software and the 10 highest rated Free GIS software in 2020, as stated in the evaluation taken by GIS Geography online journal \cite{gisgeography}. The evaluation is performed on a point scale from 0 to 10 in four categories - \textit{cartography, analysis, editing and data management} which are subsequently averaged. We must keep in mind that this evaluation is very indicative, as each software has different strengths. GRASS GIS takes the leading position in the \textit{analysis} category, with a rating of 9.8 out of 10, which is comparable to FME and ArcGIS Pro, but in other aspects it loses significantly.
 
 \vspace{0.3cm}
 \begin{figure}[hbt!] 
 \begin{center}
-\includegraphics[width=8cm]{../pictures/qgis_startup_window.JPG} 
-\caption[Welcome to QGIS 3.14 window]{Welcome to QGIS 3.14 window (Source: Personal collection)}
-\label{fig:qgis_startup_window}
+\includegraphics[width=13cm]{../pictures/hodnoceni_all.png} 
+\caption[Top 10 GIS Software in 2020 according to GISGeography journal]{Top 10 GIS Software in 2020 according to GIS Geography journal \cite{gisgeography}}
+\label{fig:hodnoceni_all}
 \end{center}
 \end{figure}
 
-\noindent After this introduction, we are redirected to the main
-software window (Fig. \ref{fig:qgis_first_window}) informing about
-community events and significant improvements that have taken
-place. Here we can choose an empty project template or we may open
-sample datasets (North Carolina, South Dakota, Alaska) provided along
-with instalation.
+\begin{figure}[hbt!] 
+\begin{center}
+\includegraphics[width=13cm]{../pictures/hodnoceni_free.png} 
+\caption[Top 10 Free GIS Software in 2020 according to GISGeography journal]{Top 10 Free GIS Software in 2020 according to GIS Geography journal \cite{gisgeography}}
+\label{fig:hodnoceni_free}
+\end{center}
+\end{figure}
 
-In QGIS 3, we distinguish between the layer's and project's CRS. It is
-worth mentioning that QGIS supports about 2700 known coordinate
-systems, whose definitions are stored in the SQLite database installed
-together with QGIS. The empty project has always global default
-projection EPSG: 4326 - WGS 84.
+\noindent For the following analysis, the three highest rated commercial software were selected - ArcGIS Pro (ESRI), GeoMedia (Hexagon) and MapInfo Professional (Pitney Bowes) as well as the four highest rated open-source software (excluding QGIS 2 and GRASS GIS). The software is analyzed using the following three questions:
+
+\begin{itemize}
+\item What data hierarchy does the software use compared to GRASS GIS?
+\item Has the software startup screen? Ans if so, is always displayed? How does it look like? 
+\item Does the software have features for enhancing first-time user experience, and if so, in what form?
+\end{itemize}
+
+\noindent The information obtained about commercial GIS software is summarized in Figure \ref{fig:commercial_software}.
 
 \vspace{0.3cm}
 \begin{figure}[hbt!] 
 \begin{center}
-\includegraphics[width=17cm]{../pictures/qgis_first_window.JPG} 
-\caption[The main software window after first opening QGIS 3.14]{The main software window after first opening QGIS 3.14 (Source: Personal collection)}
-\label{fig:qgis_first_window}
+\includegraphics[width=16.5cm]{../pictures/commercial_software.png}
+\caption[Summary of selected commercial software]{Summary of selected commercial software (Source: Personal collection)}
+\label{fig:commercial_software}
 \end{center}
 \end{figure}
 
-\noindent In QGIS, On-the-fly transformation is enabled by default,
-meaning that whenever you use layers with different coordinate systems
-QGIS transparently reprojects them to the project CRS. When importing
-the first layer (in this case US tracts in ESRI: 102003 system), the
-dialog box shown in Fig. \ref{fig:qgis_transformation} specifies what
-type of transformation to perform when changing the project CRS. These
-Datum transformations are then listed in Project Properties - CRS
-settings (Fig. \ref{fig:qgis_trans}). It is important to note that the
-first layer added defines the coordinate system of the project. In our
-case, it was changed to the US Contiguous Albers Equal Area Conic
-system. In the dialog \ref{fig:qgis_trans} we can set the Predefined
-coordinate system, which is related to the project, not to the layer.
+\noindent In terms of enhancing the first-time user experience, the most interesting deeds are the startup screen of the ArcGIS Pro 2.4 and MapInfo 2019 software. The startup screen of MapInfo 2019 (see Figure \ref{fig:map_info_startup_screen}) atypically occupies the size of the entire computer screen. It provides links to new version news or links to videos on YouTube that can help first-time users. In the upper right part of the startup screen it is possible to run help, which has the character of a separate desktop application. In the left part there is a simple bar allowing to choose a workspace we want to work in. We can open an empty workspace, sample workspace with a map of Washington DC or choose another previously saved workspace in the directory path. If we run the software again, the Open Last Saved Session option will be added to the startup screen.
 
-Whenever a more accurate transformation is available, but is not
-currently usable, QGIS 3 shows an informative warning message (see
-Fig. \ref{fig:qgis_warning_window}) advising to use more accurate
-transformation. Those messages appear quite often in a variety of
-situations, which can definitely help new as well as experienced QGIS
-users.
+\vspace{0.3cm}
+\begin{figure}[hbt!] 
+\begin{center}
+\includegraphics[width=16cm]{../pictures/map_info_startup_screen.PNG} 
+\caption[MapInfo Professional 2019 startup dialog]{MapInfo Professional 2019 startup dialog (Source: Personal collection)}
+\label{fig:map_info_startup_screen}
+\end{center}
+\end{figure}
 
+\noindent The ArcGIS Pro 2.4 also has its startup screen.. Here we can open recently saved projects or select from pre-prepared templates, of which we have several to choose from - Map (standard), Catalog, Global scene and Local scene. Another option is to select an empty sheet.
+
+The information obtained about open-source GIS software is summarized in Figure \ref{fig:open-source_software}. In terms of improving the first-time user experience, QGIS 3 is the most interesting. After the introduction, we are redirected to the main software window informing about community events and improvements. Here we can choose an empty project template or may open sample datasets (North Carolina, South Dakota, Alaska) provided along with instalation. QGIS 3 also shows an informative warning messages (see Figure \ref{fig:qgis_warning_window}) that appear quite often in a variety of situations, which can definitely help new as well as experienced QGIS users.
+
+\vspace{0.3cm}
 \begin{figure}[hbt!] 
 \begin{center}
 \includegraphics[width=17cm]{../pictures/qgis_warning_window.JPG} 
@@ -1102,49 +1097,37 @@ users.
 \end{center}
 \end{figure}
 
+\vspace{0.3cm}
 \begin{figure}[hbt!] 
 \begin{center}
-\includegraphics[width=14cm]{../pictures/qgis_transformation.JPG} 
-\caption[Select the type of transformation in QGIS 3.14]{Select the type of transformation in QGIS 3.14 (Source: Personal collection)}
-\label{fig:qgis_transformation}
+\includegraphics[width=14.5cm]{../pictures/open-source_software.png} 
+\caption[Summary of selected open-source software and GRASS GIS]{Summary of selected open-source software and GRASS GIS (Source: Personal collection)}
+\label{fig:open-source_software}
 \end{center}
 \end{figure}
 
-\begin{figure}[hbt!] 
-\begin{center}
-\includegraphics[width=14cm]{../pictures/qgis_trans.JPG} 
-\caption[Predefined CRS and Datum Transformations in QGIS 3.14]{Predefined CRS and Datum Transformations in QGIS 3.14 (Source: Personal collection)}
-\label{fig:qgis_trans}
-\end{center}
-\end{figure}
 
+\noindent In the cross-section of all selected GIS software, we can notice that the data hierarchy is quite different. The truth is that two world-famous representatives of GIS software - ArcGIS Pro and QGIS 3 -  have similar data organization into projects. However, in the data hierarchy of the other two commercial software GeoMedia and MapInfo, the term `` project '' does not appear at all. It is therefore good to realize that we may consider `` project '' as a standard element of data organization, especially for open-source software, but after looking at commercial software we find out that data organization across software is surprisingly different not only from a technical point of view, but also in terms of different names.
+
+\newpage \noindent Startup screens appear in some form in all selected commercial software. For GeoMedia, it is a small dialog box whose purpose is purely organizational - choose the GeoWorkspace you will work in. For ArcGIS Pro and MapInfo, startup screens play a more important role. It tries to impress users with both modern design and the services they offer. Similarly, QGIS tries to make contact with the user from the beginning - it refers to news and displays info bars.
+
+It is surprising how much of a difference there can be between commercial GIS software in terms of efforts to enhance the first-time user experience. With the GeoMedia software, the author did not manage to record any effort at all, on the contrary, MapInfo is very generous to its user from the very beginning and uses modern technologies in startup screen, such as videos on YouTube. Despite the fact that in some of selected software there is a certain effort to better interact with the initial user, none of them contains any First Run Wizard incorporated directly in the main software window (as offered by Zoner Photo Studio X, see the next chapter \ref{sec:other_software}). However, it may not be necessary. Whether any help at all makes sense and will not be rather counterproductive strongly depends on the complexity of data organization in a particular software. For example, with gvSIG software, there is no startup screen or any other helpful explanation, although it can be assumed that the new user will find his way around without any problems. GeoMedia also lacks any interactive features, however, as data organization is more complex to understand, it is likely to be much more inconvenient start for users.
+
+As known, GRASS GIS went a different way from the beginning. Not only in data organization. The difference between GRASS and other GIS software goes far beyond the startup mechanism or data organization. Let's remember the unique Unix philosophy, where the software consists of a collection of small applications called modules, or the ability to call these modules from the command line. It is therefore interesting to note that the comparison of GRASS GIS with other GIS software does not provide significant inspiration for other implementations associated with the improvement of the startup mechanism, which requires (and probably deserves) a completely unique solution whose roots were laid already in the summer of 2020 by GSoC implementations. However, the comparison offers an interesting look at this topic, which is not talked about much, but certainly has a big impact on the whole software. The evidence may be, after all,  user complaints\footnote{\url{https://trac.osgeo.org/grass/ticket/3474}} about the problematic startup mechanism in versions before GSoC.
+We do not have to look for inspiration only in GIS software. How the software interacts with the first-time user is a completely general thing that plays a role in all types of software. In the next chapter, the author highlights several interesting cases of enhancement of first-time user experience in other software.
 
 \newpage
+\vspace*{-1cm}
+\subsection{Interesting solutions from other software}
+\label{sec:other_software}
+
+\noindent \textit{\color{red}Dokončit!}
+
 \noindent \textbf{Zoner Photo Studio X} \\
 
-\noindent After the initial login and launching the main software
-window, a short first run wizard will appear and can be skipped. The
-guide consists of four parts. The first section introduces the main
-tabs on the left side of the software window called the Navigator and
-also explains the Catalog tab, which provides quick access to
-photos. The following are two pages of a guide describing photo
-thumbnails and zooming. The last page of the wizard lists the right
-toolbar and the three individual modules - Manager, Develop and
-Editor. The main software components described in the wizard are
-always marked with a blue frame and the individual information windows
-are assigned to a particular part by arrows. The wizard is not only at
-the beginning, but also when using the above-mentioned modules for the
-first time.
+\noindent After the initial login and launching the main software window, a short first run wizard will appear and can be skipped. The guide consists of four parts. The first section introduces the main tabs on the left side of the software window called the Navigator and also explains the Catalog tab, which provides quick access to photos. The following are two pages of a guide describing photo thumbnails and zooming. The last page of the wizard lists the right toolbar and the three individual modules - Manager, Develop and Editor. The main software components described in the wizard are always marked with a blue frame and the individual information windows are assigned to a particular part by arrows. The wizard is not only at the beginning, but also when using the above-mentioned modules for the first time.
 
-Images are managed in the Catalog, which has a tree structure. We edit
-the image, save it, and if we turn off the Zoner software and run it a
-second time, it starts up in the last opened file. If the last used
-file is deleted, the software is launched in the Manager tab in the
-last opened folder, where another image can be selected for editing or
-we can simply click to another folder and open or create another
-image. There is a native image format of Zoner Photo Studio X with
-extension * .zps, however, firstly, traditional formats such as *
-.jpg, * .png, * .tif, * .gif etc. are offered to us.
+Images are managed in the Catalog, which has a tree structure. We edit the image, save it, and if we turn off the Zoner software and run it a second time, it starts up in the last opened file. If the last used file is deleted, the software is launched in the Manager tab in the last opened folder, where another image can be selected for editing or we can simply click to another folder and open or create another image. There is a native image format of Zoner Photo Studio X with extension * .zps, however, firstly, traditional formats such as * .jpg, * .png, * .tif, * .gif etc. are offered to us.
 
 \vspace{0.3cm}
 \begin{figure}[hbt!] 
@@ -1155,6 +1138,7 @@ extension * .zps, however, firstly, traditional formats such as *
 \end{center}
 \end{figure}
 
+V následující kapitole popíšeme možnosti usability testing, které úzce souvisí s dotazníky, které jsou hlavním rozhodovacím kritériem této práce.
 
 
 \newpage
