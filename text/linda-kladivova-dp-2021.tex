@@ -439,7 +439,7 @@ basically includes three things:
 
 \begin {itemize}
 
-\item the way GRASS GIS can be started. In the case of an Unix
+\item the way GRASS GIS can be started. In the case of a Unix
   operating system, it is run from the command line.
 
 \item GUI (graphical user interface) components that the user
@@ -743,7 +743,7 @@ such a way that enables a user-friendly organization of work. This is
 mainly about creating, renaming, and deleting mapsets and locations,
 % ML: not only startup screen, but also by Layer Manager's menu
 which was previously possible through the startup screen. However,
-completely new possibilities have been added. GRASS GIS allows an user
+completely new possibilities have been added. GRASS GIS allows a user
 % ML: add -> work/define (?)
 to add multiple databases. New management icons offer intuitive
 creation of the mentioned data components. In the context menu, there
@@ -868,7 +868,6 @@ the GRASS GIS ``after GSoC'' development version:
   \textit{world\_latlong\_wgs84} in WGS84 coordinate system
   (EPSG:4326) shows the correct organization of the data. Base data
   are stored in a PERMANENT mapset whereas already analyzed data
-  % ML: is "named after an user" correct wording?
   belongs to another mapset, for example to the one named after an
   user. The current implementation does not show the World map
   included in \textit{country\_boundaries} layer immediately at
@@ -924,7 +923,7 @@ the GRASS GIS ``after GSoC'' development version:
 encounters during startup and to the state that the software finds
 itself immediately after startup, the startup mechanism also includes
 the way we run the software. Because users of this software usually
-work under an Unix operating system, GRASS GIS is usually run from the
+work under a Unix operating system, GRASS GIS is usually run from the
 command line. Advanced users often do not even run the graphical
 environment and perform all geographic analyzes using the command
 line. This is also why the command line window runs in the background
@@ -2327,6 +2326,7 @@ users.
 \subsection{How to enhance first-time user experience}
 \label{sec:proposal1}
 
+% ML: twice "to the", try to rewrite the first sentence
 After running GRASS in the version after GSoC, the new user is
 redirected to the default location (demolocation) to the Data
 tab. Here he/she can see a project template containing a world
@@ -2423,7 +2423,7 @@ extension of the first proposal.
 \newpage
 In the first proposal in Figure \ref{fig:normal_user_diagram} we do
 not consider the last used location at all. If the last used mapset is
-in an unusable state, the user will always be redirected to the
+in a unusable state, the user will always be redirected to the
 default location. We do not prohibit the user from working in the
 default location as in the normal location. Then, however, there is a
 risk that the PERMANENT mapset can be used by another process. This
