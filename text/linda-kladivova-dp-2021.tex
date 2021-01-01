@@ -1730,6 +1730,7 @@ this work, they were determined according to the SUS questionnaire:
 \newpage
 \vspace*{-1cm}
 \fancyhead[RE, RO]{\fancyplain{}{\small \sl{Analysis of the results of the first survey}}}
+% ML: try to find better chapter name (avoid of the of the)
 \section{Analysis of the results of the first survey}
 \label{sec:qstat}
 
@@ -2540,14 +2541,60 @@ be informative, but questional.
 \newpage
 \vspace*{-1cm}
 \fancyhead[RE, RO]{\fancyplain{}{\small \sl{Analysis of the results of the second survey}}}
+% ML: try to find better chapter name (avoid of the of the)
 \section{Analysis of the results of the second survey}
 \label{sec:qstat2}
 
-\noindent The second questionnaire called \textbf{Help improve the special mode for first-time users} was released on November 26 and stopped on November 30, 2020. It introduces a new Info Bar solution to new and existing users and tests its success. At the same time, it addresses users to share their ideas on how to modify and adapt the solution so that the resulting solution that emerges from this work, largely based on this survey, enriches the first-time user experience with GRASS as much as possible.
+\noindent The second questionnaire called \textbf{Help improve the
+  special mode for first-time users} was released on November 26 and
+stopped on November 30, 2020. It introduces a new Info Bar solution to
+new and existing users and tests its success. At the same time, it
+addresses users to share their ideas on how to modify and adapt the
+solution so that the resulting solution that emerges from this work,
+largely based on this survey, enriches the first-time user experience
+with GRASS as much as possible.
 
-The questionnaire is based on a simple task. A user has vector data of rivers in the Czech Republic in the shapefile format in the coordinate system S-po/Krovak East North (EPSG:5514) and they would like to import this data into GRASS and perform a simple task - extract a river called Otava and save it in a separate layer. Unfortunately, due to external epidemiological circumstances, this task could not be tested among GRASS beginners directly on the software. Thus, a survey was designed that simulates three key situations that, according to the diagrams in the previous chapter, a new user is likely to get into and which, according to the results of the second part of the first survey, are crucial. In these situations, the respondent is presented with software mockups of Info Bars which (if they are placed in the right place at the right time and correctly designed in terms of text) should lead to the right decision on how to continue in work. In the following text, the term \textit{default location} is preferred to the term \textit{demolocation}, which is more of a technical (developer) nature. Semantically, these concepts do not differ.
+The questionnaire is based on a simple task. A user has vector data of
+rivers in the Czech Republic in the shapefile format in the coordinate
+system S-po/Krovak East North (EPSG:5514) and they would like to
+import this data into GRASS and perform a simple task - extract a
+river called Otava and save it in a separate layer. Unfortunately, due
+to external epidemiological circumstances, this task could not be
+tested among GRASS beginners directly on the software. Thus, a survey
+was designed that simulates three key situations that, according to
+the diagrams in the previous chapter, a new user is likely to get into
+and which, according to the results of the second part of the first
+survey, are crucial. In these situations, the respondent is presented
+with software mockups of Info Bars which (if they are placed in the
+right place at the right time and correctly designed in terms of text)
+should lead to the right decision on how to continue in work. In the
+following text, the term \textit{default location} is preferred to the
+term \textit{demolocation}, which is more of a technical (developer)
+nature. Semantically, these concepts do not differ.
 
-\textbf{The first situation} shown in the mockup in Figure \ref{fig:grass_infobar_1} shows the GRASS GIS immediately after startup. At this point, a user needs to find their way around in a completely unknown environment as quickly as possible and import their data so that he can look at it and possibly perform analyzes. The software starts in the Data tab to the default location, which in the Map Display window displays the world map in the WGS 84 system (EPSG:4326). The task of the default location is to give the user a certain sense of security by showing a map and at the same time an example of data organization in the Data Catalog, which is now the center of GRASS. At the first moment, it is therefore essential for the user to at least passively understand the principle of the GRASS data hierarchy, which is well visible in the Data Catalog and is also briefly explained in the first Info Bar. Terms are also specified in the text using new planned names in parentheses. In order to properly figure out the first situation, a user must realize that the data he wants to import into the software has a different coordinate system (EPSG:5514) than the one defined for the default location (EPSG:4326). This means that if a user understands the meaning of the location, he will create a new location that will have the coordinate system of the data he wants to import. The user can also click on a button ``Learn More'' linking the website \cite{hierarchy} which contains a detailed explanation of the data hierarchy.
+\textbf{The first situation} shown in the mockup in Figure
+\ref{fig:grass_infobar_1} shows the GRASS GIS immediately after
+startup. At this point, a user needs to find their way around in a
+completely unknown environment as quickly as possible and import their
+data so that he can look at it and possibly perform analyzes. The
+software starts in the Data tab to the default location, which in the
+Map Display window displays the world map in the WGS 84 system
+(EPSG:4326). The task of the default location is to give the user a
+certain sense of security by showing a map and at the same time an
+example of data organization in the Data Catalog, which is now the
+center of GRASS. At the first moment, it is therefore essential for
+the user to at least passively understand the principle of the GRASS
+data hierarchy, which is well visible in the Data Catalog and is also
+briefly explained in the first Info Bar. Terms are also specified in
+the text using new planned names in parentheses. In order to properly
+figure out the first situation, a user must realize that the data he
+wants to import into the software has a different coordinate system
+(EPSG:5514) than the one defined for the default location
+(EPSG:4326). This means that if a user understands the meaning of the
+location, he will create a new location that will have the coordinate
+system of the data he wants to import. The user can also click on a
+button ``Learn More'' linking the website \cite{hierarchy} which
+contains a detailed explanation of the data hierarchy.
 
 \vspace{0.3cm}
 \begin{figure}[hbt!] 
@@ -2558,7 +2605,15 @@ The questionnaire is based on a simple task. A user has vector data of rivers in
 \end{center}
 \end{figure}
 
-\noindent Once a user creates a new location, he finds themselves in \textbf{the second situation} captured in Figure \ref{fig:grass_infobar_2} which displays the second Info Bar leading to data import. This Info Bar also explains the concept of PERMANENT mapset and shows a variant of creating own mapset, which is not necessary but useful. It means that we are still partially dealing with the topic of data hierarchy in GRASS, but at the same time, we advise the user on how to import their data. After successful import, a map is displayed automatically in the Map Display.
+\noindent Once a user creates a new location, he finds themselves in
+\textbf{the second situation} captured in Figure
+\ref{fig:grass_infobar_2} which displays the second Info Bar leading
+to data import. This Info Bar also explains the concept of PERMANENT
+mapset and shows a variant of creating own mapset, which is not
+necessary but useful. It means that we are still partially dealing
+with the topic of data hierarchy in GRASS, but at the same time, we
+advise the user on how to import their data. After successful import,
+a map is displayed automatically in the Map Display.
 
 \vspace{0.3cm}
 \begin{figure}[hbt!] 
@@ -2701,7 +2756,10 @@ default location will also contain a user-named mapset set as
 mapset for their further analyzes, but to sort their data into other
 mapsets. However, from the point of view of GRASS, this solution does
 not make sense, because in all other cases but default location we are
+% ML: this is not a true, you can display data from all mapsets in the
+% current mapset
 only allowed to display layers from the current mapset, and when
+% ML: this is not a true...
 displaying layers from another mapset we need to switch to it. Due to
 these circumstances, it would be probably more correct and at the same
 time more clearer for first-time users if the default location
