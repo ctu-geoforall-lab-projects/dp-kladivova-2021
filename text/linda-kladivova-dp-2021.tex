@@ -1129,7 +1129,7 @@ The information obtained about open-source GIS software is summarized in Figure 
 \vspace{0.3cm}
 \begin{figure}[hbt!] 
 \begin{center}
-\includegraphics[width=14.5cm]{../pictures/open-source_software.png} 
+\includegraphics[width=15cm]{../pictures/open-source_software.png} 
 \caption[Summary of selected open-source software and GRASS GIS]{Summary of selected open-source software and GRASS GIS (Source: Personal collection)}
 \label{fig:open-source_software}
 \end{center}
@@ -1143,31 +1143,74 @@ The information obtained about open-source GIS software is summarized in Figure 
 It is surprising how much of a difference there can be between commercial GIS software in terms of efforts to enhance the first-time user experience. With the GeoMedia software, the author did not manage to record any effort at all, on the contrary, MapInfo is very generous to its user from the very beginning and uses modern technologies in startup screen, such as videos on YouTube. Despite the fact that in some of selected software there is a certain effort to better interact with the initial user, none of them contains any First Run Wizard incorporated directly in the main software window (as offered by Zoner Photo Studio X, see the next chapter \ref{sec:other_software}). However, it may not be necessary. Whether any help at all makes sense and will not be rather counterproductive strongly depends on the complexity of data organization in a particular software. For example, with gvSIG software, there is no startup screen or any other helpful explanation, although it can be assumed that the new user will find his way around without any problems. GeoMedia also lacks any interactive features, however, as data organization is more complex to understand, it is likely to be much more inconvenient start for users.
 
 As known, GRASS GIS went a different way from the beginning. Not only in data organization. The difference between GRASS and other GIS software goes far beyond the startup mechanism or data organization. Let's remember the unique Unix philosophy, where the software consists of a collection of small applications called modules, or the ability to call these modules from the command line. It is therefore interesting to note that the comparison of GRASS GIS with other GIS software does not provide significant inspiration for other implementations associated with the improvement of the startup mechanism, which requires (and probably deserves) a completely unique solution whose roots were laid already in the summer of 2020 by GSoC implementations. However, the comparison offers an interesting look at this topic, which is not talked about much, but certainly has a big impact on the whole software. The evidence may be, after all,  user complaints\footnote{\url{https://trac.osgeo.org/grass/ticket/3474}} about the problematic startup mechanism in versions before GSoC.
-We do not have to look for inspiration only in GIS software. How the software interacts with the first-time user is a completely general thing that plays a role in all types of software. In the next chapter, the author highlights several interesting cases of enhancement of first-time user experience in other software.
+We do not have to look for inspiration only in GIS software. How the software interacts with the first-time user is a completely general thing that plays a role in all types of software.
 
 \newpage
 \vspace*{-1cm}
 \subsection{Interesting solutions from other software}
 \label{sec:other_software}
 
-\noindent \textit{\color{red}Dokončit!}
+In this subsection, the author presents several interesting solutions of enhancement of first-time user experience in other software. It doesn't have to be just a first-time user experience. Generally speaking, the good user experience means that the user does not need a manual since everything is ready and straightforward. The user is led through the process with the guided tour or a combination of implicit and explicit action cues that show the way \cite{ftue2}. The authors found two interesting ways to enhance the first-time user experience, which are again mentioned in Survey 1 Part 2 Question 1 and Question 1. In this work we focus only on software solutions, however, there are also mentioned several examples of web solutions.
 
-\noindent \textbf{Zoner Photo Studio X} \\
+The first option, which is directly related to the improvement of the first-time user experience and often replaces the startup screen, is the First Run Wizard. It can take the form of a configuration (see \cite{lansweeper}, \cite{jetbrains}) or explicitly educational. As GRASS GIS has a steep learning curve, this work is mainly about the educational form. An interesting example of an educational First Run Wizard is offered by the Zoner Photo Studio X software. As can be seen on Figure \ref{fig:zoner}, the guide consists of four parts. The first section introduces the main tabs. The following two pages of a guide describe photo thumbnails and zooming. The last page of the wizard lists the right toolbar and the three individual modules - Manager, Develop and Editor. The main software components described in the wizard are always marked with a blue frame and the individual information windows are assigned to a particular part by arrows. The wizard is not only at the beginning, but also when using the above-mentioned modules for the first time.
 
-\noindent After the initial login and launching the main software window, a short first run wizard will appear and can be skipped. The guide consists of four parts. The first section introduces the main tabs on the left side of the software window called the Navigator and also explains the Catalog tab, which provides quick access to photos. The following are two pages of a guide describing photo thumbnails and zooming. The last page of the wizard lists the right toolbar and the three individual modules - Manager, Develop and Editor. The main software components described in the wizard are always marked with a blue frame and the individual information windows are assigned to a particular part by arrows. The wizard is not only at the beginning, but also when using the above-mentioned modules for the first time.
+The second example - info bars - may not only improve the first-time user experience. They most often provide a globally visible means of alerting users and publishing notifications. Presenting basic information or notifications to the user may also include a button to perform a follow-up action, as in the example in Figure \ref{fig:info_infobar_1}. As we can see, info bars usually enhance  the general user experience. Exceptions are, for example, info bars in Matlab Simulink (see Figure \ref{fig:info_advice_infobar}), which really have the character of advice for the first-time user. The topic of info bars is modern mainly in the web world, where a lot of interesting designs are created, some examples can be seen in Figures \ref{fig:bootstrap_infobar} and \ref{fig:infobar_android}. 
 
-Images are managed in the Catalog, which has a tree structure. We edit the image, save it, and if we turn off the Zoner software and run it a second time, it starts up in the last opened file. If the last used file is deleted, the software is launched in the Manager tab in the last opened folder, where another image can be selected for editing or we can simply click to another folder and open or create another image. There is a native image format of Zoner Photo Studio X with extension * .zps, however, firstly, traditional formats such as * .jpg, * .png, * .tif, * .gif etc. are offered to us.
+In the following chapter the author describes the possibilities of usability testing, which are closely related to the questionnaires -- the main decision criteria of this work.
 
 \vspace{0.3cm}
 \begin{figure}[hbt!] 
 \begin{center}
-\includegraphics[width=15cm]{../pictures/zoner.png} 
-\caption[First run wizard in Zoner Photo Studio X]{First run wizard in Zoner Photo Studio X}
+\includegraphics[width=17cm]{../pictures/zoner.png} 
+\caption[First Run Wizard in Zoner Photo Studio X]{First Run Wizard in Zoner Photo Studio X}
 \label{fig:zoner}
 \end{center}
 \end{figure}
 
-V následující kapitole popíšeme možnosti usability testing, které úzce souvisí s dotazníky, které jsou hlavním rozhodovacím kritériem této práce.
+\vspace{0.3cm}
+\begin{figure}[hbt!] 
+\begin{center}
+\includegraphics[width=17cm]{../pictures/info_infobar.png} 
+\caption[Informative info bar in Microsoft Visual Studio]{Informative info bar in Microsoft Visual Studio (Source: \cite{visualstudio})}
+\label{fig:info_infobar}
+\end{center}
+\end{figure}
+
+\vspace{0.3cm}
+\begin{figure}[hbt!] 
+\begin{center}
+\includegraphics[width=17cm]{../pictures/info_advice_infobar.png} 
+\caption[Advising info bar in Matlab Simulink]{Advising  info bar in Matlab Simulink (Source: Personal collection)}
+\label{fig:info_advice_infobar}
+\end{center}
+\end{figure}
+
+\vspace{0.3cm}
+\begin{figure}[hbt!] 
+\begin{center}
+\includegraphics[width=16cm]{../pictures/info_infobar_1.png} 
+\caption[Advising info bar in API Manager]{Advising infobar in API Manager (Source: \cite{githubio})}
+\label{fig:info_infobar_1}
+\end{center}
+\end{figure}
+
+\vspace{0.3cm}
+\begin{figure}[hbt!] 
+\begin{center}
+\includegraphics[width=15cm]{../pictures/bootstrap_infobar.png} 
+\caption[Bootstrap alert messages]{Bootstrap alert messages (Source: \cite{bootstrap})}
+\label{fig:bootstrap_infobar}
+\end{center}
+\end{figure}
+
+\vspace{0.3cm}
+\begin{figure}[hbt!] 
+\begin{center}
+\includegraphics[width=9cm]{../pictures/infobar_android.png} 
+\caption[Example of info bar design for Android]{Example of info bar design for Android (Source: \cite{pinterest})}
+\label{fig:infobar_android}
+\end{center}
+\end{figure}
 
 \clearpage
 \newpage
@@ -2200,14 +2243,8 @@ can be very outdated in a short time, thus for new users rather
 confusing. However, this does not mean that short videos or clearer
 documentation could not be created. Inspiration can come here from
 QGIS, as suggested by respondent \#14 in question 5. Respondent \#7
-also encounters the relationship between QGIS and GRASS. As mentioned
-<<<<<<< HEAD
-in \ref{subsection:enhancing} GRASS modules can also be run through
-=======
-% ML: broken reference
-in \ref{subsection:GIS software} GRASS modules can also be run through
->>>>>>> a7097f27b4bec8cb861940dff834a6a106954dde
-QGIS. However, the GRASS function in QGIS has a different description
+also encounters the relationship between QGIS and GRASS. GRASS modules 
+can also be run through QGIS. However, the GRASS function in QGIS has a different description
 than the same module in GRASS. This should be unified on the GRASS
 side.
 
@@ -3117,7 +3154,7 @@ Therefore, the text of the originally proposed Info Bar in Figure \ref{fig:grass
 \noindent
 \large
 
-\noindent The first important goal of this work is to evaluate the benefits of significant changes that have taken place within the GSoC. Based on Survey 1 Part 1, it was found out that most users agree with the statement that partial removal of the startup screen and improvement of the Data Catalog simplifies the initial introdution to the software and further work. The most useful feautes according to users are the small icons in the Data Catalog distinguishing elements of data hierarchy, the new Management icons for adding GRASS database, location, and mapset, and for downloading location, and some or some new functions in the context menu for creating, renaming and deleting mapset and location.
+\noindent The first important goal of this work is to evaluate the benefits of significant changes that have taken place within the GSoC. Based on Survey 1 Part 1, it was found out that most users agree with the statement that partial removal of the startup screen and improvement of the Data Catalog simplifies the initial introdution to the software and further work. The most useful features according to users are the small icons in the Data Catalog distinguishing elements of data hierarchy, the new Management icons for adding GRASS database, location, and mapset, and for downloading location, and some or some new functions in the context menu for creating, renaming and deleting mapset and location.
 
 Further direction of this diploma thesis is related to two key questions, which were introduced in the subsection \ref{sec:objectives}. First question -- \textbf{How to enhance first-time user experience?} -- loosely follows the topic of improving the GRASS startup mechanism and seeks a way to make getting started in GRASS more user-friendly. The second question of this work -- \textbf{How to improve the GRASS GIS startup mechanism?} -- encounters the main shortcoming of the solution after GSoC, when the old startup screen (causing problems to first-time users) was not completely removed. In the following lines, the author describes how and whether these questions were answered at all as well as the shortcomings of the presented solutions and suggestions for improvements.
 
@@ -3125,7 +3162,7 @@ Based on the surveys and the chapter \ref{subsection:enhancing}, a first-time us
 
 The second survey shows that it is not entirely clear from the info message dealing with data import (see Figure \ref{fig:lmgr2}) which functions the ``Import vector data'' and ``Import raster data'' buttons call. In addition to the buttons in the Info Bar, it is possible to use the newly implemented Management icons for data import (see Figure \ref{fig:icons}), but the continuity of these functions may not be obvious at first glance. The improvement would mean adding images to the buttons (the same images that are used for Management icons). Similarly, the first info message does not completely guarantee that the user will make the connection of the data hierarchy explanations (locations, mapsets) with the visual representation of the data hierarchy offered by the Data Catalog. In this info message, small icons could be placed in front of the names of the data hierarchy elements, distinguishing which type of element it is. The text in info messages was slightly modified on the basis of Survey 2, but it can still be expected that its form is not final. How first-time user mode works will be shown by time and other user suggestions.
 
-As can be seen from the previous lines, most users like the idea of the info bar. In Survey 1 Part 1 Question 1, several suggestions were made that would solve the start of GRASS GIS when the last used mapset is not in usable state by displaying a warning or an error message. A solution proposed for this issue conceptually improves and tightens the GRASS GIS startup mechanism introduced after GSoC. The proposal for the second key question incorporates both concepts, on which the new first-time user mode stands - the concept of default location and the concept of info message. The concept of the default location is advantageous due to the fact that without a significant implementation intervention, it will enable the complete removal of the old startup screen, which still appears in the current implementation. The default location is used in the presented proposal in the subsection \ref{sec:proposal2} as an alternative solution, into which GRASS will start in case the start to the last used mapset fails. In this case, the author suggests displaying the info message stating that the reason that the user is located in the default location. The work also suggests displaying info messages in other situations in which they could speed up daily work with GRASS. The proposal compiled for the second key question is not implemented in this work. However, the author assumes the participattion in these implementations after the completion of this work. Both the new first-time mode and the complete removal of the old startup screen are planned improvements to the new version of GRASS 8.0, which is scheduled for release in the spring of 2021.
+As can be seen from the previous lines, most users like the idea of the info bar. In Survey 1 Part 1 Question 1, several suggestions were made that would solve the start of GRASS GIS when the last used mapset is not in usable state by displaying a warning or an error message. A solution proposed for this issue conceptually improves and tightens the GRASS GIS startup mechanism introduced after GSoC. The proposal for the second key question incorporates both concepts, on which the new first-time user mode stands - the concept of default location and the concept of info message. The concept of the default location is advantageous due to the fact that without a significant implementation intervention, it will enable the complete removal of the old startup screen, which still appears in the current implementation. The default location is used in the presented proposal in the subsection \ref{sec:proposal2} as an alternative solution, into which GRASS will start in case the start to the last used mapset fails. In this case, the author suggests displaying the info message stating that the reason that the user is located in the default location. The work also suggests displaying info messages in other situations in which they could speed up daily work with GRASS. The implementation of the proposal compiled for the second key question is not the goal of this work. However, the author assumes the participation in these implementations after the completion of this work. Both the new first-time mode and the complete removal of the old startup screen are planned improvements to the new version of GRASS 8.0, which is scheduled for release in the spring of 2021.
 
 In addition to the proposals and implementation of first-time mode, this work brought a number of valuable answers concerning especially the direction of further development of the GRASS GIS. For example, Survey 1 shows that starting GRASS using the file association of workspace file is not perceived by GRASS GIS users as essential, although it is standard in other software. There are also demands for better documentation. If we select the most important topics related to the GUI, users would especially like to simplify the path to import WMS/WFS, expand the set of management icons and also enrich even more the Data Catalog.
 
