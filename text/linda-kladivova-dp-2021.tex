@@ -368,7 +368,7 @@ of GRASS for geo-scientists that are not familiar with C
 The software has been developing since January 2020 on GitHub, a web
 version control using Git. Nowadays, most main changes take place in
 the Python language, which also applies to the GUI, which uses the
-% ML: extension -> library
+% ML: extension -> library (or better GUI toolkit)
 wxPython extension. Besides improving the GRASS GIS startup mechanism,
 in summer 2020 the community presented a new website (see Figure
 \ref{fig:grass_gis}) on the occasion of its 37th birthday which offers
@@ -3030,21 +3030,37 @@ resulted in several changes:
 \noindent This chapter presents the implementation of first-time mode
 from the technical point of view. As mentioned in subsection
 \ref{subsection:grassgis} the most changes in GRASS GIS takes place in
+% ML: is there any reference to wxPython (or footnote)
 Python which also applies to GUI which uses the wxPython
+% ML: extension -> library (or better GUI toolkit)
+% ML: here it would be better to rewrite both sentences (the first
+% already contains twice 'which')
+% ML: cross-platform *GUI* toolkit
 extension. wxPython is a cross-platform toolkit which means that the
 same program can be run on multiple platforms without
+% ML: *MS* Windows
 modification. Currently, supported platforms are Windows, macOS,
 Linux, or other Unix-like systems. The resulting design on each
 platform can be a bit different as we can also notice when using GRASS
+% ML: operating systems
 GIS on different systems. We can import wx to a script file as a
+% ML: add wxWidget reference or footnote
 package that wraps the GUI components of the popular wxWidgets
+% ML: the last sentence can be probably even skipped
 cross-platform C++ library. There are several other GUI packages for
 Python, for example, the Tkinter package is also very popular.
 
+% ML: please don't ignore whole history of versioning (GRASS source
+% code started to use CVS in 1999, than migrated to Subversion), Git
+% is just another version system in a row...
 GRASS GIS has been developing since January 2020 on GitHub, a web
 service that supports development using the Git versioning tool. This
+% ML: see comment above, there is no black hole before January 2020...
 principle makes working on code much clearer. It stores the history of
 work, ensures stylistic consistency using the flake8 command-line
+% ML: see trac.osgeo.org/grass which is still used and old issue (in
+% trac terminology "tickets"), GRASS has a long history regarding
+% version systems and different system for reporting tickets,issues...
 utility, and also allows the creation of Issues, which can have the
 character of errors and various improvements. Then these issues are
 usually proposed for changes (so-called Pull Requests), which users
