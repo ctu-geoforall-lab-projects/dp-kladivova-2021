@@ -277,7 +277,7 @@ for his valuable comments on the text of the thesis.
 \large
 \setcounter{page}{17}  % nastaví čítač stránek od stránky Úvod na stránku č. 13
 
-\noindent According to the evaluation of the GISGeography journal
+\noindent According to the evaluation of the GIS Geography journal
 \cite{gisgeography}, GRASS GIS (Geographic Resources Analysis Support
 System) is one of the best software we can meet in the world of
 open-source software focused on Geographic Information System (GIS) 
@@ -670,14 +670,15 @@ experienced users of GRASS, however, for complete beginners, it is
 rather confusing. Especially if the above-mentioned main components
 (database, location, and mapset) have to be defined right at the start
 % ML: try to find better word than "standard"
-of the software in the startup screen, which has been standard since
+% LK: changed
+of the software in the startup screen, which is used since
 version 6.4.  Although, in the startup screen of version 7.8, there is
 a certain effort to provide the first-time user with the maximum
-possible help (short description of data hierarchy, Help button), the
+possible help (short description of data hierarchy, ``Help'' button), the
 development community often encountered misunderstanding from the
 ranks of users
 \footnote{\url{https://trac.osgeo.org/grass/ticket/3474}}. The
-disadvantages of GRASS mentioned in the evaluation of the GISGeography
+disadvantages of GRASS mentioned in the evaluation of the GIS Geography
 journal \cite{gisgeography} are also largely related to the current
 startup mechanism. According to this source, the main disadvantage of
 GRASS version 7.8 is mainly the clunky and dated user interface,
@@ -693,7 +694,8 @@ keep in mind that many later problems will be avoided by clearly
 defining the CRS at the beginning and allowing only one coordinate
 % ML: here we are not directly speaking about GRASS, right? So
 % "location" -> "project" ?
-system within one location. From the author’s point of view, the
+% LK: yes thats true, changed
+system within one project. From the author’s point of view, the
 advantage (perhaps from the point of view of first-time users maybe
 the disadvantage) is that GRASS GIS does not support ``on the fly''
 transformation which shows differently projected data in the right
@@ -718,45 +720,63 @@ databases, adding buttons to create existing or new databases, or
 adding new actions from the context menu to a database, location, and
 mapset node. Considering the disadvantages mentioned in the paragraph
 above, the data hierarchy \texttt{database/location/mapset} is
-preserved. In addition, this proposal introduces a new concept called
-% ML: Workspace files has been introduced to GRASS much more earlier
-% (before 7.4 for sure)
-\textit{workspace} which is not directly part of a mapset, but is
-associated with it.
+preserved. 
+%In addition, this proposal introduces a new concept called
+%% ML: Workspace files has been introduced to GRASS much more earlier
+%% (before 7.4 for sure)
+% LK: ok, the sentence is not used
+%\textit{workspace} which is not directly part of a mapset, but is
+%associated with it.
 
-The proposed changes in the Location Wizard are mainly related to the
+\noindent The proposed changes in the Location Wizard are mainly related to the
 clarification of the first page, better naming of the given
 attributes, and speeding up the selection of the coordinate system in
 % ML: Explain idea of using Data Catalog in startup screen in more
 % understandable way (Data Catalog is already used in the GUI, here it
 % was planned to use it also for startup screen purposes)
-the dialog. Furthermore, the proposal assumes the possibility of
+the dialog. 
+
+% LK: new paragraph about Data Catalog
+The same Data Catalog implemented in the Data tab is
+planned to be used within a startup screen. 
+The proposal assumes the possibility of
 filtering in the Data Catalog based on the recently selected
 % ML: what means recetly used "maps" for startup?
-items. General startup GUI should be able to collect recent maps and
+items. General startup GUI should be able to collect recently used mapsets and
 % ML: twice used "workspace" in a single sentence, you probably meant
 % "location" (at the end)
-workspaces as well as recently used databases and workspaces. The
-display of map layers in the Data Catalog is switched off by default,
-the display of workspaces under the relevant mapset is switched
+as well as databases and locations. 
 % ML: launches for the first time
-on. When GRASS GIS launches, the "grassdata" working directory for
+When GRASS GIS  launches for the first time, the "grassdata" working directory for
 storing locations, mapsets and maps should be automatically created in
 a reasonable place.
 
 % ML: ah, here you explain the how idea - separate text about location
 % wizard and data catalog startup screen usage into two seperate
 % paragraphs
-Furthermore, the same Data Catalog implemented in the Data tab is
-planned to be used within a startup screen. The startup screen
-proposed in Prague Roadmap consists of only one startup page, which
-has a Data Datalog in the center, and a toolbar with big buttons for
-creating or defining new or existing data components, such as a
-location or mapset.
+
+To sum it up, the startup screen proposed in Prague Roadmap consists of only one 
+startup page, which has a Data Datalog in the center, and a toolbar 
+with big buttons for creating or defining new or existing data 
+components, such as a location or mapset. There is not any image available
+for that design, however, it follows very closely the previous proposal A2 
+\cite{A2} created by  Garrett C. Millar, which we can see in Figure 
+\ref{fig:roadmap_proposal}.
 
 % ML: you could probably add image from wiki page describing whole
 % concept (if there is any)
+% LK: figure added
+\vspace{0.3cm}
+\begin{figure}[hbt!] 
+\begin{center}
+\includegraphics[width=16cm]{../pictures/roadmap_proposal.png} 
+\caption[Proposal A2 (Gcmillar): Quick access through well-designed tabs on the side]{Proposal A2 (Gcmillar): Quick access through well-designed tabs on the side (Source: \cite{A2})}
+\label{fig:roadmap_proposal}
+\end{center}
+\end{figure}
 
+\newpage
+\vspace*{-1cm}
 \subsection{State of Art after GSoC}
 \label{sec:afterGSoC}
 
