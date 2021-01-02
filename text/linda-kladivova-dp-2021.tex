@@ -457,7 +457,7 @@ basically includes three things:
 
 \item GUI (graphical user interface) components that the user
   encounters during startup. In the case of GRASS GIS version 7.8,
-  these are the splash screen, startup screen and Location
+  these are the splash screen, startup screen, and Location
   Wizard. There may be situations where the requested mapset is locked
   (this happens if it is used by another process, or if the last
   session in this mapset ended in an error). If the running mapset is
@@ -504,7 +504,8 @@ the user to set up the software.
 
 The startup screen is the first component of the GRASS GIS version 7.8
 % ML: "meet" doesn't sound good, try better wording
-that we meet. It allows us to set all the above-mentioned components
+% LK: changed to ``encounter''
+that the user encounters. It allows us to set all the above-mentioned components
 except maps and, in the case of locations and mapsets, also manage
 them in terms of renaming and deleting. The various historical
 versions of the startup screen can be seen in Figure
@@ -512,11 +513,12 @@ versions of the startup screen can be seen in Figure
 7.5 (as well as 7.8).
 
 %% ML: source?
+% LK: source added
 \vspace{0.3cm}
 \begin{figure}[hbt!]
 \begin{center}
 \includegraphics[width=17cm]{../pictures/verze_startup.png} 
-\caption[Historical versions of the GRASS startup screen]{Historical versions of the GRASS startup screen}
+\caption[Historical versions of the GRASS startup screen]{Historical versions of the GRASS startup screen (Source: \cite{intro}}
 \label{fig:verze_startup}
 \end{center}
 \end{figure}
@@ -537,30 +539,34 @@ GSoC is included in subsection \ref{sec:afterGSoC}.
 \noindent The peculiarity of GRASS GIS is that it does not consist of
 one software window, as is usually the custom, but directly of
 % ML: in section header you mentioned 'Map Display', keep terminology consistent (Display vs Window)
-two. The topic of connecting Layer Manager with Map Window is, by the
+% LK: changed
+two. The topic of connecting Layer Manager with Map Display is, by the
 way, one of the proposed topics on GSoC
 \footnote{\url{https://trac.osgeo.org/grass/wiki/GSoC/2020\#GRASSGUI:Singlewindowlayout}}.
+As explained in more detail in the GRASS documentation, the
+Layer Manager provides a GUI for creating and managing maps. In Figure
+\ref{fig:empty_layers1} we can notice five tabs - Layers, Console,
+Modules, Data, and Python.
 
 \vspace{0.3cm}
 \begin{figure}[hbt!]
 \begin{center}
-\includegraphics[width=10cm]{../pictures/loc_wizard_sour_pred.png} 
+\includegraphics[width=11cm]{../pictures/loc_wizard_sour_pred.png} 
 \caption[Choosing EPSG code in Location Wizard in version 7.8]{Choosing EPSG code in Location Wizard in version 7.8 (Source: Personal collection)}
 \label{fig:loc_wizard_sour_pred}
 \end{center}
 \end{figure}
 
 \newpage
-\noindent As explained in more detail in the GRASS documentation, the
-Layer Manager provides a GUI for creating and managing maps. In Figure
-\ref{fig:empty_layers1} we can notice five tabs - Layers, Console,
-Modules, Data, and Python.  In the Layer Manager version 7.8, after
-running GRASS we first see the Layers tab, which allows layers in Map
+\noindent   In the Layer Manager version 7.8, after
+% LK: maps in brackets
+running GRASS we first see the Layers tab, which allows layers (maps) in Map
 Display to be switched on and off. After starting the session this tab
 is empty. The path to the current mapset and location can be noticed
 in the top bar in the Map Display window. In this case, the current
 % ML: demomapset in italics(?)
-mapset is called demomapset and is located in the location named
+% LK: ok
+mapset is called \textit{demomapset} and is located in the location named
 \textit{fire\_grassdata}. GRASS GIS allows adding more Map Display
 % ML: at beggining of this paragraph you are using "maps" term, now
 % "layers". This need to be explained, kept consistent.
@@ -572,7 +578,8 @@ tab.
 \begin{center}
   \includegraphics[width=17cm]{../pictures/empty_layers1.png}
   % ML: Window vs Display
-\caption[Layer Manager and Map Window in version 7.8]{Layer Manager and Map Window in version 7.8 (Source: Personal collection)}
+  % LK: ok
+\caption[Layer Manager and Map Display in version 7.8]{Layer Manager and Map Display in version 7.8 (Source: Personal collection)}
 \label{fig:empty_layers1}
 \end{center}
 \end{figure}
@@ -582,51 +589,71 @@ explanation of other tabs can be found in the documentation
 \footnote{\url{https://grass.osgeo.org/grass79/manuals/wxGUI.html}}.
  
 \bigskip
-\noindent \textbf {Data Catalog}
+% LK: rewrited
+\noindent \textbf {Data tab}
 
-\noindent When we want to display the data located in the
-% ML: not limited only to current (you can display all data from
-% current location)
-%
-% ML: Data catalog is not the only way how to display data ("we need
-% to go"), https://training.gismentors.eu/grass-gis-zacatecnik/intro/zobrazeni-geodat.html
-\textit{current mapset} (equal to active mapset), we need to go to the
-% ML: try to rewrite sentence "In this tab" (you are not speaking
-% about "tab" before)
-Data tab. In this tab provided in Figure \ref{fig:data_catalog_pred},
-there is a Data Catalog in the middle, and the toolbar in the upper
-% ML: "we are" sounds strange in this context
-part. Within the Data Catalog we are allowed to work with maps through
+\noindent The Data tab contains two objects - the Data Catalog (data hierarchy tree)
+and the toolbar, which allows e.g. updating and searching in the tree .
+
+The Data Catalog enables to display the data located in the 
+\textit{current location} (equal to active location). Within the 
+Data Catalog we are allowed to work with maps through
 the context menu - to display, rename and delete them, display their
-% ML: usually "*from* another mapset"
-metadata, or to copy them to another mapset. However, the Data Catalog
+metadata, or to copy them from another mapset. However, the Data Catalog
 in version 7.8 does not provide management of mapsets, locations, or a
 database. This management is sort of hidden in the Settings/GRASS
-% ML: it's not tab, but the menu.
-working environment tab.
+working environment menu.
 
-% ML: why "in the current mapset"?, you can read/display data also from
-% other mapsets
-%
-% ML: "what means "firmly" in this context?, the whole paragraph
-% doesn't make sense to me - probably you meant "current location"
-% instead of "current mapset"?
-% ML: please rewrite whole paragraph - it's very confusing
-The data in the current mapset are firmly connected to the Map Display
-window. If we want to see maps from a different mapset we can find in
+The data in the current location are firmly connected to the Map Display
+window. If we want to see maps from a different location we can find in
 the mapset context menu the option for switching. We are able to
 switch between mapsets in the same location or between mapsets in
-% ML: how you can move mapset to another location via GRASS GUI/CLI?
-% It's not possible and not allowed
 different locations. If we move the data to the mapset in another
-%% ML: the last sentence is the only correct
 location with a different CRS, the projection takes place. GRASS GIS
 does not use ``on the fly'' transformation.
+
+%% ML: not limited only to current (you can display all data from
+%% current location)
+%%
+%% ML: Data catalog is not the only way how to display data ("we need
+%% to go"), https://training.gismentors.eu/grass-gis-zacatecnik/intro/zobrazeni-geodat.html
+%\textit{current mapset} (equal to active mapset), we need to go to the
+%% ML: try to rewrite sentence "In this tab" (you are not speaking
+%% about "tab" before)
+%Data tab. In this tab provided in Figure \ref{fig:data_catalog_pred},
+%there is a Data Catalog in the middle, and the toolbar in the upper
+%% ML: "we are" sounds strange in this context
+%part. Within the Data Catalog we are allowed to work with maps through
+%the context menu - to display, rename and delete them, display their
+%% ML: usually "*from* another mapset"
+%metadata, or to copy them from another mapset. However, the Data Catalog
+%in version 7.8 does not provide management of mapsets, locations, or a
+%database. This management is sort of hidden in the Settings/GRASS
+%% ML: it's not tab, but the menu.
+%working environment menu.
+
+%% ML: why "in the current mapset"?, you can read/display data also from
+%% other mapsets
+%%
+%% ML: "what means "firmly" in this context?, the whole paragraph
+%% doesn't make sense to me - probably you meant "current location"
+%% instead of "current mapset"?
+%% ML: please rewrite whole paragraph - it's very confusing
+%The data in the current location are firmly connected to the Map Display
+%window. If we want to see maps from a different location we can find in
+%the mapset context menu the option for switching. We are able to
+%switch between mapsets in the same location or between mapsets in
+%% ML: how you can move mapset to another location via GRASS GUI/CLI?
+%% It's not possible and not allowed
+%different locations. If we move the data to the mapset in another
+%%% ML: the last sentence is the only correct
+%location with a different CRS, the projection takes place. GRASS GIS
+%does not use ``on the fly'' transformation.
 
 \vspace{0.3cm}
 \begin{figure}[hbt!] 
 \begin{center}
-\includegraphics[width=17cm]{../pictures/data_catalog_pred.png} 
+\includegraphics[width=16cm]{../pictures/data_catalog_pred.png} 
 \caption[Data Catalog in version 7.8]{Data Catalog in version 7.8 (Source: Personal collection)}
 \label{fig:data_catalog_pred}
 \end{center}
