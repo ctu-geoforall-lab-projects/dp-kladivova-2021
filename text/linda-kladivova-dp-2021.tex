@@ -377,10 +377,10 @@ of GRASS for geo-scientists that are not familiar with C
 GRASS GIS had been using the versioning system since 1999 (CVS, then
 Subversion). Since January 2020 it has been developing on GitHub, a web
 version control using Git. Nowadays, most main changes take place in
-the Python language, which also applies to the GUI, which uses the
+the Python language. For GUI coding wxPython GUI toolkit is used.
 % ML: extension -> library (or better GUI toolkit)
 % LK: changed to GUI toolkit
-wxPython GUI toolkit. Besides improving the GRASS GIS startup mechanism,
+Besides improving the GRASS GIS startup mechanism,
 in summer 2020 the community presented a new website (see Figure
 \ref{fig:grass_gis}) on the occasion of its 37th birthday which offers
 a curated list of tutorials in different languages and links to
@@ -823,7 +823,7 @@ functionalities that have been newly implemented in the Data Catalog.
 \noindent GRASS GIS after GSoC allows a user
 % ML: add -> work/define (?)
 % LK changed to define
-to define multiple databases. New management icons offer intuitive
+to define multiple databases. New management icons in the upper toolbar offer intuitive
 creation of the mentioned data components. In the context menu, there
 are also new options for deleting several mapsets or
 locations. Though, probably the most visible changes are those related
@@ -1283,7 +1283,6 @@ QGIS users.
 \end{center}
 \end{figure}
 
-
 \noindent In the cross-section of all selected GIS software, we can
 notice that the data hierarchy is quite different. The truth is that
 two world-famous representatives of GIS software -- ArcGIS Pro and
@@ -1402,7 +1401,7 @@ perform a follow-up action, as in the example in Figure
 \begin{figure}[hbt!] 
 \begin{center}
 \includegraphics[width=17cm]{../pictures/info_infobar_1.png} 
-\caption[Advising info bar in API Manager]{Advising infobar in API Manager (Source: \cite{githubio})}
+\caption[Advising infobar in API Manager]{Advising infobar in API Manager (Source: \cite{githubio})}
 \label{fig:info_infobar_1}
 \end{center}
 \end{figure}
@@ -1415,7 +1414,7 @@ first-time user.
 \begin{figure}[hbt!] 
 \begin{center}
 \includegraphics[width=17cm]{../pictures/info_advice_infobar.png} 
-\caption[Advising info bar in Matlab Simulink]{Advising  info bar in Matlab Simulink (Source: Personal collection)}
+\caption[Advising infobar in Matlab Simulink]{Advising  infobar in Matlab Simulink (Source: Personal collection)}
 \label{fig:info_advice_infobar}
 \end{center}
 \end{figure}
@@ -1438,7 +1437,7 @@ examples can be seen in Figures \ref{fig:bootstrap_infobar} and
 \begin{figure}[hbt!] 
 \begin{center}
 \includegraphics[width=8cm]{../pictures/infobar_android.png} 
-\caption[Example of info bar design for Android]{Example of info bar design for Android (Source: \cite{pinterest})}
+\caption[Example of infobar design for Android]{Example of infobar design for Android (Source: \cite{pinterest})}
 \label{fig:infobar_android}
 \end{center}
 \end{figure}
@@ -2101,10 +2100,10 @@ message.
 
 \newpage
 \noindent The first option, therefore, how this case could be solved
-would be to use the Info Bar, which would not have an informative
+would be to use the infobar, which would not have an informative
 character (as with the proposed solution for first-time users in the
 second questionnaire), but would have the character of a warning. This
-Warning Info Bar explains why the user was redirected to Demolocation
+Warning infobar explains why the user was redirected to Demolocation
 and instructs the user to open their own project.
 
 The second solution is to create a simple startup screen, very similar
@@ -2119,7 +2118,7 @@ database, location or mapset is very simple through the new Data
 Catalog, as well as saving and opening workspaces. Therefore, not only
 the author but also other developers are inclined rather to the
 variant to completely remove any form of startup screen and employ
-Info Bars instead.
+infobars instead.
 
 \par\noindent\rule{\textwidth}{0.4pt} \\
 \noindent \textbf{Question 3: Please, rank how useful these features in Data Catalog would be (or already are) for you (1 = the most useful).}
@@ -2296,7 +2295,7 @@ functionality that is perceived as essential.
 \vspace{0.3cm}
 \begin{figure}[hbt!] 
 \begin{center}
-\includegraphics[width=13cm]{../surveys/analyzed_data/survey1_part1_question6_histogram.png} 
+\includegraphics[width=14cm]{../surveys/analyzed_data/survey1_part1_question6_histogram.png} 
 \caption[Survey 1 Part 1 Question 6: Histogram]{Survey 1 Part 1 Question 6: Histogram (Source: Personal collection)}
 \label{fig:survey1_part1_question6_histogram}
 \end{center}
@@ -2305,14 +2304,11 @@ functionality that is perceived as essential.
 \vspace{0.3cm}
 \begin{figure}[hbt!] 
 \begin{center}
-\includegraphics[width=13cm]{../surveys/analyzed_data/survey1_part1_question6_r_pdf.png} 
+\includegraphics[width=14cm]{../surveys/analyzed_data/survey1_part1_question6_r_pdf.png} 
 \caption[Survey 1 Part 1 Question 6: Probability Density Function]{Survey 1 Part 1 Question 6: Probability Density Function (Source: Personal collection - R analysis)}
 \label{fig:survey1_part1_question6_r_pdf}
 \end{center}
 \end{figure}
-
-ADD SUMMARY
-
 
 \newpage
 \vspace*{-1cm}
@@ -2322,20 +2318,21 @@ ADD SUMMARY
   better first-time user experience in GRASS GIS} seeks to get user
 preferences on how they would like to improve the first-time user
 experience. This survey consists mainly of Multiple Choice and Comment
-Box types of questions, so the evaluation is very subjective and there
-are exceptional answers for which the author was not entirely sure
+Box types of questions, so the evaluation is very subjective, and there
+are exceptional answers where the author was not entirely sure
 whether she understood them correctly. This is, after all, one of the
 disadvantages of questionnaires and remote usability testing in
 general.
 
 This part of the survey offers two ways to improve the first-time user
-experience that the author has noticed with other software -- infobars
-% ML: add reference to chapter 2 (?)
-(QGIS 3/ Matlab Simulink) and First Run Wizard (Zoner Photo Studio X) 
-(see section \ref{subsection:enhancing}). Respondents
+% LK: added reference
+experience (see section \ref{subsection:enhancing}). The first way 
+uses the component of  infobar (used e.g. in QGIS 3 and Matlab Simulink) while the 
+second way represents the implementation of First Run Wizard
+(e.g. Zoner Photo Studio X). Respondents
 evaluate these topics in the first two questions, thus giving feedback
-on which of the above options they would prefer in GRASS. Question 3
-is very open and users write their own suggestions on how to improve
+on which of the above-mentioned options they would prefer in GRASS. Question 3
+offers the option to write suggestions on how to improve
 the first-time user experience. In Question 4, users share ideas for
 software that is user-friendly, while in Question 5, we then find out
 which specific things cause problems for users and what any first-time
@@ -2343,7 +2340,7 @@ advice should be about. The second part of the first survey was
 attended by 46 respondents, the completion rate was high -- 97
 \%. Question 4, which was optional, was skipped 14 times. Other
 questions were answered by all participants, however, the answers were
-not always relevant, so not all are part of the analyzes. We can see a
+not always relevant, so not all are part of the analyses. We can see a
 weekly graph of the number of responses for a specific day in Figure
 \ref{fig:survey1_part2_insight2}.
 
@@ -2380,15 +2377,15 @@ the remaining 13 (28.3 \%) respondents against First Run Wizard.
 
 \noindent The comment \#2 recommends creating pop-ups that themselves
 contain only the most important information, but refer to a written
-and video tutorial. So, the point is to include as few distractions as
+or video tutorial. So, the point is to include as few distractions as
 possible in the software itself, but to refer well to detailed
 information, for example in the form of a ``Learn more'' button.
 
 \par\noindent\rule{\textwidth}{0.4pt}
-\noindent \textbf{Question 2: Do you like the idea of first-time mode info bars (visually similar to info bars in QGIS implementation)?}
+\noindent \textbf{Question 2: Do you like the idea of first-time mode infobars (visually similar to infobars in QGIS implementation)?}
 \par\noindent\rule{\textwidth}{0.4pt}
 
-\noindent People largely like both the Info Bars and the First Run Wizard. However, there are fewer ``Yes, but...'' comments in Info Bars, and unlike the previous question, they are literally ``Yes, but...'', as we can see in Figure \ref{fig:survey1_part2_question2_all}. 
+\noindent People largely like both the infobars and the First Run Wizard. However, there are fewer ``Yes, but...'' comments in infobars, and unlike the previous question, they are literally ``Yes, but...'', as we can see in Figure \ref{fig:survey1_part2_question2_all}. 
 
 \vspace{0.3cm}
 \begin{figure}[hbt!] 
@@ -2400,9 +2397,9 @@ information, for example in the form of a ``Learn more'' button.
 \end{figure}
 
 \noindent A relatively large proportion of respondents (17.4 \%) think
-that these icons will be ignored by new GRASS users. If we combine the
+that infobars will be ignored by new GRASS users. If we combine the
 subgroups into two main groups ``Yes'' and ``No'', we conclude that 34
-(73.9 \%) respondents are for and 12 (26.1 \%) against Info Bars. This
+(73.9 \%) respondents are for and 12 (26.1 \%) against infobars. This
 is a slightly better balance than in Question 1. But even here we must
 be careful. The difficult task will be to find a compromise between
 the fact that the information icons must be placed in the right place
@@ -2583,31 +2580,28 @@ should no longer be included, but it should be well-referred to.
 \section{GRASS GIS Development Proposals}
 
 \noindent As described in the subchapter \ref{sec:objectives}, this
-work consists of 2 seemingly independent parts. The first part (the
-main part of this work) related to the second part of the first survey
-and the second survey improves the concept of default location by the
+work consists of 2 seemingly independent parts. The first part (the 
+main part of this work) related to Survey 1 Part 2
+and Survey 2 improves the concept of default location by the
 so-called first-time user mode, which aims to improve the first-time
-user experience. The second part, related to the first part of the
-first survey, builds significantly on the changes made in the GSoC and
-addresses the shortcomings of the new startup mechanism. The first
+user experience. The second part, related to Survey~1 Part 1, builds 
+significantly on the changes made in the GSoC and
+addresses the shortcomings of the new startup mechanism. The first 
 main topic of this work focuses exclusively on new users, while the
 second topic related to the complete removal of the original startup
 screen (so that it does not appear even in a situation where the last
-mapset is not in a usable state) is a topic that affects all existing
-users.
+mapset is not in a usable state) is a topic that affects all users.
 
 \subsection{How to enhance first-time user experience}
 \label{sec:proposal1}
 
 % ML: twice "to the", try to rewrite the first sentence
-After running GRASS in the version after GSoC, the new user is
-redirected to the default location (demolocation) to the Data
-tab. Here he/she can see a project template containing a world
-map. (In the future, the default location is likely to be enriched
-with additional maps.) The analysis of the second survey confirmed the
+After running GRASS in the version after GSoC for the first time, the 
+user is redirected to the Data tab containing the default location (project template). 
+The analysis of the second survey confirmed the
 assumption that in order to make GRASS a more user-friendly tool right
 from the outset, there is some form of help (whether in form of First
-Run Wizard or Info Bars) a necessity. Although the Data Catalog
+Run Wizard or infobar) a necessity. Although the Data Catalog
 provides a visual idea of the hierarchical data structure in GRASS, no
 clue would explain the concept of the default location, nor locations
 and mapsets in general. But it's not just a misunderstanding of the
@@ -2625,6 +2619,8 @@ third step, we can visit the Modules tab if want to analyze the data
 straight away. However, if we only want to change the layer
 properties, we should go to the Display tab.
 
+
+
 \vspace{0.3cm}
 \begin{figure}[hbt!] 
 \begin{center}
@@ -2639,16 +2635,15 @@ hints which can be seen in Figure
 \ref{fig:first-time_user_diagram}. Those texts displayed in the orange
 box essentially suggest a special first-time user mode, which we can
 also perceive as a First Run Wizard in terms of continuity. If the
-user follows the advices, he will eventually meet all three advice in
+user follows the advice, he will eventually meet all three advice in
 that order. So it is not possible to skip this mode as in Zoner Photo
 Studio, but if we do not follow the advice, we can avoid it. Since
 small hints are displayed in predefined situations, it was decided to
 implement them with a similar solution that is used in QGIS 3 - in the
-form of the Info Bar. After all, the Info Bar had better response than
-the First Run Wizard in the second survey. Except for hints, the Info
-Bar in GRASS will include a button(s) that offer the user the
+form of an infobar. Except for hints, the infobar in GRASS will include 
+a button(s) that offer the user the
 necessary functions without the need to search. A more detailed
-description of the first-time mode, including Info Bar mockups, is
+description of the first-time mode, including infobar mockups, is
 contained in section \ref{sec:qstat2}.
 
 \subsection{How to improve GRASS GIS startup mechanism}
@@ -2675,14 +2670,14 @@ responses, ideas with some form of information or error message very
 often appear, which is a very interesting variant, which the author of
 the work did not think of when compiling the survey. In terms of
 implementation complexity, however, it is a simple option, as the
-proposed Info Bar for first-time users can cover both purposes - it
+proposed infobar for first-time users can cover both purposes - it
 will primarily serve as a help for new users and secondarily it can
 serve as an information channel for existing users. In the latter
-context, the Info Bar can inform users about non-standard situations
+context, the infobar can inform users about non-standard situations
 and speed up their work (e.g. when creating a location, it will
 automatically offer the creation of a mapset, etc.).
 
-The display of the Info Bar in a non-standard situation is related to
+The display of the infobar in a non-standard situation is related to
 the existing startup mechanism, which still has not completely gotten
 rid of the old startup screen. If we start GRASS GIS for the first
 time, we meet a default location. In other cases, GRASS tries to boot
@@ -2693,14 +2688,15 @@ Flowcharts in Figures \ref{fig:normal_user_diagram} and
 \ref{fig:normal_user_diagram2}, where the second proposal is an
 extension of the first proposal.
 
-\newpage
 In the first proposal in Figure \ref{fig:normal_user_diagram} we do
 not consider the last used location at all. If the last used mapset is
 in a unusable state, the user will always be redirected to the
 default location. We do not prohibit the user from working in the
 default location as in the normal location. Then, however, there is a
-risk that the PERMANENT mapset can be used by another process. This
-situation can occur, for example, when a user starts two GRASS
+risk that the PERMANENT mapset can be used by another process. 
+
+\newpage
+\noindent This situation can occur, for example, when a user starts two GRASS
 sessions. The first instance starts in the last used mapset, but the
 second instance can no longer start this way.
 
@@ -2716,24 +2712,24 @@ second instance can no longer start this way.
 \noindent It is therefore essential to check whether the PERMANENT
 mapset in the default location is in the usable state and if it is
 not, we need to create a new mapset in the default location, into
-which GRASS will start in case of emergency. This mapset can be named
+which GRASS will start in case of an emergency. This mapset can be named
 after the user, which is a concept proposed in the second survey as a
 standard solution for first-time users. (In the end, it was not
 implemented since the second survey found that the existence of a user
 mapset in the standard version of the default location is rather
 confusing than useful).
 
-\newpage
 When starting in the default location, the user will see the
-notification in the form of the Info Bar saying the reason of start in
+notification in the form of the infobar saying the reason of start in
 the default location and advising a user on what to do next in this
 situation. The solution is simple as in the new version of the Data
 Catalog after GSoC it is very easy to add a new database to the Data
-Catalog, create a new location, etc. The Info Bar can therefore have
+Catalog, create a new location, etc. The infobar can therefore have
 the character of an information icon, as in the case with help for
 first-time users.
 
-Proposal 1 can be extended with another idea. To offer the user the
+\newpage
+\noindent Proposal 1 can be extended with another idea. To offer the user the
 most similar state to the last GRASS run, we can start GRASS in the
 PERMANENT mapset of the last used location. However, it presents a new
 concept, which assumes that the PERMANENT mapset is some kind of
@@ -2757,12 +2753,12 @@ possible to open the last used mapset or PERMANENT mapset.
 \noindent However, the disadvantage of the second solution is that the
 GRASS GIS startup process would not be consistent. The first solution
 is always consistent - boot in the demolocation in each non-standard
-situation and provide the same message in the Info Bar. Since this
+situation and provide the same message in the infobar. Since this
 massage is closely related to the Data Catalog and data hierarchy in
-GRASS GIS in general, we can use the same object of Info Bar which is
+GRASS GIS in general, we can use the same object of infobar which is
 used for messages intended for first-time users.
 
-We could also think of other situations where the Info Bar could be
+We could also think of other situations where the infobar could be
 displayed to users (see Figure \ref{fig:other_situations}). For
 example, when creating a new location, it can be assumed that the user
 will subsequently request the creation of a mapset. Similarly, when
@@ -2770,7 +2766,7 @@ creating a database, it can be assumed that the user will want to
 create a new location in the next step. The notifications could
 therefore be a kind of guide intended not only for first-time
 users. Their purpose would be to speed up the user's work related to
-the organization of their data. It could also be the same Info Bar
+the organization of their data. It could also be the same infobar
 object placed in the data tab, however, this time the type would not
 be informative, but questional.
 
@@ -2778,7 +2774,7 @@ be informative, but questional.
 \begin{figure}[hbt!] 
 \begin{center}
 \includegraphics[width=17cm]{../pictures/other_situations.png} 
-\caption[Flowchart of other situations where the Info Bar could be helpful]{Flowchart of other situations where the Info Bar could be helpful (Source: Personal collection)}
+\caption[Flowchart of other situations where the infobar could be helpful]{Flowchart of other situations where the infobar could be helpful (Source: Personal collection)}
 \label{fig:other_situations}
 \end{center}
 \end{figure}
@@ -2793,46 +2789,45 @@ be informative, but questional.
 \label{sec:qstat2}
 
 \noindent The second questionnaire called \textbf{Help improve the
-  special mode for first-time users} was released on November 26 and
-stopped on November 30, 2020. It introduces a new Info Bar solution to
+special mode for first-time users} was released on November 26 and
+stopped on November 30, 2020. It introduces a new infobar solution to
 new and existing users and tests its success. At the same time, it
-addresses users to share their ideas on how to modify and adapt the
+addresses users to share their ideas on how to modify and adapt the 
 solution so that the resulting solution that emerges from this work,
 largely based on this survey, enriches the first-time user experience
 with GRASS as much as possible.
 
 The questionnaire is based on a simple task. A user has vector data of
 rivers in the Czech Republic in the shapefile format in the coordinate
-system S-po/Krovak East North (EPSG:5514) and they would like to
-import this data into GRASS and perform a simple task - extract a
-river called Otava and save it in a separate layer. Unfortunately, due
-to external epidemiological circumstances, this task could not be
+system S-JTSK/Krovak East North (EPSG:5514) and they would like to
+import this data into GRASS and perform a simple task -- extract a river
+called Otava and save it in a separate layer. Unfortunately, due
+to external circumstances, this task could not be
 tested among GRASS beginners directly on the software. Thus, a survey
-was designed that simulates three key situations that, according to
-the diagrams in the previous chapter, a new user is likely to get into
-and which, according to the results of the second part of the first
-survey, are crucial. In these situations, the respondent is presented
-with software mockups of Info Bars which (if they are placed in the
-right place at the right time and correctly designed in terms of text)
-should lead to the right decision on how to continue in work. In the
-following text, the term \textit{default location} is preferred to the
-term \textit{demolocation}, which is more of a technical (developer)
+was designed that simulates three key situations. These situations are 
+according to the diagrams in the previous chapter and according to the 
+results of Survey 1 Part 2 crucial. The questionnaire provides the user 
+with three simulated situations in the form of infobar mockups and finds 
+out if they let him to the right decision on how to continue in work.
+In the following text, the term \textit{default location} is preferred to
+the term \textit{demolocation}, which is more of a technical (developer) 
 nature. Semantically, these concepts do not differ.
 
 \textbf{The first situation} shown in the mockup in Figure
 \ref{fig:grass_infobar_1} shows the GRASS GIS immediately after
 startup. At this point, a user needs to find their way around in a
-completely unknown environment as quickly as possible and import their
-data so that he can look at it and possibly perform analyzes. The
-software starts in the Data tab to the default location, which in the
+completely unknown environment as quickly as possible and import the
+data in order to perform analyses.
+GRASS GIS starts to the default location, which in the
 Map Display window displays the world map in the WGS 84 system
 (EPSG:4326). The task of the default location is to give the user a
 certain sense of security by showing a map and at the same time an
 example of data organization in the Data Catalog, which is now the
 center of GRASS. At the first moment, it is therefore essential for
 the user to at least passively understand the principle of the GRASS
-data hierarchy, which is well visible in the Data Catalog and is also
-briefly explained in the first Info Bar. Terms are also specified in
+data hierarchy, which is well visible in the Data Catalog and also
+briefly explained in the first infobar. The data hierarchy terms are also 
+specified in
 the text using new planned names in parentheses. In order to properly
 figure out the first situation, a user must realize that the data he
 wants to import into the software has a different coordinate system
@@ -2852,10 +2847,11 @@ contains a detailed explanation of the data hierarchy.
 \end{center}
 \end{figure}
 
+\newpage
 \noindent Once a user creates a new location, he finds themselves in
 \textbf{the second situation} captured in Figure
-\ref{fig:grass_infobar_2} which displays the second Info Bar leading
-to data import. This Info Bar also explains the concept of PERMANENT
+\ref{fig:grass_infobar_2} which displays the second infobar leading
+to data import. This infobar also explains the concept of PERMANENT
 mapset and shows a variant of creating own mapset, which is not
 necessary but useful. It means that we are still partially dealing
 with the topic of data hierarchy in GRASS, but at the same time, we
@@ -2871,13 +2867,13 @@ a map is displayed automatically in the Map Display.
 \end{center}
 \end{figure}
 
-\noindent The result of Question 5 of the second part of the first
-survey shows that users also have a problem with the meaning of
+\noindent The result of Question 5 in Survey 1 Part 2
+shows that users also have a problem with the meaning of
 individual tabs. After importing the data, a user wants to either
 analyze data directly or change its display in the Map Display
 (e.g. change transparency, strength, line color, etc.). Therefore, 
 in \textbf{the third situation} shown in Figure \ref{fig:grass_infobar_3} 
-we introduce the two main tabs called Modules and Display and
+the author introduces the two main tabs called Modules and Display and
 link the documentation GRASS website \cite{manual} via ``See documentation''  
 button. As a reader probably noticed, the proposal is trying to provide
 basic advice on all of the aspects that appeared in Survey 1 Part 2
@@ -2909,7 +2905,7 @@ responses for a specific day in Figure
 
 \noindent The questionnaire consists of 10 questions - 6 questions
 concern the understanding of individual situations, 2 questions are
-complementary and two more questions find out how experienced the
+complementary and 2 more questions find out how experienced the
 interviewer is - both in terms of GIS in general and in terms of GRASS
 GIS.
 
@@ -2952,11 +2948,11 @@ form of open-ended responses. These are divided into six categories
 throughout Survey 2:
 
 \begin{enumerate}
-\item Demolocation/Info Bar confused
-\item Info Bar could be ignored
+\item Demolocation/infobar confused
+\item infobar could be ignored
 \item Terminology should be changed
-\item Info Bar too long / Editing of content in Info Bar
-\item Info Bar Helped
+\item infobar too long / Editing of content in infobar
+\item infobar Helped
 \item Other
 \end{enumerate}
 
@@ -3000,31 +2996,28 @@ intended for storing and displaying basic data. However, analyzes
 should always be performed in a mapset other than
 PERMANENT. Therefore, at the end of GSoC, it was decided that the
 default location will also contain a user-named mapset set as
-\textbf{current}, which will motivate users not to use PERMANENT
-mapset for their further analyzes, but to sort their data into other
-mapsets. However, from the point of view of GRASS, this solution does
-not make sense, because in all other cases but default location we are
+\textbf{current}. This solution was supposed to motivate users 
+not to use PERMANENT mapset for their further analyzes, 
+but to sort their data into other mapsets. However, it is confusing
+since we display layers from non-current mapset.
 % ML: this is not a true, you can display data from all mapsets in the
 % current mapset
-only allowed to display layers from the current mapset, and when
 % ML: this is not a true...
-displaying layers from another mapset we need to switch to it. Due to
-these circumstances, it would be probably more correct and at the same
-time more clearer for first-time users if the default location
+Therefore, it would be probably clearer for first-time users if the default location
 contained only the PERMANENT mapset with the included world map. After
-all, advice on the use of other mapsets is already part of the Info
-Bar in the second situation. Alternatively, a brief explanation of the
-term mapset could still be part of the first Info Bar, as suggested by
+all, advice on the use of other mapsets is already part of the infobar 
+in the second situation. Alternatively, a brief explanation of the
+term mapset could still be part of the first infobar, as suggested by
 respondent \#24.
 
 Response \#11 indicates that a user may not realize that he or she is
 in a default location at all. This would need to be emphasized
 more. Respondents \#13 and \#17 fear that users will ignore the Info
 Bar. So another important step would be to think about how to
-highlight the Info Bar as much as possible so that most new users will
+highlight the infobar as much as possible so that most new users will
 really read it. However, as we can see from the responses \#10 and
-\#24 as well as from the number of correct answers in Q1, the Info
-Bar, even in the form in which it appears in this initial proposal, is
+\#24 as well as from the number of correct answers in Q1, the info
+bar, even in the form in which it appears in this initial proposal, is
 certainly an improvement for new GRASS GIS users.
 
 \vspace{0.3cm}
@@ -3036,6 +3029,15 @@ certainly an improvement for new GRASS GIS users.
 \end{center}
 \end{figure}
 
+\par\noindent\rule{\textwidth}{0.4pt}
+\noindent \textbf{Question 3: What will be your next step in second situation?}
+\par\noindent\rule{\textwidth}{0.4pt}
+
+\noindent There were two correct choices - either import the data
+using the \textit{Import vector data} button or go directly to the
+File menu, where a user would find the corresponding function called
+\textit{Simplified vector import with reprojection (v.import)}. 
+
 \vspace{0.3cm}
 \begin{figure}[hbt!] 
 \begin{center}
@@ -3045,38 +3047,38 @@ certainly an improvement for new GRASS GIS users.
 \end{center}
 \end{figure}
 
-\newpage
-\vspace*{-1cm}
-\par\noindent\rule{\textwidth}{0.4pt}
-\noindent \textbf{Question 3: What will be your next step in second situation?}
-\par\noindent\rule{\textwidth}{0.4pt}
-
-\noindent There were two correct choices - either import the data
-using the \textit{Import vector data} button or go directly to the
-File menu, where a user would find the corresponding function called
-\textit{Simplified vector import with reprojection (v.import)}. As we
-can notice in Figures \ref{fig:survey2_question3_histogram_group1},
+\noindent As we can notice in Figures \ref{fig:survey2_question3_histogram_group1},
 \ref{fig:survey2_question3_histogram_group2}, both groups have been
 successful, 18 people out of 25 would choose to import data via the
-button in the Info Bar, only 5 people would search in the File menu.
+button in the infobar, only 5 people would search in the File menu.
 
 \par\noindent\rule{\textwidth}{0.4pt}
 \noindent \textbf{Question 4: Is something confusing to you? If so, what specifically?? (Optional)}
 \par\noindent\rule{\textwidth}{0.4pt}
 
 \noindent As the comment \#14 in Figure \ref{fig:survey2_question4}
-points out, it is not clear from the Info Bar that it is the import
+points out, it is not clear from the infobar that it is the import
 using the \textit{v.import} or \textit{r.import} modules. It is
 important to make sure that the user who clicks on the button in the
-Info Bar will be able to run this function afterwards without having
+infobar will be able to run this function afterward without having
 to search for it. Therefore, the buttons could contain bitmap images
 in addition to the text. Creating a location already has its image
 used for management icons, for data import it would be useful to add
 basic functions for data import also to the management icons. However,
-the question is whether to implement the buttons in the Info Bar at
+the question is whether to implement the buttons in the infobar at
 all. Perhaps it would be clearer to lead a user directly to the File
 menu or to the upper toolbar containing management icons, as
 respondent \#10 suggests.
+
+The comment number \#13 encounters the problem that the
+first help in the infobar is not clearly related to the Data
+Catalog. Therefore, the infobar in the first situation could also
+contain small icons next to the explanation of location and mapset,
+which are used to distinguish the data hierarchy elements in the Data
+Catalog. Another part of the users encounters problematic terminology
+in GRASS. In this case, according to the author's opinion, it is worth
+waiting for how helpful will the infobar be for first-time
+users. 
 
 \newpage
 \vspace{0.3cm}
@@ -3107,20 +3109,13 @@ respondent \#10 suggests.
 \end{center}
 \end{figure}
 
-\noindent The comment number \#13 encounters the problem that the
-first help in the Info Bar is not clearly related to the Data
-Catalog. Therefore, the Info Bar in the first situation could also
-contain small icons next to the explanation of location and mapset,
-which are used to distinguish the data hierarchy elements in the Data
-Catalog. Another part of the users encounters problematic terminology
-in GRASS. In this case, according to the author's opinion, it is worth
-waiting for how helpful will the Info Bar be for first-time
-users. Only after a certain time when this mechanism will be
+\noindent Only after a certain time when this mechanism will be
 functional can we conclude whether it will be necessary to change the
 terminology of the data hierarchy or whether the new startup mechanism
 is so straightforward to new users that most of them will get their
 way around without problems.
 
+\newpage
 \vspace{0.3cm}
 \begin{figure}[hbt!] 
 \begin{center}
@@ -3152,9 +3147,8 @@ from \textbf{Frequent GRASS users} only three people would do so.
 \par\noindent\rule{\textwidth}{0.4pt}
 
 \noindent The first survey shows that people have problems with the
-meaning of tabs. Like respondent \#15, also other users, especially
-existing ones, may be confused by the purpose of the Data and Display
-tabs.
+meaning of tabs. Like respondent \#15, also other users may be confused 
+by the purpose of the Data and Display tabs.
 
 \vspace{0.3cm}
 \begin{figure}[hbt!] 
@@ -3190,13 +3184,13 @@ order) was placed in the first place. The Data tab has the character
 of a data directory and is only used to organize data in GRASS GIS. A
 very distant counterpart called Catalog can be found in ArcGIS. Map
 layers and their properties are located in the Display tab. In the
-Info Bar in the third situation, it would be helpful to better explain
+infobar in the third situation, it would be helpful to better explain
 the difference between the Data and Display tabs. Similarly, it could
 help to change the terminology of Modules to \textit{Tools}, as
 suggested by respondent \#24 in Figure \ref{fig:survey2_question6}.
 
 \par\noindent\rule{\textwidth}{0.4pt}
-\noindent \textbf{Question 7: What do you think about the following statement? The advice in Info Bars given in each situation was straightforward and led me very well to the right answers.}
+\noindent \textbf{Question 7: What do you think about the following statement? The advice in infobars given in each situation was straightforward and led me very well to the right answers.}
 \par\noindent\rule{\textwidth}{0.4pt}
 
 \noindent The agreement with this statement is significantly higher
@@ -3207,12 +3201,12 @@ perception of these users is somewhat distorted by the knowledge of
 GRASS. For the \textbf{Occasional GRASS users}, however, the average
 of 53.5 is also not disappointing. Despite the very small number of
 respondents, we can conclude that there are more \textbf{Occasional
-  GRASS users} who like the Info Bar solution than dislike it.
+  GRASS users} who like the infobar solution than dislike it.
 
 It is important to admit that the survey indicates what the respondent
 should pay attention to. This is not only since a user has a choice of
 multiple answers but also to the topic of the survey itself. It is
-therefore clear that in practice the success of the Info Bar can be
+therefore clear that in practice the success of the infobar can be
 different.
 
 \vspace{0.3cm}
@@ -3243,27 +3237,27 @@ different.
 \end{figure}
 
 \par\noindent\rule{\textwidth}{0.4pt}
-\noindent \textbf{Question 8: Any ideas you want to share? (e.g. the change of wording in Info Bars, adding more information, or, conversely, the removal of some information) (Optional)}
+\noindent \textbf{Question 8: Any ideas you want to share? (e.g. the change of wording in infobars, adding more information, or, conversely, the removal of some information) (Optional)}
 \par\noindent\rule{\textwidth}{0.4pt}
 
 \noindent In addition to the required changes in terminology and
-concerns that the Info Bar will be ignored by users, several
-respondents said that the texts in the Info Bar are too long. There is
+concerns that the infobar will be ignored by users, several
+respondents said that the texts in the infobar are too long. There is
 an effort to shorten them as much as possible, but at the same time,
-it must contain everything needed. The text of the Info Bar is
+it must contain everything needed. The text of the infobar is
 definitely not final and will be changed based on proposals in Pull
 Requests and also based on longer-term feedback from GRASS users.
 
 A very valuable comment was given by respondent \#18, who suggests
-placing the Info Bar above the Data Catalog (not below as presented in
-the proposal). This respondent also perceives the Info Bar as a
+placing the infobar above the Data Catalog (not below as presented in
+the proposal). This respondent also perceives the infobar as a
 warning message rather than an information message. It can be evoked
 by an orange color that was chosen deliberately in order to highlight
-the Info Bar and at the same time to match the color of the selected
+the infobar and at the same time to match the color of the selected
 item of data hierarchy emphasized by the white text on the orange
-field as well. The Info Bar type (for example, information, warnings,
+field as well. The infobar type (for example, information, warnings,
 or a question) is distinguished by a small icon on the left side of
-the widget. The Info Bar designed for first-time users has the
+the widget. The infobar designed for first-time users has the
 character of an information message.
 
 \vspace{0.3cm}
@@ -3275,7 +3269,7 @@ character of an information message.
 \end{center}
 \end{figure}
 
-\noindent In terms of concept, the Info Bar in Data Catalog can be
+\noindent In terms of concept, the infobar in Data Catalog can be
 implemented with texts appearing in situations that have been
 identified based on the first survey. The concept, therefore, will be
 preserved. However, the second survey revealed some shortcomings which
@@ -3283,15 +3277,15 @@ resulted in several changes:
 
 \begin{itemize}
 \item Removal of a user-named mapset from the default location
-\item Placing the Info Bar above the Data Catalog
-\item Text editing in the Info Bar stemming from the second survey
+\item Placing the infobar above the Data Catalog
+\item Text editing in the infobar stemming from the second survey
 \end {itemize}
 
 \noindent Alternatively, after successful implementation of this foundation, further improvements can be made:
 
 \begin {itemize}
 \item Adding basic functions for data import between Management icons
-\item Adding bitmap images to the buttons so that users know 100\% what function they are calling through the Info Bar
+\item Adding bitmap images to the buttons so that users know 100\% what function they are calling through the infobar
 \end {itemize}
 
 \newpage
@@ -3308,51 +3302,76 @@ resulted in several changes:
 \vspace*{-1cm}
 \fancyhead[RE, RO]{\fancyplain{}{\small \sl{Implementation}}}
 \section{Implementation}
+\label{sec:implementation}
 \noindent
 \large
 
-\noindent This chapter presents the implementation of first-time mode
+\noindent This chapter presents the implementation of the first-time mode 
 from the technical point of view. As mentioned in subsection
-\ref{subsection:grassgis} the most changes in GRASS GIS takes place in
-% ML: is there any reference to wxPython (or footnote)
-Python which also applies to GUI which uses the wxPython
-% ML: extension -> library (or better GUI toolkit)
-% ML: here it would be better to rewrite both sentences (the first
-% already contains twice 'which')
-% ML: cross-platform *GUI* toolkit
-extension. wxPython is a cross-platform toolkit which means that the
-same program can be run on multiple platforms without
-% ML: *MS* Windows
-modification. Currently, supported platforms are Windows, macOS,
+\ref{subsection:grassgis} GUI implementations use the wxPython
+-- cross-platform GUI toolkit\footnote{\url{https://wxpython.org/}}.
+Currently, supported platforms are MS Windows, macOS,
 Linux, or other Unix-like systems. The resulting design on each
 platform can be a bit different as we can also notice when using GRASS
-% ML: operating systems
-GIS on different systems. We can import wx to a script file as a
-% ML: add wxWidget reference or footnote
-package that wraps the GUI components of the popular wxWidgets
-% ML: the last sentence can be probably even skipped
-cross-platform C++ library. There are several other GUI packages for
-Python, for example, the Tkinter package is also very popular.
+GIS on different operating systems. We can import wx to a script file as a
+package that wraps the GUI components of the popular
+cross-platform C++ library wxWidgets\footnote{\url{https://www.wxwidgets.org/}}.
 
-% ML: please don't ignore whole history of versioning (GRASS source
-% code started to use CVS in 1999, than migrated to Subversion), Git
-% is just another version system in a row...
-GRASS GIS has been developing since January 2020 on GitHub, a web
-service that supports development using the Git versioning tool. This
-% ML: see comment above, there is no black hole before January 2020...
-principle makes working on code much clearer. It stores the history of
-work, ensures stylistic consistency using the flake8 command-line
-% ML: see trac.osgeo.org/grass which is still used and old issue (in
-% trac terminology "tickets"), GRASS has a long history regarding
-% version systems and different system for reporting tickets,issues...
-utility, and also allows the creation of Issues, which can have the
-character of errors and various improvements. Then these issues are
-usually proposed for changes (so-called Pull Requests), which users
-discuss. Therefore, GitHub partly works as a social network, which can
-support the creativity and enthusiasm of developers. In the following
-text presenting the changes from the developer's point of view, the
-term \textit{demolocation} is preferred to the term \textit{default
-  location}.
+GRASS has a long history regarding version systems and
+systems for reporting tickets/issues. Since January 2020 it has been developing on 
+GitHub. GitHub stores the history of work, ensures stylistic consistency using the 
+flake8 command-line utility, and also allows the creation of Issues that can have
+the character of errors and various improvements. These issues are usually 
+proposed for changes (so-called Pull Requests), which users discuss. Therefore, 
+GitHub partly works as a social network, which can support the creativity and 
+enthusiasm of developers. In the following text presenting the changes from 
+the developer's point of view, the term \textit{demolocation} is preferred to 
+the term \textit{default location}.
+
+%\noindent This chapter presents the implementation of first-time mode
+%from the technical point of view. As mentioned in subsection
+%\ref{subsection:grassgis}
+%% ML: is there any reference to wxPython (or footnote)
+%GUI implementations uses the wxPython
+%% ML: extension -> library (or better GUI toolkit)
+%% ML: here it would be better to rewrite both sentences (the first
+%% already contains twice 'which')
+%% ML: cross-platform *GUI* toolkit
+%% LK: rewrited and reference added
+% -- cross-platform GUI toolkit\footnote{\url{https://wxpython.org/}}. 
+%% ML: *MS* Windows
+%% added
+%Currently, supported platforms are MS Windows, macOS,
+%Linux, or other Unix-like systems. The resulting design on each
+%platform can be a bit different as we can also notice when using GRASS
+%% ML: operating systems
+%% LK: added
+%GIS on different operating systems. We can import wx to a script file as a
+%% ML: add wxWidget reference or footnote
+%% LK: added
+%package that wraps the GUI components of the popular 
+%% ML: the last sentence can be probably even skipped
+%cross-platform C++ library wxWidgets\footnote{\url{https://www.wxwidgets.org/}}.
+%
+%% ML: please don't ignore whole history of versioning (GRASS source
+%% code started to use CVS in 1999, than migrated to Subversion), Git
+%% is just another version system in a row...
+%GRASS has a long history regarding version systems and different 
+%system for reporting tickets/issues. Since January 2020 it has been developing on GitHub.
+%% ML: see comment above, there is no black hole before January 2020...
+%GitHub stores the history of
+%work, ensures stylistic consistency using the flake8 command-line
+%% ML: see trac.osgeo.org/grass which is still used and old issue (in
+%% trac terminology "tickets"), GRASS has a long history regarding
+%% version systems and different system for reporting tickets,issues...
+%utility, and also allows the creation of Issues which can have the
+%character of errors and various improvements. These issues are
+%usually proposed for changes (so-called Pull Requests), which users
+%discuss. Therefore, GitHub partly works as a social network, which can
+%support the creativity and enthusiasm of developers. In the following
+%text presenting the changes from the developer's point of view, the
+%term \textit{demolocation} is preferred to the term \textit{default
+%location}.
 
 \subsection{Displaying a world map and deleting a user mapset}
 
@@ -3393,7 +3412,7 @@ Catalog. This class inherits from the implementation in the Advanced
 Generic Widgets (AGW). This package provides many custom wxPython
 controls that are simply an addition to the wxPython widgets set. In
 terms of Layout and displaying and hiding messages (and buttons), the
-Info Bar has been significantly adapted to GRASS GIS.
+infobar has been significantly adapted to GRASS GIS.
 
 Next, the \texttt{DataCatalogInfoManager} class was created in the new
 script in the path
@@ -3414,11 +3433,11 @@ object. In Figure \ref{fig:uml_chart} we can see a UML diagram that
 shows the classes described above and the relationships between them.
 
 If the user is in the demolocation after startup, the world map is
-displayed and at the same time the Info Bar is visible, which displays
+displayed and at the same time the infobar is visible, which displays
 advice and buttons for the first situation. The setting of the Info
 Bar for the second and third situation is no longer so
 straightforward. It is necessary to use Signals from the pydispatch
-library.
+library\footnote{\url{https://pypi.org/project/PyDispatcher/}}.
 
 In the second situation, a Signal is created in the
 \texttt{DataCatalogTree} class and emitted if the user is in a
@@ -3428,12 +3447,15 @@ to the PERMANENT mapset of the newly created location, which thus
 becomes the current mapset. The \texttt{showImportDataInfo} method is
 connected to the signal in the parent \texttt{DataCatalog} object,
 which calls \texttt{InfoManager} with the settings which is set in
-case of successful creation of a new location. The Info Bar is
+case of successful creation of a new location. 
+
+\newpage
+\noindent The infobar is
 displayed in the second situation after creating a new location using
 the Management icon as well as after creating a location using the
-button in the Info Bar set for the first situation.
+button in the infobar set for the first situation.
 
-Showing the Info Bar in the third situation is also handled via Signal
+Showing the infobar in the third situation is also handled via Signal
 from the pydispatch library. Signal is created in the
 \texttt{ImportDialog} class in the
 \textit{gui/wxpython/modules/import\_export} file, which is the
@@ -3450,42 +3472,43 @@ importing vector data.
 \end{center}
 \end{figure}
 
-\noindent If the import is successful, this Signal is emited. In the
+\noindent If the import is successful, this Signal is emitted. In the
 \texttt{DataCatalog} class, the \texttt{showImportSuccessfulInfo}
 method calling the \texttt{InfoManager} with the particular settings,
-is connected to this Signal. The Info Bar is displayed in the third
+is connected to this Signal. The infobar is displayed in the third
 situation after data import using the appropriate Management icons as
-well as after data import using the buttons in the Info Bar set for
+well as after data import using the buttons in the infobar set for
 the second situation.
 
-The Info Bar does not appear if the user creates a location or imports
+\newpage
+\noindent The infobar does not appear if the user creates a location or imports
 data from the File tab. In this case, it is assumed that it is not a
-first-time user. The Info Bar is therefore only a part of the Data
+first-time user. The infobar is therefore only a part of the Data
 Catalog, its functionality is not connected with the \texttt{GMFrame}
 class, which represents the Layer Manager.
 
-\newpage
+\par\noindent\rule{\textwidth}{0.4pt}
 \noindent \textbf{Pull Requests:}
 
-Info Bar in first situation: \url{https://github.com/OSGeo/grass/pull/1078}
+infobar in first situation: \url{https://github.com/OSGeo/grass/pull/1078}
 
-Info Bar in second situation: \url{https://github.com/OSGeo/grass/pull/1183}
+infobar in second situation: \url{https://github.com/OSGeo/grass/pull/1183}
 
-Info Bar in third situation: \url{https://github.com/OSGeo/grass/pull/1204}
+infobar in third situation: \url{https://github.com/OSGeo/grass/pull/1204}
 \par\noindent\rule{\textwidth}{0.4pt}
 
 \subsection{Managament icons for vector and raster data import}
 
-\noindent \large Due to the Info Bar in the second situation, two
-Management icons for data import are added. They are implemented in
+\noindent \large Due to the infobar in the second situation, two
+management icons for data import are added. They are implemented in
 the file \textit{gui/wxpython/datacatalog/toolbar.py} in the
 \texttt{DataCatalogToolbar} class and use images used for the same
 purpose in QGIS. Depending on the type of import (vector/ raster), the
 function called \textit{Simplified vector import with reprojection
-  (v.import)} or \textit{Simplified raster import with reprojection
-  (v.raster)} is called. These are the same functions that are linked
+(v.import)} or \textit{Simplified raster import with reprojection
+(v.raster)} is called. These are the same functions that are linked
 to the buttons ``Import vector data'' and ``Import raster data'' in
-the Info Bar set for the second situation.
+the infobar set for the second situation.
 
 \par\noindent\rule{\textwidth}{0.4pt}
 \textbf{Pull Request:}
@@ -3496,7 +3519,7 @@ the Info Bar set for the second situation.
 \vspace{0.3cm}
 \begin{figure}[hbt!] 
 \begin{center}
-\includegraphics[width=15cm]{../pictures/icons.png} 
+\includegraphics[width=14cm]{../pictures/icons.png} 
 \caption[Management icons for vector and raster data
   import]{Management icons for vector and raster data import (Source:
   Personal collection)}
@@ -3516,17 +3539,18 @@ the Info Bar set for the second situation.
 \noindent In addition to the created proposal on how to improve the
 current GRASS GIS startup mechanism (see subsection
 \ref{sec:proposal2}), the goal of this work is to propose and
-implement a special mode for first-time users. Based on the second
-part of the first survey and the section \ref{sec:usability_testing},
-this mode was compiled. It consists of Info Bar which is created in
+implement a special mode for first-time users (see sections
+\ref{sec:proposal1}, \ref{sec:implementation}). Based on Survey 1 Part 2 
+and the section \ref{subsection:enhancing},
+this mode was compiled. It consists of infobar which is created in
 Data Catalog each time the user starts GRASS GIS and it is only up to
-the situation what message is displayed. The Info Bar is finally
+the situation what message is displayed. The infobar is finally
 displayed in three defined situations, which were already proposed in
 Survey 2 - for the first time after the first GRASS GIS startup, the
 second time when the first-time user creates a new location
 successfully, and the third time when the first-time user imports data
-successfully. During the work, the user can then close the Info Bar
-but in reality it is only hidden and in another defined situation it
+successfully. During the work, the user can then close the infobar
+but in reality, it is only hidden and in another defined situation it
 may get visible again. The following lines use the software
 screenshots to present these three situations and highlight the
 changes from the design in Survey 2.
@@ -3543,7 +3567,7 @@ changes from the design in Survey 2.
 \vspace{0.3cm}
 \begin{figure}[hbt!] 
 \begin{center}
-\includegraphics[width=13cm]{../pictures/mapdisplay1.png} 
+\includegraphics[width=14cm]{../pictures/mapdisplay1.png} 
 \caption[Map Display in Situation 1 (immediatelly after first startup)]{Map Display in Situation 1 (immediatelly after first startup) (Source: Personal collection)}
 \label{fig:mapdisplay1}
 \end{center}
@@ -3553,29 +3577,29 @@ changes from the design in Survey 2.
 first situation in which every GRASS user finds themselves when start
 GRASS GIS after the installation. There are several important changes
 compared to the proposal in Survey 2 (see Figure
-\ref{fig:grass_infobar_1}). Firstly, the Info Bar is newly placed
+\ref{fig:grass_infobar_1}). Firstly, the infobar is newly placed
 above the Data Catalog, which will help it not to be
-ignored. Secondly, the appearance of the Info Bar was slightly
+ignored. Secondly, the appearance of the infobar was slightly
 modified, which we can notice on the buttons that have different
 design. Thirdly, the color of the world map, which is displayed
 automatically as part of the demolocation, was changed to dark blue
-from the original gray. Lastly, the Info Bar text set for the first
+from the original gray. Lastly, the infobar text set for the first
 situation was slightly specified - the word `` default '' was added
-before the location name, as in Survey 2, there are responses
-indicating that users do not undestand where they are located.
+before the location name since there are responses in Survey 2
+indicating that users do not understand where they are located.
 
-In order to further improve the Info Bar function in the second
-situation, but also the Data tab in general, two Management icons were
+In order to further improve the infobar function in the second situation, 
+but also the Data tab in general, two management icons were
 created for the import of raster and vector data. We can see them in
 Figure \ref{fig:icons} highlighted in red. The main reason is that
-Management icons were very successful in Survey 1 Part 1 Question 3
-and at the same time, the advice in the proposal in Survey 2 regarging
+management icons were very successful in Survey 1 Part 1 Question 3
+and at the same time, the advice in the proposal in Survey 2 regarding
 File Manager is confusing since there are several functions for data
-import in File Manager. It makes much more sense to continue with the
-same concept that was introduced at the content of the Info Bar in the
-first situation, when the creation of a new location is also possible
-via the Management icon in addition to the button in the Info Bar.
-Therefore, the text of the originally proposed Info Bar in Figure
+import. It makes much more sense to continue with the same concept 
+that was introduced at the content of the infobar in the first situation. 
+Here, the creation of a new location is also possible
+via the management icon in addition to the button in the infobar.
+Therefore, the text of the originally proposed infobar in Figure
 \ref{fig:grass_infobar_2} was slightly changed (see Figure
 \ref{fig:lmgr2}).
 
@@ -3589,11 +3613,11 @@ Therefore, the text of the originally proposed Info Bar in Figure
 \end{center}
 \end{figure}
 
-\noindent The originally proposed text in the Info Bar in the third
+\noindent The originally proposed text in the infobar in the third
 situation (see Figure \ref{fig:grass_infobar_3}) was changed according
 to the proposal of the respondent \#21 in Survey 2 Question 6. The
-Data tab after successful data import can be seen in Figures
-\ref{fig:lmgr3}, \ref{fig:mapdisplay3}.
+Data tab after successful data import can be seen in Figure
+\ref{fig:lmgr3}.
 
 \vspace{0.3cm}
 \begin{figure}[hbt!] 
@@ -3605,19 +3629,6 @@ Data tab after successful data import can be seen in Figures
 \label{fig:lmgr3}
 \end{center}
 \end{figure}
-
-\newpage
-\begin{figure}[hbt!] 
-\begin{center}
-\includegraphics[width=15cm]{../pictures/mapdisplay3.png} 
-\caption[Map Display in Situation 3 (after successful import)]{Map
-  Display in Situation 3 (after successful import) (Source: Personal
-  collection)}
-\label{fig:mapdisplay3}
-\end{center}
-\end{figure}
-
-
 
 
 %% -------<<< Chapter: Discussion >>>-------\\%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -3636,16 +3647,17 @@ with the statement that partial removal of the startup screen and
 improvement of the Data Catalog simplifies the initial introdution to
 the software and further work. The most useful features according to
 users are the small icons in the Data Catalog distinguishing elements
-of data hierarchy, the new Management icons for adding GRASS database,
+of data hierarchy, the new management icons for adding GRASS databases,
 % ML: downloading sample locations
 % ML: skip 'some' word
-location, and mapset, and for downloading location, and some
+% changed
+locations, and mapsets, and for downloading sample locations, as well as
 new functions in the context menu for creating, renaming and deleting
 mapset and location.
 
 % ML: in the text 'master thesis' is used (diploma thesis is used only
 % in abstract)
-Further direction of this diploma thesis is related to two key
+Further direction of this master thesis is related to two key
 questions, which were introduced in the subsection
 \ref{sec:objectives}. First question -- \textbf{How to enhance
   first-time user experience?} -- loosely follows the topic of
@@ -3677,7 +3689,7 @@ that in Survey 2 simulating the proposed solution of info messages,
 users in defined situations usually made the right
 decisions. Furthermore, there are comments among the open responses,
 which directly state that the person likes the proposal. Based on the
-second survey, the Info Bar was further enhanced by some of the topics
+second survey, the infobar was further enhanced by some of the topics
 raised in Survey 2. It can therefore be assumed that the version
 presented in the chapter \ref{sec:results} is even more helpful from
 the user's point of view. However, this does not mean that the
@@ -3687,7 +3699,7 @@ the author mention several ideas for improvement.
 The second survey shows that it is not entirely clear from the info
 message dealing with data import (see Figure \ref{fig:lmgr2}) which
 functions the ``Import vector data'' and ``Import raster data''
-buttons call. In addition to the buttons in the Info Bar, it is
+buttons call. In addition to the buttons in the infobar, it is
 possible to use the newly implemented Management icons for data import
 (see Figure \ref{fig:icons}), but the continuity of these functions
 may not be obvious at first glance. The improvement would mean adding
@@ -3704,8 +3716,9 @@ first-time user mode works will be shown by time and other user
 suggestions.
 
 % ML: 'that' is missing ?
+% LK: ?
 As can be seen from the previous lines, most users like the idea of
-the info bar. In Survey~1 Part 1 Question 1, several suggestions were
+the infobar. In Survey~1 Part 1 Question 1, several suggestions were
 made that would solve the start of GRASS GIS when the last used mapset
 is not in usable state by displaying a warning or an error message. A
 solution proposed for this issue conceptually improves and tightens
@@ -3720,8 +3733,9 @@ location is used in the presented proposal in the subsection
 \ref{sec:proposal2} as an alternative solution, into which GRASS will
 start in case the start to the last used mapset fails. In this case,
 % ML: review this sentence ('that' is used twice in the sentence)
-the author suggests displaying the info message stating that the
-reason that the user is located in the default location. The work also
+% LK: rewrited
+the author suggests displaying the info message stating the
+reason why the user is located in the default location. The work also
 suggests displaying info messages in other situations in which they
 could speed up daily work with GRASS.  The implementation of the 
 proposal compiled for the second key question is not the goal of this work. 
