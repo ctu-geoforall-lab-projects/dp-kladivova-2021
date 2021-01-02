@@ -1173,6 +1173,7 @@ experience.
 
 \noindent In Figures \ref{fig:hodnoceni_all} and
 \ref{fig:hodnoceni_free} we can see graphs of the 10 highest rated GIS
+% ML: in following text you are using "open-source" term rather than "free"
 software and the 10 highest rated Free GIS software in 2020, as stated
 in the evaluation taken by GIS Geography online journal
 \cite{gisgeography}. The evaluation is performed on a point scale from
@@ -1209,13 +1210,18 @@ GIS). The software is analyzed using the following three questions:
 
 \begin{itemize}
 \item What data hierarchy does the software use compared to GRASS GIS?
-\item Has the software startup screen? Ans if so, is always displayed? How does it look like? 
+\item Has the software startup screen? And if so, is always displayed? How does it look like? 
 \item Does the software have features for enhancing first-time user experience, and if so, in what form?
 \end{itemize}
 
 \noindent The information obtained about proprietary GIS software is
 summarized in Figure \ref{fig:proprietary_software}.
 
+% ML: Note that in GRASS a workspace is not store in data hierarchy (by default)
+% ML: ArcGIS project is probably more closed to GRASS database
+% ML: You can have several GRASS workspace files for single mapset defined
+% ML: Be careful with "GRASS workspace" term - what do you exactly mean by this term?
+% ML: Also note that "GRASS workspace" term is not clearly explained in the text (AFAIR)
 \vspace{0.3cm}
 \begin{figure}[hbt!] 
 \begin{center}
@@ -1229,6 +1235,7 @@ summarized in Figure \ref{fig:proprietary_software}.
 most interesting deeds are the startup screens of the ArcGIS Pro 2.4
 and MapInfo 2019 software. The startup screen of MapInfo 2019 (see
 Figure \ref{fig:map_info_startup_screen}) atypically occupies the size
+% ML: skip "new" 
 of the entire computer screen. It provides links to new version news
 or links to videos on YouTube that can help first-time users. In the
 upper right part of the startup screen, it is possible to run help,
@@ -1239,6 +1246,8 @@ map of Washington DC, or choose another previously saved workspace in
 the directory path. If we run the software again, the Open Last Saved
 Session option will be added to the startup screen.
 
+% ML: why two tables (two headers)
+% ML: why there is GRASS only after GSoC (and not before?)
 \vspace{0.3cm}
 \begin{figure}[hbt!] 
 \begin{center}
@@ -1348,6 +1357,7 @@ plays a role in all types of software.
 
 \newpage
 \vspace*{-1cm}
+% ML: try to find better section name
 \subsection{Interesting solutions from other software}
 \label{sec:other_software}
 
@@ -1408,6 +1418,7 @@ perform a follow-up action, as in the example in Figure
 \end{figure}
 
 \noindent An infobar usually enhances the general user experience. The
+% ML: why exception (?)
 exception is, e.g., the infobar in Matlab Simulink (see Figure
 \ref{fig:info_advice_infobar}) having the character of advice for the
 first-time user.
