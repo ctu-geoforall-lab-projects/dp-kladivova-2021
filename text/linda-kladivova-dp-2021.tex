@@ -294,39 +294,48 @@ Although, in the startup screen of version 7.8, there is a certain
 effort to provide the first-time user with the maximum possible help,
 the development community often encountered misunderstanding from the
 ranks of users. These complaints led to the creation of an
-% ML: Prague Roadmap could be in quotes, but for sure - reference is missing 
-implementation proposal known as the Prague Roadmap. This proposal was
+% ML: Prague Roadmap could be in quotes, but for sure - reference is missing
+% LK: Reference and quotes added 
+implementation proposal known as the ``Prague Roadmap'' \cite{roadmap}. 
+This proposal was
 % ML: GSoC is mentioned many times in the theses (is there reference
 % to wiki page somewhere), see 1.2 & 1.4, please add clear reference
 the basis for the author's participation in the global program Google
 % ML: "students into" (skip student developers - what does it mean?)
-Summer of Code program (GSoC) focused on bringing more student
+% LK: word ``student'' removed
+Summer of Code program (GSoC) focused on bringing more
 developers into open source software development. The task of GSoC was
 to change the sort of unfortunate GRASS startup mechanism so that it
 would be easier for first-time users to become familiar with
 GRASS. After the changes within GSoC, the startup screen -- the
 % ML: find better word that "trick"
-biggest trick for new users, was partially removed. The main role for
+% LK: Changed to ``challange''
+biggest challange for new users, was partially removed. The main role for
 the data organization was taken over by the Data Catalog -- a tree
 object, whose functionality was significantly expanded. Now, the
 possibilities of managing data hierarchy components are even beyond
 the options previously available in the startup screen.
+% citation added
+The workflow of GSoC participation is described in detail on the 
+GRASS wiki page \cite{gsoc}. 
 
 This work, therefore, follows up on the complex topic of creating a
 better GRASS GIS startup mechanism. The main part of the work consists
 of two surveys where the first one consists of two parts. The aim of
 the first part is to evaluate the benefits of significant changes
 % ML: replace "final" with more suitable word (final is never final;-)
-among the GRASS community and at the same time to propose a final
+% LK: replaced by suitable
+among the GRASS community and at the same time to propose a suitable
 % ML: for "existing" user - what does it mean?
-solution of the GRASS startup mechanism for the existing user so that
+% LK:  ``for "existing" user'' removed
+solution of the GRASS startup mechanism so that
 the old startup screen is permanently removed. The second part of the
 first survey focuses on the improvement of the startup mechanism for
 first-time users. Already at GSoC, it was decided that some form of
 assistance to new users would need to be implemented. The second part
 of the survey finds out what options of first-time help would be
 preferred. The second survey conducted one month later introduces a
-new special mode for first-time users (``first-time mode''), which
+new special mode for first-time users (so-called ``first-time'' mode), which
 extends the concept of the default location with an Info Bar helping
 users to manage the first steps. It examines whether users like the
 newly designed mockups of the Info Bar and gives them space to share
