@@ -468,7 +468,7 @@ basically includes three things:
   version after GSoC, the mentioned components are bypassed in most
   situations and we can move straight to the third point.
 
-\item the state instantly after startup - here we can talk e.g. about
+\item the state instantly after startup -- here we can talk e.g. about
   the state of individual Layer Manager tabs, and Map Display.
 
 \end{itemize}
@@ -480,7 +480,7 @@ significant changes, the author of this work made during the GSoC, the
 role of the startup screen and Data Catalog in the version after GSoC
 is very different compared to version 7.8. The Data Catalog takes over
 the role of the startup screen. The state after GSoC is clearly
-described in the section \ref{sec:afterGSoC}, so that we can evaluate
+described in section \ref{sec:afterGSoC} so that the author can evaluate
 the benefits of the changes in the first part of the first survey. In
 both subsections \ref{sec:beforeGSoC} and \ref{sec:afterGSoC}, the
 GRASS GUI software components are arranged chronologically according
@@ -496,7 +496,7 @@ about the software publisher's copyright restrictions." So, it appears
 before the main software window starts and remains visible for a few
 seconds. If we try to find articles on the startup screen, we will not
 be very successful. Nowadays, this topic lives mainly on programming
-websites such as Stack Overflow. In some software, startup screen can
+websites such as Stack Overflow. In some software, a startup screen can
 mean at the same time a splash screen if no other startup screen
 appears (among GIS software e.g. gvSIG, SAGA GIS). However, generally
 speaking, a startup screen usually requires some initial action from
@@ -509,7 +509,7 @@ that the user encounters. It allows us to set all the above-mentioned components
 except maps and, in the case of locations and mapsets, also manage
 them in terms of renaming and deleting. The various historical
 versions of the startup screen can be seen in Figure
-\ref{fig:verze_startup}. The one on the right corresponds to version
+\ref{fig:verze_startup}. The one on the right corresponds to the version
 7.5 (as well as 7.8).
 
 %% ML: source?
@@ -518,7 +518,7 @@ versions of the startup screen can be seen in Figure
 \begin{figure}[hbt!]
 \begin{center}
 \includegraphics[width=17cm]{../pictures/verze_startup.png} 
-\caption[Historical versions of the GRASS startup screen]{Historical versions of the GRASS startup screen (Source: \cite{intro}}
+\caption[Historical versions of the GRASS startup screen]{Historical versions of the GRASS startup screen (Source: \cite{intro})}
 \label{fig:verze_startup}
 \end{center}
 \end{figure}
@@ -530,7 +530,7 @@ versions of the startup screen can be seen in Figure
 character of a guide that appears when creating a new
 location. Therefore, the main task of the wizard is to define the
 Coordinate Reference System (CRS). It consists of four consecutive
-dialog boxes. A comparison of the Location Wizard before and after
+dialog boxes (the third box can be seen in Figure \ref{fig:loc_wizard_sour_pred}). A comparison of the Location Wizard before and after
 GSoC is included in subsection \ref{sec:afterGSoC}.
 
 \bigskip
@@ -545,20 +545,19 @@ way, one of the proposed topics on GSoC
 \footnote{\url{https://trac.osgeo.org/grass/wiki/GSoC/2020\#GRASSGUI:Singlewindowlayout}}.
 As explained in more detail in the GRASS documentation, the
 Layer Manager provides a GUI for creating and managing maps. In Figure
-\ref{fig:empty_layers1} we can notice five tabs - Layers, Console,
+\ref{fig:empty_layers1} we can notice five tabs -- Layers, Console,
 Modules, Data, and Python.
 
 \vspace{0.3cm}
 \begin{figure}[hbt!]
 \begin{center}
-\includegraphics[width=11cm]{../pictures/loc_wizard_sour_pred.png} 
+\includegraphics[width=11.5cm]{../pictures/loc_wizard_sour_pred.png} 
 \caption[Choosing EPSG code in Location Wizard in version 7.8]{Choosing EPSG code in Location Wizard in version 7.8 (Source: Personal collection)}
 \label{fig:loc_wizard_sour_pred}
 \end{center}
 \end{figure}
 
-\newpage
-\noindent   In the Layer Manager version 7.8, after
+\noindent  In the Layer Manager version 7.8, after
 % LK: maps in brackets
 running GRASS we first see the Layers tab, which allows layers (maps) in Map
 Display to be switched on and off. After starting the session this tab
@@ -592,8 +591,9 @@ explanation of other tabs can be found in the documentation
 % LK: rewrited
 \noindent \textbf {Data tab}
 
-\noindent The Data tab contains two objects - the Data Catalog (data hierarchy tree)
-and the toolbar, which allows e.g. updating and searching in the tree .
+\noindent The Data tab  in Figure \ref{fig:data_catalog_pred} contains 
+two objects -- the Data Catalog (data hierarchy tree)
+and the toolbar, which allows e.g. updating and searching in the tree.
 
 The Data Catalog enables to display the data located in the 
 \textit{current location} (equal to active location). Within the 
@@ -610,7 +610,7 @@ the mapset context menu the option for switching. We are able to
 switch between mapsets in the same location or between mapsets in
 different locations. If we move the data to the mapset in another
 location with a different CRS, the projection takes place. GRASS GIS
-does not use ``on the fly'' transformation.
+does not use the ``on the fly'' transformation.
 
 %% ML: not limited only to current (you can display all data from
 %% current location)
