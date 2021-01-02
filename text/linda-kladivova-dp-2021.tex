@@ -853,7 +853,7 @@ the Mapset Access Info in the Data Catalog.
 
 \noindent Another substantive step forward was the graphic change of the icon
 enabling or disabling changes outside the current mapset. This icon
-has newly the bitmap of a pencil (instead of bitmap of a lock in
+has newly the bitmap of a pencil (instead of a bitmap of a lock in
 version 7.8) and protects a user from unwanted changes. If we do not enable
 editing, we cannot rename or delete any mapsets,
 % ML: layers -> maps (better data elements - it's more generic, in the
@@ -868,16 +868,6 @@ enable editing, we cannot delete a PERMANENT mapset.
 Similarly, we are not allowed to delete boldly marked
 \textbf{current} components in the Data Catalog.
 
-\vspace{0.3cm}
-\begin{figure}[hbt!] 
-\begin{center}
-\includegraphics[width=14cm]{../pictures/data_catalog_switch.png} 
-\caption[Switching to mapset in use in Data Catalog]{Switching to mapset in use in Data Catalog (Source: Personal collection)}
-\label{fig:data_catalog_switch_new}
-\end{center}
-\end{figure}
-
-
 \bigskip
 \noindent \textbf {Location Wizard}
 
@@ -887,32 +877,32 @@ page ``Define a new GRASS location'' in Figure
 \ref{fig:loc_wiz_1}. Checkboxes and simplified names are removed
 here. Furthermore, the GRASS database can be modified.
 
-The second page is renamed to ``Select Coordinate Reference
-System (CRS)''. As we can see in Figure \ref{fig:loc_wiz_2}, the
-division into simple and advanced methods is abolished in the new
-version. Besides, CRS can be newly specified using a WKT string.
-
-However, the essential change is related to the ``Choose
-EPSG code'' page. Now it supports dynamic EPSG search and the
-hyperlink which is changed dynamically according to a filter set by an
-user (see Figure \ref{fig:loc_wiz_3}). The last page of the Location
-Wizard called ``Summary'' remains unchanged.
-
 \begin{figure}[hbt!] 
 \begin{center}
-\includegraphics[width=17cm]{../pictures/loc_wiz_1.png} 
+\includegraphics[width=15.5cm]{../pictures/loc_wiz_1.png} 
 \caption[Location Wizard first page before and after GSoC]{Location Wizard first page before and after GSoC (Source: Personal collection)}
 \label{fig:loc_wiz_1}
 \end{center}
 \end{figure}
 
+\noindent The second page is renamed to ``Select Coordinate Reference
+System (CRS)''. As we can see in Figure \ref{fig:loc_wiz_2}, the
+division into simple and advanced methods is abolished in the new
+version. Besides, CRS can be newly specified using a WKT string.
+
 \begin{figure}[hbt!] 
 \begin{center}
-\includegraphics[width=17cm]{../pictures/loc_wiz_2.png} 
+\includegraphics[width=15.5cm]{../pictures/loc_wiz_2.png} 
 \caption[Location Wizard second page before and after GSoC]{Location Wizard second page before and after GSoC (Source: Personal collection)}
 \label{fig:loc_wiz_2}
 \end{center}
 \end{figure}
+
+\noindent  However, the essential change is related to the ``Choose
+EPSG code'' page. Now it supports dynamic EPSG search and the
+hyperlink which is changed dynamically according to a filter set by an
+user (see Figure \ref{fig:loc_wiz_3}). The last page of the Location
+Wizard called ``Summary'' remains unchanged.
 
 \begin{figure}[hbt!] 
 \begin{center}
@@ -922,8 +912,6 @@ Wizard called ``Summary'' remains unchanged.
 \end{center}
 \end{figure}
 
-\newpage
-\vspace*{-1cm}
 \bigskip
 \noindent \textbf {Startup screen}
 
@@ -941,7 +929,7 @@ the GRASS GIS ``after GSoC'' development version:
   \textit{world\_latlong\_wgs84} in WGS84 coordinate system
   (EPSG:4326) shows the correct organization of the data. Base data
   are stored in a PERMANENT mapset whereas already analyzed data
-  belongs to another mapset, for example to the one named after an
+  belongs to another mapset, for example to the one named after a
   user. The current implementation does not show the World map
   included in \textit{country\_boundaries} layer immediately at
   startup, it is necessary to display the map using Data Catalog (see
@@ -951,48 +939,37 @@ the GRASS GIS ``after GSoC'' development version:
   % ML: from text it's not clear that GRASS starts in the last used
   % location/mapset
   % LK: added
-  \ref{fig:last_mapset_startup}). The situation that GRASS starts in 
+  \ref{fig:last_mapset_startup}). The situation when GRASS starts in 
   the last used location/mapset is probably the most common. 
   The software remembers the databases that were open when the
   last session was closed and opens them.  The splash screen does not
   appear.
   % ML: if the last used mapset ...
   % LK: added
-\item \textbf{GRASS launches in startup screen if the last use mapset
+\item \textbf{GRASS launches in startup screen if the last used mapset
  is not in a usable state} (was deleted or is used by another process). 
  In this special situation, GRASS starts in the same way as in version 7.8.
+
+\end{enumerate}
 
 \vspace{0.3cm}
 \begin{figure}[hbt!] 
 \begin{center}
-\includegraphics[width=15cm]{../pictures/demolocation_startup.png} 
+\includegraphics[width=17cm]{../pictures/demolocation_startup.png} 
 \caption[GRASS starts in the prepared default location]{GRASS starts in the prepared default location (Source: Personal collection)}
 \label{fig:demolocation_startup}
 \end{center}
 \end{figure}
 
-\newpage
 \vspace{0.3cm}
 \begin{figure}[hbt!] 
 \begin{center}
-\includegraphics[width=16.5cm]{../pictures/demolocation.png} 
+\includegraphics[width=17cm]{../pictures/demolocation.png} 
 \caption[World map as a part of the default location]{World map as a part of the default location (Source: Personal collection)}
 \label{fig:demolocation}
 \end{center}
 \end{figure}
 
-\vspace{0.3cm}
-\begin{figure}[hbt!] 
-\begin{center}
-\includegraphics[width=16.5cm]{../pictures/last_mapset_startup.png} 
-\caption[GRASS starts in the last used mapset]{GRASS starts in the last used mapset (Source: Personal collection)}
-\label{fig:last_mapset_startup}
-\end{center}
-\end{figure}
-
-\end{enumerate}
-
-\bigskip
 \noindent \textbf {Various options for starting GRASS GIS}
 
 \large \noindent In addition to the software components that the user
@@ -1000,26 +977,39 @@ encounters during startup and to the state that the software finds
 itself immediately after startup, the startup mechanism also includes
 the way how GRASS GIS can be started. Because users of this software usually
 work under a Unix operating system, GRASS is usually run from the
-command line. Advanced users often do not even run the graphical
+command line. 
+
+\vspace{0.3cm}
+\begin{figure}[hbt!] 
+\begin{center}
+\includegraphics[width=17cm]{../pictures/last_mapset_startup.png} 
+\caption[GRASS starts in the last used mapset]{GRASS starts in the last used mapset (Source: Personal collection)}
+\label{fig:last_mapset_startup}
+\end{center}
+\end{figure}
+
+\noindent Advanced users often do not even run the graphical
 environment and perform all geographic analyzes using the command
 line. This is also why the command line window runs in the background
 throughout the work with this software. In the thesis, however, the author
-mainly focus on first-time users.
+mainly focuses on first-time users.
 % ML: "we" is heavily used in this thesis, here it's not clear what
 % mean "we", try to rewrite the sentence
 % LK: changed to ''author''
 This is also basically the main reason why we try to
-improve the GRASS GUI.  To summarize, the software could be run from 
+improve the GRASS GUI.  
+
+\noindent To summarize, the software could be run from 
 the command line in four ways \cite{startup}:
 
 \noindent \texttt{:$\sim$\$ grass79} \\
 \noindent Start GRASS using the default user interface. In version
-7.8, the user is prompted by the startup screen. After GSoC startup
+7.8, the user is prompted by the startup screen. After GSoC the startup
 screen appears only when the mapset is not in the usable state.
 
 \noindent \texttt{:$\sim$\$ grass79 --gui}\\
 \noindent Start GRASS using the graphical user interface.  In version
-7.8, the user is prompted by the startup screen. After GSoC startup
+7.8, the user is prompted by the startup screen. After GSoC the startup
 screen appears only when the mapset is not in the usable state.
 
 \noindent \texttt{:$\sim$\$ grass79 --text} \\
@@ -1037,10 +1027,11 @@ GRASS session, specifically from a file in the path
 It is also possible to use
 \texttt{:$\sim$\$ grass79\$ --text /path/to/location/mapset} command.
 
+\newpage
 \noindent \texttt{:$\sim$\$ grass79 --gtext} \\
 \noindent Start GRASS using the text-based user interface.  In version
 7.8, this option as the only one does not display the startup
-screen. Similarly as for \texttt{--text},  the desired location and mapset must be 
+screen. Similarly, as for \texttt{--text},  the desired location and mapset must be 
 either set as environmental variables or taken from the last
 GRASS session. In version 7.9, \texttt{--gtext} uses startup
 screen but then does not run the GUI.
@@ -1051,14 +1042,14 @@ The possibilities of starting GRASS GIS can be further extended by the
 concept of \textit{workspaces} which enables to save the current software settings
 and then open it, as we can see in Figure \ref
 {fig:workspace_grass}. However, the option to start a specific
-workspace from the command line or to start GRASS GIS from File
+workspace from the command line or to start GRASS GIS from a File
 Manager using the file association of the workspace file (.gxw)
 is missing.
 
 \vspace{0.3cm}
 \begin{figure}[hbt!] 
 \begin{center}
-\includegraphics[width=10cm]{../pictures/workspace_grass.png} 
+\includegraphics[width=12cm]{../pictures/workspace_grass.png} 
 \caption[Management of workspaces in the Layer Manager]{Management of workspaces in the Layer Manager (Source: Personal collection)}
 \label{fig:workspace_grass}
 \end{center}
@@ -1071,10 +1062,10 @@ is missing.
 
 The aim of the master thesis is to evaluate the changes made in the
 % ML: find better word than "final" (nothing is final ;-)
-GSoC using questionnaires, propose the final solution of the GRASS
-startup mechanism and especially propose and implement a new solution
-that will help enhance a first-time user experience in GRASS. There
-are two fundamental questions related to the mentioned proposals,
+GSoC using questionnaires, propose the suitable solution for the GRASS GIS
+startup mechanism, and extend the startup mechanism by proposing 
+and implementing a new solution of special mode for first-time users.
+There are two fundamental questions related to the mentioned proposals,
 which we will try to answer in the work:
 
 \begin{enumerate}
@@ -1106,7 +1097,7 @@ general startup mechanism and further direction of the GRASS GUI.
 
 Therefore, the first part of the first survey entitled \textbf {Help
   improve GRASS GIS startup mechanism and Data Catalog}, see Appendix
-\ref{appendix:A}, does not deal only with the second issue mentioned,
+\ref{appendix:A}, does not deal only with the second key question,
 it is much broader. The goals also are to determine the level of user
 satisfaction/dissatisfaction with the new solution and to obtain
 general user preferences regarding further improvements of the GRASS
@@ -1122,7 +1113,7 @@ contain and which implementation form to choose.
 
 The aim of the second survey called \textbf{Help improve the special
   mode for first-time users} is to find out whether users like the
-proposed mockups of the Info Bar and give them space to share their
+proposed mockups of the infobar and give them space to share their
 own ideas so that the implemented solution in this work is the best
 possible from an objective point of view (see Appendix
 \ref{appendix:C}). Both the second part of the first survey and the
