@@ -780,18 +780,18 @@ for that design, however, it follows very closely the previous proposal A2
 \subsection{State of Art after GSoC}
 \label{sec:afterGSoC}
 
-\noindent The changes that occurred during the Google Summer of Code
+\noindent The changes that occurred during the GSoC
 are fundamental. At first, developers did not plan to remove the
 % ML: try to use shorter sentences (long sentences dicreaces
 % readibility)
-startup screen. The changes were to be based on Proposal A3, which
-planned to improve the Data Catalog, but also suggested that the same
-Data Catalog, which is available in the Data tab after starting the
-session, will be part of the startup screen. During the
-implementation, however, all the functionality of the startup screen,
+startup screen. The changes were to be based on Proposal A3, which 
+suggested that the same Data Catalog, which is available in the 
+Data tab after starting the session, will be part of the startup screen. 
+During the implementation, however, all the functionality of the startup screen,
 including switching mapsets as well as locations and databases, was
 % ML: moved -> implemented
-moved to the Data Catalog, so it no longer made sense to keep this
+% LK': ok
+implemented to the Data Catalog, so it no longer made sense to keep this
 notion. At least definitely not the form in which it is in version
 7.8.
 
@@ -802,10 +802,25 @@ notion. At least definitely not the form in which it is in version
 such a way that enables a user-friendly organization of work. This is
 mainly about creating, renaming, and deleting mapsets and locations,
 % ML: not only startup screen, but also by Layer Manager's menu
-which was previously possible through the startup screen. However,
-completely new possibilities have been added. GRASS GIS allows a user
+% LK: added
+which was previously possible through the startup screen and through 
+Layer Manager's menu. However, completely new possibilities have 
+been added. In Figure \ref{fig:function} we can see the all
+functionalities that have been newly implemented in the Data Catalog.
+
+\vspace{0.3cm}
+\begin{figure}[hbt!] 
+\begin{center}
+\includegraphics[width=13cm]{../pictures/funkce.png} 
+\caption[New functionalities in Data Catalog]{New functionalities in Data Catalog (Source: Personal collection)}
+\label{fig:function}
+\end{center}
+\end{figure}
+
+\noindent GRASS GIS after GSoC allows a user
 % ML: add -> work/define (?)
-to add multiple databases. New management icons offer intuitive
+% LK changed to define
+to define multiple databases. New management icons offer intuitive
 creation of the mentioned data components. In the context menu, there
 are also new options for deleting several mapsets or
 locations. Though, probably the most visible changes are those related
@@ -813,20 +828,9 @@ to the graphical representation of the Data Catalog. Next to the
 individual components, we can notice small icons distinguishing types
 of data hierarchy components. The Data Catalog also informs about
 access to individual mapsets (current, in use, and a different
-owner). In Figure \ref{fig:function} we can see the all
-functionalities that have been newly implemented in the Data Catalog.
+owner). 
 
-\vspace{0.3cm}
-\begin{figure}[hbt!] 
-\begin{center}
-\includegraphics[width=15cm]{../pictures/funkce.png} 
-\caption[New functionalities in Data Catalog]{New functionalities in Data Catalog (Source: Personal collection)}
-\label{fig:function}
-\end{center}
-\end{figure}
-
-\newpage
-\noindent Another important thing is related to access to individual
+Another important thing is related to access to individual
 mapsets. In version 7.8, the startup screen informs about the lock and
 asks if the user wants to remove the lock. In order to completely take
 over the startup screen functionality by the Data Catalog, it is also
@@ -838,24 +842,36 @@ confused with prohibiting editing outside the current mapset, the term
 was changed to \textit{mapset in use}. This term can also be seen in
 the Mapset Access Info in the Data Catalog.
 
-Another substantive step forward was the graphic change of the icon
+\vspace{0.3cm}
+\begin{figure}[hbt!] 
+\begin{center}
+\includegraphics[width=13cm]{../pictures/data_catalog_switch.png} 
+\caption[Switching to mapset in use in Data Catalog]{Switching to mapset in use in Data Catalog (Source: Personal collection)}
+\label{fig:data_catalog_switch_new}
+\end{center}
+\end{figure}
+
+\noindent Another substantive step forward was the graphic change of the icon
 enabling or disabling changes outside the current mapset. This icon
 has newly the bitmap of a pencil (instead of bitmap of a lock in
-version 7.8) and protects a user from unwanted changes. If we do not
-have editing enabled, we cannot rename or delete any mapsets,
+version 7.8) and protects a user from unwanted changes. If we do not enable
+editing, we cannot rename or delete any mapsets,
 % ML: layers -> maps (better data elements - it's more generic, in the
 % future data catalog could show also spacetime datasets and other
 % data elements, not only raster/vector maps)
-locations, and databases. We can only work with layers inside the
+locations, and databases. We can only work with data elements inside the
 % ML: probably describe short why PERMANENT mapset cannot be deleted
-current mapset. However, even if we enable editing, we can never
-delete a PERMANENT mapset. Similarly, we cannot delete boldly marked
+current mapset. (The term ``data elements'' is  more generic, in the
+future Data Catalog could show also spacetime datasets and other
+data elements, not only raster/vector maps). However, even if we 
+enable editing, we cannot delete a PERMANENT mapset. 
+Similarly, we are not allowed to delete boldly marked
 \textbf{current} components in the Data Catalog.
 
 \vspace{0.3cm}
 \begin{figure}[hbt!] 
 \begin{center}
-\includegraphics[width=13cm]{../pictures/data_catalog_switch.png} 
+\includegraphics[width=14cm]{../pictures/data_catalog_switch.png} 
 \caption[Switching to mapset in use in Data Catalog]{Switching to mapset in use in Data Catalog (Source: Personal collection)}
 \label{fig:data_catalog_switch_new}
 \end{center}
@@ -871,7 +887,17 @@ page ``Define a new GRASS location'' in Figure
 \ref{fig:loc_wiz_1}. Checkboxes and simplified names are removed
 here. Furthermore, the GRASS database can be modified.
 
-\vspace{0.3cm}
+The second page is renamed to ``Select Coordinate Reference
+System (CRS)''. As we can see in Figure \ref{fig:loc_wiz_2}, the
+division into simple and advanced methods is abolished in the new
+version. Besides, CRS can be newly specified using a WKT string.
+
+However, the essential change is related to the ``Choose
+EPSG code'' page. Now it supports dynamic EPSG search and the
+hyperlink which is changed dynamically according to a filter set by an
+user (see Figure \ref{fig:loc_wiz_3}). The last page of the Location
+Wizard called ``Summary'' remains unchanged.
+
 \begin{figure}[hbt!] 
 \begin{center}
 \includegraphics[width=17cm]{../pictures/loc_wiz_1.png} 
@@ -880,12 +906,6 @@ here. Furthermore, the GRASS database can be modified.
 \end{center}
 \end{figure}
 
-\noindent The second page is renamed to ``Select Coordinate Reference
-System (CRS)''. As we can see in Figure \ref{fig:loc_wiz_2}, the
-division into simple and advanced methods is abolished in the new
-version. Besides, CRS can be newly specified using a WKT string.
-
-\vspace{0.3cm}
 \begin{figure}[hbt!] 
 \begin{center}
 \includegraphics[width=17cm]{../pictures/loc_wiz_2.png} 
@@ -894,13 +914,6 @@ version. Besides, CRS can be newly specified using a WKT string.
 \end{center}
 \end{figure}
 
-\noindent However, the essential change is related to the ``Choose
-EPSG code'' page. Now it supports dynamic EPSG search and the
-hyperlink which is changed dynamically according to a filter set by an
-user (see Figure \ref{fig:loc_wiz_3}). The last page of the Location
-Wizard called ``Summary'' remains unchanged.
-
-\vspace{0.3cm}
 \begin{figure}[hbt!] 
 \begin{center}
 \includegraphics[width=17cm]{../pictures/loc_wiz_3.png} 
@@ -937,19 +950,22 @@ the GRASS GIS ``after GSoC'' development version:
     in the last used mapset} (see Figure
   % ML: from text it's not clear that GRASS starts in the last used
   % location/mapset
-  \ref{fig:last_mapset_startup}). This situation is probably the most
-  common. The software remembers the databases that were open when the
+  % LK: added
+  \ref{fig:last_mapset_startup}). The situation that GRASS starts in 
+  the last used location/mapset is probably the most common. 
+  The software remembers the databases that were open when the
   last session was closed and opens them.  The splash screen does not
   appear.
   % ML: if the last used mapset ...
-\item \textbf{GRASS launches in startup screen if a mapset is not in a
-    usable state} (was deleted or is used by another process). In this
-  special situation, GRASS starts in the same way as in version 7.8.
+  % LK: added
+\item \textbf{GRASS launches in startup screen if the last use mapset
+ is not in a usable state} (was deleted or is used by another process). 
+ In this special situation, GRASS starts in the same way as in version 7.8.
 
 \vspace{0.3cm}
 \begin{figure}[hbt!] 
 \begin{center}
-\includegraphics[width=17cm]{../pictures/demolocation_startup.png} 
+\includegraphics[width=15cm]{../pictures/demolocation_startup.png} 
 \caption[GRASS starts in the prepared default location]{GRASS starts in the prepared default location (Source: Personal collection)}
 \label{fig:demolocation_startup}
 \end{center}
@@ -982,19 +998,19 @@ the GRASS GIS ``after GSoC'' development version:
 \large \noindent In addition to the software components that the user
 encounters during startup and to the state that the software finds
 itself immediately after startup, the startup mechanism also includes
-the way we run the software. Because users of this software usually
-work under a Unix operating system, GRASS GIS is usually run from the
+the way how GRASS GIS can be started. Because users of this software usually
+work under a Unix operating system, GRASS is usually run from the
 command line. Advanced users often do not even run the graphical
 environment and perform all geographic analyzes using the command
 line. This is also why the command line window runs in the background
-throughout the work with this software. In our work, however, we
-mainly focus on first-time users who do not have to be
+throughout the work with this software. In the thesis, however, the author
+mainly focus on first-time users.
 % ML: "we" is heavily used in this thesis, here it's not clear what
 % mean "we", try to rewrite the sentence
-experienced. This is also basically the main reason why we try to
-improve the GRASS GUI.
-
- \noindent To summarize, the software could be run from the command line in four ways \cite{startup}:
+% LK: changed to ''author''
+This is also basically the main reason why we try to
+improve the GRASS GUI.  To summarize, the software could be run from 
+the command line in four ways \cite{startup}:
 
 \noindent \texttt{:$\sim$\$ grass79} \\
 \noindent Start GRASS using the default user interface. In version
@@ -1010,34 +1026,39 @@ screen appears only when the mapset is not in the usable state.
 \noindent Start GRASS using the text-based user interface. Appropriate
 % ML: location/mapset can be defined also by the argument
 % ML: grass79 --text /path/to/location/mapset
-location and mapset must be either set by environmental variables or
-taken from the last GRASS session.
+location and mapset must be either set by environmental variables 
+by running a specific
+% ML: same usage as for --text
+mapset using the \texttt{:$\sim$\$ grass79
+  \$HOME/grassdata/location/mapset} command, or taken from the last
+GRASS session, specifically from a file in the path
+\textit{\$HOME/.grass7/rc}.
+% LK: included here
+It is also possible to use
+\texttt{:$\sim$\$ grass79\$ --text /path/to/location/mapset} command.
 
 \noindent \texttt{:$\sim$\$ grass79 --gtext} \\
 \noindent Start GRASS using the text-based user interface.  In version
 7.8, this option as the only one does not display the startup
-screen. However, it means that the desired location and mapset must
-already be set as environmental variables either by running a specific
-% ML: same usage as for --text
-mapset using the \texttt{:$\sim$\$ grass78
-  \$HOME/grassdata/location/mapset} command, or taken from the last
-GRASS session, specifically from a file in the path
-\textit{\$HOME/.grass7/rc}. In version 7.9, \texttt{--gtext} uses startup
+screen. Similarly as for \texttt{--text},  the desired location and mapset must be 
+either set as environmental variables or taken from the last
+GRASS session. In version 7.9, \texttt{--gtext} uses startup
 screen but then does not run the GUI.
+% ML: same usage as for --text
 
 The possibilities of starting GRASS GIS can be further extended by the
 % ML: twice "version" in a single sentence (the later can be removed)
-concept of \textit{workspaces}. In the development version of the
-software version, it is possible to save the current software settings
+concept of \textit{workspaces} which enables to save the current software settings
 and then open it, as we can see in Figure \ref
-{fig:workspace_grass}. However, there is no option to start a specific
+{fig:workspace_grass}. However, the option to start a specific
 workspace from the command line or to start GRASS GIS from File
-Manager using the file association of the workspace file (.gxw).
+Manager using the file association of the workspace file (.gxw)
+is missing.
 
 \vspace{0.3cm}
 \begin{figure}[hbt!] 
 \begin{center}
-\includegraphics[width=12cm]{../pictures/workspace_grass.png} 
+\includegraphics[width=10cm]{../pictures/workspace_grass.png} 
 \caption[Management of workspaces in the Layer Manager]{Management of workspaces in the Layer Manager (Source: Personal collection)}
 \label{fig:workspace_grass}
 \end{center}
