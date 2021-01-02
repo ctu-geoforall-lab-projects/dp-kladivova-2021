@@ -1155,7 +1155,7 @@ The first-time user experience is mainly related to the initial user steps, so i
 \end{center}
 \end{figure}
 
-\noindent For the following analysis, the three highest-rated commercial software were selected - ArcGIS Pro (ESRI), GeoMedia (Hexagon), and MapInfo Professional (Pitney Bowes) as well as the four highest-rated open-source software (excluding QGIS 2 and GRASS GIS). The software is analyzed using the following three questions:
+\noindent For the following analysis, the three highest-rated proprietary software were selected - ArcGIS Pro (ESRI), GeoMedia (Hexagon), and MapInfo Professional (Pitney Bowes) as well as the four highest-rated open-source software (excluding QGIS 2 and GRASS GIS). The software is analyzed using the following three questions:
 
 \begin{itemize}
 \item What data hierarchy does the software use compared to GRASS GIS?
@@ -1163,14 +1163,14 @@ The first-time user experience is mainly related to the initial user steps, so i
 \item Does the software have features for enhancing first-time user experience, and if so, in what form?
 \end{itemize}
 
-\noindent The information obtained about commercial GIS software is summarized in Figure \ref{fig:commercial_software}.
+\noindent The information obtained about proprietary GIS software is summarized in Figure \ref{fig:proprietary_software}.
 
 \vspace{0.3cm}
 \begin{figure}[hbt!] 
 \begin{center}
-\includegraphics[width=16.5cm]{../pictures/commercial_software.png}
-\caption[Summary of selected commercial software]{Summary of selected commercial software (Source: Personal collection)}
-\label{fig:commercial_software}
+\includegraphics[width=16.5cm]{../pictures/proprietary_software.png}
+\caption[Summary of selected proprietary software]{Summary of selected proprietary software (Source: Personal collection)}
+\label{fig:proprietary_software}
 \end{center}
 \end{figure}
 
@@ -1208,11 +1208,11 @@ The information obtained about open-source GIS software is summarized in Figure 
 \end{figure}
 
 
-\noindent In the cross-section of all selected GIS software, we can notice that the data hierarchy is quite different. The truth is that two world-famous representatives of GIS software -- ArcGIS Pro and QGIS 3 -- have similar data organization into projects. However, in the data hierarchy of the other two commercial software GeoMedia and MapInfo, the term `` project '' does not appear at all. It is therefore good to realize that we may consider `` project '' as a standard element of data organization, especially for open-source software, but after looking at commercial software we find out that data organization across software is surprisingly different not only from a technical point of view but also in terms of different names.
+\noindent In the cross-section of all selected GIS software, we can notice that the data hierarchy is quite different. The truth is that two world-famous representatives of GIS software -- ArcGIS Pro and QGIS 3 -- have similar data organization into projects. However, in the data hierarchy of the other two proprietary software GeoMedia and MapInfo, the term `` project '' does not appear at all. It is therefore good to realize that we may consider `` project '' as a standard element of data organization, especially for open-source software, but after looking at proprietary software we find out that data organization across software is surprisingly different not only from a technical point of view but also in terms of different names.
 
-\newpage \noindent Startup screens appear in some form in all selected commercial software. For GeoMedia, it is a small dialog box whose purpose is purely organizational -- choose the GeoWorkspace you will work in. For ArcGIS Pro and MapInfo, startup screens play a more important role. It tries to impress users with both modern design and the services they offer. Similarly, QGIS tries to make contact with the user from the beginning -- it refers to news and displays info bars.
+\newpage \noindent Startup screens appear in some form in all selected proprietary software. For GeoMedia, it is a small dialog box whose purpose is purely organizational -- choose the GeoWorkspace you will work in. For ArcGIS Pro and MapInfo, startup screens play a more important role. It tries to impress users with both modern design and the services they offer. Similarly, QGIS tries to make contact with the user from the beginning -- it refers to news and displays info bars.
 
-It is surprising how much of a difference there can be between commercial GIS software in terms of efforts to enhance the first-time user experience. With the GeoMedia software, the author did not manage to record any effort at all, on the contrary, MapInfo is very generous to its user from the very beginning and uses modern technologies in the startup screen, such as videos on YouTube. Despite the fact that in some of the selected software there is a certain effort to better interact with the initial user, none of them contains any First Run Wizard incorporated directly in the main software window (as offered by Zoner Photo Studio X, see the next chapter \ref{sec:other_software}). However, it may not be necessary. Whether any help at all makes sense and is not rather counterproductive strongly depends on the complexity of data organization in particular software. For example, gvSIG software does not have any startup screen or helpful explanation, although it can be assumed that the new user will find his way around without any problems. GeoMedia also lacks any interactive features, however, as data organization is more complex to understand, it is likely to be a much more inconvenient start for users.
+It is surprising how much of a difference there can be between proprietary GIS software in terms of efforts to enhance the first-time user experience. With the GeoMedia software, the author did not manage to record any effort at all, on the contrary, MapInfo is very generous to its user from the very beginning and uses modern technologies in the startup screen, such as videos on YouTube. Despite the fact that in some of the selected software there is a certain effort to better interact with the initial user, none of them contains any First Run Wizard incorporated directly in the main software window (as offered by Zoner Photo Studio X, see the next chapter \ref{sec:other_software}). However, it may not be necessary. Whether any help at all makes sense and is not rather counterproductive strongly depends on the complexity of data organization in particular software. For example, gvSIG software does not have any startup screen or helpful explanation, although it can be assumed that the new user will find his way around without any problems. GeoMedia also lacks any interactive features, however, as data organization is more complex to understand, it is likely to be a much more inconvenient start for users.
 
 As known, GRASS GIS went a different way from the beginning. Not only in data organization. The difference between GRASS and other GIS software goes far beyond the startup mechanism or data organization. Let's remember the unique Unix philosophy, where the software consists of a collection of small applications called modules, or the ability to call these modules from the command line. It is therefore interesting to note that the comparison of GRASS GIS with other GIS software does not provide significant inspiration for other implementations associated with the improvement of the startup mechanism, which requires (and probably deserves) a completely unique solution whose roots were laid already in the summer of 2020 by GSoC implementations. However, the comparison offers an interesting look at this topic, which is not talked about much, but certainly has a big impact on the whole software. The evidence may be, after all, user complaints\footnote{\url{https://trac.osgeo.org/grass/ticket/3474}} about the problematic startup mechanism in versions before GSoC.
 We do not have to look for inspiration only in GIS software. The interaction with a first-time user is a completely general thing that plays a role in all types of software.
@@ -1280,6 +1280,7 @@ The second example -- infobar -- may not only improve the first-time user experi
 
 \noindent In the following chapter the author describes the possibilities of usability testing, which is closely related to the questionnaires -- the main decision criteria of this work.
 
+%% -------<<< Chapter 3: Usability testing methods >>>-------\\%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \newpage
 \vspace*{-1cm}
 \fancyhead[RE, RO]{\fancyplain{}{\small \sl{Usability testing methods}}}
@@ -1398,7 +1399,7 @@ out the opportunity for follow-up questions.
 % ML (updated): there is clear relation to chapter 4 (ignore comment
 % above)
 
-%% -------<<< Chapter 5: Questionnaires >>>-------\\%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% -------<<< Chapter 4: Questionnaires >>>-------\\%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \newpage
 \vspace*{-1cm}
 \fancyhead[RE, RO]{\fancyplain{}{\small \sl{Questionnaires}}}
@@ -1797,13 +1798,13 @@ this work, they were determined according to the SUS questionnaire:
 
 
 
-%% -------<<< Chapter 7: Analysis of the results of the first survey>>>-------\\%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% -------<<< Chapter 5: Analysis of the first questionnaire>>>-------\\%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \newpage
 \vspace*{-1cm}
-\fancyhead[RE, RO]{\fancyplain{}{\small \sl{Analysis of Survey 1}}}
+\fancyhead[RE, RO]{\fancyplain{}{\small \sl{Analysis of the first questionnaire}}}
 % ML: try to find better chapter name (avoid of the of the)
-\section{Analysis of Survey 1}
+\section{Analysis of the first questionnaire}
 \label{sec:qstat}
 
 \noindent The main part of this work consists of two
@@ -1811,9 +1812,9 @@ questionnaires. The first questionnaire was released on 23 October and
 stopped on 29 October 2020. It has two separate parts. The first one
 contains six questions dealing with the improvement of the GRASS GIS
 startup mechanism and the assessment of the state after GSoC. The
-second part of the survey which is even more important for this master
+second part of the questionnaire which is even more important for this master
 thesis contains 5 questions focusing on the enhancement of the
-newcomers' experience. In other words, it focuses on possibilities of
+newcomers' experience. In other words, it focuses on the possibilities of
 how to enrich the existing ``demolocation'' concept so that the new
 users can find their way around the software as quickly and
 conveniently as possible. The implementation part of this work is
@@ -1824,10 +1825,11 @@ analyzed in Section \ref{sec:qstat2}.
 \subsection{Part 1: GRASS startup and Data Catalog}
 
 \noindent The first part of the survey called \textbf {Help improve
-  GRASS GIS startup mechanism and Data Catalog} returns to the changes
-that were implemented within the GSoC. It tries both - to get feedback
-from users and to answer questions that remain unanswered after
-GSoC. From this point of view, the most fundamental question is No. 2,
+  GRASS GIS startup mechanism and Data Catalog} 
+  (see Appendix \ref{appendix:A}) returns to the changes
+that were implemented within the GSoC. It tries both -- to get feedback
+from users and to answer questions that remain unanswered. 
+From this point of view, the most fundamental question is No. 2,
 which finds out the preferences regarding the way of starting GRASS
 GIS in a situation where the last mapset is not in a usable
 state. Questions 4, 5, and 6 are also related to the further direction
@@ -1905,9 +1907,9 @@ on open-ended responses. Ten respondents choose neither of the two
 questions offered and took the opportunity to write their own
 proposal. Of the ten answers, which are categorized in the table in
 Figure \ref{fig:survey1_part1_question2_other_answers}, only one
-respondent \#31 is for maintaining the original start screen. There
+respondent \#31 is for maintaining the original startup screen. There
 are some ideas of displaying a simple dialog in the form of a warning
-message, which offers a user some other options - e.g. to open a
+message, which offers a user some other options -- e.g. to open a
 demolocation, an existing mapset, or to create a new mapset. There was
 also a suggestion that it would not be a dialog, but only a pop-up
 message.
@@ -1930,6 +1932,7 @@ message.
 \end{center}
 \end{figure}
 
+\newpage
 \noindent The first option, therefore, how this case could be solved
 would be to use the Info Bar, which would not have an informative
 character (as with the proposed solution for first-time users in the
@@ -2083,11 +2086,13 @@ opinion of individuals whether they would really use this
 functionality often, not on the general belief, which can be distorted
 by the fact that in other software this functionality is a matter of
 % ML: commercial -> proprietary
-course. Among highly evaluated commercial and open-source software by
-GISGeography \cite{gisgeography} (ArcGIS Pro, Geomedia Advantage,
+% LK: changed in the whole thesis
+course. Among highly evaluated proprietary and open-source software by
+GIS Geography \cite{gisgeography} (ArcGIS Pro, Geomedia Advantage,
 % ML: is there a need to provide QGIS version?
-MapInfo Professional, QGIS 3, gvSIG, GRASS GIS, ILWIS, SAGA GIS),
-according to author's conclusions, GRASS GIS is the only software of
+% LK: no need
+MapInfo Professional, QGIS, gvSIG, GRASS GIS, ILWIS, SAGA GIS), 
+GRASS GIS is the only software of
 mentioned together with ILWIS, that cannot be started using the file
 association of the workspace file. Nevertheless, based on the results,
 users do not seem to mind.
@@ -2124,7 +2129,7 @@ functionality that is perceived as essential.
 \vspace{0.3cm}
 \begin{figure}[hbt!] 
 \begin{center}
-\includegraphics[width=14cm]{../surveys/analyzed_data/survey1_part1_question6_histogram.png} 
+\includegraphics[width=13cm]{../surveys/analyzed_data/survey1_part1_question6_histogram.png} 
 \caption[Survey 1 Part 1 Question 6: Histogram]{Survey 1 Part 1 Question 6: Histogram (Source: Personal collection)}
 \label{fig:survey1_part1_question6_histogram}
 \end{center}
@@ -2133,11 +2138,13 @@ functionality that is perceived as essential.
 \vspace{0.3cm}
 \begin{figure}[hbt!] 
 \begin{center}
-\includegraphics[width=15cm]{../surveys/analyzed_data/survey1_part1_question6_r_pdf.png} 
+\includegraphics[width=13cm]{../surveys/analyzed_data/survey1_part1_question6_r_pdf.png} 
 \caption[Survey 1 Part 1 Question 6: Probability Density Function]{Survey 1 Part 1 Question 6: Probability Density Function (Source: Personal collection - R analysis)}
 \label{fig:survey1_part1_question6_r_pdf}
 \end{center}
 \end{figure}
+
+ADD SUMMARY
 
 
 \newpage
@@ -2155,9 +2162,9 @@ disadvantages of questionnaires and remote usability testing in
 general.
 
 This part of the survey offers two ways to improve the first-time user
-experience that the author has noticed with other software - Info Bars
+experience that the author has noticed with other software - infobars
 % ML: add reference to chapter 2 (?)
-(QGIS 3) and First Run Wizard (Zoner Photo Studio X). Respondents
+(QGIS 3) and First Run Wizard (Zoner Photo Studio X) (see subsection. Respondents
 evaluate these topics in the first two questions, thus giving feedback
 on which of the above options they would prefer in GRASS. Question 3
 is very open and users write their own suggestions on how to improve
@@ -2608,13 +2615,13 @@ be informative, but questional.
 \end{center}
 \end{figure}
 
-%% -------<<< Chapter 6: Analysis of the results of the second survey>>>-------\\%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% -------<<< Chapter 7: Analysis of the second questionnaire>>>-------\\%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \newpage
 \vspace*{-1cm}
-\fancyhead[RE, RO]{\fancyplain{}{\small \sl{Analysis of the results of the second survey}}}
+\fancyhead[RE, RO]{\fancyplain{}{\small \sl{Analysis of the second questionnaire}}}
 % ML: try to find better chapter name (avoid of the of the)
-\section{Analysis of the results of the second survey}
+\section{Analysis of the second questionnaire}
 \label{sec:qstat2}
 
 \noindent The second questionnaire called \textbf{Help improve the
