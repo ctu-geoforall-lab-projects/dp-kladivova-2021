@@ -120,8 +120,8 @@
 \large
 \noindent
 The GRASS GIS startup mechanism could discourage new users from further 
-working with this software or at least make it
-uncomfortable. This diploma thesis is built on the programming part
+working with this software or at least making it
+uncomfortable. This master thesis is built on the programming part
 performed in the summer of 2020 within the international Google Summer
 of Code program (GSoC) and uses two questionnaires to evaluate the
 benefits of significant changes that have taken place. The first part
@@ -129,8 +129,8 @@ of the work focuses on a survey among intermediate users and compares
 the startup mechanism of the original GRASS GIS 7.8 version with the
 new solution introduced after GSoC.  The second part is focused on 
 newcomers and implements the special mode for first-time users. 
-A survey based on a simple task further examines whether the initial 
-contact of the user with the software when using the ``first-time'' mode
+A survey based on a simple task further examines whether the user's initial 
+contact with the software when using the ``first-time'' mode
 is more pleasant or not.
 
 \vspace{2ex}
@@ -279,21 +279,21 @@ for his valuable comments on the text of the thesis.
 
 \noindent According to the evaluation of the GIS Geography journal
 \cite{gisgeography}, GRASS GIS (Geographic Resources Analysis Support
-System) is one of the best software we can meet in the world of
+System) is one of the best software in the world of
 open-source software focused on Geographic Information System (GIS) 
 in terms of numerical analysis. The history of GRASS, built for vector
 and raster geospatial management, geoprocessing, spatial modeling, and
-visualization, dates back to 1982 when its development was started by
-the United States military. At the time of writing this thesis, the current 
+visualization, dates back to 1982 when the United States military started its development..
+At the time of writing this thesis, the current 
 stable version of the software is version 7.8, but as the number 
 suggests, the planned version 8.0, which will be released in the spring
  of 2021, will introduce major changes. They are going to be largely 
  related to the GRASS graphical user interface (GUI).
 
-Although, in the startup screen of version 7.8, there is a certain
+Although in the startup screen of version 7.8, there is a certain
 effort to provide the first-time user with the maximum possible help,
 the development community often encountered misunderstandings from the
-ranks of users. These complaints led to the creation of an
+ranks of users. These complaints led to creating an
 % ML: Prague Roadmap could be in quotes, but for sure - reference is missing
 % LK: Reference and quotes added 
 implementation proposal known as the ``Prague Roadmap'' \cite{roadmap}. 
@@ -307,21 +307,21 @@ Summer of Code program (GSoC) focused on bringing more
 developers into open-source software development. The task of GSoC was
 to change the sort of unfortunate GRASS startup mechanism so that it
 would be easier for first-time users to become familiar with
-GRASS. After the changes within GSoC, the startup screen -- the
+GRASS. After GSoC changes, the startup screen -- the
 % ML: find better word that "trick"
 % LK: Changed to ``challenge''
-biggest challenge for new users, was partially removed. The main role for
+biggest challenge for new users, was partially removed. The primary role for
 the data organization was taken over by the Data Catalog -- a tree
-object, whose functionality was significantly expanded. Now, the
+object whose functionality was significantly expanded. Now, the
 possibilities of managing data hierarchy components are even beyond
 the options previously available in the startup screen.
 % LK: citation added
 The workflow of GSoC participation is described in detail on the 
 GRASS wiki page \cite{gsoc}. 
 
-This work, therefore, follows up on the complex topic of creating a
+Therefore, this work follows up on the complex topic of creating a
 better GRASS GIS startup mechanism. The main part of the work consists
-of two surveys where the first one consists of two parts. The first part aims 
+of two surveys, where the first one consists of two parts. The first part aims 
 to evaluate the benefits of significant changes
 % ML: replace "final" with more suitable word (final is never final;-)
 % LK: replaced by suitable
@@ -333,11 +333,11 @@ the old startup screen will be permanently removed. The second part of the
 first survey focuses on the improvement of the startup mechanism for
 first-time users. Already at GSoC, it was decided that some form of
 assistance to new users would need to be implemented. The second part
-of the survey finds out what options of first-time help would be
+of the survey finds out what options of the first-time help would be
 preferred. The second survey conducted one month later introduces a
 new special mode for first-time users (so-called ``first-time'' mode), which
-extends the concept of the default location with an infobar helping
-users to manage the first steps. It examines whether users like the
+extends the default location concept with an infobar helping
+users manage the first steps. It examines whether users like the
 newly designed mockups of the infobar and gives them space to share
 ideas. Based on the analysis of the second survey, the infobar is
 improved and subsequently implemented.
@@ -348,41 +348,41 @@ improved and subsequently implemented.
 \label{subsection:grassgis}
 \noindent GRASS GIS is a cross-platform desktop geographic information
 system (GIS) designed to work with geographic 2D/3D raster and vector
-data with SQL-based attribute management, and vector network analysis,
-both using the command line and graphical user interface
+data with SQL-based attribute management and vector network analysis.
+It supports both the command line and graphical user interface
 (GUI). Besides, it offers many spatial modeling algorithms, 3D
 visualization, as well as image processing routines pertaining to
 LiDAR and multi-band imagery \cite{NETELER2012124}. It is open-source
 software published under the GNU GPL general license and managed and
 developed under the Open Source Geospatial Foundation
-(OSGeo). Important users of the GRASS system include, for example,
+(OSGeo). The GRASS system's influential users include
 NASA, NOAA, USDA, USGS, and many environmental consulting companies
 \cite{grassgis}.
 
 The power of software stems mainly from its Unix philosophy, where the
 software itself consists of a collection of more than 500 applications
-called modules. Each of these modules has only one task to perform,
-and the real power of the software comes when the various of these
+called modules. Each of these modules has only one task to perform.
+The real power of the software comes when the various of these
 modules begin to chain together, allowing the user to create even very
-complex applications. Most of these modules are written in C, but
+complex applications. Most of these modules are written in C. However,
 above the whole system, PyGRASS as an object-oriented Python
 Application Programming Interface (API) stands, which hides the
-complexity of GRASS and provides access to the capability of the C-API
-of GRASS for geo-scientists that are not familiar with C
+complexity of GRASS and provides access to the C-API capability
+of GRASS for geoscientists that are not familiar with C
 \cite{pygrass}.
 
 % ML: GRASS is using versioning system since 1999 (CVS, than
 % Subversion). 
 % LK: proposed sentence added 
 GRASS GIS had been using the versioning system since 1999 (CVS, then
-Subversion). Since January 2020 it has been developing on GitHub, a web
+Subversion). Since January 2020, it has been developing on GitHub, a web
 version control using Git. Nowadays, most main changes take place in
-the Python language. For GUI coding wxPython GUI toolkit is used.
+the Python language. For GUI coding, wxPython GUI toolkit is used.
 % ML: extension -> library (or better GUI toolkit)
 % LK: changed to GUI toolkit
 Besides improving the GRASS GIS startup mechanism,
-in summer 2020 the community presented a new website (see Figure
-\ref{fig:grass_gis}) on the occasion of its 37th birthday which offers
+in summer 2020, the community presented a new website (see Figure
+\ref{fig:grass_gis}) on the occasion of its 37th birthday, which offers
 a curated list of tutorials in different languages and links to
 videos.
 
@@ -426,9 +426,9 @@ common coordinate reference system (CRS). Therefore, Maps in the
 Mapsets contained in a particular Location will always have the same
 coordinate system.
 
-It is also important to mention that when creating a location, a
-mapset named PERMANENT is automatically created. Briefly speaking, the
-PERMANENT mapset is used to store general spatial data which are also
+It is also important to mention that a
+mapset named PERMANENT is automatically created when creating a location. Briefly speaking, the
+PERMANENT mapset is used to store general spatial data, which are also
 accessible but write-protected to other users who are working in the
 same Location as the Database owner. The PERMANENT mapset also holds
 % ML: not only extent, but also resolution ("computational region" in GRASS terminology)
@@ -437,8 +437,8 @@ the default region boundary coordinate values and resolution
 ("computational region" in GRASS terminology). 
 This is important for raster analysis \cite{hierarchy}.
 
-In the following text, the elements of the GRASS data hierarchy are
-already taken as standard terms and the initial letters are lowercase.
+In the following text, the GRASS data hierarchy elements are
+already taken as standard terms, and the initial letters are lowercase.
 
 \newpage
 \vspace*{-1cm}
@@ -1081,22 +1081,22 @@ which we will try to answer in the work:
 
 \begin{enumerate}
 
-\item  \noindent \textbf{How to enhance first-time user experience?}
+\item  \noindent \textbf{How to enhance the first-time user experience?}
 
   \noindent As already mentioned, data hierarchy in GRASS GIS can
   cause significant problems for newcomers. Therefore, the aim of this
-  work is to propose the solution on how to enhance the first-time
+  work is to propose a solution on how to enhance the first-time
   user experience (see subsection \ref{sec:proposal1}) and implement
   it.
 
 
-\item \noindent \textbf{How to improve GRASS GIS startup mechanism?}
+\item \noindent \textbf{How to improve the GRASS GIS startup mechanism?}
 
   As mentioned in the previous subchapter, in the special situation
   where the last opened mapset is not in the usable state, the ``old''
   startup screen still appears. This situation is rather a lack of a
-  new solution introduced after GSoC and the important goal of this
-  work is to propose the solution for how this shortcoming could be
+  new solution introduced after GSoC. The important goal of this
+  work is to propose a solution for how this shortcoming could be
   remedied (see subsection \ref{sec:proposal2}).
 
 \end{enumerate}
@@ -1106,29 +1106,29 @@ special mode for new users will need to be implemented. At the same
 time, however, some questions remained unanswered regarding the
 general startup mechanism and further direction of the GRASS GUI.
 
-Therefore, the Part 1 from Survey 1 entitled \textbf {Help
-  improve GRASS GIS startup mechanism and Data Catalog}, see Appendix
-\ref{appendix:A}, does not deal only with the second key question,
-it is much broader. The goals also are to determine the level of user
-satisfaction/dissatisfaction with the new solution and to obtain
+Therefore, Survey 1 Part 1 entitled \textbf {Help
+improve GRASS GIS startup mechanism and Data Catalog}, see Appendix
+\ref{appendix:A}, does not deal only with the second key question;
+it is much broader. The goals are also to determine the level of user
+satisfaction/dissatisfaction with the new solution and obtain
 general user preferences regarding further improvements of the GRASS
 GUI.
 
 As it was not clear how to grab the new special mode for first-time
 users, the first survey was extended by a second thematically
 different section called \textbf{Help create a better first-time user
-  experience in GRASS GIS}, see Appendix \ref{appendix:B}. The answers
-in this part of the survey are important for the subsequent decision
+experience in GRASS GIS}, see Appendix \ref{appendix:B}. The answers
+in this part of the survey are essential for deciding
 of what information the special mode for first-time users should
 contain and which implementation form to choose.
 
 The aim of the second survey called \textbf{Help improve the special
-  mode for first-time users} is to find out whether users like the
-proposed mockups of the infobar and give them space to share their
-own ideas so that the implemented solution in this work is the best
+mode for first-time users} is to find out whether users like the
+proposed mockups of the infobar and give them space to share their 
+ideas so that the implemented solution in this work is the best
 possible from an objective point of view (see Appendix
-\ref{appendix:C}). Both the second part of the first survey and the
-second survey deal with the first question which prevails in this work
+\ref{appendix:C}). Both Survey 1 Part 2 and Survey 2
+deal with the first question, which prevails
 since all the performed implementations are based on it.
 
 %% -------<<< Chapter 2: Enhancing the first-time user experience in other software >>>-------\\%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -1139,7 +1139,7 @@ since all the performed implementations are based on it.
 \label{subsection:enhancing}
 
 Firstly, we need to define what we mean by the \textit{first-time user
-  experience}. As \cite{ftue} states ``In human-computer interaction
+experience}. As \cite{ftue} states ``In human-computer interaction
 and UI design, a first-time user experience (FTUE) refers to the
 initial stages of using a piece of software. It commonly includes
 configuration steps, such as signing up for an account. Every user of
@@ -1219,7 +1219,7 @@ GIS). The software is analyzed using the following three questions:
 \begin{itemize}
 \item What data hierarchy does the software use compared to GRASS GIS?
 \item Has the software startup screen? And if so, is always displayed? How does it look like? 
-\item Does the software have features for enhancing first-time user experience, and if so, in what form?
+\item Does the software have features for enhancing the first-time user experience, and if so, in what form?
 \end{itemize}
 
 \noindent The information obtained about proprietary GIS software is
@@ -1305,7 +1305,7 @@ QGIS users.
 \vspace{0.3cm}
 \begin{figure}[hbt!] 
 \begin{center}
-\includegraphics[width=16.5cm]{../pictures/grass_gis_software.png} 
+\includegraphics[width=16cm]{../pictures/grass_gis_software.png} 
 \caption[Summary of GRASS GIS software]{Summary of GRASS GIS software (Source: Personal collection)}
 \label{fig:grass_gis_software}
 \end{center}
@@ -1358,7 +1358,7 @@ software goes far beyond the startup mechanism or data
 organization. Let's remember the unique Unix philosophy, where the
 software consists of a collection of small applications called
 modules, or the ability to call these modules from the command
-line. It is therefore interesting to note that the comparison of GRASS
+line. It is, therefore, interesting to note that the comparison of GRASS
 GIS with other GIS software does not provide significant inspiration
 for other implementations associated with the improvement of the
 startup mechanism, which requires (and probably deserves) a completely
@@ -1370,8 +1370,8 @@ user
 complaints\footnote{\url{https://trac.osgeo.org/grass/ticket/3474}}
 about the problematic startup mechanism in versions before GSoC.  We
 do not have to look for inspiration only in GIS software. The
-interaction with a first-time user is a completely general thing that
-plays a role in all types of software.
+interaction with a first-time user is a completely general thing 
+in all types of software.
 
 % \newpage
 \vspace*{-1cm}
@@ -1380,7 +1380,7 @@ plays a role in all types of software.
 \label{sec:other_software}
 
 In this subsection, the author presents several interesting solutions
-for the enhancement of first-time user experience in other
+for the enhancement of the first-time user experience in other
 software. It doesn't have to be just a first-time user
 experience. Generally speaking, a good user experience means that the
 user does not need a manual since everything is ready and
@@ -1405,7 +1405,7 @@ in Figure \ref{fig:zoner}, the guide consists of five parts.
 \begin{figure}[hbt!] 
 \begin{center}
 \includegraphics[width=17cm]{../pictures/zoner_first_run_2.png} 
-\caption[Second page of First Run Wizard in Zoner Photo Studio X]{Second page of First Run Wizard in Zoner Photo Studio X}
+\caption[Second page of First Run Wizard in Zoner Photo Studio X]{Second page of First Run Wizard in Zoner Photo Studio X (Source: Personal collection)}
 \label{fig:zoner}
 \end{center}
 \end{figure}
@@ -2412,7 +2412,7 @@ possible in the software itself, but to refer well to detailed
 information, for example in the form of a ``Learn more'' button.
 
 \par\noindent\rule{\textwidth}{0.4pt}
-\noindent \textbf{Question 2: Do you like the idea of first-time mode infobars (visually similar to infobars in QGIS implementation)?}
+\noindent \textbf{Question 2: Do you like the idea of the first-time mode infobars (visually similar to infobars in QGIS implementation)?}
 \par\noindent\rule{\textwidth}{0.4pt}
 
 \noindent People largely like both the infobars and the First Run Wizard. However, there are fewer ``Yes, but...'' comments in infobars, and unlike the previous question, they are literally ``Yes, but...'', as we can see in Figure \ref{fig:survey1_part2_question2_all}. 
@@ -2609,7 +2609,7 @@ should no longer be included, but it should be well-referred to.
 \fancyhead[RE, RO]{\fancyplain{}{\small \sl{GRASS GIS Development Proposals}}}
 \section{GRASS GIS Development Proposals}
 
-\noindent As described in the subchapter \ref{sec:objectives}, this
+\noindent As described in subchapter \ref{sec:objectives}, this
 work consists of 2 seemingly independent parts. The first part (the 
 main part of this work) related to Survey 1 Part 2
 and Survey 2 improves the concept of default location by the
@@ -2622,7 +2622,7 @@ second topic related to the complete removal of the original startup
 screen (so that it does not appear even in a situation where the last
 mapset is not in a usable state) is a topic that affects all users.
 
-\subsection{How to enhance first-time user experience}
+\subsection{How to enhance the first-time user experience}
 \label{sec:proposal1}
 
 % ML: twice "to the", try to rewrite the first sentence
@@ -2655,7 +2655,7 @@ properties, we should go to the Display tab.
 \begin{figure}[hbt!] 
 \begin{center}
 \includegraphics[width=16cm]{../pictures/first-time_user_diagram.png} 
-\caption[Flowchart of First-time user mode]{Flowchart of First-time user mode (Source: Personal collection)}
+\caption[Flowchart of the first-time user mode]{Flowchart of the first-time user mode (Source: Personal collection)}
 \label{fig:first-time_user_diagram}
 \end{center}
 \end{figure}
@@ -3342,18 +3342,17 @@ from the technical point of view. As mentioned in subsection
 -- cross-platform GUI toolkit\footnote{\url{https://wxpython.org/}}.
 Currently, supported platforms are MS Windows, macOS,
 Linux, or other Unix-like systems. The resulting design on each
-platform can be a bit different as we can also notice when using GRASS
-GIS on different operating systems. We can import wx to a script file as a
+platform can be a bit different. We can import wx to a script file as a
 package that wraps the GUI components of the popular
 cross-platform C++ library wxWidgets\footnote{\url{https://www.wxwidgets.org/}}.
 
-GRASS has a long history regarding version systems and
-systems for reporting tickets/issues. Since January 2020 it has been developing on 
+GRASS has a long history of versioning and reporting tickets/issues. 
+Since January 2020 it has been developing on 
 GitHub. GitHub stores the history of work, ensures stylistic consistency using the 
-flake8 command-line utility, and also allows the creation of Issues that can have
-the character of errors and various improvements. These issues are usually 
-proposed for changes (so-called Pull Requests), which users discuss. Therefore, 
-GitHub partly works as a social network, which can support the creativity and 
+flake8 command-line utility, and also allows the creation of Issues (such as errors 
+and improvements). These issues are usually 
+proposed for changes (Pull Requests), which users discuss. Therefore, 
+GitHub partly works as a social network, which supports the creativity and 
 enthusiasm of developers. In the following text presenting the changes from 
 the developer's point of view, the term \textit{demolocation} is preferred to 
 the term \textit{default location}.
@@ -3428,8 +3427,8 @@ Displaying a world map: \url{https://github.com/OSGeo/grass/pull/1070}
 
 Deleting a user mapset: \url{https://github.com/OSGeo/grass/pull/1173}
 
-\par\noindent\rule{\textwidth}{0.4pt}
-
+\newpage
+\vspace*{-1cm}
 \subsection{Special mode for first-time users}
 
 \noindent \large The basis of the new special mode for first-time
@@ -3477,15 +3476,13 @@ to the PERMANENT mapset of the newly created location, which thus
 becomes the current mapset. The \texttt{showImportDataInfo} method is
 connected to the signal in the parent \texttt{DataCatalog} object,
 which calls \texttt{InfoManager} with the settings which is set in
-case of successful creation of a new location. 
-
-\newpage
-\noindent The infobar is
+case of successful creation of a new location. The infobar is
 displayed in the second situation after creating a new location using
 the Management icon as well as after creating a location using the
 button in the infobar set for the first situation.
 
-Showing the infobar in the third situation is also handled via Signal
+\newpage
+\noindent Showing the infobar in the third situation is also handled via Signal
 from the pydispatch library. Signal is created in the
 \texttt{ImportDialog} class in the
 \textit{gui/wxpython/modules/import\_export} file, which is the
@@ -3510,14 +3507,13 @@ situation after data import using the appropriate Management icons as
 well as after data import using the buttons in the infobar set for
 the second situation.
 
-\newpage
-\noindent The infobar does not appear if the user creates a location or imports
+The infobar does not appear if the user creates a location or imports
 data from the File tab. In this case, it is assumed that it is not a
 first-time user. The infobar is therefore only a part of the Data
 Catalog, its functionality is not connected with the \texttt{GMFrame}
 class, which represents the Layer Manager.
 
-\par\noindent\rule{\textwidth}{0.4pt}
+\newpage
 \noindent \textbf{Pull Requests:}
 
 infobar in first situation: \url{https://github.com/OSGeo/grass/pull/1078}
@@ -3571,7 +3567,7 @@ current GRASS GIS startup mechanism (see subsection
 \ref{sec:proposal2}), the goal of this work is to propose and
 implement a special mode for first-time users (see sections
 \ref{sec:proposal1}, \ref{sec:implementation}). Based on Survey 1 Part 2 
-and the section \ref{subsection:enhancing},
+and section \ref{subsection:enhancing},
 this mode was compiled. It consists of infobar which is created in
 Data Catalog each time the user starts GRASS GIS and it is only up to
 the situation what message is displayed. The infobar is finally
@@ -3672,11 +3668,11 @@ Data tab after successful data import can be seen in Figure
 
 % ML: a note: is it clear from text that GSoC was your project(?)
 % LK: changed
-\noindent The first important goal of this work is to evaluate the
+\noindent This work's first important goal is to evaluate the
 benefits of significant changes that the author performed within the
 GSoC. Based on Survey 1 Part 1, it was found out that most users agree
 with the statement that partial removal of the startup screen and
-improvement of the Data Catalog simplifies the initial introdution to
+improvement of the Data Catalog simplifies the initial introduction to
 the software and further work. The most useful features according to
 users are the small icons in the Data Catalog distinguishing elements
 of data hierarchy, the new management icons for adding GRASS databases,
@@ -3690,10 +3686,10 @@ mapset and location.
 % ML: in the text 'master thesis' is used (diploma thesis is used only
 % in abstract)
 Further direction of this master thesis is related to two key
-questions, which were introduced in the subsection
-\ref{sec:objectives}. First question -- \textbf{How to enhance
-  first-time user experience?} -- loosely follows the topic of
-improving the GRASS startup mechanism and seeks a way to make getting
+questions introduced in subsection
+\ref{sec:objectives}. The first question -- \textbf{How to enhance
+ the first-time user experience?} -- loosely follows the topic of
+improving the GRASS startup mechanism and seeks a way to get
 started in GRASS more user-friendly. The second question of this work
 -- \textbf{How to improve the GRASS GIS startup mechanism?} --
 encounters the main shortcoming of the solution after GSoC, when the
@@ -3703,32 +3699,33 @@ and whether these questions were answered at all as well as the
 shortcomings of the presented solutions and suggestions for
 improvements.
 
-Based on the surveys and the chapter \ref{subsection:enhancing}, a
+Based on the surveys and chapter \ref{subsection:enhancing}, a
 first-time user mode extending the concept of the default location
 (location with pre-prepared data, into which GRASS will run at the
 very first start) was designed. This mode consists of three info
 messages, which are gradually displayed to the new user in defined
-situations. These user-intensive situations were determined on the
-basis of Survey 1 Part 2. It turned out that users not only have
+situations. These user-intensive situations were determined based on
+Survey 1 Part 2. It turned out that users not only have
 trouble understanding the GRASS data hierarchy, but they also have
 problems with the meaning of Modules and Display tabs, and with data
 import. The advice that is provided in the info messages tries to
 address all three of these issues. The first message displayed to the
 user immediately after startup, in addition to the data hierarchy,
 also describes the concept of the default location. Key question
-number 1 was therefore largely answered. The evidence may be the fact
+number 1 was, therefore, largely answered. The evidence may be
 that in Survey 2 simulating the proposed solution of info messages,
 users in defined situations usually made the right
 decisions. Furthermore, there are comments among the open responses,
 which directly state that the person likes the proposal. Based on the
 second survey, the infobar was further enhanced by some of the topics
-raised in Survey 2. It can therefore be assumed that the version
-presented in the chapter \ref{sec:results} is even more helpful from
+raised in Survey 2. Therefore, It can be assumed that the version
+presented in chapter \ref{sec:results} is even more helpful from
 the user's point of view. However, this does not mean that the
 implemented solution cannot be improved. In the following paragraph,
-the author mention several ideas for improvement.
+the author mentions several ideas for improvement.
 
-The second survey shows that it is not entirely clear from the info
+\newpage
+\noindent The second survey shows that it is not entirely clear from the info
 message dealing with data import (see Figure \ref{fig:lmgr2}) which
 functions the ``Import vector data'' and ``Import raster data''
 buttons call. In addition to the buttons in the infobar, it is
@@ -3736,53 +3733,53 @@ possible to use the newly implemented management icons for data import
 % ML: is it correct figure, I was expecing icons and not a UML diagram
 (see Figure \ref{fig:icons}), but the continuity of these functions
 may not be obvious at first glance. The improvement would mean adding
-images to the buttons (the same images that are used for Management
+images to the buttons (the same images that are used for management
 icons). Similarly, the first info message does not completely
 guarantee that the user will make the connection of the data hierarchy
 explanations (locations, mapsets) with the visual representation of
 the data hierarchy offered by the Data Catalog. In this info message,
-small icons could be placed in front of the names of the data
-hierarchy elements, distinguishing which type of element it is. The
+small icons could be placed in front of the data
+hierarchy elements' names, distinguishing which type of element it is. The
 text in info messages was slightly modified on the basis of Survey 2,
 % ML: final -> can change (or something similar)
 % LK: changed
 but it can still be expected that its form can change. How
-first-time user mode works will be shown by time and other user
+the first-time user mode works will be shown by time and other users'
 suggestions.
 
 % ML: 'that' is missing ?
 % LK: ?
-As can be seen from the previous lines, most users like the idea of
+As can be seen from the previous lines, most of the users like the idea of
 the infobar. In Survey~1 Part 1 Question 1, several suggestions were
 made that would solve the start of GRASS GIS when the last used mapset
-is not in usable state by displaying a warning or an error message. A
+is not in a usable state by displaying a warning or an error message. A
 solution proposed for this issue conceptually improves and tightens
-the GRASS GIS startup mechanism introduced after GSoC. The proposal
-for the second key question incorporates both concepts, on which the
+the GRASS GIS startup mechanism introduced after GSoC. The second key
+question proposal incorporates both concepts on which the
 new first-time user mode stands - the concept of default location and
 the concept of info message. The concept of the default location is
-advantageous due to the fact that without a significant implementation
+advantageous since, without a significant implementation
 intervention, it will enable the complete removal of the old startup
 screen, which still appears in the current implementation. The default
-location is used in the presented proposal in the subsection
+location is used in the presented proposal in subsection
 \ref{sec:proposal2} as an alternative solution, into which GRASS will
-start in case the start to the last used mapset fails. In this case,
+start if the start to the last used mapset fails. In this case,
 % ML: review this sentence ('that' is used twice in the sentence)
 % LK: rewrited
-the author suggests displaying the info message stating the
-reason why the user is located in the default location. The work also
-suggests displaying info messages in other situations in which they
-could speed up daily work with GRASS.  The implementation of the 
+the author suggests displaying the info message stating 
+why the user is located in the default location. The work also
+suggests displaying info messages in other situations to 
+speed up daily work with GRASS.  The implementation of the 
 proposal compiled for the second key question is not the goal of this work. 
-However, the author assumes the participation in these implementations 
+However, the author assumes participation in these implementations 
 after the completion of this work. Both the new first-time mode and the 
 complete removal of the old startup screen are planned improvements to 
 the new version of GRASS 8.0, which is scheduled for release in the spring of
 2021.
 
-In addition to the proposals and implementation of first-time mode,
-this work brought a number of valuable answers concerning especially
-the direction of further development of the GRASS GIS. For example,
+In addition to the proposals and implementation of the first-time mode,
+this work brought a number of valuable answers concerning the further 
+GRASS GIS development. For example,
 Survey 1 shows that starting GRASS using the file association of
 workspace file is not perceived by GRASS GIS users as essential,
 although it is standard in other software. There are also demands for
@@ -3791,8 +3788,8 @@ to the GUI, users would especially like to simplify the path to import
 % ML: note also multiple window arrangement vs. single
 % LK: added
 WMS/WFS, design GRASS GUI as a single window application, 
-expand the set of management icons and also enrich even more
-the Data Catalog.
+expand the set of management icons, and enrich
+the Data Catalog even more.
 
 
 %% -------<<< LITERATURA >>>-------\\%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
