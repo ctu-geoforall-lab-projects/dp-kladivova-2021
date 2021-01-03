@@ -608,7 +608,7 @@ The data in the current location are firmly connected to the Map Display
 window. If we want to see maps from a different location we can find in
 the mapset context menu the option for switching. We are able to
 switch between mapsets in the same location or between mapsets in
-different locations. If we move the data to the mapset in another
+different locations. If we copy the data to the mapset in another
 location with a different CRS, the projection takes place. GRASS GIS
 does not use the ``on the fly'' transformation.
 
@@ -1000,16 +1000,22 @@ mainly focuses on first-time users.
 % ML: "we" is heavily used in this thesis, here it's not clear what
 % mean "we", try to rewrite the sentence
 % LK: changed to ''author''
-This is also basically the main reason why we try to
-improve the GRASS GUI.  
-
-\noindent To summarize, the software could be run from 
-the command line in four ways \cite{startup}:
+The software can be run from 
+the command line in the following way \cite{startup}:
 
 \noindent \texttt{:$\sim$\$ grass79} \\
 \noindent Start GRASS using the default user interface. In version
-7.8, the user is prompted by the startup screen. After GSoC the startup
+7.8, the user is prompted by the startup screen. 
+Appropriate location and mapset must be either set by command line argument
+using the \texttt{:$\sim$\$ grass79
+  \$HOME/grassdata/location/mapset}, or by environment variables, 
+  or taken from the last
+GRASS session, specifically from a file in the path
+\textit{\$HOME/.grass7/rc}. 
+After GSoC the startup
 screen appears only when the mapset is not in the usable state.
+
+\noindent User interface can be futher specified by Flags:
 
 \noindent \texttt{:$\sim$\$ grass79 --gui}\\
 \noindent Start GRASS using the graphical user interface.  In version
@@ -1017,28 +1023,28 @@ screen appears only when the mapset is not in the usable state.
 screen appears only when the mapset is not in the usable state.
 
 \noindent \texttt{:$\sim$\$ grass79 --text} \\
-\noindent Start GRASS using the text-based user interface. Appropriate
-% ML: location/mapset can be defined also by the argument
-% ML: grass79 --text /path/to/location/mapset
-location and mapset must be either set by environmental variables 
-by running a specific
-% ML: same usage as for --text
-mapset using the \texttt{:$\sim$\$ grass79
-  \$HOME/grassdata/location/mapset} command, or taken from the last
-GRASS session, specifically from a file in the path
-\textit{\$HOME/.grass7/rc}.
-% LK: included here
+\noindent Start GRASS using the text-based user interface and do not show the startup
+screen.
+%Appropriate
+%% ML: location/mapset can be defined also by the argument
+%% ML: grass79 --text /path/to/location/mapset
+%location and mapset must be either set by environmental variables 
+%by running a specific
+%% ML: same usage as for --text
+%mapset using the \texttt{:$\sim$\$ grass79
+%  \$HOME/grassdata/location/mapset} command, or taken from the last
+%GRASS session, specifically from a file in the path
+%\textit{\$HOME/.grass7/rc}.
+%% LK: included here
 It is also possible to use
 \texttt{:$\sim$\$ grass79\$ --text /path/to/location/mapset} command.
 
 \newpage
 \noindent \texttt{:$\sim$\$ grass79 --gtext} \\
-\noindent Start GRASS using the text-based user interface.  In version
-7.8, this option as the only one does not display the startup
-screen. Similarly, as for \texttt{--text},  the desired location and mapset must be 
-either set as environmental variables or taken from the last
-GRASS session. In version 7.9, \texttt{--gtext} uses startup
-screen but then does not run the GUI.
+\noindent Start GRASS using the text-based user interface and show startup screen.  
+As it is planned to completely remove the old startup screen, in version 7.9 after GSoC, 
+the new function of the \texttt{--gtext} is not defined yet. 
+
 % ML: same usage as for --text
 
 The possibilities of starting GRASS GIS can be further extended by the
