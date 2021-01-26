@@ -1,0 +1,326 @@
+\documentclass[aspectratio=169]{beamer}
+
+\usepackage[utf8]{inputenc}
+\usepackage{beamerthemesplit}
+\usepackage[orientation=landscape,size=custom,width=16,height=9,scale=0.5,debug]{beamerposter} 
+\usepackage{graphicx}
+\usetheme{Madrid}
+
+\AtBeginSection[]{
+  \begin{frame}
+  \vfill
+  \centering
+  \begin{beamercolorbox}[sep=8pt,center,shadow=true,rounded=true]{title}
+    \usebeamerfont{title}\insertsectionhead\par%
+  \end{beamercolorbox}
+  \vfill
+  \end{frame}
+}
+
+%Information to be included in the title page:
+\title[Creation of a new GRASS GIS startup mechanism] %optional
+{Creation of a new GRASS GIS startup mechanism}
+
+\author[Bc. Linda Kladivova] % (optional, for multiple authors)
+{Bc. Linda Kladivova}
+
+\institute[Department of Geomatics] % (optional)
+{
+  CTU\\
+  Faculty of civil engineering\\
+  Department of Geomatics\\
+  [8ex]
+{\small Supervisor: Ing. Martin Landa Ph.D.}
+}
+
+\date[\today] % (optional)
+{\today}
+
+\begin{document}
+
+\frame{\titlepage}
+
+\begin{frame}
+\frametitle{Table of Contents}
+\tableofcontents
+\end{frame}
+
+% Startovací mechanismus ve verzi 7.8
+\section{Startup mechanism in the version 7.8}
+\begin{frame}
+\frametitle{Startup screen and data hiearchy}
+\begin{itemize}
+\item	Every new GRASS GIS user was always redirected to the Startup screen
+\item	Quite confusing without knowing what each of data hiearchy elements means
+\end{itemize}
+		\centering
+	        \includegraphics[width=0.8\columnwidth]{pictures/verze_startup.png}
+\end{frame}
+
+\begin{frame}
+\frametitle{User complaints}
+	        	\centering
+	        \includegraphics[width=0.8\columnwidth]{pictures/ticket.PNG}
+\end{frame}
+
+% Startovací mechanismus po GSoC
+\section{Startup mechanism after GSoC}
+
+\begin{frame}
+\frametitle{Google Summer of Code}
+	\centering
+        \includegraphics[width=0.7\textwidth]{pictures/Certificate.pdf}
+\end{frame}
+
+\begin{frame}
+\frametitle{No more Startup screen for first-time user}
+\begin{itemize}
+\item Launched directly in the Data Catalog with the prepared \textit{default location (demolocation)} including world map in EPSG:4326
+\end{itemize}
+	\centering
+        \includegraphics[width=0.8\textwidth]{pictures/demolocation_startup.PNG}
+\end{frame}
+
+\begin{frame}
+\frametitle{No more Startup screen when start in the last used mapset}
+\begin{itemize}
+\item Launched directly in the Data Catalog
+\item Used GRASS databases that had been stored in settings
+\end{itemize}
+	\centering
+        \includegraphics[width=0.8\textwidth]{pictures/last_mapset_startup.png}
+\end{frame}
+
+\begin{frame}
+\frametitle{New functionalities in Data Catalog}
+\begin{itemize}
+\item Data Catalog takes over the role of startup screen and offers even more!
+\end{itemize}
+	\centering
+        \includegraphics[width=0.5\textwidth]{pictures/funkce.PNG}
+\end{frame}
+
+\begin{frame}
+\frametitle{For comparison - Poor Data Catalog in the version 7.8}
+	        	\centering
+	        \includegraphics[width=0.8\columnwidth]{pictures/data_catalog_pred.PNG}
+\end{frame}
+
+\begin{frame}
+\frametitle{Lacks of the solution after GSoC}
+\begin{itemize}
+\item Missing advice about how the first-time user should continue in data processing when he is in the default location
+\item Old startup screen is still used when the last used mapset is not available (deleted or used by another user)
+\end{itemize}
+\end{frame}
+
+
+\section{Thesis objectives}
+
+\begin{frame}
+\frametitle{Aims of the work}
+\begin{itemize}
+\item Evaluate the changes made during GSoC
+\item Propose the solution for the new startup mechanism
+\item Propose and implement a special mode for first-time users
+\end{itemize}
+\end{frame}
+
+
+\section{Evaluate the changes made during GSoC}
+
+\begin{frame}
+\frametitle{Survey 1 Part 1: Help improve GRASS GIS startup mechanism and Data Catalog}
+General questions:
+\begin{itemize}
+\item Are users satisfied with the new solution after GSoC?
+\item Which new functionalities do they like the most?
+\item What are general user preferences regarding further development of GRASS GUI?
+\vspace{0.5cm}
+\item Survey 1 Part 1 attended by 52 GRASS GIS users (all levels of proficiency)
+\end{itemize}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Evaluation of changes made during GSoC}
+
+\begin{itemize}
+\item Based on Survey 1 Part 1 - attended by 52 GRASS GIS users (all levels of proficiency)
+\item Most of respondents like the situation after GSoC, however, there is also a minority of negative opinions.
+\item Users appreciate the new Data Catalog management icons,  new small icons distinguishing mapsets, locations, GRASS
+databases and layers (vector, raster) and new context menu options to create, rename and delete a mapset or location.
+\item Relatively low people rated the new option of adding more GRASS databases (working directories).
+\end{itemize}
+\end{frame}
+
+\section{Propose the solution for the new startup mechanism}
+
+\begin{frame}
+\frametitle{Survey 1 Part 1: Help improve GRASS GIS startup mechanism and Data Catalog}
+Lack:
+\begin{itemize}
+\item  Old startup screen is still used when the last used mapset is not available (deleted or used by another user)
+\end{itemize}
+
+\vspace{0.5cm}
+General question:
+\begin{itemize}
+\item How to improve the GRASS GIS startup mechanism?
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Propose the solution for the new startup mechanism}
+\begin{itemize}
+\item Two proposals introduced
+\item both permanently remove the old startup screen
+\item both inspired by Infobar solution for first-time user mode
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{GRASS GIS startup mechanism - Proposal 1}
+\begin{columns}
+\begin{column}{.35\textwidth}
+\begin{itemize}
+\item If the last mapset is not in the usable state GRASS starts into PERMANENT mapset in the default location with explaining infobar
+\end{itemize}
+\end{column}
+\begin{column}{.65\textwidth}
+\includegraphics[width=\textwidth]{pictures/normal_user_diagram.PNG} \hspace*{4cm}
+\end{column}
+\end{columns}
+\end{frame} 
+
+\begin{frame}
+\frametitle{GRASS GIS startup mechanism - Proposal 2}
+\begin{columns}
+\begin{column}{.35\textwidth}
+\begin{itemize}
+\item GRASS starts into PERMANENT mapset of last used location if possible, otherwise into PERMANENT mapset in the default location as in Proposal 1
+\end{itemize}
+\end{column}
+\begin{column}{.65\textwidth}
+\includegraphics[width=\textwidth]{pictures/normal_user_diagram2.PNG} \hspace*{4cm}
+\end{column}
+\end{columns}
+\end{frame} 
+
+\section{Propose and implement a special mode for first-time users}
+
+\begin{frame}
+\frametitle{Survey 1 Part 2: Help create a better first-time user experience in GRASS GIS}
+Lack:
+\begin{itemize}
+\item Missing advice about how the first-time user should continue in data processing when he is in the default location
+\end{itemize}
+
+\vspace{0.5cm}
+General questions:
+\begin{itemize}
+\item What information the special mode for first-time users should contain?
+\item Which implementation form to choose?
+\vspace{0.5cm}
+\item Survey 1 Part 2 attended by 48 GRASS GIS users (all levels of proficiency)
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Three key problematic first-time user situations identified on the basis of Survey 1 Part 2}
+
+\begin{itemize}
+\item{\textbf{Situation 1}: immediately after startup - a user needs to at least passively understand the principle of GRASS data hiearchy in order to create new Location with CRS of his data.}
+\item{\textbf{Situation 2}: once a user creates a new location he needs to know how to import his data.}
+\item{\textbf{Situation 3}: after importing the data, a user wants to either analyze data directly or change its display in the Map Display. So, he needs to know Display and Modules tabs.}
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Example of proposed infobar for first-time user after Survey 1}
+	\centering
+        \includegraphics[width=0.55\textwidth]{pictures/info1before.PNG}
+\end{frame}
+
+\begin{frame}
+\frametitle{Survey 2: Help improve the special mode for first-time users}
+General questions:
+\begin{itemize}
+\item Do users like the proposed infobar?
+\item Do they have any other ideas so that the implemented solution is the best from an objective point of view?
+\vspace{0.4cm}
+\item Survey 2 attended by 15 frequent GRASS users and 10 occasional GRASS users
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Impact of Survey 2 on the work}
+	\centering
+        \includegraphics[width=0.7\textwidth]{pictures/survey2.PNG}
+\end{frame}
+
+\begin{frame}
+\frametitle{Situation 1 before and after Survey 2}
+	\centering
+        \includegraphics[width=0.95\textwidth]{pictures/info1.PNG}
+\end{frame}
+
+\begin{frame}
+\frametitle{Situation 2 before and after Survey 2, New management icons for data import}
+	\centering
+        \includegraphics[width=0.95\textwidth]{pictures/info2.PNG}
+\end{frame}
+
+\begin{frame}
+\frametitle{Situation 3 before and after Survey 2}
+	\centering
+        \includegraphics[width=0.95\textwidth]{pictures/info3.PNG}
+\end{frame}
+
+\begin{frame}
+\frametitle{Displaying world map immediately after startup}
+	\centering
+        \includegraphics[width=0.95\textwidth]{pictures/po_prvnich_trech_PRs.PNG}
+\end{frame}
+
+\section{Conclusions}
+
+\begin{frame}
+\frametitle{Conclusions}
+\begin{itemize}
+\item{Most users like the partial removal of startup screen and improvements of the Data Catalog made during GSoC}
+\item{Proposals for GRASS GIS startup machanism for normal users were introduced to GRASS comunity and they are now being discussed}
+\item{GSoC improvements and the special mode for first-time users are already in the development GRASS branch}
+\item{They will be part of the stable version 8.0 scheduled for the spring of 2021}
+\end{itemize}
+\end{frame}
+
+\section{Suggestions for further GRASS GUI development}
+\begin{frame}
+\frametitle{Suggestions for further GRASS GUI development}
+\begin{itemize}
+\item{simplify the path to import WMS/WFS}
+\item{expand the set of management icons}
+\item{design GRASS GUI as a single window application}
+\item{enrich the Data Catalog functionalities beyond changes made during GSoC}
+\item{create better documentation}
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\begin{center}
+{\fontsize{20}{40}\selectfont Thank you for your attention}
+\end{center}
+\end{frame}
+
+\begin{frame}
+\frametitle{Opponent's questions}
+\begin{itemize}
+\item{}
+\item{}
+\item{}
+\end{itemize}
+\end{frame}
+
+
+\end{document}
