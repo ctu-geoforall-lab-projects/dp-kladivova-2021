@@ -5,6 +5,12 @@
 \usepackage[orientation=landscape,size=custom,width=16,height=9,scale=0.5,debug]{beamerposter} 
 \usepackage{graphicx}
 \usetheme{Madrid}
+\definecolor{UBCblue}{rgb}{0.04706, 0.13725, 0.26667}
+\usecolortheme[named=UBCblue]{structure}
+
+\titlegraphic{\vspace*{-1.7cm}\includegraphics[width=2.8cm]{pictures/logo_cvut.png}\hspace*{10cm}~%
+\includegraphics[width=2.1cm]{pictures/Grass_GIS_logo.png}
+}
 
 \AtBeginSection[]{
   \begin{frame}
@@ -33,8 +39,8 @@
 {\small Supervisor: Ing. Martin Landa, Ph.D.}
 }
 
-\date[\today] % (optional)
-{\today}
+\date[February 4, 2021] % (optional)
+{February 4, 2021}
 
 \begin{document}
 
@@ -50,7 +56,7 @@
 \begin{frame}
 \frametitle{Startup screen and data hiearchy}
 \begin{itemize}
-\item	Every new GRASS GIS user was always redirected to the Startup screen
+\item	Every GRASS GIS user was always redirected to the Startup screen
 \item	Quite confusing without knowing what each of data hiearchy elements means
 \end{itemize}
 		\centering
@@ -101,7 +107,7 @@
 \end{frame}
 
 \begin{frame}
-\frametitle{For comparison - Poor Data Catalog in the version 7.8}
+\frametitle{For comparison - Poor Data Catalog before GSoC}
 	        	\centering
 	        \includegraphics[width=0.8\columnwidth]{pictures/data_catalog_pred.PNG}
 \end{frame}
