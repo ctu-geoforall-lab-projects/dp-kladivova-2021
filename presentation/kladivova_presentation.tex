@@ -321,31 +321,50 @@ General questions:
 \section{Questions}
 
 \begin{frame}
-\frametitle{Opponent's Question 1}
-\begin{enumerate}
-\item{You used a definition of usability as ``to whether or not users can achieve specific goals with efficiency, effectinevess, and satisfaction''. How would that definition translate to the GRASS GIS startup? What would characterize a most user-friendly startup mechanism?}
-\end{enumerate}
-\begin{itemize}
-\vspace{0.3cm}
-\item{efficiency (efektivnost) -- complete the task faster -- good performance}
-\item{effectiveness (účinnost) -- accompish a purpose and produce the intended result}
-\item{Satisfaction and performance - correlated very strongly}
-\item{The ideal startup mechanism \textbf{quickly} starts up in an environment where one can start working \textbf{without problems} immediately}
-\item{Most effective way in terms of programming}
-\end{itemize}
-\end{frame}
-
-\begin{frame}
 \frametitle{Supervisor's Question}
 \begin{enumerate}
 \item{Většina vámi navržených úprav byla začleněna do zdrojových kódů systému GRASS. Definitivní odstranění tradiční startovací obrazovky není nadšeně přijato všemi uživateli. Jak byste řešila snahu minimalizovat negativní ohlasy, které s sebou tento krok přináší?}
 \end{enumerate}
 \begin{itemize}
 \vspace{0.3cm}
-\item{Již založena diskuze na GitHub platformě}
-\item{Oba návrhy představeny komunitě}
-\item{Podrobné vysvětlení a diskuze ohledně návrhů a uvědomění komunity, že Data Catalog převzal a dokonce rozšířil roli startovací obrazovky}
-\item{Při startu do demolokace je jednoduché se přepnout do mapsetu v jiné lokaci}
+\item{V průzkumu 70 \% uživatelů pro začlenění modernizované startup screen, 30 \% pro využití defaultní lokace}
+\item{Hlavní důvodem pravděpodobně nedostatečné pochopení komunity, že Data Catalog převzal a dokonce rozšířil roli startovací obrazovky}
+\item{Založena nová diskuze na GitHub platformě -- podrobné vysvětlení a dialog ohledně obou představených návrhů}
+
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Opponent's Question 1}
+\begin{enumerate}
+\item{You used a definition of usability as ``to whether or not users can achieve specific goals with efficiency, effectinevess, and satisfaction''. How would that definition translate to the GRASS GIS startup? What would characterize a most user-friendly startup mechanism?}
+\end{enumerate}
+\begin{itemize}
+\vspace{0.3cm}
+\item{The user is happy when GRASS GIS starts fast, without complicated dialogs, but the settings are not limited.}
+\vspace{0.3cm}
+\item{Efficiency (efektivnost) -- complete the task fast}
+\item{Effectiveness (účinnost) -- accompish a purpose and produce the intended result}
+\item{Satisfaction (spokojenost) - the user is happy with the result}
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Opponent's Question 1}
+\begin{enumerate}
+\item{You used a definition of usability as ``to whether or not users can achieve specific goals with efficiency, effectinevess, and satisfaction''. How would that definition translate to the GRASS GIS startup? What would characterize a most user-friendly startup mechanism?}
+\end{enumerate}
+\begin{itemize}
+\vspace{0.3cm}
+\item{A good user-friendly startup mechanism}
+\begin{itemize}
+\item{opens the program}
+\item{opens it fast}
+\item{remembers the user's settings (in GRASS - start in the last used mapset)}
+\item{can solve arisen problems (when last mapset not avaliable (deleted, in use or broken))}
+\item{leads new users}
+\item{creates no burden for professionals}
+\end{itemize}
 \end{itemize}
 \end{frame}
 
@@ -372,8 +391,8 @@ General questions:
 \begin{itemize}
 \vspace{0.3cm}
 \item{PERMANENT mapset - automatically created, visible from other mapsets, used for storing data common to all projects}
-\item{For normal users (multiple users) asset, for new users rather irrelevant}
-\item{Effort to bring the PERMANENT mapset closer to new users by explaining it in the second infobar}
+\item{For experienced users (and multiple users accessing the same location) asset, for new users rather confusing}
+\item{Effort to bring the PERMANENT mapset closer to new users by explaining it in the \textit{second infobar}}
 \end{itemize}
 \end{frame}
 
@@ -386,7 +405,7 @@ General questions:
 \vspace{0.3cm}
 \item{Modules offer maps contained in PERMANENT or current mapset}
 \item{Mapset Access Info was created to emphasize the function of the current mapset in the Data Catalog}
-\item{Obvious that maps in other than the current mapset will not be offered to the user} 
+\item{Obvious that maps in another than the current mapset will not be offered to the user} 
 \end{itemize}
 \end{frame}
 
