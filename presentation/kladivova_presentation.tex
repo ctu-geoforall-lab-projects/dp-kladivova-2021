@@ -403,9 +403,10 @@ General questions:
 \end{enumerate}
 \begin{itemize}
 \vspace{0.3cm}
-\item{Modules offer maps contained in PERMANENT or current mapset}
-\item{Mapset Access Info was created to emphasize the function of the current mapset in the Data Catalog}
-\item{Obvious that maps in another than the current mapset will not be offered to the user} 
+\item{Modules offer maps contained in search path - maps from PERMANENT or current mapset}
+\item{Data Catalog does not respect search path, displays all maps in all mapsets}
+\item{It it definitely confusing for users that Data Catalog does not correspond to the options offered in Modules} 
+\item{Possible solution - defautly offer all maps in the current location in Modules, restrictions via search path offered only to more advanced users (for example, when a certain number of created locations is exceeded)}
 \end{itemize}
 \end{frame}
 
