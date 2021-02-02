@@ -251,7 +251,7 @@ General questions:
 \end{frame}
 
 \begin{frame}
-\frametitle{Example of proposed infobar for first-time user after Survey 1}
+\frametitle{Example of proposed infobar for first-time user after Survey 1, User mapset removed}
 	\centering
         \includegraphics[width=0.55\textwidth]{pictures/info1before.PNG}
 \end{frame}
@@ -312,34 +312,82 @@ General questions:
 \end{itemize}
 \end{frame}
 
-\section{Suggestions for further GRASS GUI development}
-\begin{frame}
-\frametitle{Suggestions for further GRASS GUI development}
-\begin{itemize}
-\item{simplify the path to import WMS/WFS}
-\vspace{0.5cm}
-\item{expand the set of management icons}
-\vspace{0.5cm}
-\item{design GRASS GUI as a single window application}
-\vspace{0.5cm}
-\item{enrich the Data Catalog functionalities beyond changes made during GSoC}
-\vspace{0.5cm}
-\item{create better documentation}
-\end{itemize}
-\end{frame}
-
 \begin{frame}
 \begin{center}
 {\fontsize{20}{40}\selectfont Thank you for your attention}
 \end{center}
 \end{frame}
 
+\section{Questions}
+
 \begin{frame}
-\frametitle{Opponent's questions}
+\frametitle{Opponent's Question 1}
+\begin{enumerate}
+\item{You used a definition of usability as ``to whether or not users can achieve specific goals with efficiency, effectinevess, and satisfaction''. How would that definition translate to the GRASS GIS startup? What would characterize a most user-friendly startup mechanism?}
+\end{enumerate}
 \begin{itemize}
-\item{}
-\item{}
-\item{}
+\vspace{0.3cm}
+\item{efficiency (efektivnost) -- complete the task faster -- good performance}
+\item{effectiveness (účinnost) -- accompish a purpose and produce the intended result}
+\item{Satisfaction and performance - correlated very strongly}
+\item{The ideal startup mechanism \textbf{quickly} starts up in an environment where one can start working \textbf{without problems} immediately}
+\item{At the same time, it will be the most effective way in terms of programming}
+\item{It will lead new users and there will be no burden for professionals} 
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Supervisor's Question}
+\begin{enumerate}
+\item{Většina vámi navržených úprav byla začleněna do zdrojových kódů systému GRASS. Definitivní odstranění tradiční startovací obrazovky není nadšeně přijato všemi uživateli. Jak byste řešila snahu minimalizovat negativní ohlasy, které s sebou tento krok přináší?}
+\end{enumerate}
+\begin{itemize}
+\vspace{0.3cm}
+\item{Již založena diskuze na GitHub platformě}
+\item{Oba návrhy představeny komunitě}
+\item{Podrobné vysvětlení a diskuze ohledně návrhů a uvědomění komunity, že Data Catalog převzal a dokonce rozšířil roli startovací obrazovky}
+\item{Při startu do demolokace je jednoduché se přepnout do mapsetu v jiné lokaci}
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Opponent's Question 2}
+\begin{enumerate}\addtocounter{enumi}{1}
+\item{What would be the five main topics on a long term roadmap for further UX development in GRASS GIS and why (consider effect and probably effort)?}
+\end{enumerate}
+\begin{itemize}
+\vspace{0.3cm}
+\item{Complete the issue of the startup mechanism} - medium effect, no consensus
+\item{Strictly semantically separate Data and Display tabs} - big effect, medium effort
+\item{Design GRASS GUI as a single window application} - huge effect as well as effort
+\item{Make the Location Wizard more pleasant} - probably big effect as well as effort
+\item{Enrich the Data Catalog functionalities beyond changes made during GSoC} - small effect as well as effort, but depends on functionalities
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Opponent's Questions 3}
+\begin{enumerate}\addtocounter{enumi}{2}
+\item{How does the concept of the PERMANENT mapset affect user experience? Is it an asset, irrelevant or an obstacle to new users?}
+\end{enumerate}
+\begin{itemize}
+\vspace{0.3cm}
+\item{PERMANENT mapset - automatically created, visible from other mapsets, used for storing data common to all projects}
+\item{For normal users (multiple users) asset, for new users rather irrelevant}
+\item{Effort to bring the PERMANENT mapset closer to new users by explaining it in the second infobar}
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Opponent's Question 4}
+\begin{enumerate}\addtocounter{enumi}{3}
+\item{How does the search path concept integrate with the data catalog? Do you expect confusion among users when visible maps in the catalog are not available in modules interfaces?}
+\end{enumerate}
+\begin{itemize}
+\vspace{0.3cm}
+\item{Modules offer maps contained in PERMANENT or current mapset}
+\item{Mapset Access Info was created to emphasize the function of the current mapset in the Data Catalog}
+\item{Obvious that maps in other than the current mapset will not be offered to the user} 
 \end{itemize}
 \end{frame}
 

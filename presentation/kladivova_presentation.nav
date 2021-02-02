@@ -87,19 +87,25 @@
 \headcommand {\beamer@framepages {33}{33}}
 \headcommand {\slideentry {7}{0}{2}{34/34}{}{0}}
 \headcommand {\beamer@framepages {34}{34}}
-\headcommand {\beamer@sectionpages {33}{34}}
-\headcommand {\beamer@subsectionpages {33}{34}}
-\headcommand {\sectionentry {8}{Suggestions for further GRASS GUI development}{35}{Suggestions for further GRASS GUI development}{0}}
-\headcommand {\slideentry {8}{0}{1}{35/35}{}{0}}
+\headcommand {\slideentry {7}{0}{3}{35/35}{}{0}}
 \headcommand {\beamer@framepages {35}{35}}
-\headcommand {\slideentry {8}{0}{2}{36/36}{}{0}}
+\headcommand {\beamer@sectionpages {33}{35}}
+\headcommand {\beamer@subsectionpages {33}{35}}
+\headcommand {\sectionentry {8}{Questions}{36}{Questions}{0}}
+\headcommand {\slideentry {8}{0}{1}{36/36}{}{0}}
 \headcommand {\beamer@framepages {36}{36}}
-\headcommand {\slideentry {8}{0}{3}{37/37}{}{0}}
+\headcommand {\slideentry {8}{0}{2}{37/37}{}{0}}
 \headcommand {\beamer@framepages {37}{37}}
-\headcommand {\slideentry {8}{0}{4}{38/38}{}{0}}
+\headcommand {\slideentry {8}{0}{3}{38/38}{}{0}}
 \headcommand {\beamer@framepages {38}{38}}
-\headcommand {\beamer@partpages {1}{38}}
-\headcommand {\beamer@subsectionpages {35}{38}}
-\headcommand {\beamer@sectionpages {35}{38}}
-\headcommand {\beamer@documentpages {38}}
-\headcommand {\gdef \inserttotalframenumber {38}}
+\headcommand {\slideentry {8}{0}{4}{39/39}{}{0}}
+\headcommand {\beamer@framepages {39}{39}}
+\headcommand {\slideentry {8}{0}{5}{40/40}{}{0}}
+\headcommand {\beamer@framepages {40}{40}}
+\headcommand {\slideentry {8}{0}{6}{41/41}{}{0}}
+\headcommand {\beamer@framepages {41}{41}}
+\headcommand {\beamer@partpages {1}{41}}
+\headcommand {\beamer@subsectionpages {36}{41}}
+\headcommand {\beamer@sectionpages {36}{41}}
+\headcommand {\beamer@documentpages {41}}
+\headcommand {\gdef \inserttotalframenumber {41}}
